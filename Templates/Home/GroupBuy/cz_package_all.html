@@ -1,0 +1,60 @@
+<extend name="../Common/group_buy_base" />
+
+<block name="custom_css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/group_buy.css">
+</block>
+
+<block name="content">
+    <div class="row_container">
+        <div class="one_buy">
+            <foreach name="cz_package" item="row">
+                <div class="one_buy_list">
+                    <a href="{:U('IOSCZPackage/buy', array('id'=>$row['id']))}">
+                        <img src="/game_pic/{$row.thumbnail_path}" alt="{$row.name}" />
+                    </a>
+                    <span>{$row.option_text}</span><br>
+                    <del>价值{$row.real_price}元</del><b>￥{$row.price}.00元</b><br>
+                    <div class="progress_all">
+                        <div style="width:{$row.precent}" class="progress"></div>
+                    </div>
+                    <div class="people">
+                        <span class="people_buy">{$row.buy_number}<br><i>已参与</i></span>
+                        <span class="people_all">{$row.sum_number}<br><i>总需人次</i></span>
+                        <span class="people_left">{$row.left_number}<br><i>剩余</i></span>
+                    </div>
+                    <if condition="$row['precent'] lt 100 ">
+                        <a class="buy_btn" href="{:U('IOSCZPackage/buy', array('id'=>$row['id']))}">立即组团购买</a>
+                        <else/>
+                        <a class="buy_btn" href="javascript:void(0)" style="background-color: #bbbbbb;">已完成团购</a>
+
+                    </if>
+                </div>
+            </foreach>
+        </div>
+        <div style="clear:both;float:right;" class="page">{$show}</div>
+
+        <h3>可能感兴趣的商品</h3>
+        <div class="one_buy">
+            <foreach name="group_buy" item="row">
+                <div class="one_buy_list">
+                    <a href="{:U('GroupBuyCz/buy', array('id'=>$row['id']))}">
+                        <img src="/game_pic/{$row.pic}" alt="{$row.game_name}" />
+                    </a>
+                    <span>{$row.option_text}</span><br>
+                    <del>价值{$row.price}元</del><b>￥1.00元</b><br>
+                   
+                    <a class="buy_btn" href="{:U('GroupBuyCz/buy', array('id'=>$row['id']))}">立即云购</a>
+
+                    <div class="progress_all">
+                        <div style="width:{$row.precent}" class="progress"></div>
+                    </div>
+                    <div class="people">
+                        <span class="people_buy">{$row.buy_number}<br><i>已参与</i></span>
+                        <span class="people_all">{$row.price}<br><i>总需人次</i></span>
+                        <span class="people_left">{$row.left_number}<br><i>剩余</i></span>
+                    </div>
+                </div>
+            </foreach>
+        </div>
+    </div>
+</block>

@@ -1,0 +1,62 @@
+<extend name="../Common/home_base" />
+
+<block name="custom_css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/shouchonghao.css">
+</block>
+
+<block name="extra_js">
+    
+</block>
+
+<block name="content">
+    <div class="row_container">
+        <div class="crumbs_nav">
+            <div class="crumbs_nav_item">
+                <a href="{:U('/')}">首页</a>
+                <i>&gt;</i>
+            </div>
+            <div class="crumbs_nav_item">
+                <a href="{:U('Home/SCH/index')}">首充号</a>
+                <i>&gt;</i>
+            </div>
+            <div class="crumbs_nav_item">
+                <a>{$gameInfo.name}</a>
+                <i>{$type}</i>
+            </div>
+        </div>
+        <div class="filter_title">
+            <span>
+                <img src="/game_pic/{$gameInfo.pic}" alt="{$gameInfo.name}"/>{$gameInfo.name}
+                <a href="{$download_url}">游戏下载</a>
+            </span>
+        </div>
+        <div class="sch_list">
+            <ul>
+                <li class="head">
+                    <label>标题</label>
+                    <div class="pc-price">原价</strong></div>
+                    <div class="pc-price">折后价</strong></div>
+                    <span>销量</span>
+                </li>
+                <foreach name='sclist' item='sch' key="index">
+                    <li class="<?php if($index%2)echo 'on'; else echo 'off' ?>">
+                        <label>{$sch.operator}&nbsp;{$sch.name}</label>
+                        <del class="pc-price"><b>￥{$sch.price}</b></del>
+                        <div class="pc-price"><strong>￥{$sch.real_price}</strong></div>
+                        <span>{$sch.sell_amount}</span>
+                        <a href="{$sch.href}" class="submit">立即购买</a>
+                    </li>
+                </foreach>    
+            </ul>
+            <empty name="sclist">
+                <div class="search_box">
+                    <div class="no_result">
+                        <p>此游戏首先号已下架</p><br>
+                        <a href="{:U('Home/Index/index')}">&nbsp;&nbsp;返回首页</a>
+                    </div>
+                </div>
+            </empty>
+        <div class="clear"></div>
+        </div>
+    </div>
+</block>

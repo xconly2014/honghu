@@ -1,0 +1,77 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="header_bar">
+    <h1 class="mui-title">团购中心</h1>
+</block>
+
+<block name="extra_css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/mb_group_buy.css">
+</block>
+
+<block name="main_content">
+    <div class="main_container">
+        <div id="segmentedControl" class="mui-segmented-control">
+            <a class="mui-control-item mui-active" href="#item1mobile">
+                充值团购
+            </a>
+
+            <a class="mui-control-item" href="#item2mobile">
+                一元购
+            </a>
+        </div>
+
+        <div class="mui-content-padded">
+            <div id="item1mobile" class="mui-control-content mui-active">
+                <ul class="mui-table-view">
+                    <foreach name="cz_package" item="row">
+                        <li class="mui-table-view-cell">
+                            <if condition="$row['precent'] lt 100 ">
+                                <a href="{:U('Home/IOSCZPackage/buy',array('id'=>$row['id']))}">
+                                    <b class="mui-media-object mui-pull-right" style="color:red">￥{$row.price}元</b>
+                                    <div class="mui-media-body">
+                                        {$row.option_text}
+                                        <p class='mui-ellipsis'><del>价值{$row.real_price}元</del></p>
+                                    </div>
+                            <else />
+                                <a href="javascript:void(0)">
+                                    <b class="mui-media-object mui-pull-right" style="color:red">￥{$row.price}元</b>
+                                    <div class="mui-media-body">
+                                        {$row.option_text}
+                                        <p class='mui-ellipsis'><del>价值{$row.real_price}元</del>&nbsp;已完成</p>
+                                    </div>
+                            </if>
+                            </a>
+                        </li>
+                    </foreach>                        
+                </ul>
+                <a href="{:U('Home/IOSCZPackage/index')}" class="mui-btn mui-btn-block">点击查看全部</a>
+            </div>
+
+            <div id="item2mobile" class="mui-control-content">
+                <ul class="mui-table-view">
+                    <foreach name="group_buy" item="row">
+                        <li class="mui-table-view-cell mui-media">
+                            <a href="{:U('Home/GroupBuyCz/buy',array('id'=>$row['id']))}">
+                                <img class="mui-media-object mui-pull-left" src="/game_pic/{$row.pic}"/>
+                                <div class="mui-media-body">
+                                    {$row.option_text}<b class="import_price">￥1.00元</b>
+                                    <p class='mui-ellipsis'>
+                                         <div class="progress_all">
+                                            <div style="width:{$row.precent}" class="progress"></div>
+                                        </div>
+                                        <div class="people">
+                                            <span class="people_buy">{$row.buy_number}<br><i>已参与</i></span>
+                                            <span class="people_all">{$row.price}<br><i>总需人次</i></span>
+                                            <span class="people_left">{$row.left_number}<br><i>剩余</i></span>
+                                        </div>   
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+                    </foreach>
+                </ul>
+                <a href="{:U('Home/GroupBuy/show_all')}" class="mui-btn mui-btn-block">点击查看全部</a>
+            </div>
+        </div>
+    </div>
+</block>

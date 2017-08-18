@@ -1,0 +1,43 @@
+<extend name="../Common/admin_base" />
+
+<block name="extra_js">
+    <script src="__PUBLIC__/js/admin/user_mgr.js"></script>
+</block>
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div class="cz_option_container">
+                <div class="add_cz_option">
+                    <form class="common_form" action="{$url}" method="post" id="admin_form">
+                        <p>编辑管理员</p>
+                        <li class="required">
+                            <label>权限组</label>
+                        	<select name='group_id'>
+                            	<option value=''>--请选择--</option>
+                            	<volist name='group_list' id='group'>
+                                	<option value="{$group.id}" <if condition="$group['id'] eq $row_info['group_id']">selected='selected'</if>>{$group.title}</option>
+                            	</volist>
+                        	</select>
+                        </li>
+                        <li>
+                            <label class="form_key">用户ID</label>
+            				<label class="form_value">{$row_info.uid}</label>
+                        </li>
+                        <li>
+                            <label>&nbsp;</label>
+                            <button type="submit">修改</button>
+                        </li>
+                    </form>
+                </div>
+            </div>
+        </div>
+</block>
+
+<block name="footer">
+    <div class="footer">
+        <p>
+            广州鸿鹄网络科技有限公司
+        </p>
+    </div>
+</block>

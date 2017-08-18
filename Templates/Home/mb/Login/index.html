@@ -1,0 +1,83 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="extra_js"> 
+	<script>
+		$().ready(function(){
+			$('#account').focus(function(){
+	           $('.mobile_error span').remove();
+			});
+			$('#pwd').focus(function(){
+		           $('.mobile_error span').remove();
+				});
+			
+			$('#login').click(function(){
+ 				var username = $.trim($("#account").val());
+			    var password = $.trim($("#pwd").val());
+			    
+			    if(username == ''){
+			        updateError("用户名不能为空");
+			        return false;
+			    }
+			    
+			    if(password == ''){
+			        updateError("密码不能为空");
+			        return false; 
+			    }
+			    
+			    $('.mobile_error').html();
+			    
+			    var remember = document.getElementById('remember');
+        		if(remember.checked == true){
+        			var auto = "on";
+        		}
+			    
+			    var url="{:U('Home/Login/ajaxLogin')}";
+			    
+			    $.post(url,{username:username,password:password,type:'mb',remember:auto},function(msg){
+	 		        if(msg.status){
+			            
+	 		        	window.location.href = msg.data;
+			        }else{
+			            updateError(msg.data);
+			            return false;
+			        } 
+			    },'json');
+			});
+			
+			
+			function updateError(errorMsg){
+			    $(".mobile_error").html("<span class='error'>"+errorMsg+"</span>");
+			}
+			
+		});
+	</script>
+</block>
+
+<block name="extra_css">
+   <link rel="stylesheet" type="text/css"href="__PUBLIC__/css/mb_login.css" />
+</block>
+
+<block name="header_bar">
+<h1 class="mui-title">登录</h1>
+</block>
+
+<block name="main_content">
+	<div class="main_container">
+		<div class="login-container">
+		    <div class="mobile_error"></div>
+		    <span class="mui-icon mui-icon-contact"></span>
+		    <input type="text" id="account" name="account" placeholder="邮箱/手机号码">
+		    <span class="mui-icon mui-icon-locked"></span>
+		    <input type="password" id="pwd" name="pwd" placeholder="密码">
+			<div>
+			    <input type="checkbox" class="remember" id="remember" /><label>记住密码</label>
+			</div>
+			<button class="mui-btn mui-btn-primary mui-btn-block" id="login">登录</button>
+			<div class="login-signup">
+			<a href="{:U('Home/Register/reg_tel')}">手机注册</a>
+			<a href="{:U('Home/User/forget_password_index')}">忘记密码?</a>
+			</div>
+		</div>
+	</div>
+
+</block>

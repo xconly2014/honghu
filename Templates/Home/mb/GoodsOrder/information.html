@@ -1,0 +1,50 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="extra_js">
+    <script type="text/javascript" src="__PUBLIC__/js/Plugin/jqueryForm/jQuery_Validation.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/global_checker.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/common/goods_common.js"></script>
+	<script type="text/javascript">
+	    $().ready(function(){
+	    	addMethod();
+	    	$("#mb_goods_order_form").validate(window.goods_option,true);
+	    });
+	</script>
+</bloc
+
+<block name="header_bar">
+    <h1 class="mui-title">填写收货地址</h1>
+</block>
+
+<block name="main_content">
+    <div class="main_container">
+        <form action="{$url}" method="post" id="mb_goods_order_form">
+            <div class="mobile_error"></div>
+            <ul class="mui-table-view">
+                <li class="mui-table-view-cell">
+                    <label>订单号：</label><span>{$orderId}</span>
+                </li>
+                <li class="mui-table-view-cell">
+                    <label>商品名：</label><span>{$data.name}</span>
+                </li>
+                <li class="mui-table-view-cell">
+                    <label>消耗积分：</label><span>{$data.credits}
+                </li>
+                
+                <li class="mui-table-view-cell">
+                    <input type="text" name="recipient" placeholder="请填写收件人的名称"/>
+                </li>
+                <li class="mui-table-view-cell">
+                    <input type="text" name="tel"  placeholder="请填写收件人的手机号码"/>
+                </li>
+                <li class="mui-table-view-cell">
+                    <input type="text" name="address" placeholder="请填写您的收件地址"/>
+                </li>
+            </ul>
+            <div class="mui-button-row">
+                <button class="mui-btn mui-btn-primary mui-btn-block">提交</button>
+            </div>
+            
+        </form>
+    </div>
+</block>

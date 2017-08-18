@@ -1,0 +1,48 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="header_bar">
+    <h1 class="mui-title">发送邮箱验证链接</h1>
+</block>
+
+<block name="extra_js">
+    <script>
+        $().ready(function(){
+            //点击按钮时的发送邮件
+            $('#check_email_btn').click(function(){
+                $.post('__CONTROLLER__/ajax_email_auth_url',function(data){
+                    if(data == 'success'){
+                        sleepSendBtn();
+                    }
+
+                });
+            });
+        });
+
+         function sleepSendBtn(){
+           var time = 60;
+           var interval = setInterval(function(){
+               --time;
+               if(time >= 0){
+                    $('#check_email_btn').css('opacity','0.5').val('重发'+time).prop("disabled","disabled");
+               }
+               if(time < 0){
+                    $('#check_email_btn').css('opacity','1').val('发送邮件').removeAttr("disabled");
+                   clearInterval(interval);
+               }
+           },1000); 
+       };
+    </script>
+</block>
+
+<block name="main_content">
+    <div class="main_container">
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell">
+                <label>邮箱：</label><span>{$email}</span>
+            </li>
+        </ul>
+        <div class="mui-button-row">
+            <input value="发送邮件" type="submit" id="check_email_btn" class="mui-btn mui-btn-primary mui-btn-block">
+        </div>
+    </div>
+</block>

@@ -1,0 +1,72 @@
+.game_list_container{
+  padding:30px;
+}
+
+.cz_option_container  {
+  width:820px;
+  padding:30px;
+}
+
+.add_cz_option  {
+  width:750px;
+  height:420px;
+  margin:0 auto;
+
+  p {
+    margin-top:10px;
+
+    label  {
+      font-size: 14px;
+      color:#f00;
+    }
+  }
+}
+
+.game_on_sale_container  {
+  width: 700px;
+  padding:30px;
+}
+
+.sc_edit_container  {
+  padding:15px;
+  width:540px;
+}
+
+.game_strategy_container  {
+  padding:15px;
+}
+
+.container  {
+  margin:0 auto;
+}
+
+.kinFormUpload_upfilesInfoContent{
+  p{
+    font-size: 12px;
+  }
+}
+
+#uploadImg{
+  display: inline-block;
+}
+
+#error {
+font-size: 12px;
+background: url("../img/wrong.png") no-repeat 0px 0px;
+display: inline-block;
+padding-left: 20px;
+width: 80px;
+text-align: left;
+height: 20px;
+color: red;
+}
+
+#success {
+font-size: 12px;
+display: inline-block;
+width: 20px;
+height: 20px;
+background: url("../img/right.png") no-repeat 0px 0px;
+position: relative;
+top: 10px;
+}

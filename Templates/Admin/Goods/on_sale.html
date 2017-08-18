@@ -1,0 +1,146 @@
+<extend name="../Common/admin_base"/>
+
+<block name="extra_js">
+    <script type="text/javascript" src="__PUBLIC__/js/Plugin/kinFormUpload/jquery.kinFormUpload.1.1.source.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/ue_import.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/add_ons/ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/add_ons/ueditor/ueditor.all.min.js"></script>
+    <script>
+        $().ready(function(){
+
+            window.onload=function(){
+            window.UEDITOR_CONFIG.initialFrameWidth=800  //初始化编辑器宽度,默认1000
+            window.UEDITOR_CONFIG.initialFrameHeight=320  //初始化编辑器高度,默认320
+            UE.getEditor('content');
+        }
+    
+            if($("#uploadImages").length > 0 ){
+                $("#uploadImages").kinFormUpload({
+                    length:1,
+                    zIndex:2,
+                    ext:'jpg,jpeg,png,gif'
+                });
+            }
+            
+            $('#uploadImg').mouseout(function(){
+                var num = $('i').html();
+                if(num == 0){
+                    $('#uploadImg').next().remove();
+                    $('#uploadImg').after("<label id='error'>请上传缩略图</label>");
+                }else{
+                    $('#uploadImg').next().remove();
+                    $('#uploadImg').after("<label id='success'></label>");
+                }               
+            });
+
+            $("#goodsAdd").validate({
+                rules:{
+                    name:'required',
+                    credits:{
+                        required:true,
+                        range:[1,9999999999999]
+                    },
+                    store_num:{
+                        required:true,
+                        range:[0,9999999999]
+                    },
+                    exchange_num:{
+                        required:true,
+                        range:[0,9999999999]
+                    }
+                },
+
+                messages:{
+                    name:'请输入商品名',
+                    credits:{
+                        required:'请填写所需积分',
+                        range:$.validator.format("请输入9999999999999以内数字")
+                    },
+                    store_num:{
+                        required:'请输入库存量',
+                        range:$.validator.format("请输入9999999999以内数字")
+                    },
+
+                    exchange_num:{
+                        required:'请输入已兑换数量',
+                        range:$.validator.format("请输入9999999999以内数字")
+                    }
+                },
+
+                errorPlacement: function(error, element) {
+                    error.appendTo(element.parent());
+                    error.siblings("span").remove();
+                },
+
+                errorElement:"span",
+
+                success: function(span) {
+                    span.attr("class","success");
+                },
+
+                onfocusout: function(element) {
+                    $(element).valid();
+                }
+            });
+        });
+
+    </script>
+</block>
+<block name="extra_css">
+   <style>
+       #content{
+	       position: relative;
+           z-index: 0;
+       } 
+   </style>
+</block>
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div class="game_on_sale_container">
+                <form id="goodsAdd" class="common_form container" action="{:U('Admin/Goods/on_sale')}" enctype="multipart/form-data" method="post">
+                    <p>商品上架</p>
+                    <li class="required">
+                        <label>商品名：</label>
+                        <input type="text" name="name" />
+                    </li>
+
+                    <li class="required">
+                        <label>所需积分：</label>
+                        <input type="text" name="credits" />
+                    </li>
+
+                    <li class="required">
+                        <label>库存：</label>
+                        <input type="text" name="store_num" />
+                    </li>
+
+                    <li class="required">
+                        <label>兑换数量：</label>
+                        <input type="text" name="exchange_num" />
+                    </li>
+
+                    <li class="required">
+                        <label>缩略图：</label>
+                        <label id='uploadImg'>
+                        <input type="file" name="photo" id="uploadImages" />
+                        <input type="hidden" id="img"/>
+                        </label>
+                    </li>
+                    
+                    <li>
+                        <label>商品详情：</label>
+                        <textarea id="content" name="content"></textarea>
+                    </li>
+
+                    <li>
+                        <button type="submit">添加</button>
+                        <button type="reset">取消</button>
+                    </li>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</block>

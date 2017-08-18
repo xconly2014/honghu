@@ -1,0 +1,72 @@
+<extend name="../Common/admin_base" />
+
+<block name="content">
+
+
+    <div class="content_container">
+        <div class="content">
+            <div class="table_bar">
+                <a href="{:U('Footer/add')}">添加</a>
+            </div>
+
+            <div class="table_container">
+                <table class="data-table">
+                    <thead>
+                    <tr>
+                        <th>标题</th>
+                        <th>优先级</th>
+                        <th>图片</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <volist name="item_list" id="vo">
+                        <tr id="row_{$vo.id}" onclick="showCol()">
+                            <td>{$vo.name}</td>
+                            <td>{$vo.priority}</td>
+                            <td>
+                                <img src="{$vo.image_path}"/>
+                            </td>
+                            <td>
+                                <a href="{:U('Footer/add_col?item_id='.$vo['id'])}">添加子项</a>
+                                <a href="{:U('Footer/edit?item_id='.$vo['id'])}">编辑</a>
+                                <a href="{:U('Footer/del?item_id='.$vo['id'])}">删除</a>
+                            </td>
+                        </tr>
+                    </volist>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="table_container">
+                <table class="data-table">
+                    <thead>
+                    <tr>
+                        <th>标题</th>
+                        <th>链接</th>
+                        <th>优先级</th>
+                        <th>父标题</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <volist name="item_col_list" id="vo">
+                        <tr id="item_{$vo.footer_col_id}" onclick="showCol()">
+                            <td>{$vo.name}</td>
+                            <td>{$vo.href}</td>
+                            <td>{$vo.priority}</td>
+                            <td>{$vo.footer_item_name}</td>
+                            <td>
+                                <a href="{:U('Footer/edit_col?col_id='.$vo['id'])}">编辑</a>
+                                <a>删除</a>
+                            </td>
+                        </tr>
+                    </volist>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+</block>

@@ -1,0 +1,213 @@
+<extend name="../Common/home_base" />
+
+<block name="custom_css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/group_buy.css">
+</block>
+
+<block name="content">
+    <div class="row_container">
+        <div class="crumbs_nav">
+            <div class="crumbs_nav_item">
+                <a href="{:U('/')}">首页</a>
+                <i>&gt;</i>
+            </div>
+            <div class="crumbs_nav_item">
+                <a href="{:U('Home/GroupBuy/index')}">手游团购专区 </a>
+                <i>&gt;</i>
+            </div>
+            <div class="crumbs_nav_item">
+                <a>一元购详情</a>
+                <i></i>
+            </div>
+        </div>
+        <div class="center_content">
+            <div class='content_top'>
+                <div class='gb_info'>
+                    <img src="/game_pic/{$game_pic}" class='game_img' alt="{$game_pic}"/>
+                    <div class='info'>
+                        <div class="codes" id="codes">
+                            <div class="title">本期幸运者的云购码 <b id="close">X</b></div>
+                            <foreach name='luckyManInfo.codes' item='codeList'>
+                                <if condition="$codeList eq $bgczRes['lucky_code']">
+                                    <span id="orange">{$codeList}</span> 
+                                <else />
+                                    <span>{$codeList}</span>
+                                </if>
+                            </foreach>
+                        </div>
+                        <label>{$bgczRes.option_text}</label>
+                            
+                        <div class="process result-main">
+                                <img src="__PUBLIC__{$luckyManInfo.img_path}" alt="用户头像"/>
+                            <div class="lucky_user">
+                               <p class='lucky_name'>{$luckyManInfo.name}</p>
+                               <p>本云参与：<em>{$luckyManInfo.times}</em>人次<a href="javascript:void(0);" id="view">查看云购码</a></p>
+                               <p>云购时间：{$luckyManInfo.pay_time}</p>
+                               <p>揭晓时间：{$bgczRes.release_time}</p>
+                            </div>
+                            <div class="lucky_code">
+                               <p class='lucky_name'>幸运云购码</p>
+                               <h3>{$bgczRes.lucky_code}</h3>
+                            </div>
+                        </div>
+                        <div class='process'>
+                           <div class='process_left'>怎么玩儿</div>
+                           <div class='process_right'>
+                               <ul>
+                                   <li>
+                                       <img src="__PUBLIC__/img/car.png" alt="选择商品"/>
+                                       <strong>1.选择商品</strong>
+                                   </li>
+                                   <li>
+                                       <img src="__PUBLIC__/img/money.png" alt="支付"/>
+                                       <strong>2.支付</strong>
+                                   </li>
+                                   <li>
+                                       <img src="__PUBLIC__/img/lucky.png" alt="抽出幸运者"/>
+                                       <strong>3.抽出幸运者</strong>
+                                   </li>
+                               </ul>
+                               <div class='clear'></div>
+                           </div>
+                        </div>
+                        <div class='clear'></div>
+                    </div>
+                </div>
+                <div class='record'>
+                <div class="title_nav">
+                    <ul class='title_list'>
+                        <li class='selected'>最新一元购</li>
+                        <li>我的一元购</li>
+                    </ul>
+                </div>
+                <div class='buy_record'>
+                    <div class='show'>
+                        <ul class='show_hidden new_record'>
+                                <foreach name='new_group_buy' item='newGroupBuyList'>
+                                    <li>
+                                        <span><a href="{:U('Home/GroupBuyCz/buy',array('id'=>$newGroupBuyList['id']))}">{$newGroupBuyList.option_text}</a></span>
+                                        <p>
+                                            <img src="/game_pic/{$newGroupBuyList.pic}"  alt="{$newGroupBuyList.game_name}"/>
+                                            <span><del>{$newGroupBuyList.price}元</del><b>￥1元</b></span>
+                                            <a href="{:U('Home/GroupBuyCz/buy',array('id'=>$newGroupBuyList['id']))}">{$newGroupBuyList.game_name}</a>
+                                            <p class='clear'></p>
+                                        </p>
+                                    </li>
+                                </foreach>
+                            </ul>
+                    </div>
+                    <div>
+                        <if condition="is_login()">
+                            
+                            <ul class='show_hidden my_record'>
+                                <foreach name='my_record' item='myRecordList'>
+                                    <li>
+                                        <span><a href="{:U('Home/GroupBuyCz/buy',array('id'=>$myRecordList['id']))}">{$myRecordList.option_text}</a></span>
+                                        <em>{$myRecordList.name}<b>{$myRecordList.real_payment}人次</b></em>
+                                    </li>
+                                </foreach>
+                            </ul>
+                        <else />
+                            <a href="{:U('Home/Login/index')}" class='login_link'>请先登录</a>
+                        </if>
+                    </div>   
+                </div>
+                </div>
+                <div class='clear'></div>
+            </div>
+            <div class="all_record">
+                <div class="record_title">
+                    <ul class='title_list'>
+                        <li class='selected'>计算出幸运码</li>
+                        <li>所有参与记录</li>
+                        <li>常见问题</li>
+                    </ul>
+                </div>
+                <div class='all_info'>
+                
+                    <div class="hundreds show">
+                        <table>
+                            <tr>
+                                <td colspan="5" class='top'>
+                                    <p>截止该商品最后一人次购买时间【{$endTime}】所有云购商品的最后100条购买时间记录</p>
+                                    <span>购买时间</span><b>-&gt;</b><span>时间和:{$gbData.sum}</span><b>%</b><span>本次需参与人次:{$bgczRes.price}人次</span><b>+</b><span>固定值:10000001</span><b>=</b><span>幸运码:{$bgczRes.lucky_code}</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>云购时间</td>
+                                <td>计算数据</td>
+                                <td>用户</td>
+                                <td>参与人次</td>
+                                <td>商品名称</td>
+                            </tr>
+                            <foreach name='gbData.data' item='list' key='k'>
+                                <if condition="$k lt '8'">
+	                                <tr>
+	                                    <td width="190">{$list.pay_time}</td>
+	                                    <td id="orange">{$list.code}</td>
+	                                    <td>{$list.username}</td>
+	                                    <td>{$list.real_payment}</td>
+	                                    <td>{$list.option_text}</td>
+	                                </tr>
+	                            <else />
+	                                <tr class="more none">
+	                                    <td width="190">{$list.pay_time}</td>
+	                                    <td id="orange">{$list.code}</td>
+	                                    <td>{$list.username}</td>
+	                                    <td>{$list.real_payment}</td>
+	                                    <td>{$list.option_text}</td>
+	                                </tr>
+	                            
+	                            </if>
+	                               
+	                        </foreach>
+                        </table>
+                        <p id="more"><img src='__PUBLIC__/img/down.png' alt="展开"/>展开更多</p>
+                    </div>
+	                <div class="record_info">
+	                    <ul>
+	                        <foreach name='all_record' item='allRecordList'>
+	                            <li class="show_btn">
+	                                <img src="__PUBLIC__{$allRecordList.img}" alt="用户头像"/>
+	                                <label>{$allRecordList.user}</label><span>云购码：{$allRecordList.simple_code}</span>
+	                                
+	                                <if condition="$allRecordList.flag gt 0">
+	                                    <button class="check_more">查看更多</button>
+	                                    <div class="code_show">
+	                                        <foreach name="allRecordList['codes_list']" item="row" >
+	                                            <p style="display:inline-block">{$row}&nbsp;&nbsp;</p>
+	                                        </foreach>
+	                                    </div>
+	                                </if>
+	                            </li>
+	                        </foreach>    
+	                    </ul>
+	                </div>
+                    <div class="problem">
+                        <p>☆&nbsp;什么是轰轰虎一元购？</p>
+                        <span class="introduce">
+                            轰轰虎1元购是一种全新的手游充值模式，只需1元就有可能买到一件商品。轰轰虎一元购把一件商品平分成若干“等份”出售，每份1元，当一件商品所有“等份”售出后抽出一名幸运者，该幸运者即可获得此商品。
+                        </span>
+                        <p>☆&nbsp;规则</p>
+                        <ul>
+                            <li>每件商品平分成相应“等份”，每份1元，1份对应1个“一元云购码”。</li>
+                            <li>同一件商品可以购买多次或者一次购买多份。</li>
+                            <li>当一件商品所有“等份”售出后计算出“幸运一元购码”，拥有“幸运一元购码”者即可获得此商品。</li>
+                        </ul>
+                        <p>☆&nbsp;幸运一元购码是怎么计算出来的？</p>
+                        <ul>
+                            <li>当该商品满员时，取出所有商品最后100条购买记录。</li>
+                            <li>将这100条时间记录的时、分、秒、毫秒取出来，形成100个数相加。</li>
+                            <li>将"100个数所得总和"除以"总需参与人次"，得到一个余数，把该余数与10000001相加，得到幸运一元购码。</li>
+                        </ul>
+                    </div>
+	            </div>
+            </div>
+        </div>
+    </div>
+
+</block>
+
+<block name="extra_js">
+    <script type="text/javascript" src="__PUBLIC__/js/module/group_buy_cz.js"></script>
+</block>

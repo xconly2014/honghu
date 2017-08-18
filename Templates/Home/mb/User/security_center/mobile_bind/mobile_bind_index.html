@@ -1,0 +1,26 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="header_bar">
+    <h1 class="mui-title">手机绑定首页</h1>
+</block>
+
+<block name="main_content">
+    <div class="main_container">
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell mui-media">
+                <a href="#">
+                    <img class="mui-media-object mui-pull-left" src="__PUBLIC__/img/alert.png">
+                    <div class="mui-media-body">
+                        <span style="color:#FF9933;font-size:20px">您未绑定手机</span>
+                        <p class='mui-ellipsis-2'>手机可用于找回账号等安全服务的身份信息验证，有效保护您的账号安全</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+        <form action="{$submit_url}" method="post">
+            <div class="mui-button-row">
+                    <button class="mui-btn mui-btn-primary mui-btn-block">马上去绑定</button>
+            </div>
+        </form>
+    </div>
+</block>

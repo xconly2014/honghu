@@ -1,0 +1,211 @@
+﻿<extend name="../Common/_mb_layout" />
+
+<block name="extra_js">
+    <script type="text/javascript" src="__PUBLIC__/js/common/week.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/Plugin/calendar/calendar.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/Plugin/calendar/jquery.layerModel.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/Plugin/calendar/jquery.layerModel.plugin.js"></script>
+   	<script>
+   	 $().ready(function(){
+        week();
+        var current = new Date();
+        $(".singer_r_img").click(function(){
+            $(this).addClass("current");
+            calUtil.doSign("{:U('Home/User/Sign')}",{$cur_time.year},{$cur_time.month} + 1);
+        });
+   	});
+   	</script>
+</block>
+
+<block name="extra_css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/mb_user.css" />
+    <link type="text/css" rel="stylesheet" href="__PUBLIC__/css/layerModel.plugin.css">
+    <link type="text/css" rel="stylesheet" href="__PUBLIC__/css/layerModel.css">
+    <style>
+        .sign_succ_calendar_title,#sign_layer{
+            width:100%;
+        }
+        .layerModel_wrapper,.layerModel_content{
+            width:90%;
+        }
+        .sign th,.sign td{
+            width:20px;
+            padding:0;
+            height:30px;
+            line-height:30px;
+        }
+        .sign table{
+            width:100%;
+        }
+        .gwc_mes_box{
+            width:100%;
+        }
+        .tb_cart_head_succ_txt{
+            padding-left:15px;
+            padding-right:10px;
+            line-height: 32px;
+        }
+
+        .sign_msg ul {
+            padding:0;
+        }
+    </style>
+</block>
+
+<block name="header_bar">
+    <h1 class="mui-title">个人中心</h1>
+</block>
+
+<block name="main_content">
+<div class="main_container">
+	<div class="head_picture">
+		<div class="user_sign">
+            <div class="weiduduan clearfix">
+                <div class="singer">
+                    <if condition="$is_sign == true">
+                        <div class="singer_r_r">
+                            <a class="singer_r_img current">
+                                <span id="week_day"></span>
+                            </a>
+                        </div>
+                        <div class="singer_l_cont">
+                            <span id="today" style="color:#000000">今日已经签到</span>
+                        </div>
+                        <else/>
+                        <div class="singer_r_r">
+                            <a class="singer_r_img">
+                                <span id="week_day"></span>
+                            </a>
+                        </div>
+
+                        <div class="singer_l_cont">
+                            <span id="today" style="color:#000000">每天签到赢取积分</span>
+                        </div>
+                    </if>
+                </div>
+            </div>
+        </div>
+
+        <img src="__PUBLIC__/{$thumb_img}" alt="用户头像"/>
+	   
+	    <div class="bottom_right" style="padding-left:15px;">
+	        <p id="info">
+                <if condition="$vip_info neq ''">
+                    <span class="vip_level">{$vip_info.name}</span>
+                </if>&nbsp;{$user_name}
+            </p>
+            <label style="display:block">成长值：{$cz_sum}</label>
+	        <label>上次登录：{$login_time}</label>
+	    </div>
+        <div class="operation">
+            <if condition="$is_bind_phone == false">
+                <img src="__PUBLIC__/img/account_center/icons/phone.png" alt="手机未绑定">
+                <a href="{:U('Home/User/mobile')}">未绑定</a>
+                <else/>
+                <img src="__PUBLIC__/img/account_center/icons/phone_valid.png" alt="手机已绑定">
+                <a>已绑定</a>
+            </if>
+        </div>
+	    <div class="clear"></div>
+
+	    <div class="vip">
+            
+        </div>
+
+	    <ul class="other_info">
+            <li>
+                <label class="hubi_pic">虎币:</label>
+                <span>{$coins}</span>
+                <a href="{:U('Home/CoinsCenter/card')}">充值</a>
+            </li>
+            <li>
+                <label class="credits_pic">积分:</label>
+                <span>{$credits}</span>
+                <a href="{:U('Home/User/credits')}">查看详细</a>
+            </li>
+        </ul>
+	</div>
+	<div class="nav"></div>
+	<div class="menu">
+		<ul class="mui-table-view mui-table-view-chevron">
+			<li class="mui-table-view-cell mui-collapse">
+				<a class="mui-navigate-right user_account" href="#">&nbsp;&nbsp;&nbsp;账号中心</a>
+				<ul class="mui-table-view mui-table-view-chevron">
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right" href="{:U('Home/User/password_modify')}">修改密码</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right" href="{:U('Home/User/mobile')}">手机绑定</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right" href="{:U('Home/User/email')}">邮箱验证</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right" href="{:U('Home/User/credits')}">我的积分</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right" href="{:U('Home/User/coins_list')}">我的虎币</a>
+					</li>
+                    <li class="mui-table-view-cell">
+                        <a class="mui-navigate-right" href="{:U('Home/User/grow_record_list')}">vip成长值</a>
+                    </li>
+                    <if condition="isUserJoinOrganizationEver(get_uid()) eq true">
+                        <li class="mui-table-view-cell">
+                            <a class="mui-navigate-right" href="{:U('Home/User/contribution_list')}">我的贡献值</a>
+                        </li>
+                    </if>
+
+                    <if condition="isUserOrganizationMgr(get_uid()) eq true">
+                        <li class="mui-table-view-cell">
+                            <a class="mui-navigate-right" href="{:U('Home/User/members_manage')}">我的堂会</a>
+                        </li>
+                    </if>
+				</ul>
+			</li>
+			<li class="mui-table-view-cell mui-collapse">
+				<a class="mui-navigate-right user_order" href="#">&nbsp;&nbsp;&nbsp;订单中心</a>
+				<ul class="mui-table-view mui-table-view-chevron">
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right" href="{:U('Home/User/chongzhi_list')}">苹果充值</a>
+					</li>
+					<!-- <li class="mui-table-view-cell">
+						<a class="mui-navigate-right" href="{:U('Home/User/cz_package_order')}">充值团购</a>
+					</li> -->
+					<!-- <li class="mui-table-view-cell">
+						<a class="mui-navigate-right" href="{:U('Home/User/group_buy_order')}">一元购</a>
+					</li> -->
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right" href="{:U('Home/User/goods_order')}">商品兑换</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right" href="{:U('Home/User/sc_order_list')}">首充号</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right" href="{:U('Home/User/my_package')}">代练套餐</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right" href="{:U('Home/User/my_requirement')}">代练需求</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right" href="{:U('Home/User/my_account_trade')}">账号交易</a>
+					</li>
+				</ul>
+			</li>
+            
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right user_message" href="{:U('Home/User/message')}">&nbsp;&nbsp;&nbsp;我的消息
+                <php>$num = getMessageNoRead();</php>
+                <if condition="$num neq 0"><span class="new_message">({$num})</span></if></a>
+            </li>
+
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right user_goods" href="{:U('Home/CreditsStore/index')}">&nbsp;&nbsp;&nbsp;积分商城</a>
+            </li>
+
+            <!--<li class="mui-table-view-cell">
+                <a class="mui-navigate-right collect" href="{:U('Home/User/collect')}">&nbsp;&nbsp;&nbsp;圣诞集赞</a>
+            </li>-->
+		</ul>
+	</div>
+</div>
+</block>

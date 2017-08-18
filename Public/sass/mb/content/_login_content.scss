@@ -1,0 +1,40 @@
+.login-container{
+  margin: 0 8px;
+  margin-top: 10px;
+
+  input[type='text'],input[type='password']{
+    width: 85%;
+  }
+
+  .remember{
+  margin: 3px 10px 20px 5px;
+  }
+
+  .mui-icon{
+   width: 10%;
+  }
+}
+
+
+.login-signup{
+  text-align: center;
+  margin-top: 15px;
+  background-color: #ff0;
+
+  a{
+    display: block;
+    width: 50%;
+    float: left;
+    color: #0073c3;
+    font-weight: 500;
+    font-size: 20px;
+    &:hover{
+      background-color: #cccccc;
+      border-radius: 5px;
+    }
+  }
+}
+
+.mui-btn-block{
+  padding: 5px 0px;
+} 

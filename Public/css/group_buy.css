@@ -1,0 +1,971 @@
+/* line 1, ../sass/pc/content/_group_buy_content.scss */
+.goods_list {
+  background: #F33F00;
+  width: 205px;
+}
+/* line 4, ../sass/pc/content/_group_buy_content.scss */
+.goods_list a {
+  color: white;
+  font-weight: bold;
+}
+
+/* line 10, ../sass/pc/content/_group_buy_content.scss */
+.goods_menu {
+  width: 203px;
+  height: 255px;
+  border: 1px solid #ff9936;
+  border-top: 0;
+  float: left;
+}
+/* line 16, ../sass/pc/content/_group_buy_content.scss */
+.goods_menu li {
+  height: 63px;
+  border-bottom: 1px solid #ededed;
+  line-height: 63px;
+  text-align: center;
+  vertical-align: middle;
+}
+/* line 22, ../sass/pc/content/_group_buy_content.scss */
+.goods_menu li a {
+  color: #ff9936;
+  font-size: 18px;
+  display: block;
+  width: 100%;
+  text-decoration: none;
+}
+/* line 31, ../sass/pc/content/_group_buy_content.scss */
+.goods_menu li:hover {
+  background-color: #ff9936;
+}
+/* line 34, ../sass/pc/content/_group_buy_content.scss */
+.goods_menu li:hover a {
+  color: #fff;
+}
+
+/* line 41, ../sass/pc/content/_group_buy_content.scss */
+.goods_img {
+  float: left;
+}
+/* line 43, ../sass/pc/content/_group_buy_content.scss */
+.goods_img img {
+  width: 555px;
+  height: 256px;
+}
+
+/* line 49, ../sass/pc/content/_group_buy_content.scss */
+.goods_lucky {
+  float: left;
+  width: 220px;
+  height: 254px;
+  overflow: hidden;
+  background-color: #FEF6E9;
+  border: 1px solid #ccc;
+  margin-left: -2px;
+}
+/* line 57, ../sass/pc/content/_group_buy_content.scss */
+.goods_lucky .lucky_title {
+  background: #ededed;
+  line-height: 36px;
+  padding-left: 10px;
+  color: #ff9936;
+}
+/* line 64, ../sass/pc/content/_group_buy_content.scss */
+.goods_lucky li {
+  font-size: 12px;
+  padding: 5px 5px 0px;
+  border-bottom: 1px dashed #ccc;
+}
+/* line 69, ../sass/pc/content/_group_buy_content.scss */
+.goods_lucky li span {
+  color: #3399ff;
+}
+
+/* line 75, ../sass/pc/content/_group_buy_content.scss */
+h3 {
+  clear: both;
+  color: #ff9936;
+  padding-top: 15px;
+  padding-left: 10px;
+}
+
+/* line 82, ../sass/pc/content/_group_buy_content.scss */
+.one_buy {
+  width: 978px;
+  min-height: 310px;
+  border: 1px solid #999;
+  margin-top: 12px;
+  overflow: hidden;
+}
+/* line 88, ../sass/pc/content/_group_buy_content.scss */
+.one_buy .one_buy_list {
+  float: left;
+  width: 183px;
+  height: 293px;
+  border: 1px solid #ccc;
+  margin-left: 9px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+/* line 96, ../sass/pc/content/_group_buy_content.scss */
+.one_buy .one_buy_list img {
+  margin-left: 15px;
+  width: 152px;
+  height: 152px;
+}
+/* line 101, ../sass/pc/content/_group_buy_content.scss */
+.one_buy .one_buy_list span {
+  font-size: 12px;
+  margin-left: 10px;
+  height: 32px;
+  line-height: 18px;
+  display: inline-block;
+}
+/* line 108, ../sass/pc/content/_group_buy_content.scss */
+.one_buy .one_buy_list del {
+  margin-left: 10px;
+  font-size: 12px;
+  color: #aaa;
+}
+/* line 113, ../sass/pc/content/_group_buy_content.scss */
+.one_buy .one_buy_list b {
+  font-size: 12px;
+  color: #ff9936;
+  float: right;
+  margin-right: 15px;
+}
+/* line 120, ../sass/pc/content/_group_buy_content.scss */
+.one_buy .one_buy_list .progress_all {
+  width: 160px;
+  height: 5px;
+  background: #ccc;
+  margin-left: 10px;
+  margin-top: 10px;
+  border-radius: 2px;
+}
+/* line 127, ../sass/pc/content/_group_buy_content.scss */
+.one_buy .one_buy_list .progress_all .progress {
+  background: #ff9936;
+  width: 100px;
+  height: 5px;
+}
+/* line 135, ../sass/pc/content/_group_buy_content.scss */
+.one_buy .one_buy_list .people span {
+  font-size: 12px;
+}
+/* line 137, ../sass/pc/content/_group_buy_content.scss */
+.one_buy .one_buy_list .people span.people_buy {
+  color: #ff9936;
+}
+/* line 140, ../sass/pc/content/_group_buy_content.scss */
+.one_buy .one_buy_list .people span.people_all {
+  text-align: center;
+}
+/* line 143, ../sass/pc/content/_group_buy_content.scss */
+.one_buy .one_buy_list .people span.people_left {
+  float: right;
+  margin-right: 15px;
+  text-align: center;
+}
+/* line 148, ../sass/pc/content/_group_buy_content.scss */
+.one_buy .one_buy_list .people span i {
+  color: #999;
+}
+/* line 154, ../sass/pc/content/_group_buy_content.scss */
+.one_buy .one_buy_list a.buy_btn {
+  display: inline-block;
+  text-align: center;
+  line-height: 23px;
+  width: 160px;
+  margin-left: 10px;
+  background: #FF6600;
+  border: 1px solid #ff9936;
+  border-radius: 5px;
+  height: 23px;
+  font-weight: bold;
+  font-size: 14px;
+  text-decoration: none;
+  color: #fff;
+}
+
+/* line 173, ../sass/pc/content/_group_buy_content.scss */
+.credits_goods {
+  width: 978px;
+  margin-bottom: 38px;
+  height: 280px;
+  border: 1px solid #999;
+  margin-top: 12px;
+}
+/* line 179, ../sass/pc/content/_group_buy_content.scss */
+.credits_goods .goods {
+  clear: both;
+}
+/* line 181, ../sass/pc/content/_group_buy_content.scss */
+.credits_goods .goods div {
+  float: left;
+  width: 168px;
+  height: 230px;
+  border: 1px solid #ededed;
+  margin-left: 21px;
+  margin-top: 21px;
+  text-align: center;
+}
+/* line 190, ../sass/pc/content/_group_buy_content.scss */
+.credits_goods .goods div img {
+  width: 152px;
+  height: 117px;
+  margin-top: 8px;
+}
+/* line 195, ../sass/pc/content/_group_buy_content.scss */
+.credits_goods .goods div p {
+  font-size: 12px;
+  height: 35px;
+  font-size: 12px;
+  text-align: left;
+  margin: 0px 10px;
+}
+/* line 202, ../sass/pc/content/_group_buy_content.scss */
+.credits_goods .goods div span {
+  display: block;
+  font-size: 12px;
+  text-align: left;
+  margin: 0 0 5px 10px;
+}
+/* line 208, ../sass/pc/content/_group_buy_content.scss */
+.credits_goods .goods div span.credits_price {
+  margin-top: 5px;
+  height: 18px;
+  width: 70px;
+  display: block;
+  float: left;
+  background: url("../img/dollar.png") 0 0 no-repeat;
+}
+/* line 215, ../sass/pc/content/_group_buy_content.scss */
+.credits_goods .goods div span.credits_price b {
+  margin-left: 25px;
+  line-height: 18px;
+  color: #FE6F29;
+}
+/* line 222, ../sass/pc/content/_group_buy_content.scss */
+.credits_goods .goods div span.goods_left {
+  color: #999;
+  font-weight: bold;
+  margin-top: 3px;
+}
+/* line 227, ../sass/pc/content/_group_buy_content.scss */
+.credits_goods .goods div span.goods_left a {
+  display: inline-block;
+  width: 46px;
+  height: 21px;
+  border: 1px solid #669FBD;
+  color: #669FBD;
+  text-align: center;
+  line-height: 21px;
+  float: right;
+  margin-right: 9px;
+  text-decoration: none;
+}
+/* line 239, ../sass/pc/content/_group_buy_content.scss */
+.credits_goods .goods div span.goods_left a:hover {
+  color: #FE6F29;
+  border: 1px solid #FE6F29;
+  background: #fff;
+}
+
+/* line 251, ../sass/pc/content/_group_buy_content.scss */
+.center_content {
+  background-color: #fff;
+  margin: 15px 0 38px 0px;
+  padding: 15px 0px;
+}
+
+/* line 258, ../sass/pc/content/_group_buy_content.scss */
+.orderInfo {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  border: 3px solid green;
+  border-radius: 10px;
+  min-height: 560px;
+  background: #fff;
+}
+
+/* line 267, ../sass/pc/content/_group_buy_content.scss */
+#orange {
+  color: orange;
+}
+
+/* line 271, ../sass/pc/content/_group_buy_content.scss */
+.gb_info {
+  width: 740px;
+  padding-top: 10px;
+  float: left;
+}
+/* line 275, ../sass/pc/content/_group_buy_content.scss */
+.gb_info .game_img {
+  float: left;
+  padding: 2px;
+  border-radius: 50px;
+  width: 245px;
+  height: 245px;
+  margin: 45px 30px 10px 28px;
+}
+
+/* line 284, ../sass/pc/content/_group_buy_content.scss */
+.info {
+  width: 400px;
+  position: relative;
+  float: left;
+}
+/* line 288, ../sass/pc/content/_group_buy_content.scss */
+.info label {
+  margin: 8px 0 15px;
+  display: block;
+  width: 380px;
+  height: 50px;
+  font-weight: bold;
+  font-size: 18px;
+}
+/* line 296, ../sass/pc/content/_group_buy_content.scss */
+.info span {
+  color: #999;
+}
+/* line 299, ../sass/pc/content/_group_buy_content.scss */
+.info li {
+  font-size: 12px;
+  color: #999;
+}
+/* line 302, ../sass/pc/content/_group_buy_content.scss */
+.info li span {
+  float: left;
+  display: block;
+  width: 179px;
+}
+/* line 307, ../sass/pc/content/_group_buy_content.scss */
+.info li p {
+  display: inline;
+}
+/* line 310, ../sass/pc/content/_group_buy_content.scss */
+.info li .blue {
+  color: #2294FE;
+}
+/* line 314, ../sass/pc/content/_group_buy_content.scss */
+.info .submit {
+  float: left;
+  padding-left: 5px;
+  margin: 0 10px 5px 3px;
+  width: 180px;
+  height: 30px;
+  line-height: 30px;
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  background-color: #FF9935;
+}
+/* line 325, ../sass/pc/content/_group_buy_content.scss */
+.info .submit:hover {
+  background-color: #FF6600;
+}
+/* line 330, ../sass/pc/content/_group_buy_content.scss */
+.info .bgimg {
+  background-image: url(../img/buffer.gif) no-repeat 20px 15px;
+}
+
+/* line 336, ../sass/pc/content/_group_buy_content.scss */
+.progress_bar {
+  margin: 12px 0 3px 0px;
+  width: 380px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+/* line 341, ../sass/pc/content/_group_buy_content.scss */
+.progress_bar .bg_color {
+  background-color: #FF7B26;
+  height: 5px;
+  border-radius: 5px;
+}
+
+/* line 348, ../sass/pc/content/_group_buy_content.scss */
+.record {
+  float: left;
+  padding: 10px 6px 0px;
+  width: 205px;
+  height: 345px;
+}
+
+/* line 359, ../sass/pc/content/_group_buy_content.scss */
+.title_list li {
+  cursor: pointer;
+  float: left;
+  display: block;
+  width: 49.5%;
+  height: 38px;
+  line-height: 38px;
+  background-color: #F1F2F6;
+  text-align: center;
+  border-bottom: 2px solid #ccc;
+  font-size: 14px;
+  color: #000;
+}
+/* line 372, ../sass/pc/content/_group_buy_content.scss */
+.title_list .selected {
+  color: #fff;
+  background-color: #ff9936;
+  border-bottom: 2px solid #f00;
+}
+
+/* line 379, ../sass/pc/content/_group_buy_content.scss */
+ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 385, ../sass/pc/content/_group_buy_content.scss */
+.buy_record div {
+  display: none;
+}
+/* line 387, ../sass/pc/content/_group_buy_content.scss */
+.buy_record div .login_link {
+  float: left;
+  color: #00f;
+  font-size: 14px;
+  text-decoration: none;
+  margin: 20px 0 0 75px;
+}
+/* line 393, ../sass/pc/content/_group_buy_content.scss */
+.buy_record div .login_link:hover {
+  color: #f00;
+}
+/* line 399, ../sass/pc/content/_group_buy_content.scss */
+.buy_record .show {
+  display: block;
+}
+
+/* line 406, ../sass/pc/content/_group_buy_content.scss */
+.clear {
+  clear: both;
+}
+
+/* line 410, ../sass/pc/content/_group_buy_content.scss */
+#choose {
+  margin: 12px 0 20px 0;
+  height: 26px;
+  font-size: 12px;
+}
+/* line 414, ../sass/pc/content/_group_buy_content.scss */
+#choose span {
+  float: left;
+  line-height: 23px;
+}
+/* line 418, ../sass/pc/content/_group_buy_content.scss */
+#choose #num {
+  float: left;
+  height: 21px;
+  text-align: center;
+  width: 40px;
+}
+/* line 424, ../sass/pc/content/_group_buy_content.scss */
+#choose p {
+  cursor: pointer;
+  color: #000;
+  text-align: center;
+  display: block;
+  float: left;
+  width: 45px;
+  height: 23px;
+  line-height: 23px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-left: 20px;
+}
+/* line 436, ../sass/pc/content/_group_buy_content.scss */
+#choose p:hover {
+  color: #FFA500;
+  border-color: #FFA500;
+}
+/* line 442, ../sass/pc/content/_group_buy_content.scss */
+#choose a {
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  height: 23px;
+  line-height: 23px;
+  width: 25px;
+  border: 1px solid #A9A9A9;
+  float: left;
+  color: #999;
+}
+/* line 453, ../sass/pc/content/_group_buy_content.scss */
+#choose a:hover {
+  color: #FFA500;
+}
+/* line 457, ../sass/pc/content/_group_buy_content.scss */
+#choose #reduce {
+  margin-left: 10px;
+  border-right: none;
+  border-bottom-left-radius: 12px;
+  border-top-left-radius: 12px;
+}
+/* line 464, ../sass/pc/content/_group_buy_content.scss */
+#choose #add {
+  margin-right: 10px;
+  border-left: none;
+  border-bottom-right-radius: 12px;
+  border-top-right-radius: 12px;
+  margin-right: 100px;
+}
+
+/* line 472, ../sass/pc/content/_group_buy_content.scss */
+.process {
+  margin-top: 20px;
+  margin-bottom: 8px;
+  width: 390px;
+  height: 70px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+}
+
+/* line 480, ../sass/pc/content/_group_buy_content.scss */
+.process_left {
+  color: #FFA500;
+  padding: 0px 3px;
+  width: 32px;
+  padding-top: 12px;
+  height: 58px;
+  float: left;
+  font-size: 14px;
+  border-right: 1px solid #ccc;
+  vertical-align: middle;
+}
+
+/* line 492, ../sass/pc/content/_group_buy_content.scss */
+.process_right li {
+  margin-top: 12px;
+  text-align: center;
+  display: block;
+  width: 30%;
+  float: left;
+}
+/* line 498, ../sass/pc/content/_group_buy_content.scss */
+.process_right li strong {
+  display: block;
+  color: #000;
+}
+
+/* line 505, ../sass/pc/content/_group_buy_content.scss */
+.all_record {
+  margin: 0px 18px;
+  border-radius: 8px;
+  border: 2px solid #7FCEF5;
+  min-height: 330px;
+}
+
+/* line 512, ../sass/pc/content/_group_buy_content.scss */
+.record_title {
+  height: 46px;
+  margin: 0px 15px;
+  border-bottom: 2px solid #7FCEF5;
+}
+/* line 516, ../sass/pc/content/_group_buy_content.scss */
+.record_title li {
+  margin: 6px 0px 2px 0px;
+  width: 149px;
+  height: 37px;
+  border-radius: 4px;
+  font-size: 17px;
+  background-color: #fff;
+  border: none;
+}
+/* line 525, ../sass/pc/content/_group_buy_content.scss */
+.record_title .selected {
+  background-color: #ffeb7d;
+  border: none;
+  color: #000000;
+}
+
+/* line 532, ../sass/pc/content/_group_buy_content.scss */
+.record_info {
+  padding: 10px 0  0 30px;
+  text-overflow: ellipsis;
+}
+/* line 535, ../sass/pc/content/_group_buy_content.scss */
+.record_info li {
+  font-size: 14px;
+  clear: both;
+}
+/* line 539, ../sass/pc/content/_group_buy_content.scss */
+.record_info li img {
+  vertical-align: middle;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  margin-right: 25px;
+  border: 1px solid #aaa;
+}
+/* line 547, ../sass/pc/content/_group_buy_content.scss */
+.record_info li span {
+  color: #999;
+}
+/* line 550, ../sass/pc/content/_group_buy_content.scss */
+.record_info li label {
+  display: inline-block;
+  width: 220px;
+}
+/* line 555, ../sass/pc/content/_group_buy_content.scss */
+.record_info button {
+  display: none;
+  margin: 0 10px 5px 10px;
+  width: 100px;
+  height: 30px;
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  background-color: #FF9935;
+}
+/* line 565, ../sass/pc/content/_group_buy_content.scss */
+.record_info .code_show {
+  width: 500px;
+  margin-left: 280px;
+  margin-top: -5px;
+  display: none;
+  background: #FF9935;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* line 576, ../sass/pc/content/_group_buy_content.scss */
+.new_record {
+  font-size: 12px;
+}
+/* line 578, ../sass/pc/content/_group_buy_content.scss */
+.new_record p {
+  display: none;
+}
+/* line 580, ../sass/pc/content/_group_buy_content.scss */
+.new_record p a {
+  display: block;
+  width: 134px;
+  float: left;
+  padding-left: 5px;
+  text-decoration: none;
+  color: #000;
+  text-align: center;
+}
+/* line 588, ../sass/pc/content/_group_buy_content.scss */
+.new_record p a:hover {
+  color: #FF9935;
+}
+/* line 593, ../sass/pc/content/_group_buy_content.scss */
+.new_record del {
+  float: left;
+  display: block;
+  color: #999;
+  padding: 5px;
+}
+/* line 599, ../sass/pc/content/_group_buy_content.scss */
+.new_record b {
+  float: left;
+  padding: 5px 20px;
+  color: #f00;
+}
+/* line 604, ../sass/pc/content/_group_buy_content.scss */
+.new_record img {
+  float: left;
+  margin: 2px;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+}
+
+/* line 612, ../sass/pc/content/_group_buy_content.scss */
+.gbac_form {
+  width: 415px;
+  margin-top: 80px;
+  margin-left: 70px;
+  float: left;
+}
+/* line 617, ../sass/pc/content/_group_buy_content.scss */
+.gbac_form .button {
+  color: #fff;
+  width: 112px;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+  float: right;
+  margin: -10px 165px 0 0;
+  background: url(../img/hb_cz.png) no-repeat;
+}
+
+/* line 629, ../sass/pc/content/_group_buy_content.scss */
+.dashed_line {
+  min-height: 560px;
+  float: left;
+  border-right: 3px dashed #0175A8;
+}
+
+/* line 635, ../sass/pc/content/_group_buy_content.scss */
+.attention {
+  width: 485px;
+  margin-top: 80px;
+  float: left;
+}
+/* line 640, ../sass/pc/content/_group_buy_content.scss */
+.attention img {
+  margin-left: 150px;
+  border-radius: 10px;
+}
+/* line 644, ../sass/pc/content/_group_buy_content.scss */
+.attention h4 {
+  padding-top: 45px;
+  color: #f00;
+  text-align: center;
+}
+/* line 649, ../sass/pc/content/_group_buy_content.scss */
+.attention ul {
+  margin-left: 150px;
+}
+/* line 651, ../sass/pc/content/_group_buy_content.scss */
+.attention ul li {
+  margin: 0 8px 0 8px;
+  display: block;
+  font-size: 14px;
+  height: 25px;
+  line-height: 25px;
+  color: #d33302;
+}
+
+/* line 663, ../sass/pc/content/_group_buy_content.scss */
+.result-main {
+  height: 140px;
+  background-color: #eee;
+}
+/* line 666, ../sass/pc/content/_group_buy_content.scss */
+.result-main img {
+  float: left;
+  margin-top: -15px;
+  margin-left: -15px;
+  width: 45px;
+  height: 45px;
+  padding: 3px;
+  border-radius: 25px;
+  background-color: #ccc;
+  position: absolute;
+}
+/* line 677, ../sass/pc/content/_group_buy_content.scss */
+.result-main div {
+  float: left;
+  height: 110px;
+  background-color: #fff;
+  margin: 15px 0px 0px 15px;
+  border-radius: 15px;
+}
+/* line 684, ../sass/pc/content/_group_buy_content.scss */
+.result-main .lucky_name {
+  text-align: center;
+  font-size: 16px;
+  color: #4C92D7;
+}
+/* line 689, ../sass/pc/content/_group_buy_content.scss */
+.result-main p {
+  padding-top: 6px;
+  color: #999;
+  font-size: 12px;
+}
+
+/* line 696, ../sass/pc/content/_group_buy_content.scss */
+.lucky_user {
+  width: 210px;
+  padding-left: 20px;
+}
+/* line 700, ../sass/pc/content/_group_buy_content.scss */
+.lucky_user em {
+  color: #FF9936;
+}
+/* line 703, ../sass/pc/content/_group_buy_content.scss */
+.lucky_user a {
+  color: #FF9936;
+  padding-left: 10px;
+  text-decoration: none;
+}
+/* line 707, ../sass/pc/content/_group_buy_content.scss */
+.lucky_user a:hover {
+  color: #f00;
+}
+
+/* line 712, ../sass/pc/content/_group_buy_content.scss */
+.lucky_code {
+  width: 120px;
+}
+/* line 714, ../sass/pc/content/_group_buy_content.scss */
+.lucky_code h3 {
+  padding-left: 0px;
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* line 721, ../sass/pc/content/_group_buy_content.scss */
+.codes {
+  display: none;
+  margin-left: -14px;
+  float: left;
+  background-color: #fff;
+  border-radius: 15px;
+  position: absolute;
+  top: 60px;
+  z-index: 10;
+  width: 404px;
+  min-height: 160px;
+  border: 1px solid #FF9936;
+}
+/* line 722, ../sass/pc/content/_group_buy_content.scss */
+.codes .title {
+  text-align: center;
+  border-bottom: 1px solid #FF9936;
+  height: 26px;
+  line-height: 26px;
+  color: #FF9936;
+}
+/* line 728, ../sass/pc/content/_group_buy_content.scss */
+.codes .title b {
+  font-size: 14px;
+  float: right;
+  width: 20px;
+  height: 20px;
+  line-height: 22px;
+  margin: 2px 10px 0 0;
+  color: #000;
+  border-radius: 10px;
+  border: 1px solid #FF9936;
+}
+/* line 738, ../sass/pc/content/_group_buy_content.scss */
+.codes .title b:hover {
+  cursor: pointer;
+  color: #f00;
+}
+/* line 755, ../sass/pc/content/_group_buy_content.scss */
+.codes span {
+  text-align: center;
+  display: inline-block;
+  padding-top: 2px;
+  width: 92px;
+  float: left;
+  font-size: 14px;
+  margin: 0px 4px;
+}
+
+/* line 766, ../sass/pc/content/_group_buy_content.scss */
+#orange {
+  color: #FF9936;
+}
+
+/* line 771, ../sass/pc/content/_group_buy_content.scss */
+.all_info {
+  padding: 0px 15px;
+}
+/* line 773, ../sass/pc/content/_group_buy_content.scss */
+.all_info div {
+  display: none;
+}
+/* line 776, ../sass/pc/content/_group_buy_content.scss */
+.all_info .show {
+  display: block;
+}
+/* line 779, ../sass/pc/content/_group_buy_content.scss */
+.all_info table {
+  width: 100%;
+}
+/* line 782, ../sass/pc/content/_group_buy_content.scss */
+.all_info .top {
+  height: 100px;
+  padding-bottom: 10px;
+  font-size: 16px;
+  color: #FF9936;
+}
+/* line 787, ../sass/pc/content/_group_buy_content.scss */
+.all_info .top p {
+  margin-bottom: 20px;
+  color: #00B3EE;
+  font-size: 14px;
+}
+/* line 792, ../sass/pc/content/_group_buy_content.scss */
+.all_info .top span {
+  padding: 8px 5px;
+  margin: 0px 3px;
+  border: 1px solid #FF9936;
+  border-radius: 20px;
+}
+/* line 800, ../sass/pc/content/_group_buy_content.scss */
+.all_info td {
+  border-bottom: 1px dashed #ccc;
+  text-align: center;
+  height: 25px;
+  color: #999;
+  font-size: 14px;
+}
+
+/* line 810, ../sass/pc/content/_group_buy_content.scss */
+.hundreds .none {
+  display: none;
+}
+
+/* line 814, ../sass/pc/content/_group_buy_content.scss */
+#more {
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+  color: #FF9936;
+  background-color: #eee;
+}
+/* line 821, ../sass/pc/content/_group_buy_content.scss */
+#more img {
+  vertical-align: middle;
+  margin-top: -2px;
+}
+
+/* line 826, ../sass/pc/content/_group_buy_content.scss */
+.show_hidden {
+  border: none;
+  height: auto;
+}
+
+/* line 831, ../sass/pc/content/_group_buy_content.scss */
+.problem {
+  padding: 20px 0px;
+  color: #004CA0;
+}
+/* line 834, ../sass/pc/content/_group_buy_content.scss */
+.problem p {
+  font-weight: bold;
+  margin: 10px 0px;
+}
+/* line 838, ../sass/pc/content/_group_buy_content.scss */
+.problem li {
+  margin: 8px 0px 0px 40px;
+  font-size: 14px;
+  list-style: circle;
+  width: 300px;
+}
+/* line 844, ../sass/pc/content/_group_buy_content.scss */
+.problem span {
+  font-size: 14px;
+  margin-left: 40px;
+  display: inline-block;
+  width: 300px;
+}
+
+/* line 852, ../sass/pc/content/_group_buy_content.scss */
+.gbcz_container {
+  background-color: #fff;
+  min-height: 480px;
+  margin: 38px auto;
+}
+
+/* line 858, ../sass/pc/content/_group_buy_content.scss */
+.bgcz_info_box {
+  width: 665px;
+}
+/* line 860, ../sass/pc/content/_group_buy_content.scss */
+.bgcz_info_box h3 {
+  color: #000000;
+  margin-left: 120px;
+}

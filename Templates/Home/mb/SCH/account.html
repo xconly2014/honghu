@@ -1,0 +1,34 @@
+<extend name="../Common/_mb_layout" />
+
+
+<block name="header_bar">
+    <h1 class="mui-title">{$gameInfo.name}{$type}</h1>
+</block>
+
+<block name="extra_css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/mb_sch.css">
+</block>
+
+<block name="main_content">
+    <div class="main_container">
+        <notempty name="sclist">
+        <ul class="mui-table-view">
+            <foreach name='sclist' item='sch' key="index">
+               <li class="mui-table-view-cell mui-media">
+                    <a href="{$sch.href}">
+                        <div class="mui-media-body">
+                            {$sch.operator}&nbsp;{$sch.name}<b class="import_price">￥{$sch.real_price}元</b>
+                            <p class='mui-ellipsis'><del>原价：￥{$sch.price}</del></p>
+                        </div>
+                    </a>
+                </li>
+            </foreach>
+        </ul>
+          <else />
+                <div style="width:30%;text-align:center;margin-left:35%;margin-top:50px;">
+                    <img src="__PUBLIC__/img/mb_search_cry.png" alt="此游戏首充号已下架" />
+                </div>
+                <p style="width:80%;margin:0 auto;text-align:center;margin-top:10px;">抱歉，此游戏首先号已下架！</p>
+        </notempty>
+    </div>
+</block>

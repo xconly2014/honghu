@@ -1,0 +1,48 @@
+<extend name="../Common/home_base"/>
+
+<block name="custom_css">
+    <link rel="stylesheet" href="__PUBLIC__/css/search.css" />
+</block>
+
+<block name="content">
+    <div class="row_container">
+        <div class="search_result">
+            <ul class="search_ul">
+            <foreach name="search_list" item="row">
+               <notempty name="row['isShow']">
+                    <li>
+                        <div class='pic'>
+                            <img src="/game_pic/{$row['thumbnail_path']}" width="147.5" height="147.5">
+                        </div>
+                        <span>{$row['name']}</span>
+                        <label>▲</label>
+                        <if condition="$row.ios_platform eq 1">
+                            <a href="{:U('CZIOS/chongzhi_info',array('gameId'=>$row['id']))}">【充值入口】</a>
+                        </if>
+                        <notempty name="row.strategy">
+                            <a href="{:U('Strategy/search_list',array('gameId'=>$row['strategy']))}">【攻&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;略】</a>
+                        </notempty>
+                        <notempty name="row.evoluation">
+                            <a href="{:U('Evoluation/search_list',array('gameId'=>$row['evoluation']))}">【资&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;讯】</a>
+                        </notempty>
+                        <notempty name="row.scIos">
+                            <a href="{:U('SCH/account_ios',array('gameId'=>$row['scIos']))}">【苹果首充号】</a>
+                        </notempty>
+                        <!--<notempty name="row.scAndroid">
+                            <a href="{:U('SCH/account_android',array('gameId'=>$row['scAndroid']))}">【安卓首充号】</a>
+                        </notempty>-->
+                    </li>
+               </notempty>
+            </foreach>
+            </ul>
+            <empty name="search_list">
+                <div class="search_box">
+                    <div class="no_result">
+                    <p>没有找到您搜索的游戏内容</p><br>
+                    <a href="{:U('Home/Suggest/suggest')}">通知客服上架</a>
+                </div>
+                </div>
+            </empty>
+        </div>     
+    </div>
+</block>

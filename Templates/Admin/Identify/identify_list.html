@@ -1,0 +1,52 @@
+<extend name="../Common/admin_base" />
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div class="user_list_container">
+                <div class="table_bar">
+                    <div class="search_box_container">
+                        <div class="search_box">
+                            <form action="{:U('Admin/Identify/identify_list')}" method="post">
+                                <input type="text" placeholder="请输入姓名关键" name="name">
+                                <button type="submit">搜索</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table_container">
+                    <table class="data-table">
+                        <thead>
+                        <tr>
+                            <th>日期</th>
+                            <th>编号</th>
+                            <th>用户ID</th>
+                            <th>真实姓名</th>
+                            <th>身份证号</th>
+                            <th>审核状态</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <volist name="identify_list" id="vo">
+                            <tr id="row_{$vo.id}">
+                                <td>{$vo.created_date}</td>
+                                <td>{$vo.id}</td>
+                                <td>{$vo.uid}</td>
+                                <td>{$vo.true_name}</td>
+                                <td>{$vo.idc_no}</td>
+                                <td>{$vo.state_text}</td>
+                                <td>
+                                    <a href="{:U('Admin/Identify/identify_edit', array('id'=>$vo['id']))}">去审核</a>
+                                </td>
+                            </tr>
+                        </volist>
+                        </tbody>
+                    </table>
+                    <div class="page">{$show}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>

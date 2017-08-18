@@ -1,0 +1,58 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="extra_css">
+    <link rel="stylesheet" href="__PUBLIC__/css/mb_family.css" />
+    <style>
+        .mui-btn{
+            width: 49.5%;
+            color: #D92502;
+        }
+        .mui-btn-block{
+            margin-bottom: 0px;
+        }
+    </style>
+</block>
+
+<block name="extra_js">
+    <script>
+        $().ready(function(){
+            $('.mui-slider-indicator .mui-indicator:first').addClass('mui-active');
+        });
+    </script>
+</block>
+
+<block name="header_bar">
+    <h1 class="mui-title">名人堂-首页</h1>
+</block>
+
+<block name="main_content">
+    <div class="main_container">
+        <a href="{:U('Home/Help/index?id=27')}">
+            <img src="__PUBLIC__/img/family/family.jpg" width="100%"/>
+        </a>
+
+        <div class="button_container">
+            <a href="{:U('Home/User/family_create')}" class="mui-btn mui-btn-block" style="float: left;">创建堂会</a>
+            <a href="{:U('Home/Help/index?id=27')}" class="mui-btn mui-btn-block"style="float: right;">堂会规则</a>
+        </div>
+        <div class="ranking_container">
+            <div class="ranking_list">
+
+                <volist name="ranking_list" id="list" key="k">
+                    <div class="ranking_one">
+                        <i>{$k}</i>
+                        <label>
+                            <img src="__PUBLIC__/img/family/logo/{$list.logo}" alt="{$list.name}" height="55"/>
+                        </label>
+                        <div>
+                            <p>{$list.name}</p>
+                            <span>当前人数：{$list.member_count}</span>
+                        </div>
+                        <a href="{:U('Home/Family/family_info',array('id'=>$list['id']))}">查看堂会</a>
+                    </div>
+                </volist>
+            </div>
+        </div>
+
+    </div>
+</block>

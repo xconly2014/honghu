@@ -1,0 +1,48 @@
+<extend name="../Common/admin_base" />
+
+<block name="extra_css">
+    <link rel="stylesheet" href="__PUBLIC__/css/user_record_list.css" />
+</block>
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div class="cz_order_ios">
+                <ul>
+                    <li>总收入：<b>{$add_credits}</b></li>
+                    <li>总支出：<b>{$minus_credits}</b></li>
+                    <li>当前积分：<b>{$current_credits}</b></li>
+                </ul>
+                <div class="table_container">
+                    <table class="data-table">
+                        <thead>
+                        <tr>
+                            <th>时间</th>
+                            <th>操作</th>
+                            <th>积分</th>
+                            <th>收入+/支出-</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <foreach name="user_record" item="row">
+                            <tr>
+                                <td>{$row.created_date}</td>
+                                <td>{$row.type}</td>
+                                <td>
+                                    <empty name="row['oid_url']">
+                                        {$row.score}
+                                        <else />
+                                        <a href="{$row['oid_url']}">{$row.score}</a>
+                                    </empty>
+                                </td>
+                                <td>{$row.operation}</td>
+                            </tr>
+                        </foreach>
+                        </tbody>
+                    </table>
+                    <div class="page">{$pager}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>

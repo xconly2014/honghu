@@ -1,0 +1,13 @@
+$base-border-color: #dbdbdb;
+$white: #ffffff;
+$gray-light: #c8c8c8;
+
+@mixin menu_item {
+  width:127px;
+  height:45px;
+  line-height: 42px;
+}
+
+$theme_color: #ff9936;
+$border_color: #cdcdcd;
+$main_top_border_color:#207bce;

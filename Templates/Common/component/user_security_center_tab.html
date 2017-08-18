@@ -1,0 +1,11 @@
+<ul class="set_list">
+    <li class="<?php if($cur_tab == 'password_modify')echo 'selected';?>">
+        <a href="{:U('Home/User/password_modify')}">修改登录密码</a>
+    </li>
+    <li class="<?php if($cur_tab == 'mobile')echo 'selected';?>">
+        <a href="{:U('Home/User/mobile')}">手机绑定</a>
+    </li>
+    <li class="<?php if($cur_tab == 'email')echo 'selected';?>">
+        <a href="{:U('Home/User/email')}">邮箱验证</a>
+    </li>
+</ul>

@@ -1,0 +1,179 @@
+<extend name="../Common/home_base" />
+
+<block name="custom_css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/family.css">
+    <style>
+        .member_nick_name{
+            text-align: left;
+          }
+    </style>
+</block>
+
+<block name="extra_js">
+    <script src="__PUBLIC__/js/Plugin/slideBox/jquery.slideBox.min.js"></script>
+    <script src="__PUBLIC__/js/family.js"></script>
+    <script src="__PUBLIC__/js/Plugin/layer/layer.js"></script>
+    <block name="extra_js">
+    <script>
+        is_login = "{$is_login}";
+        $().ready(function(){
+
+            $('.family_title>a').each(function(index){
+                var liNode = $(this);
+                $(this).click(function(){
+                    $('.family_title .selected').removeClass('selected');
+                    $('.family_tab .active').removeClass('active');
+                    $('.tab_list').eq(index).addClass('active');
+                    liNode.addClass('selected');
+                });
+            });
+
+            $('#next').click(function(){
+                var active = $('.banner > .active').next();
+                if(active.length){
+                    $('.banner > .active').removeClass('active');
+                    active.addClass('active');
+                }
+            });
+            $('#prev').click(function(){
+                var active = $('.banner > .active').prev();
+                if(active.length){
+                    $('.banner > .active').removeClass('active');
+                    active.addClass('active');
+                }
+            });
+
+
+            var scrtime;
+            $('#family_show').hover(function(){
+                clearInterval(scrtime);
+            },function(){
+                scrtime = setInterval(function(){
+                    var ul = $("#family_show ul");
+                    var liHeight = ul.find("li:last").height();
+                    ul.animate({marginTop : liHeight-20 +"px"},500,function(){
+                        ul.find("li:first").appendTo(ul)
+                        ul.find("li:last").hide();
+                        ul.css({marginTop:0});
+                        ul.find("li:last").fadeIn(1500);
+                    });
+                },2000);
+            }).trigger('mouseleave');
+
+            $('#add_member').click(function(){
+                if(is_login){
+                    alert_member_in({$current_family.id});      
+                }else{
+                    layer.alert('请您先登录再进行操作'); 
+                    layer.title('轰轰虎提示');
+                }
+                
+            });
+            
+
+        });
+
+      
+    </script>
+
+</block>
+
+<block name="content">
+    <div class="row_container">
+        <div class="center_content">
+            <div class="family_info_container">
+                <div class="info_top">
+                    <div class="inline_div family_logo">
+                        <img src="__PUBLIC__/img/family/logo/{$current_family.logo}" alt="{$current_family.name}" width="300" height="189"/>
+                    </div>
+
+                    <div class="family_details">
+                        <p>堂会名称：<b>{$current_family.name}</b></p>
+                        <p>堂主尊称：<span>{$current_family.nick_name}</span></p>
+                        <p>堂员人数：{$current_family.member_count}</p>
+                        <p>最多人数：{$current_family.max_count}</p>
+                        <p>总贡献值：{$current_family.sum}</p>
+                        <if condition="$add_show eq true">
+                            <a href="javascript:void(0)" id="add_member">加入堂会</a>
+                        </if>
+                        <if condition="$quit_show == true">
+                            <a href="javascript:void(0)" onclick="logout_family({$current_family.id});">退出堂会</a>
+                        </if>
+                    </div>
+                    <div class="family_tab">
+                        <div class="family_title">
+                            <a href="javascript:void(0)" class="selected">堂会动态</a>
+                            <a href="javascript:void(0)" class="logout_family">堂会简介</a>
+                        </div>
+                        <div class="tab_list active" id="family_show">
+                            <ul>
+                                <foreach name="dynamic_list" item="dynamic">
+                                    <li>{$dynamic.nick_name}充值获得&nbsp;{$dynamic.unit}&nbsp;贡献值</li>
+                                </foreach>
+                            </ul>
+                        </div>
+                        <div class="tab_list">
+                            <div class="introduction">
+                                {$current_family.introduction}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                    <div class="members_info">
+                        <div class="ranking inline_div">
+                            <div class="ranking_title">
+                                堂员贡献值排行
+                            </div>
+                            <hr/>
+                            <ul class="ranking_ul">
+                                <volist name="members[0]" id="list" key="k" offset="0" length='8'>
+                                    <li>
+                                        <label class="li{$k}">{$k}</label>
+                                        <img src="__PUBLIC__{$list.pic}" width="50" height="50" alt="用户头像">
+                                        <div class="cz_sum">
+                                            <p>{$list.nick_name}</p>
+                                            <span>贡献值：{$list.contribt_sum}</span>
+                                        </div>
+                                        <div class="send_hb">
+                                            vip等级：<span>{$list.vip}</span>
+                                        </div>
+                                    </li>
+                                </volist>
+                            </ul>
+                        </div>
+                        <div class="members inline_div">
+                            <p class="ranking_title members_list_title">
+                                堂会成员
+                            </p>
+                            <div class="members_container">
+                                <label id="prev"></label>
+                                <div class="banner">
+                                    <foreach name="members" item="list" key="k">
+                                        <div class="lists <if condition='$k eq $page'>active</if>">
+                                            <ul>
+                                                <foreach name="list" item="row" key="i">
+                                                    <li>
+                                                        <img src="__PUBLIC__{$row.pic}" width="40" height="40" alt="{$row.nick_name}" />
+                                                        <span class="name">{$row.nick_name}</span>
+                                                        <span class="time">{$row.created_date}</span>
+                                                        <span class="value">贡献值：{$row.contribt_sum}</span>
+                                                        <span class="vip">{$row.vip}</span>
+                                                        <span class="ranking_val">第{$row.ranking}名</span>
+                                                    </li>
+                                                </foreach>
+                                            </ul>
+                                        </div>
+                                    </foreach>
+                                </div>
+                                <label id="next"></label>
+                            </div>
+
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>

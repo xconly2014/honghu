@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>{$seo_title}</title>
+<meta name="keywords" content="{$seo_keyword}">
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+ <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+ <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/credits_store.css">
+ <block name="custom_css"></block>
+
+<script type="text/javascript" src="__PUBLIC__/js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/Plugin/jqueryForm/jQuery_Validation.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/global_checker.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/common/week.js"></script>
+<script type="text/javascript">
+        $().ready(function(){
+        	
+        	if("{$activity_time}"){
+        		$('.del_line').css('text-decoration','line-through');
+        	}
+        	
+            week();
+            
+            
+            $(".singer_r_img").click(function(){
+                $(this).addClass("current");
+                var url = "{:U('Home/User/sign')}"
+                $.post(url, {
+                }).done(function(data) {
+                    if(data['status']){
+                        alert(data['msg']);
+                    }
+                }).fail(function() {
+                });
+            });
+        });
+
+    </script>
+
+<block name="extra_js"></block>
+
+</head>
+
+<body>
+	<include file="TopBar/index" />
+	<div class="row_container">
+		<div class="credits_store">
+			<div class="credits_store_left">
+			    <div class="userInfo">
+			        <if condition="is_login()">
+			            <div class="user_info_left">
+			                <!-- <if condition="$userInfo.head_img neq null">
+						        <img src="__PUBLIC__/{$userInfo.img_path}{$userInfo.thumb_img}" width="60" height="60" />
+					        <else />
+						        <img src="__PUBLIC__/img/header.png " width="60" height="60">
+					        </if> -->
+					        <img src="__PUBLIC__/{$userInfo.thumb_img}" width="60" height="60" alt="用户头像"/>
+					        <a href="{:U('Home/Login/logout')}">[退出]</a>
+			            </div>
+			            <div class="user_info_right">
+			                <img src="__PUBLIC__/img/dollar.png" alt="积分"/>
+			                <a href="{:U('Home/User/credits')}">{$userInfo['credit'] ? $userInfo['credit'] : '0'}</a>
+			                <if condition="$is_sign == true">
+                                <div class="singer_r_r">
+                                    <a class="singer_r_img current">
+                                        <span id="week_day"></span>
+                                    </a>
+                                </div>
+                                <else/>
+                                <div class="singer_r_r">
+                                    <a class="singer_r_img">
+                                        <span id="week_day"></span>
+                                    </a>
+                                </div>
+                            </if>
+			            </div>
+			        <else/>
+			            <div class="unlogin">
+			                <img src="__PUBLIC__/img/lock.png" alt="未登录"/>
+			                <a href="{:U('Home/Login/index')}" class="a_login">[点击登录]</a>
+			            </div>
+			        </if>    
+			    </div>
+			    <div class="reward">
+			        <div class="layer">
+			            <div class="integral_content">
+					        <img src="__PUBLIC__/img/gift.png" alt="积分兑换"/>
+					        <span>积分兑换</span>
+					        <label>多重好礼随便换</label>
+				        </div>
+				        <div class="integral_content">
+					        <img src="__PUBLIC__/img/award.png" alt="签到送积分"/>
+					        <span>签到送积分</span>
+					        <label>签到就就送您积分</label>
+				        </div>
+				        <div class="integral_content">
+					        <img src="__PUBLIC__/img/star.png" alt="积分任务"/>
+					        <span>积分任务</span>
+					        <label>轻松做任务拿积分</label>
+				       </div>
+			        </div>
+			    </div>
+			   
+			</div>
+			<div class="credits_store_right">
+				<block name="content"></block>
+			</div>
+		</div>
+	</div>
+	<include file="FooterBar/index" />
+</body>

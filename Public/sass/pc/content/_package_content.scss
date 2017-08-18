@@ -1,0 +1,37 @@
+.package_info{
+  width: 70%;
+  margin-left: 50px;
+
+  h3{
+    text-align:center;
+    padding-right: 80px;
+    margin-top:20px;
+    margin-bottom: 20px;
+  }
+  .game_operator{
+    display:none;
+  }
+}
+
+label.error {
+  font-size: 12px;
+  background: url("../img/wrong.png") no-repeat 0px 0px;
+  display: inline-block;
+  padding-left: 20px;
+  width: 320px;
+  height: 20px;
+  color: red;
+}
+
+label.success {
+  font-size: 12px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url("../img/right.png") no-repeat 0px 0px;
+  position: relative;
+  top: 10px;
+}
+.package_container{
+  border:1px solid #ccc;
+}

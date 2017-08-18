@@ -1,0 +1,79 @@
+<extend name="../Common/admin_base" />
+
+<block name="extra_js">
+    <script>
+        $().ready(function(){
+            $('.state_no').click(function(){
+                $('.state_result').css('display','inline-block');
+            });
+            $('.state_ok').click(function(){
+                $('.state_result').css('display','none');
+            });
+        });
+    </script>
+</block>
+
+<block name="extra_css">
+    <style>
+        .photo_check{
+            width:240px;
+            height:135px;
+        }
+    </style>
+</block>
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div class="game_strategy_container">
+                <form class="common_form container"  method="post" action="{:U('Admin/Identify/identify_edit',array('id'=>$identify_info['id']))}">
+                    <p>审核身份认证信息</p>
+                    <li class="static_field">
+                        <label class="form_key">真实姓名：</label>
+                        <label class="from_value">{$identify_info.true_name}</label>
+                    </li>
+                    <li class="static_field">
+                        <label class="form_key">身份证号：</label>
+                        <label class="form_value">{$identify_info.idc_no}</label>
+                    </li>
+                    <li class="static_field">
+                        <label class="form_key">身份证正面照：</label>
+                        <label class="form_value">
+                            <img class="photo_check" src="/user_idc/{$identify_info.uid}/{$identify_info.photo_face}" />
+                        </label>
+                    </li>
+                    <li class="static_field">
+                        <label class="form_key">身份证反面照：</label>
+                        <label class="form_value">
+                            <img class="photo_check" src="/user_idc/{$identify_info.uid}/{$identify_info.photo_back}" />
+                        </label>
+                    </li>                      
+                    <li class="static_field">
+                        <label class="form_key">手持身份证照：</label>
+                        <label class="form_value">
+                            <img class="photo_check" src="/user_idc/{$identify_info.uid}/{$identify_info.photo_body}" />
+                        </label>
+                    </li>
+                    
+                    <li class="static_field">
+                        <label class="form_key">审核状态：</label>
+
+                        <label class="state_no"><input type="radio" name="state" value="{$state_no}">未通过审核</label>
+
+                        <label class="state_ok"><input type="radio" name="state" value="{$state_ok}">通过审核</label>
+                    </li>
+                    <li class="static_field state_result" style="display:none;">
+                         <label class="form_key">不通过理由：</label>
+                         <label class="form_value">
+                             <textarea name="result" cols="30" rows="5"></textarea>
+                         </label>
+                    </li>   
+                    <li class="static_field">
+                        <button type="submit">确定</button>
+                        <button type="reset">取消</button>
+                    </li>
+                </form>
+            </div>
+        </div>
+    </div>
+</block>

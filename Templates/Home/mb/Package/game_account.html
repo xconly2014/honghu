@@ -1,0 +1,58 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="header_bar">
+    <h1 class="mui-title">代练套餐购买信息填写</h1>
+</block>
+
+<block name="extra_js">
+    <script type="text/javascript" src="__PUBLIC__/js/Plugin/kinFormUpload/jquery.kinFormUpload.1.1.source.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/Plugin/jqueryForm/jQuery_Validation.js"></script>
+    <script src="__PUBLIC__/js/common/package_common.js"></script>
+    <script src="__PUBLIC__/js/global_checker.js"></script>
+    <script src="__PUBLIC__/js/mb/mb_package.js"></script>
+</block>
+
+<block name="main_content">
+    <div class="main_container">
+        <form id="game_account_form" action="{$url}" method="post" enctype="multipart/form-data" onsubmit="return check()">
+            <div class="mobile_error"><li></li></div>
+            <div class="mui-table-view" style="margin-bottom:15px;">          
+               <div class="mui-input-row mui-radio mui-left" style="display:inline-block;">
+                    <label>苹果</label>
+                    <input class="platform_ios" name="platform" type="radio" value="1" checked>
+                </div>
+                <div class="mui-input-row mui-radio mui-left" style="display:inline-block;">
+                    <label>安卓</label>
+                    <input class="platform_android" name="platform" type="radio" value="2">
+                </div>
+            </div>
+            <div class="game_operator" style="display:none;margin-top:15px">
+                <select name="operator_id">
+                    <option value>请选择客户端</option>
+                    <foreach name="operatorRes" item="operatorRes">
+                        <option value="{$operatorRes.id}">{$operatorRes.name}</option>
+                    </foreach>
+                </select>
+            </div>
+                
+            <input type="text" name="account" placeholder="请填写游戏账号" />    
+            <input type="password" name="password" placeholder="请填写您的密码"/>
+            <input type="text" name="qufu" placeholder="请填写游戏区服"/>
+            <input type="text" name="role"  placeholder="请填写您的角色名称"/>
+            <input type="text" name="role_details" placeholder="请填写您当前的角色状态" />
+            <input type="text" name="role_result" placeholder="请输入您期望达到的角色状态"/>
+            <input type="text" name="contact_way" placeholder="请填写您的手机号码" />
+            <div class="mui-table-view">
+                   <label>&nbsp;&nbsp;上传图片：</label>
+                   <label id="uploadImg">
+                       <input type="file" name="images" id="uploadImages" />
+                       <input type="hidden" id="img"/>
+                   </label>
+             </div>
+
+             <div class="mui-button-row">
+                <button class="mui-btn mui-btn-primary mui-btn-block">提交</button>
+            </div>
+        </form>
+    </div>
+</block>

@@ -1,0 +1,61 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="header_bar">
+    <h1 class="mui-title">填写交易账号信息</h1>
+</block>
+
+<block name="extra_js">
+    <script type="text/javascript" src="__PUBLIC__/js/Plugin/jqueryForm/jQuery_Validation.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/global_checker.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/common/account_trade_common.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/mb/mb_account_trade.js"></script>
+</block>
+
+<block name="extra_css">
+    <style>
+        .mui-table-view{
+	        position: static;
+        	margin-bottom:15px;
+        	border:1px solid #ccc;
+        	border-radius: 3px;
+        	padding:3px 0px;
+        }
+    </style>
+</block>
+
+
+<block name="main_content">
+    <div class="main_container">
+        <form action="{$submit_url}" method="post" id='trade_center_form'>
+            <div class="mobile_error"></div>
+            <div class="mui-table-view">          
+               <div class="mui-input-row mui-radio mui-left" style="display:inline-block;" id="platform_ios">
+                    <label>苹果</label>
+                    <input class="platform_ios" name="platform" type="radio" value="1" checked>
+                </div>
+                <div class="mui-input-row mui-radio mui-left" style="display:inline-block;" id="platform_android">
+                    <label>安卓</label>
+                    <input class="platform_android" name="platform" type="radio" value="2">
+                </div>
+            </div>
+            <select name="operator" id="operators" style="border:1px solid #ccc!important;display:none">
+	           <option value="">请选择客户端</option>
+	               <volist name="operator" id = "vo">
+	                   <option value="{$vo.id}">{$vo.name}</option>
+	               </volist>
+	       </select>
+            <input type="text" name="game_account" placeholder="请填写游戏账号">
+            <input type="password" name="password" placeholder="请填写游戏密码">
+            <input type="text" name="game_qufu" placeholder="请填写游戏区服">
+            <input type="text" name="juese" placeholder="请填写游戏角色">
+            <input type="text" name="contact" placeholder="请填写您的手机号码">
+            <input type="text" name="zhiye" placeholder="请填写游戏职业">
+            <input type="text" name="level" placeholder="请填写游戏等级">
+            
+	         
+	         <textarea rows="3" name="comment" placeholder="请填写备注：（例如：例如：宠物，装备等等  请勿写上联系方式以免上当受骗！）"></textarea>   
+            
+            <button class="mui-btn mui-btn-primary mui-btn-block">提交</button>
+        </form>
+    </div>
+</block>

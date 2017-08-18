@@ -1,0 +1,36 @@
+.navigation_bar{
+  padding-top: 17px;
+  padding-bottom: 11px;
+}
+
+.crumbs_nav  {
+  font-size:14px;
+  height:20px;
+  margin-top:10px;
+  padding-left: 10px;
+  color:#EFA47D;
+}
+
+.crumbs_nav_item  {
+  float:left;
+  margin-right: 8px;
+
+
+
+  a  {
+      text-decoration: none;
+      color:#EFA47D;
+    &:hover  {
+      text-decoration: underline;
+    }
+  }
+
+  i  {
+    font-family: simsun;
+    font-style: normal;
+  }
+
+  .goods_show{
+    color: #E95404;
+  }
+}

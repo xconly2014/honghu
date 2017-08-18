@@ -1,0 +1,26 @@
+<extend name="../Common/home_base" />
+
+<block name="custom_css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/requirement.css">
+</block>
+
+<block name="extra_js">
+    <script type="text/javascript" src="__PUBLIC__/js/package.js"></script>
+    <script src="__PUBLIC__/js/module/cash_desk.js"></script>
+    <script type="text/javascript">
+
+        $().ready(function(){
+            cash_desk_active();
+
+            
+        });
+    </script>
+</block>
+
+<block name="content">
+    <div class="row_container">
+        <div class="center_content">
+            <include file="Bank/cash_desk"/>
+        </div>
+    </div>
+</block>

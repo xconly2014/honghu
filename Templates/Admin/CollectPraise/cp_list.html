@@ -1,0 +1,54 @@
+<extend name="../Common/admin_base" />
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div class="news_list_container">
+                <div class="table_bar">
+                    <div class="search_box_container">
+                        <div class="search_box">
+                            <form action="{:U('Admin/CollectPraise/cp_list')}" method="get">
+                                <input type="text" placeholder="请输入用户的联系方式" name="keyword">
+                                <button type="submit">搜索</button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table_container">
+                    <table class="data-table">
+                        <thead>
+                        <tr>
+                            <th>编号</th>
+                            <th>提交时间</th>
+                            <th>用户名</th>
+                            <th>联系方式</th>
+                            <th>兑换类型</th>
+                            <th>审核状态</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <volist name="nm_list" id="list">
+                            <tr id="row_{$vo.id}">
+                                <td>{$list.id}</td>
+                                <td>{$list.time}</td>
+                                <td>{$list.username}</td>
+                                <td>{$list.contact}</td>
+                                <td>{$list.type}</td>
+                                <td>{$list.active}</td>
+                                <td>
+                                    <a href="{:U('Admin/CollectPraise/check', array('id'=>$list['id']))}">审核</a>
+                                </td>
+                            </tr>
+                        </volist>
+                        </tbody>
+                    </table>
+                    <div class="page">{$show}</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</block>

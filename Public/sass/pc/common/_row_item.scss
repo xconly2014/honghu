@@ -1,0 +1,38 @@
+.show_hidden{
+    li{
+        border-bottom:1px dashed #ccc;
+        min-height:30px;
+        line-height: 20px;
+        list-style-type:none;
+        margin-left:12px;
+    span{
+        display:block;
+        width:100%;
+      a{
+        font-size:14px;
+        text-decoration: none;
+        line-height:30px;
+        color:#000;
+        &:hover{
+          color:#ff6600;
+          text-decoration: underline;
+        }
+      }
+      b{
+        color:red;
+        display:inline-block;
+        float:right;
+        margin-top:8px;
+        margin-right: 10px;
+      }
+    }
+
+    em{
+      display:none;
+      color:#ccc;
+      font-size:12px;
+
+    }
+
+  }
+}

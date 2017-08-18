@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+        <title>{$seo_title}</title>
+        <meta name="keywords" content="{$seo_keyword}">
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/register.css">
+
+        <script type="text/javascript" src="__PUBLIC__/js/jquery-1.8.2.min.js"></script>
+    </head>
+    <body>
+        <div class="row_container">
+            <div class="top_bar">
+                <div class="logo_bar">
+                    <a href="{:U('/')}">
+                        <img src="__PUBLIC__/img/logo.png" alt="网站logo">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row_container">
+            <div class="register_finish">
+                <div class="reg_finish_content">
+                    <h2>亲爱的用户，恭喜您完成注册！</h2>
+                    <p>更多优惠，欢迎关注轰轰虎微信公众平台</p>
+                    <p><a href="{:U('/')}"><< 返回首页 >></a></p>
+                </div>
+                <img src="__PUBLIC__/img/bar_code.png" alt="" />
+            </div>
+        </div>
+        <include file="FooterBar/index"/>
+    </body>
+</html>

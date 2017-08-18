@@ -1,0 +1,109 @@
+<extend name="../Common/home_base" />
+
+<block name="custom_css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/jquery.slideBox.css"/>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/requirement.css">
+</block>
+
+<block name="extra_js">
+    <script type="text/javascript" src="__PUBLIC__/js/Plugin/slideBox/jquery.slideBox.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/common/requirement_common.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/module/requirement.js"></script>
+    <script type="text/javascript">
+        $().ready(function(){
+        	$('#slideboxContainer').slideBox();	
+        });
+    </script>
+    
+</block>
+
+<block name="content">
+    <div class="row_container">
+        <div class="center_content">
+
+                <div class="crumbs_nav">
+                    <div class="crumbs_nav_item">
+                        <a href="{:U('/')}">首页</a>
+                        <i>&gt;</i>
+                    </div>
+                    <div class="crumbs_nav_item">
+                        <a href="{:U('Home/TradeCenter/buy')}">交易中心</a>
+                        <i>&gt;</i>
+                    </div>
+                    <div class="crumbs_nav_item">
+                        <a>需求详情</a>
+                        <i></i>
+                    </div>
+                </div>
+
+                <div class="info_details">
+                    <div class="game_pic">
+                        <img src="/game_pic/{$data.hu_pic}" alt="{$data.hu_game}">
+                    </div>
+                    <span class="state_pic">
+                        <p>{$data.state_text}</p>
+                    </span>
+
+                    <form action="{$url}" method="post">
+                            <p class="static_field">
+                                <label class="form_key">标题：</label>
+                                <label>{$data.hu_title}</label>
+                            </p>
+                            <p class="static_field">
+                                <label class="form_key">价格：</label>
+                                <label>{$data.hu_price}元</label>
+                            </p>
+                            <p class="static_field">
+                                <label class="form_key">区服：</label>
+                                <label>{$data.hu_qufu}</label>
+                            </p>
+                            <p class="static_field">
+                                <label class="form_key">完成时间：</label>
+                                <label>{$data.hu_days}天</label>
+                            </p>
+                            <p class="static_field">
+                                <label class="form_key">接单保证金：</label>
+                                <label>{$data.hu_security}元</label>&nbsp;&nbsp;<font size="2" color="#666">（为保证交易的安全性，代练师需要交付一定的保证金！）</font>
+                            </p>
+                            <if condition="$can_buy eq '1'">
+                                <p class="input_field">
+                                    <label class="form_info">&nbsp;</label>
+                                    <button type="submit">我来代练</button>
+                                </p>
+                            </if>
+                        </form>
+                </div>
+
+                <div class="tab_header">
+                    <li class="active">商品截图</li>
+                    <li>商品详情</li>
+                </div>
+                <div class="tab_body">
+                    <div class="tab_content cur">
+                        <div id="slideboxContainer" class="slideBox" style="display:block;width: 400px; height: 270px;">
+                            <ul class="items">
+                                <foreach name="data.img" item="list">
+                                    <li>
+                                        <a>
+                                            <img src="__PUBLIC__/{$list}" width="400" height="270"/>
+                                        </a>
+                                    </li>
+                                </foreach>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tab_content details_content">
+                        <p><label>系统平台：</label>{$data.hu_system}&nbsp;<img src="__PUBLIC__/img/{$data.system_img}" alt="系统标识"/></p>
+                        <notempty name="data.operator">
+                             <p><label>客户端口：</label>{$data.operator}</p>
+                        </notempty>
+                        <p><label>游戏名称：</label>{$data.hu_game}</p>
+                        <p><label>游戏账号：</label>{$data.hu_account}</p>
+                        <p><label>游戏角色：</label>{$data.hu_role}</p>
+                        <p><label>当前角色状态：</label>{$data.hu_details}</p>
+                        <p><label>角色期望状态：</label>{$data.hu_result}</p>
+                    </div>
+                </div>
+        </div>
+    </div>
+</block>

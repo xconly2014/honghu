@@ -1,0 +1,38 @@
+.row_container  {
+  width:980px;
+  margin:0 auto;
+}
+
+.part_margin  {
+  margin-top:10px;
+}
+
+.inline_div  {
+  float:left;
+}
+
+.box_left {
+  float:left;
+  position: relative;
+}
+
+.box_right  {
+  float:right;
+  position: relative;
+}
+
+
+
+
+.logo_container  {
+  float:left;
+  width:20%;
+  height:100%;
+  vertical-align: middle;
+  background-color: #66afe9;
+}
+a{
+ img{
+  border:none;
+ }
+}

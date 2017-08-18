@@ -1,0 +1,74 @@
+<extend name="../Common/admin_base" />
+
+<block name="extra_js">
+    <script type="text/javascript" src="__PUBLIC__/js/admin/change_order_state.js"></script>
+    <script>
+        $().ready(function(){        	
+        	
+        	change_state("{:U('Admin/GoodsOrder/ajax_edit_state')}");
+        });
+    </script>
+</block>
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div class="cz_order_ios">
+                <div class="table_bar">
+                    <div class="search_box_container">
+                        <div class="search_box">
+                            <form action="{:U('Admin/GoodsOrder/order_list')}" method="get">
+                                <input type="text" placeholder="请输入关键字" name="keywords" value="{$keyword}">
+                                <button type="submit">搜索</button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table_container">
+                    <table class="data-table">
+                        <thead>
+                        <tr>
+                            <th>订单号</th>
+                            <th>商品</th>
+                            <th>积分</th>
+                            <th>买家</th>
+                            <th>购买时间</th>
+                            <th width="80px">状态</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <volist name="orderRes" id="list">
+                            <tr>
+                                <td>{$list.id}</td>
+                                <td>{$list.name}</td>
+                                <td>{$list.credits}</td>
+                                <td>
+                                    <a href="{:U('Admin/CreditRecords/user_record_list', array('uid'=>$list['customer_id']))}">{$list.username}</a>
+                                </td>
+                                <td>{$list.pay_time}</td>
+                                <td>
+                                    <a href="javascript:void(0);" class="state">{$list.state}</a>
+                                    <select name="state" class="{$list.id}" style="display:none">
+                                        <option value="1">新订单</option>
+                                        <option value="2">处理中</option>
+                                        <option value="3">已完成</option>
+                                    </select>
+                                
+                                
+                                </td>
+                                <td>
+                                    <a href="{:U('Admin/GoodsOrder/details',array('id'=>$list['id']))}">订单查看</a>
+                                </td>
+                            </tr>
+                        </volist>
+                        </tbody>
+                    </table>
+                    <div class="page">{$show}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>

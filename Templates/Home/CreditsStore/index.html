@@ -1,0 +1,24 @@
+<extend name="../Common/credits_store_base" />
+
+<block name="content">
+    <img src="__PUBLIC__/img/credits_store_index.jpg" alt="积分商城" />
+    <div class="goods_list">
+        <div class="goods">
+            <foreach name="goodsList" item="goods">
+            
+            <div class="goods_message">
+                <a href="{:U('Home/CreditsStore/goods_info',array('id'=>$goods['id']))}"><img src="__PUBLIC__/upload/goods_pic/{$goods.pic_name}" alt="{$goods.name}" /></a>
+                <p>{$goods.name}</p>
+                <span class="credits_price del_line"><b>{$goods.credits}</b></span>
+                <notempty name="goods.discount_credits">
+                    <span class="credits_price"><b>{$goods.discount_credits}</b></span>
+                </notempty>
+                
+                <span class="goods_left">剩余：{$goods.remaining}个 <a href="{:U('Home/CreditsStore/goods_info',array('id'=>$goods['id']))}">兑换</a></span>
+            </div>
+           </foreach>
+        </div>
+        <div class="clear"></div>
+        <div class="page" style="margin-left:15px;">{$page}</div>
+    </div>
+</block>

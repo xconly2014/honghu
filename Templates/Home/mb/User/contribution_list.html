@@ -1,0 +1,32 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="header_bar">
+    <h1 class="mui-title">贡献值记录</h1>
+</block>
+
+<block name="extra_css">
+    <link rel="stylesheet" href="__PUBLIC__/css/mb_user.css" />
+</block>
+
+<block name="main_content">
+    <div class="main_container">
+        <span calss="new_message">贡献值：<b style="color: #ff0000">{$total_sum}</b></span>
+        <table cellspacing="0px" class="mb_table">
+            <tr class="list_head">
+                <th>时间</th>
+                <th>来源</th>
+                <th>成长值</th>
+                <th>收入+/支出-</th>
+            </tr>
+            <foreach name="record_list" item="row">
+                <tr>
+                    <td>{$row.created_date}</td>
+                    <td>{$row.type}</td>
+                    <td>{$row.unit}</td>
+                    <td>{$row.operation}</td>
+                </tr>
+            </foreach>
+        </table>
+        <div class="page">{$show}</div>
+    </div>
+</block>

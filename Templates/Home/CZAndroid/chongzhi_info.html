@@ -1,0 +1,190 @@
+<extend name="../Common/chongzhi_base" />
+
+<block name="content">
+    <div class="row_container">
+        <div class="cz_container">
+            <div class="cz_game_info inline_div">
+                <img width="175px" height="175px" src="/game_pic/{$game_pic}">
+            </div>
+            <div class="cz_info_box box_right">
+                <h3>填写充值信息</h3>
+                <form class="cz_info_form" id="cz_info_form" action="{$submit_url}" method="post">
+                    <p class="input_field required">
+                        <label class="form_info">客户端：</label>
+                        <select class="form-control" name="cz_operator" id="cz_operator" onchange="changeOperator()">
+                            <option value>请选择客户端</option>
+                            <foreach name="operator" item="vo">
+                                <option value="{$vo.operator}">{$vo.operatorname}</option>
+                            </foreach>
+                        </select>
+                    </p>
+                    <p class="input_field required">
+                        <label class="form_info">充值面额：</label>
+                        <select class="form-control" name="cz_option" id="cz_option" onchange="get_sum()">
+                            <option value>请选择充值面额</option>
+                        </select>
+
+                    </p>
+                    <p class="input_field required">
+                        <label class="form_info">充值数量：</label>
+                        <select name="cz_number" id="cz_number" onchange="get_sum()">
+                            <option value>请选择充值面额</option>
+                            <for start="1" end="10">
+                                <option value="{$i}">{$i}</option>
+                            </for>
+                        </select>
+                    </p>
+                    <p class="input_field required">
+                        <label class="form_info">联系方式：</label>
+                        <input type="text" id="cz_contact_way" name="cz_contact_way" placeholder="请填写您的手机号码">
+                    </p>
+                    <p class="input_field required">
+                        <label class="form_info">游戏账号：</label>
+                        <input name="cz_account" type="text" placeholder="请填写您的游戏账号">
+                    </p>
+                    <if condition="$is_tx == true">
+                        <p class="input_field required">
+                            <label class="form_info">登录方式：</label>
+                            <select name="cz_login_way">
+                                <option value>请选择登录方式</option>
+                                <option value="weixin">微信</option>
+                                　　 <option value="qq">QQ</option>
+                                </for>
+                            </select>
+                        </p>
+                    </if>
+                    <p class="input_field required">
+                        <label class="form_info">游戏区服：</label>
+                        <input type="text" name="cz_qufu" placeholder="请填写您的游戏区服">
+                    </p>
+                    <p class="input_field required">
+                        <label class="form_info">游戏角色：</label>
+                        <input type="text" name="cz_role" placeholder="请填写您的游戏角色">
+                    </p>
+                    <p class="input_field required">
+                        <label class="form_info">游戏密码：</label>
+                        <input type="text" name="cz_password" placeholder="请填写您的游戏密码">
+                    </p>
+                    <p class="static_field">
+                        <label class="form_key">应付金额</label>
+                        <label class="form_value" id="sum"></label>&nbsp;元
+                    </p>
+                    <p class="static_field">
+                        <label class="form_key">积分</label>
+                        <label class="form_value" id="credits"></label>
+                    </p>
+                    <p class="input_field">
+                        <label class="form_info">&nbsp;</label>
+                        <button type="submit">确认</button>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</block>
+
+<block name="extra_js">
+    <script type="text/javascript" src="__PUBLIC__/js/lib/arithmetic.js"></script>
+    <script type="text/javascript">
+        step = 1;
+
+        function set_sum_credits(sum, credits)
+        {
+            document.getElementById("sum").innerHTML = sum;
+            document.getElementById("credits").innerHTML = credits;
+        }
+
+        function get_sum()
+        {
+            var sum = "";
+            var credits = "";
+
+            var price = $("#cz_option").find("option:selected").attr("price");
+            var number = $("#cz_number").find("option:selected").attr("value");
+            var credits_multiple = $("#cz_option").find("option:selected").attr("credits_multiple");
+
+            if(number == undefined || price == undefined || !credits_multiple == undefined){
+                set_sum_credits(0, 0);
+                return;
+            }
+            sum = price * number;
+            credits = price * number * credits_multiple;
+            set_sum_credits(sum, credits);
+        }//get_sum
+
+        function changeOperator(){
+            //出去被选中的端口值
+            var operator_id = $("#cz_operator").val();
+            var game_id = {$game_id};
+
+            //组装json数据
+            var data = {operator_id:operator_id,
+                game_id:game_id};
+            $.post('__URL__/createOption',data,function(msg){
+
+                //先清空
+                $('#cz_option')[0].length = 0;
+                $('#cz_option')[0].options.add(new Option('请选择充值面额', ''));
+                //创建
+                $(msg).each(function(i,item){
+                    var op = new Option(item.name,item.id);
+                    $('#cz_option')[0].options.add(op);
+                });
+            },'json');
+        }
+
+        $().ready(function(){
+            setProgressBar();
+            get_sum();
+
+            $.validator.addMethod("mobile", mobileFormat, "手机号码格式错误");
+
+            $("#cz_info_form").validate({
+                rules:{
+                    cz_option: "required",
+                    cz_number:"required",
+                    cz_qufu:"required",
+                    cz_contact_way:{
+                        required:true,
+                        mobile:true
+                    },
+                    cz_login_way:"required",
+                    cz_account:"required",
+                    cz_role:"required",
+                    cz_password:"required"
+                },
+                messages:{
+                    cz_option:"请选择充值面额",
+                    cz_number:"请选择充值数量",
+                    cz_qufu:"请填写游戏区服",
+                    cz_login_way:"请选择登录方式",
+                    cz_contact_way:
+                    {
+                        required:"请填写您的联系方式",
+                        mobile:"手机号码格式错误"
+                    },
+                    cz_account:"请填写游戏账号",
+                    cz_role:"请填写游戏角色",
+                    cz_password:"请填写游戏账号的密码"
+                },
+
+                errorPlacement: function(error, element) {
+                    error.appendTo(element.parent());
+                    error.siblings("span").remove();
+                },
+
+                errorElement:"span",
+
+                success: function(span) {
+                    span.attr("class","success");
+                },
+
+                onfocusout: function(element) {
+                    $(element).valid();
+                }
+
+            });
+        });
+    </script>
+</block>

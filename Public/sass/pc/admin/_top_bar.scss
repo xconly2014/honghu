@@ -1,0 +1,29 @@
+.top_bar {
+  width:100%;
+  height:81px;
+  background: #07c url('../../Public/img/top.gif') 0px 0px repeat-x;
+}
+
+.logout {
+  background-color: #ffffff;
+  font-size: 14px;
+  width: 65px;
+  height: 30px;
+  text-align: center;
+  border-radius: 5px;
+  line-height: 30px;
+  position: absolute;
+  right: 5%;
+  top: 40px;
+  &:hover{
+    color: #fff;
+    background-color: #00B7EE;
+
+  }
+  a{
+    color: #000;
+    text-decoration: none;
+    display: block;
+    width: 100%
+  }
+}

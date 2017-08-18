@@ -1,0 +1,33 @@
+<extend name="../Common/home_base" />
+
+<block name="content">
+    <div class="row_container">
+        <div class="finish_page">
+            <div class="pay_finish">
+                <span>购买成功</span>
+                <p>客服人员正在处理订单,请耐心等待&nbsp;!</p>
+                <div class="alert_text">若10分钟内未收到通知，可凭<strong>&nbsp;订单号&nbsp;{$requirement_order_info.id}&nbsp;</strong>咨询客服</div>
+            </div>
+
+            <div class="pay_finish_info">
+                <h3>代练需求</h3>
+                <p>
+                    <label class="finish_key">订单号：</label>
+                    <label class="finish_value">{$requirement_order_info.id}</label>
+                </p>
+                <p>
+                    <label class="finish_key">游 &nbsp;&nbsp; 戏：</label>
+                    <label class="finish_value">{$requirement_order_info.game_name}</label>
+                </p>
+                <p>
+                    <label class="finish_key">需 &nbsp;&nbsp; 求：</label>
+                    <label class="finish_value">{$requirement_order_info.title}</label>
+                </p>
+                <p>
+                    <label class="finish_key">已付保证金：</label>
+                    <label class="finish_value">{$requirement_order_info.security_money}元</label>
+                </p>
+            </div>
+        </div>
+    </div>
+</block>

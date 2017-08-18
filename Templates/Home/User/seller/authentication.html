@@ -1,0 +1,270 @@
+﻿<extend name="../Common/account_index" />
+
+<block name="extra_js">
+   <script src="__PUBLIC__/js/Plugin/uploadify/jquery.uploadify.min.js" type="text/javascript"></script>
+   <script>
+        $().ready(function(){
+            $('#photo_face').uploadify({
+                'swf'      : '__PUBLIC__/swf/uploadify.swf',
+                'uploader' : '{:U("User/photo_face")}',
+                'formData' : {
+                    //'PHPSESSID':'{$session_id}'//PHPSESSID要与cookie中的名称一致
+                     '<?php echo session_name();?>' : '<?php echo session_id();?>'
+                },
+                'buttonText' : '图片上传',
+                'onUploadSuccess' : function(file, data, response){
+                    $('#' + file.id).find('.data').html(' 上传完毕');
+                    $('.photo_face').next().remove();
+                    data = eval("(" + data + ")");
+                    var img  = '';
+                    img += "<img  src='"+data['savepath']+data['savename']+"?a="+Math.random()+"'>";
+                    $('.photo_face').val(data['savename']);
+                    $('#face').html(img);
+                },
+                'auto' : true, 
+                'onProgress' : 'percentage',
+                'height' : '20',
+                'width' :'100',
+                'fileSizeLimit' :'3072k',
+                'fileTypeExts': '*.gif; *.jpg; *.png',
+            });
+
+            $('#photo_back').uploadify({
+                'swf'      : '__PUBLIC__/swf/uploadify.swf',
+                'uploader' : '{:U("User/photo_back")}',
+                'formData' : {
+                    //'PHPSESSID':'{$session_id}'//PHPSESSID要与cookie中的名称一致
+                    '<?php echo session_name();?>' : '<?php echo session_id();?>'
+                },
+                'buttonText' : '图片上传',    
+                'onUploadSuccess' : function(file, data, response){
+                    $('#' + file.id).find('.data').html(' 上传完毕'); 
+                    $('.photo_back').next().remove();
+                    var img  = ''; 
+                    data = eval("(" + data + ")");              
+                    img += "<img  src='"+data['savepath']+data['savename']+"?a="+Math.random()+"'>";
+                    $('.photo_back').val(data['savename']);
+                    $('#back').html(img);
+                },
+                'auto' : true, 
+                'onProgress' : 'percentage',
+                'height' : '20',
+                'width' :'100',
+                'fileSizeLimit' :'3072k',
+                'fileTypeExts': '*.gif; *.jpg; *.png',
+            });
+
+            $('#photo_body').uploadify({
+                'swf'      : '__PUBLIC__/swf/uploadify.swf',
+                'uploader' : '{:U("User/photo_body")}',
+                'formData' : {
+                    //'PHPSESSID':'{$session_id}'//PHPSESSID要与cookie中的名称一致
+                    '<?php echo session_name();?>' : '<?php echo session_id();?>'
+                },
+                'buttonText' : '图片上传',    
+                'onUploadSuccess' : function(file, data, response){ 
+                    $('#' + file.id).find('.data').html(' 上传完毕');
+                    $('.photo_body').next().remove();
+                    var img  = ''; 
+                    data = eval("(" + data + ")");              
+                    img += "<img  src='"+data['savepath']+data['savename']+"?a="+Math.random()+"'>";
+                    $('.photo_body').val(data['savename']);
+                    $('#body').html(img);
+                },
+                'auto' : true, 
+                'onProgress' : 'percentage',
+                'height' : '20',
+                'width' :'100',
+                'fileSizeLimit' :'3072k',
+                'fileTypeExts': '*.gif; *.jpg; *.png',
+            });
+
+            $.validator.addMethod("ID",checkID,"身份证号码格式错误");
+
+            $('.identify_request').validate({
+                rules:{
+                    true_name:'required',
+                    idc_no: {
+                        required:true,
+                        ID:true
+                    }
+                },
+                messages:{
+                    true_name:'请填写您的真实姓名',
+                    idc_no:{
+                        required:'请填写您的身份证号码',
+                        ID:'身份证号码格式错误'
+                    }
+                },
+                errorPlacement: function(error, element) {
+                    error.appendTo(element.parent());
+                    error.siblings("span").remove();
+                },
+
+                errorElement:"span",
+
+               success: function(span) {
+                 span.attr("class","success");
+                },
+            
+                onfocusout: function(element) { 
+                    $(element).valid();
+                }
+            });
+
+    
+        });
+
+
+    function check(){
+        var face_val = $('.photo_face').val();
+        var back_val = $('.photo_back').val();
+        var body_val = $('.photo_body').val();
+        if(face_val && back_val && body_val){
+           return true;
+
+        }else{
+            if(face_val == ''){
+                $('.photo_face').next().remove();
+                $('.photo_face').after("<label id='error'>请上传图片</label>");
+            }
+
+            if(back_val == ''){
+                $('.photo_back').next().remove();
+                $('.photo_back').after("<label id='error'>请上传图片</label>");
+            }
+
+            if(body_val == ''){
+                $('.photo_body').next().remove();
+                $('.photo_body').after("<label id='error'>请上传图片</label>");
+            }
+            return false;
+        }
+    }
+   </script>
+</block>
+    
+<block name="custom_css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/uploadify.css">
+</block>
+
+<block name="content">
+    <div class="menu_bar_content">
+        <div class="user_center_list">
+            <div class="auth_container">
+                <if condition="$Think.session.user_auth.is_trainer gt 0">
+                    <div class="authentication_alert">
+                        <img src="__PUBLIC__/img/finish.png"/>
+                        <span>您已经通过身份认证</span>
+                    </div> 
+                <else />             
+                    <div class="authentication_alert">
+                        <img src="__PUBLIC__/img/alert.png"/>
+                        <span>您还未进行身份认证</span>
+                        <p>身份认证：可增加您信用度，利于商品出售以及代练套餐的发布等</p>
+                    </div> 
+                    <form class="identify_request" action="" method="post" enctype="multipart/form-data" onsubmit="return check();">
+                        <div class="auth_id_title">
+                            <b>身份证信息填写</b>
+                        </div> 
+
+                        <p class="input_field required">
+                              <label class="form_info">真实姓名：</label>
+                              <input type="text" name="true_name" value=""/>
+                        </p>
+
+                        <p class="input_field required">
+                              <label class="form_info">身份证号码：</label>
+                              <input type="text" name="idc_no" value=""/>
+                        </p>
+                        <p class="input_field required">
+                            <label class="form_info">上传身份证照：</label>
+                            <label class="photo_size">
+                            照片支持jpg、gif、png格式，图片最大不要超过3M。
+                            </label>                    
+                        </p>
+                        <div class="file_upload">
+                            <div class="photo_left">
+                                <ul>
+                                    <li>身份证正面照</li>
+                                    <li class="photo_message">需要能看清姓名、身份证号码等信息。</li>
+                                    <li>
+                                        <div id="face"></div>
+                                    </li>
+                                    <li>
+                                        <input id="photo_face" type="file" multiple="multiple" />
+                                        <input class="photo_face" type="hidden" name="photo_face" />
+                                    </li>
+                                </ul>                       
+                            </div>
+                            
+                            <div class="photo_right">
+                                <ul>
+                                    <li>身份证反面照</li>
+                                    <li class="photo_message">需要看清签发机关、有效期限等信息。</li>
+                                    <li>
+                                        <div id="back"></div>
+                                    </li>
+                                    <li>
+                                        <input id="photo_back" type="file" multiple="multiple" value="" />
+                                        <input class="photo_back" type="hidden" name="photo_back"/>
+                                    </li>
+                                </ul>
+                            </div>   
+                        </div>
+
+                        <div class="auth_id_title">
+                            <b>身份识别信息填写</b>
+                        </div>
+
+                        <p class="input_field required">
+                            <label class="form_info">上传身份证照：</label>
+                            <label class="photo_size">
+                            照片支持jpg、gif、png格式，图片最大不要超过3M。
+                            </label>                    
+                        </p>
+
+                        <div class="file_upload">
+                            <div class="photo_left">
+                                <ul>
+                                    <li>手持身份证正面照</li>
+                                    <li>
+                                        <div id="body"></div>
+                                    </li>
+                                    <li>
+                                        <input id="photo_body" type="file" multiple="multiple" value="" />
+                                        <input class="photo_body" type="hidden" name="photo_body" />
+                                    </li>
+                                </ul>                        
+                            </div>
+                            
+                            <div class="photo_right">
+                                <ul>
+                                    <li>&nbsp;</li>
+                                    <li class="photo_message">
+                                        1.照片内所持身份证必须在有效期内，没有作假痕迹。
+                                    </li>
+                                    <li class="photo_message">
+                                        2.照片内所持身份证正面，信息清晰可见，无遮挡。
+                                    </li>
+                                    <li class="photo_message">
+                                        3.照片内持证人五官清晰可见，且五官须与身份证上照片一致。
+                                    </li>
+                                    <li class="photo_message">
+                                        4.还必须与实名认证的各项身份信息一致，包括真实姓名、身份证号等。
+                                    </li>
+                                </ul>
+                            </div>   
+                        </div>
+
+                        <p class="input_field">
+                            <label class="form_info">&nbsp;</label>
+                             
+                            <button class="identify_submit" type="submit">提交</button>
+                        </p>
+                    </form>
+                </if>
+            </div>                      
+        </div>
+    </div>
+</block>

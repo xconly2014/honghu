@@ -1,0 +1,84 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="header_bar">
+    <h1 class="mui-title">代练需求详情</h1>
+</block>
+
+<block name="extra_js">
+    <script>
+        var gallery = mui('.mui-slider');
+        gallery.slider({
+            interval:1000//自动轮播周期，若为0则不自动播放，默认为0；
+        });
+        
+        $().ready(function(){
+        	$('.mui-slider-indicator .mui-indicator:first').addClass('mui-active');
+        });
+    </script>
+</block>
+
+<block name="extra_css">
+    <style>
+        .mui-table-view{
+        	margin-top:15px;
+        }
+        .mui-table-view div{
+	        height:40px;
+        	line-height:40px;
+        }
+        font{
+	        display: block;
+            height: 30px;
+        	width:150px;
+        	color:#aaa;
+        	font-size:12px;
+        	float:right;	
+        }
+    </style>
+</block>
+
+
+<block name="main_content">
+    <div class="main_container">
+        <div id="slider" class="mui-slider">
+        <div class="mui-slider-group mui-slider-loop">
+            <foreach name="data.img" item="list">
+                <div class="mui-slider-item mui-slider-item-duplicate">
+                    <a href="#"><img src="__PUBLIC__/{$list}" height="200"></a>
+                </div>
+            </foreach>
+        </div>
+        <div class="mui-slider-indicator">
+            <foreach name="data.img" item="list">
+                <div class="mui-indicator"></div>
+            </foreach>
+        </div>
+    </div>
+    
+        <form action="{$url}" method="post">
+            <ul class="mui-table-view">
+                <li class="mui-table-view-cell mui-media">
+                <div>商品标题：<strong>{$data.hu_title}</strong></div>
+                <div>价格：<strong class="orange">{$data.hu_price}</strong>元
+                    <if condition="$can_buy eq 1">
+                        <button style="float:right;" class="mui-btn-primary">代练</button>
+                    </if>    
+                </div>
+                <p class="clear"></p><h4>商品详情</h4></li>
+                <li class="mui-table-view-cell">操作系统：{$data.hu_system}</li>
+                <notempty name="data.operator">
+                    <li class="mui-table-view-cell">客户端口：{$data.operator}</li>
+                </notempty>
+                <li class="mui-table-view-cell">游戏名称：{$data.hu_game}</li>
+                <li class="mui-table-view-cell">游戏账号：{$data.hu_account}</li>
+                <li class="mui-table-view-cell">游戏区服：{$data.hu_qufu}</li>
+                <li class="mui-table-view-cell">保证金：<strong class="orange">{$data.hu_security}</strong>元
+                    <font>为保证交易的安全性，代练师需要交付一定的保证金！</font>
+                </li>
+                <li class="mui-table-view-cell">完成时间：{$data.hu_days}天</li>
+                <li class="mui-table-view-cell">游戏角色：{$data.hu_role}</li>
+                <li class="mui-table-view-cell">当前状态：{$data.hu_details}</li>
+                <li class="mui-table-view-cell">角色状态：{$data.hu_result}</li>
+        </form>
+    </div>
+</block>

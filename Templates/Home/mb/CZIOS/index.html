@@ -1,0 +1,44 @@
+<extend name="../Common/_mb_layout" />
+
+
+<block name="extra_js">
+    <script type="text/javascript" src="__PUBLIC__/js/Plugin/IphoneSlideNav/slidernav.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#slider').sliderNav();
+            $('#transformers').sliderNav({items:['autobots','decepticons'], debug: true, height: '300', arrows: false});
+        });
+    </script>
+</block>
+
+<block name="extra_css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/mb/slidernav.css" />
+</block>
+
+<block name="header_bar">
+    <h1 class="mui-title">IOS充值</h1>
+</block>
+
+<block name="main_content">
+    <div class="main_container">
+         <div id="slider">
+            <div class="slider-content">
+                <ul style="padding-left: 0px;">
+                    <foreach name="game_list" item="v" key="letter">
+                        <li id="{$letter}"><a name="{$letter}" class="title">{$letter}</a>
+                            <ul style="padding-left: 0px;">
+                                <foreach name="v" item="game_obj">
+                                    <notempty name="game_obj">
+                                        <li>
+                                            <a href="{:U('CZIOS/chongzhi_info?gameId='.$game_obj['id'])}" >{$game_obj.name}</a>
+                                        </li>
+                                    </notempty>
+                                </foreach>
+                            </ul>
+                        </li>
+                    </foreach>
+                </ul>
+            </div>
+        </div>
+    </div>   
+</block>

@@ -1,0 +1,173 @@
+﻿.head_picture{
+  margin-top: 10px;
+  text-align: left;
+  background-color: #fbfbd2;
+  padding-bottom: 5px;
+
+  img{
+    margin: 5px 0 5px 5px;
+    float: left;
+    width: 80px;
+    height:80px;
+    border: 4px solid #fff;
+  }
+
+  .right_info{
+    float: left;
+    margin-left: 10px;
+  }
+  label{
+    text-align: left;
+    font-size: 12px;
+    color: #999999;
+  }
+}
+
+#info{
+  margin-top: 15px;
+  text-align: left;
+  width:180px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #000;
+}
+
+.nav{
+  margin:0;
+  padding:0;
+  height: 10px;
+  width: 100%;
+  background-color: #007aff;
+}
+.clear{
+  clear: both;
+}
+
+.menu{
+  background-color: #fbfbd2;
+}
+
+.editpass-container{
+  margin: 0 8px;
+  padding-top:10px; 
+}
+
+.link{
+  text-decoration: underline!important;
+  color: #f00;
+  padding: 5px;
+}
+.mini_logo{
+  vertical-align: middle;
+  margin:-3px 5px 0px 0px;
+}
+.payment{
+  color: #f00;
+}
+#instructions{
+  display:inline-block;
+  padding-left:30px; 
+  color:#ddd;
+}
+
+.user_account{
+  padding-left:50px;
+  background:url(../img/menu/user.png) 8px 11px no-repeat;
+}
+.user_order{
+  padding-left:50px;
+  background:url(../img/menu/order.png) 8px 11px no-repeat;
+}
+.user_action{
+  padding-left:50px;
+  background: url(../img/menu/requirement.png) 8px 11px no-repeat;
+}
+.user_goods{
+  padding-left:50px;
+  background: url(../img/menu/goods.png) 8px 13px no-repeat;
+}
+.user_message{
+  padding-left:50px;
+  background: url(../img/menu/message.png) 8px 15px no-repeat;
+}
+.new_message{
+  font-size:16px;
+  color:red;
+}
+.user_help{
+  padding-left:50px;
+  background:url(../img/menu/help.png) 8px 13px no-repeat;
+}
+
+.codes{
+  display: inline-block;
+  float: left;
+  padding: 0px 15px 0px 0px;
+}
+.red{
+  color: #f00;
+  float: right;
+}
+
+.singer  {
+  border-bottom:1px solid #DCDBDB;
+  height:50px;
+  line-height:45px;
+  width:100%;
+  margin:0 auto;
+  overflow: hidden;
+}
+
+.operation{
+  float:right;
+  margin-top:65px;
+  margin-right:5px;
+  height:37px;
+  line-height: 32px;
+  font-size:12px;
+  img{
+    width:20px;
+    margin:5px 0;
+    height:20px;
+    border:0;
+  }
+}
+
+span.vip_level{
+  display:inline-block;
+  padding:0 0 10px 25px;
+  font-size:14px;
+  margin-left:-5px;
+  background:url(../img/small_vip.png) 3px -2px no-repeat;
+  color:#fff;
+}
+
+.other_info{
+  padding:0px;
+  margin:0px;
+  li{
+    list-style: none;
+    border-top: 1px solid #DCDBDB;
+    padding:5px 0px 5px 10px;
+    a{
+      float:right;
+      margin-right: 10px;
+    }
+  }
+}
+
+.finish_title{
+  img{
+    vertical-align: middle;
+  }
+  span{
+    display: inline-block;
+    width: 320px;
+    height: 40px;
+    font-size: 18px;
+  }
+}
+
+.collect{
+  background: url(../img/menu/hat.png) 8px 13px no-repeat;
+}

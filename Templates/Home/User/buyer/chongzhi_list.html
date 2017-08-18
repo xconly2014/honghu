@@ -1,0 +1,42 @@
+<extend name="../Common/account_index" />
+
+<block name="content">
+    <div class="menu_bar_content">
+        <div class="user_center_list">
+            <table cellspacing="0px">
+                <tr>
+                    <th class="first">订单号</th>
+                    <th>游戏</th>
+                    <th>充值面额</th>
+                    <th>数量</th>
+                    <th>状态</th>
+                    <th>时间</th>
+                    <th>操作</th>
+                </tr>
+                <foreach name="cz_list" item="row">
+                    <tr>
+                        <td>{$row.id}</td>
+                        <td width="60">
+                            <a href="#">{$row.game_name}</a>
+                        </td>
+                        <td>{$row.details}</td>
+                        <td>{$row.bought_num}</td>
+                        <td width="60">{$row.state}</td>
+                        <td width="140">{$row.modified_date}</td>
+                        <td width="60">
+                            <foreach name="row.link_data" item="link" key="link_text">
+                                <a href="{:U($link,array('orderId'=>$row['id']))}">{$link_text}</a><br />
+                             </foreach>
+                    
+                        </td>
+                    </tr>
+                </foreach>
+            
+            </table>  
+        </div>
+        <div class="page_container">
+            <div class="page">{$show}</div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</block>

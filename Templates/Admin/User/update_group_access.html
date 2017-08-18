@@ -1,0 +1,78 @@
+<extend name="../Common/admin_base" />
+
+<block name="extra_js">
+    <script type="text/javascript" src="__PUBLIC__/js/admin/user_mgr.js"></script>
+</block>
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div class="group_add_container">
+                <form class="container" id='groupAdd' method="post" action="{$submit_url}">
+                <table>
+                    <tr>
+                        <td colspan='2' align='center'>
+                            <p class="static_field">
+                                <label class="form_key">组名</label>
+                                <span class="form_value">{$info['name']}</span>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>首页</th>
+                        <td>
+                            <li class="auth_list_item">
+                                <label class="parent_item">
+                                    <input type="checkbox" id="1"  onchange="powAll(1,this.checked)"/>
+                                    <span>首页</span>
+                                </label>
+                                <label class="item_label">
+                                    <input type="checkbox" name="rule_id[]" value="1"  class="1" <if condition="in_array(1,$info['myRules'])">checked</if> />
+	                                <span>首页界面</span>
+                                </label>
+                            </li>
+                        </td>
+                    </tr>
+                    
+                        <foreach name='topMenu' item='topNav'>
+                            <tr>
+                                <th>
+                                    {$topNav.title}
+                                </th>
+                                <td>
+                                   <foreach name='menus' item='vo'>
+	                                   <if condition="$topNav['id'] eq $vo['parent_id']">
+	                                        <li class="auth_list_item">
+	                                            <label class="parent_item">
+	                                                <input type="checkbox" id="{$vo.id}"  onchange="powAll({$vo.id},this.checked)"/>
+	                                                <span>{$vo.title}</span>
+	                                            </label>
+	                                            <foreach name='rules' item='v'>
+	                                                <if condition="$vo['id'] eq $v['m_id']">
+	                                                    <label class="item_label">
+	                                                        <input type="checkbox" name="rule_id[]" value="{$v.id}"  class="{$vo.id}" <if condition="in_array($v['id'],$info['myRules'])">checked</if> />
+	                                                        <span>{$v.title}</span>
+	                                                    </label>
+	                                                </if>
+	                                            </foreach>
+	                                        </li>
+	                                    </if>
+                                    </foreach>
+                                </td>
+                            </tr>
+                        </foreach>
+                    
+                    <tr>
+                        <td colspan='2'>
+                            <p class="input_field">
+                                <label class="form_info">&nbsp;</label>
+                                <button type="submit">提交</button>
+                            </p>
+                        </td>
+                   </tr>
+                   </table>
+                </form>
+            </div>
+        </div>
+    </div>
+</block>

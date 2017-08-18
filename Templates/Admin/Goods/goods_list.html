@@ -1,0 +1,58 @@
+<extend name="../Common/admin_base" />
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+                <div class="goods_list_container">
+                    <div class="table_bar">
+                        <a class="a_style_button" href="{:U('Admin/Goods/on_sale')}">上架新商品</a>
+
+                        <div class="search_box_container">
+                            <div class="search_box">
+                                <form action="{:U('Admin/Goods/goods_list')}" method="get">
+                                    <input type="text" placeholder="请输入商品名关键字" name="name">
+                                    <button type="submit">搜索</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="table_container">
+                    <table class="data-table">
+                        <thead>
+                        <tr>
+                            <th>编号</th>
+                            <th>商品名称</th>
+                            <th>图片</th>
+                            <th>积分价格</th>
+                            <th>库存数量</th>
+                            <th>兑换数量</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <foreach name="goods_list" item="row">
+                                <tr>
+                                    <td>{$row.id}</td>
+                                    <td>{$row.name}</td>
+                                    <td>
+                                        <img width="100px" src="__PUBLIC__/upload/goods_pic/{$row.pic_name}" alt="" />
+                                    </td>
+                                    <td>{$row.credits}</td>
+                                    <td>{$row.store_num}</td>
+                                    <td>{$row.exchange_num}</td>
+                                    <td>
+                                         <a href="{:U('Admin/Goods/edit_goods', array('id'=>$row['id']))}">编辑</a> |
+                                        <a href="{:U('Admin/Goods/del_goods',array('id'=>$row['id']))}">删除</a>
+                                    </td>
+                                </tr>
+                            </foreach>
+                        </tbody>
+                    </table>
+                    <div class="page">{$show}</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</block>

@@ -1,0 +1,113 @@
+<extend name="../Common/home_base" />
+
+<block name="custom_css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/requirement.css">
+</block>
+
+<block name="extra_js">
+    <script type="text/javascript" src="__PUBLIC__/js/Plugin/kinFormUpload/jquery.kinFormUpload.1.1.source.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/common/requirement_common.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/module/requirement.js"></script>
+</block>
+
+<block name="content">
+    <div class="row_container">
+        <div class="center_content">
+            <div class="requirement_container">
+                <div class="cz_game_info inline_div">
+	                <img width="175px" height="175px" src="/game_pic/{$game_pic}">
+	                <h5>{$game_name}</h5>
+	                <div class="instructions_div">
+	                    <ul>
+	            		    <li>请详细填写游戏角色信息以及具体需求！</li>
+	            		    <li>如有人接您的代练需求，会以短信通知！</li>
+	            		    <li>如填写的资料不吻合，可能会导致代练无法进行！</li>
+	            		    <li>在线客服QQ：4008062400</li>
+	            		    <li>如有不懂，请咨询客服QQ：4008062400！</li>
+	            	    </ul>
+	            
+	            	    <div class="problem_title">
+	            	        <img src="__PUBLIC__/img/question.png" class="book_pic"/>
+	            	        <p>常见咨询问题</p>
+	            	    </div>
+	            	    <ul>
+	            		    <li><a href="{:U('Home/Help/index',array('id'=>23))}" target="__blank">代练师如果接单后无法完成怎么办？</a></li>
+	            		    <li><a href="{:U('Home/Help/index',array('id'=>23))}" target="__blank">发了需求后没有人接单怎么办？</a></li>
+	            		    <li><a href="{:U('Home/Help/index',array('id'=>23))}" target="__blank">怎么样保证账号的安全？</a></li>
+	            	    </ul>
+	                </div>
+	            </div>
+	            <div class="requirement_info inline_div">
+	                <h3>填写代练需求内容</h3>
+	                <form action="{$submit_url}" method="post" id='requirement_form' enctype="multipart/form-data"  onsubmit="return check()">
+	                    <p class="input_field required">
+	                        <label class="form_info">标题：</label>
+	                        <input type="text" name="hu_title" placeholder="请填写代练需求标题"/>
+	                    </p>
+	                    <p class="input_field required">
+	                        <label class="form_info">平台：</label>
+	                        <input class="platform_ios" type="radio" name="hu_platform" value="1" />苹果
+	                        <input class="platform_android" type="radio" name="hu_platform" value="2" />安卓
+                        </p>
+	                    <p class="input_field required game_operator">
+	                        <label class="form_info">安卓客户端：</label>
+	                        <select name="operator" id="operators">
+	                            <option value="">请选择客户端</option>
+	                            <volist name="operator" id = "vo">
+	                                <option value="{$vo.id}">{$vo.name}</option>
+	                            </volist>
+	                        </select>
+	                    </p>
+	                    <p class="input_field required">
+	                        <label class="form_info">游戏区服：</label>
+	                        <input type="text" name="hu_qufu" placeholder="请填写游戏区服"/>
+	                    </p>
+	                    <p class="input_field required">
+	                        <label class="form_info">角色名称：</label>
+	                        <input type="text" name="hu_role" placeholder="请填写游戏角色" />
+	                    </p>
+	                    <p class="input_field required">
+	                        <label class="form_info">代练时间：</label>
+	                        <select name="days" class="form-control form-control-inline">
+	                            <option value="">请选择代练时间</option>
+	                            <for start="1" end="31">
+	                                <option value="{$i}">代练{$i}天</option>
+	                            </for>
+	                        </select>
+	                    </p>
+	                    <p class="input_field required">
+	                        <label class="form_info">当前角色状态：</label>
+	                        <textarea  cols="30" rows="5" name="hu_details" placeholder="例如：当前等级，装备，宠物等等  请勿写上联系方式以免上当受骗！"></textarea>
+	                    </p>
+	                    <p class="input_field required">
+	                        <label class="form_info">上传图片：</label>
+	                        <label id="uploadImg">
+	                            <input type="file" name="images" id="uploadImages" />
+	                            <input type="hidden" id="img"/>
+	                        </label>
+	                    </p>
+	                    <p class="input_field required">
+	                        <label class="form_info">角色期望状态:</label>
+	                        <textarea cols="30" rows="5" name="hu_result" placeholder="例如：要达到的等级，打到什么装备，英雄要达到的等级等等  请勿写上联系方式以免上当受骗！"></textarea>
+	                    </p>
+	
+	                    <p class="input_field">
+	                        <label class="form_info">备注：</label>
+	                        <textarea cols="30" rows="5" name="hu_remarks" placeholder="例如：不能开外挂，不能和好友聊天，或者代练期间得到的哪些物品不能使用等等  请勿写上联系方式以免上当受骗！"></textarea>
+	                    </p>
+	                    <p class="input_field required">
+	                        <label for="hu_provided" class="col-sm-3 control-label">是否提供充值支持</label>
+	                        <input type="radio" name="hu_provided" value="1">是
+	                        <input type="radio" name="hu_provided" value="0">否
+	                    </p>
+	                    <p class="input_field">
+	                        <label class="form_info">&nbsp;</label>
+	                        <button type="submit">提交</button>
+	                    </p>
+	                </form>
+	            </div>
+	            <div class="clear"></div>
+	        </div>    
+        </div>
+    </div>
+</block>

@@ -1,0 +1,74 @@
+<extend name="../Common/admin_base" />
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div class="cz_package_list">
+                <div class="table_bar">
+                    <a class="a_style_button" href="{:U('Admin/IOSCZPackage/on_sale')}">上架新套餐</a>
+                </div>
+
+                <div class="table_container">
+                    <table class="data-table">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>游戏名称</th>
+                            <th>最少数量</th>
+                            <th>总数量</th>
+                            <th>已购买</th>
+                            <th>面额</th>
+                            <th>单价</th>
+                            <th>完成度</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <volist name="cz_package_list" id="list">
+                            <tr id="row_{$list.id}">
+                                <td>{$list.id}</td>
+                                <td>{$list.name}</td>
+                                <td>{$list.mini_number}</td>
+                                <td>{$list.sum_number}</td>
+                                <td>{$list.buy_num}</td>
+                                <td>{$list.option_text}</td>
+                                <td>{$list.price}</td>
+                                <td>{$list.sum_percent}</td>
+                                <td>
+                                    <a href="{:U('Admin/IOSCZPackageOrder/order_list',array('packageId'=>$list['id']))}">查订单</a>|
+                                    <a href="{:U('Admin/IOSCZPackage/del',array('packageId'=>$list['id']))}" onclick="return confirm('确定删除吗?');">删除</a>
+                                </td>
+                            </tr>
+                        </volist>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</block>
+
+<block name="footer">
+    <div class="footer">
+        <p>
+            广州鸿鹄网络科技有限公司
+        </p>
+    </div>
+</block>
+
+<block name="extra_js">
+    <script type="text/javascript">
+
+        function test3(url, gameId){
+            $.post(url, { "game_id": gameId
+            }).done(function(data) {
+                alert(data['msg']);
+                var rowId = "#row_" + gameId;
+                $(rowId).hide();
+            }).fail(function() {
+            });
+        }
+    </script>
+
+</block>

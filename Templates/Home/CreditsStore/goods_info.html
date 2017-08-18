@@ -1,0 +1,31 @@
+<extend name="../Common/credits_store_base" />
+
+<block name="content">
+<div class="single_goods">
+	<div class="show_product">
+		<img src="__PUBLIC__/upload/goods_pic/{$data.pic_name}" width="406" height="313" alt="{$data.name}">
+		<div class="goods_info">
+			<b>{$data.name}（颜色随机）</b>
+			<p>所需积分：<label class="del_line">{$data.credits}积分</label>
+			    <notempty name="data.discount_credits">
+			        <label>{$data.discount_credits}积分</label>
+			    </notempty>    
+			
+			
+			</p>
+			库存数量：{$data.remaining}个<br>已购买人数：{$data.exchange_num}人
+			<p class="but_p">免费包邮</p>
+			<form action="{$url}" method="post">
+				<button <if condition="$data.remaining eq 0">disabled='disabled' style="opacity:0.4; filter:'alpha(opacity=40)';"</if> >立即兑换</button>
+			</form> 
+		</div>
+	</div>
+	<div class="goods_details">
+		<div class="details_top">
+			<div class="details_top_left">产品详情&nbsp;&nbsp;Product details</div>
+			<font style="font-style: italic;">轰轰虎积分商城</font>
+		</div>
+		<div class="goods_details_info">{$data.details}</div>
+	</div>
+</div>
+</block>

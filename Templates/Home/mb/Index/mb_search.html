@@ -1,0 +1,22 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="header_bar">
+    <h1 class="mui-title">搜索游戏列表</h1>
+</block>
+
+<block name="main_content">
+    <div class="main_container">
+        <notempty name="search_list">
+            <ul class="mui-table-view">
+                <foreach name="search_list" item="row">
+                    <li class="mui-table-view-cell"><a href="{:U('Index/search_list?gameId='.$row['id'])}" style="color:blue;font-size:14px;font-weight:bold;">{$row.name}</a></li>
+                </foreach>        
+            </ul>
+        <else />
+            <div style="width:30%;text-align:center;margin-left:35%;margin-top:50px;">
+                <img src="__PUBLIC__/img/mb_search_cry.png" alt="搜素不到" />
+            </div>
+            <p style="width:80%;margin:0 auto;text-align:center;margin-top:10px;">抱歉，搜索到 “0” 结果！</p>
+        </notempty>
+    </div>
+</block>

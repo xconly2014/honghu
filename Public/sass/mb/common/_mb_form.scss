@@ -1,0 +1,54 @@
+
+.code{
+  width: 100%;
+  .check_vcode{
+   float: left;
+   width: 50%;
+  }
+  img{
+   float: left;
+   width: 49%;
+   margin-left: 1%;
+   height: 38px;
+   border:1px solid #bbbbbb;
+   border-radius: 3px;
+  }
+}
+
+input[type='button']{
+  float: right;
+  width: 49%;
+  height: 40px;
+  color: #ffffff;
+  background-color: #007AFF;
+}
+
+
+.static_field{
+  height: 40px;
+  line-height: 40px;
+  .key{
+    text-align: center;
+    display: inline-block;
+    width: 50%;
+  }
+  .value{
+    font-weight: bold;
+    display: inline-block;
+    width: 50%;
+  }
+}
+
+.clear{
+  clear: both;
+}
+
+
+span.error {
+    background: url("../img/wrong.png") no-repeat 0px 0px;
+    display: inline-block;
+    padding-left:20px;
+    width: 100%;
+    height: 20px;
+    color: red;
+}

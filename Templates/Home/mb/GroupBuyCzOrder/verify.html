@@ -1,0 +1,55 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="extra_js">
+    <script type="text/javascript" src="__PUBLIC__/js/Plugin/jqueryForm/jQuery_Validation.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/global_checker.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/common/gbzc_lucker_common.js"></script>
+    <script>
+        $().ready(function(){
+            $("#mb_gbac_verify_form").validate(window.gbcz_verify_option,true);
+        });
+    </script>
+
+</block>
+
+<block name="header_bar">
+    <h1 class="mui-title">一元购购买信息确认</h1>
+</block>
+
+<block name="main_content">
+    <div class="main_container">
+        <form action="{$submit_url}" method="post" id="mb_gbac_verify_form">
+            <div class="mobile_error"></div>
+            <ul class="mui-table-view">
+                <li class="mui-table-view-cell">
+                    <label>订单号：</label><span>{$rowOrder.orderId}</span>
+                </li>
+                <li class="mui-table-view-cell">
+                    <label>游戏名：</label><span>{$rowOrder.game}</span>
+                </li> 
+
+                <li class="mui-table-view-cell">
+                    <label>面额：</label><span>{$rowOrder.option_text}</span>
+                </li>
+
+                <li class="mui-table-view-cell">
+                    <label>购买数量：</label><span>{$rowOrder.payment}</span>
+                </li>   
+
+                <li class="mui-table-view-cell">
+                    <label>单价：</label><span>{$rowOrder.unit_num}元</span>
+                </li>
+                <li class="mui-table-view-cell">
+                    <input type="text" name="contact_way" placeholder="请填写您的手机号码">
+                </li>
+
+                <li class="mui-table-view-cell">
+                    <label>您需要支付：</label><b style="color:red;font-weight:bold;font-size:20px;">{$rowOrder.payment}元</b></span>
+                </li>       
+            </ul>
+            <div class="mui-button-row">
+                <button class="mui-btn mui-btn-primary mui-btn-block">去支付</button>
+            </div>
+        </form>        
+    </div>
+</block>

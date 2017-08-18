@@ -1,0 +1,75 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="header_bar">
+    <h1 class="mui-title">微信支付</h1>
+</block>
+
+<block name="extra_css">
+    <style>
+        .mui-popover {
+            width:85%;
+            min-height: 550px;
+            background:none;
+        }
+        .mui-table-view {
+            background:none;
+        }
+            
+    </style>
+       
+</block>
+<block name="extra_js">
+    <script>
+        var t = 3;
+        var jump_url = "";
+        var timer_id = setInterval("review_order()", 2000);
+
+        function review_order(){
+            var url = "{$review_order_url}";
+            $.post(url, "", function(msg){
+                if(msg && msg.status && msg.url){
+                    $('#review_order_container').fadeIn();
+                    clearInterval(timer_id);
+                    location = msg.url;
+                }
+            },'json');
+        }
+
+        $().ready(function(){
+            $('.alert_img').click(function(){
+                $('.mui-popover').css('display','none');
+                $('.mui-popover').removeClass('mui-active')
+                $('.mui-backdrop').remove();
+            });    
+        });
+    </script>
+</block>
+
+<block name="main_content">
+    <div class="main_container">
+        <ul class="mui-table-view mui-grid-view">
+            <li class="mui-table-view-cell mui-media mui-col-xs-12">
+                <div class="mui-media-body" style="height:40px;">
+                    <a href="#middlePopover" class="mui-btn mui-btn-primary mui-btn-block mui-btn-outlined" style="padding: 5px 20px;">点此查看如何扫描</a>
+                </div>
+                <img class="mui-media-object" src="http://paysdk.weixin.qq.com/example/qrcode.php?data=<?php echo urlencode($qr_code_url);?>" style="border:1px solid #ccc;margin-top:30px;"/>
+            </li>
+            
+        </ul>
+        <div class="alert_container">
+        <div id="middlePopover" class="mui-popover">
+            <div class="mui-popover-arrow"></div>
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <ul class="mui-table-view mui-grid-view">
+                        <li class="mui-table-view-cell mui-media mui-col-xs-12">
+                            <img class="mui-media-object alert_img" src="__PUBLIC__/img/mb_wx_pay.jpg" />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</block>
+

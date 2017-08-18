@@ -1,0 +1,42 @@
+<extend name="../Common/admin_base" />
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div class="news_list_container">
+                <div class="table_bar">
+                    <a class="a_style_button" href="{:U('Admin/Banner/write_banner')}">添加轮播图</a>
+                </div>
+
+                <div class="table_container">
+                    <table class="data-table">
+                        <thead>
+                        <tr>
+                            <th>标题</th>
+                            <th>图片</th>
+                            <th>链接</th>
+                            <th>优先级</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <volist name="banner_list" id="vo">
+                            <tr>
+                                <td>{$vo.title}</td>
+                                <td><img src="__PUBLIC__/upload/banner/{$vo.img}" width="100"/></td>
+                                <td>{$vo.href}</td>
+                                <td>{$vo.priority}</td>
+                                <td>
+                                    <a href="{:U('Admin/Banner/banner_edit',array('id'=>$vo['id']))}">编辑</a> | 
+                                   <a href="{:U('Admin/Banner/del_banner', array('id'=>$vo['id']))}" onclick="return confirm('确定要删除吗?');">删除</a>
+                                </td>
+                            </tr>
+                        </volist>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</block>

@@ -1,0 +1,41 @@
+<extend name="../Common/admin_base" />
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div class="news_list_container">
+                <div class="table_bar">
+                    <a class="a_style_button" href="{:U('Admin/FamilyLogo/logo_add')}">添加堂会LOGO</a>
+                </div>
+
+                <div class="table_container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>名字</th>
+                                <th>图片</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <foreach name="logo_list" item="row">
+                                <tr>
+                                    <td>{$row.name}</td>
+                                    <td>
+                                        <img src="__PUBLIC__/img/family/logo/{$row.pic_name}" alt="{$row.name}" width="75"/>
+                                    </td>
+                                    <td>
+                                        <if condition="$row.is_used eq 0 ">
+                                            <a href="{:U('Admin/FamilyLogo/del_logo', array('id'=>$row['id']))}" onclick="return confirm('确定要删除吗?');">删除</a>
+                                        </if>                                        
+                                    </td>
+                                </tr>
+                            </foreach>                               
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>

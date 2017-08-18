@@ -1,0 +1,89 @@
+<extend name="../Common/admin_base" />
+
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div>
+                <div class="common_form">
+                    <p>一元云购详情</p>
+                    <div class="left_info" style="height:420px;">
+                        <h4>商品信息</h4>
+                        <li class="static_field">
+                            <label class="form_key">游戏面额：</label>
+                            <label class="form_value">{$itemInfo.option_text}</label>
+                        </li>
+	                    <li class="static_field">
+	                        <label class="form_key">游戏名称：</label>
+	                        <label class="form_value">{$itemInfo.game}</label>
+	                    </li>
+                        <li class="static_field">
+                            <label class="form_key">有效时间：</label>
+                            <label class="form_value">{$itemInfo.dued_date}</label>
+                        </li>
+	                    <li class="static_field">
+	                        <label class="form_key">游戏金额：</label>
+	                        <label class="form_value">{$itemInfo.option_num}{$itemInfo.currency}</label>
+	                    </li>
+	                    <li class="static_field">
+	                        <label class="form_key">真实价格：</label>
+	                        <label class="form_value">{$itemInfo.price}元</label>
+	                    </li>
+                        <li class="static_field">
+                            <label class="form_key">最大购买数：</label>
+                            <label class="form_value">{$itemInfo.max_time}人次</label>
+                        </li>
+	                    <li class="static_field">
+	                        <label class="form_key">中奖云码：</label>
+	                        <label class="form_value">{$itemInfo.code}</label>
+	                    </li>
+
+	                </div>
+	                <div class="right_info" style="height:420px;">
+	                    <h4>幸运者信息</h4>
+
+	                    <li class="static_field">
+	                        <label class="form_key">编号：</label>
+	                        <label class="form_value">{$luckerInfo.id}</label>
+	                    </li>
+                        <li class="static_field">
+                            <label class="form_key">用户账号：</label>
+                            <label class="form_value">{$luckerInfo.username}</label>
+                        </li>
+	                    <li class="static_field">
+	                        <label class="form_key">游戏账号：</label>
+	                        <label class="form_value">{$luckerInfo.account}</label>
+	                    </li>
+	                    <li class="static_field">
+	                        <label class="form_key">游戏密码：</label>
+	                        <label class="form_value">{$luckerInfo.password}</label>
+	                    </li>
+	                    <li class="static_field">
+	                        <label class="form_key">游戏区服：</label>
+	                        <label class="form_value">{$luckerInfo.qufu}</label>
+	                    </li>
+                        <notempty name="luckerInfo.qufu_type">
+                            <li class="static_field">
+                                <label class="form_key">登录方式：</label>
+                                <label class="form_value">{$luckerInfo.qufu_type}</label>
+                            </li>
+                        </notempty>
+	                    <li class="static_field">
+	                        <label class="form_key">游戏角色：</label>
+	                        <label class="form_value">{$luckerInfo.role}</label>
+	                    </li> 
+	                    <li class="static_field">
+	                        <label class="form_key">联系方式：</label>
+	                        <label class="form_value">{$luckerInfo.contact_way}</label>
+	                    </li>
+	                </div>        
+                    <li class="static_field">
+                        <label class="form_key"></label>
+                        <label class="form_key"></label>
+                        <button onClick="javascript :history.back(-1);">返回</button>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>

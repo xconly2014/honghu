@@ -1,0 +1,88 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="extra_css">
+    <link rel="stylesheet" href="__PUBLIC__/css/mb_family.css" />
+    <style>
+        .mui-table-view-cell:after{
+            background:#fff;
+        }
+    </style>
+</block>
+
+<block name="extra_js">
+    <script type="text/javascript" src="__PUBLIC__/js/Plugin/jqueryForm/jQuery_Validation.js"></script>
+    <script src="__PUBLIC__/js/family.js"></script>
+    <script src="__PUBLIC__/js/Plugin/layer/layer.js"></script>
+    <script>
+        
+         
+        $().ready(function(){  
+            $('#family_create').validate(window.family_create,true);
+
+             //获取第一个logo    
+            clickLogo($('.family_small_logo ul li img').first(),true);
+
+            //点击获取logo
+            $('.family_small_logo ul li img').click(function(){
+                clickLogo($(this),true);
+            });
+        });
+    </script>
+</block>
+
+<block name="header_bar">
+    <h1 class="mui-title">堂会创建</h1>
+</block>
+
+<block name="main_content">
+    <div class="main_container">
+        <ul class="mui-table-view">
+            <form id="family_create" action="{:U('Home/User/family_create')}" method="post">
+                <li class="family_big_logo" style="text-align:center;">
+                      <img src="" alt="" width="300"/>
+                </li>
+            
+                <div class="mui-slider">
+                    <div class="mui-slider-group mui-slider-loop">
+                        <div class="mui-slider-item mui-slider-item-duplicate">
+                        </div>
+
+                        <foreach name="family_logo" item="row">
+                            <div class="mui-slider-item family_small_logo">
+                                <ul class="mui-table-view mui-grid-view" style="text-align:center;">
+                                    <foreach name="row" item="vo">
+                                        <li class="mui-table-view-cell mui-media mui-col-xs-3">
+                                            <img class="mui-media-object" src="__PUBLIC__/img/family/logo/{$vo.pic_name}" alt="{$vo.name}" id="{$vo.id}">
+                                        </li>
+                                    </foreach>
+                                    
+                                </ul>
+                            </div>
+                        </foreach>
+                    
+                        <div class="mui-slider-item mui-slider-item-duplicate">
+                        </div>
+                    </div>
+                </div>
+
+                <li class="mui-table-view-cell">
+                    <label>堂会名：</label><span class="family_logo_name"></span>
+                </li>
+                <li class="mui-table-view-cell">
+                      <input type="text" name="nick_name" placeholder="请输入您在堂会中的昵称" />
+                </li>
+
+                <input class="family_logo_id" type="hidden" name="family_logo_id" />
+
+                 <li class="mui-table-view-cell">
+                      <textarea name="introduction" rows="8" placeholder="本堂会乃天下第一堂，望各位土豪大展生手！"></textarea>
+                 </li>   
+                
+                <div class="mui-button-row">
+                    <button class="mui-btn mui-btn-primary mui-btn-block">确认</button>
+                </div>
+            </form>
+        </ul>
+      
+    </div>
+</block>

@@ -1,0 +1,18 @@
+<div class="input_field required vcode_box">
+    <label class="form_info">手机验证码：</label>
+    <input class="tel_vcode_check" type="text" name="tel_vcode" id="tel_vcode"/>
+    <a class="tel_vcode" href="javascript:void(0);" >获取短信验证码</a>
+    <div class="get_vcode">
+        <div>请输入图片中的字符，以免费获取验证码：</div>
+        <div class="img_vcode">
+            <input class="code_check"　type="text" name="vcode" id="check_vcode"/>
+            <img id="vcode" src="__CONTROLLER__/vcode" alt="验证码" onclick="change()" />
+            <a href="javascript:void(0);" onclick="change()">换一张</a>
+
+        </div>
+        <div class="buttons">
+            <a class="btn_ok" href="#">确定</a>
+            <a class="btn_cancel" href="#">取消</a>
+        </div>
+    </div>
+</div>

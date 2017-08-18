@@ -1,0 +1,17 @@
+<ul class="set_list">
+    <!--<li class="<?php if($cur_tab == 'fees')echo 'selected';?>">
+        <a href="{:U('Home/CoinsCenter/fees')}">手机话费</a>
+    </li>-->
+    <li class="<?php if($cur_tab == 'card')echo 'selected';?>">
+        <a href="{:U('Home/CoinsCenter/card')}">话费卡</a>
+    </li>
+    <li class="<?php if($cur_tab == 'index')echo 'selected';?>">
+        <a href="{:U('Home/CoinsCenter/index')}">在线购买</a>
+    </li>
+</ul>
+<div class="coins_total">
+    <p>
+        <span>我的虎币：</span>
+        <b>{$coins_total}</b>
+    </p>
+</div>

@@ -1,0 +1,38 @@
+<extend name="../Common/admin_base" />
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div class="news_list_container">
+                <div class="table_bar">
+                    <a class="a_style_button" href="{:U('Admin/Help/articleInsert',array('help_category_id'=>$help_category_id))}">添加文章</a>
+                </div>
+
+                <div class="table_container">
+                    <table class="data-table">
+                        <thead>
+                        <tr>
+                            <th>编号</th>
+                            <th>文章名</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <volist name="articleRes" id="article">
+                            <tr>
+                                <td>{$article.id}</td>
+                                <td>
+                                    {$article.name}
+                                </td>
+                                <td>
+                                    <a href="{:U('Admin/Help/articleEdit',array('help_category_id'=>$help_category_id,'id'=>$article['id']))}">编辑</a>||<a href="{:U('Admin/Help/articleDel',array('help_category_id'=>$help_category_id,'id'=>$article['id']))}" onclick="return confirm('确定删除吗?');">删除</a>
+                                </td>
+                            </tr>
+                        </volist>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>

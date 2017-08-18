@@ -1,0 +1,63 @@
+<extend name ="../Common/_mb_layout" />
+
+<block name="header_bar">
+    <h1 class="mui-title">{$title}</h1>
+</block>
+
+<block name="extra_css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/mb_trade_center.css">
+    <style>
+        .mb_footer{
+	        margin-bottom: 51px;
+        	bottom: 51px;
+        	position: relative; 
+        }
+        .top_quick_bar_right{
+	        font-size:10px;
+        }
+    </style>
+</block>
+
+<block name="extra_js">
+    <script type="text/javascript">
+        $().ready(function(){
+        	var len = $('#lists li').length;
+        	if(len <= 3){
+        		var height = ($(window).height()) - 251 - (len * 80);
+        		$('.mb_footer').css('margin-top',height);
+        	}
+        });
+    </script>
+</block>
+
+
+<block name="main_content">
+     <div class="main_container mui-content">
+	     <if condition="$search_file eq 2">
+	          <include file="../Common/mb/search_bar_account_trade" />
+	      <else/>
+	          <include file="../Common/mb/search_bar_train" />
+	     </if>
+          <div class="selector_set">
+              <label id="choose">条件</label>
+              <volist name="search_line" id="ov">
+                  <a class="selector_item" href="{$ov[1]}">
+                      <em>{$ov[2]}</em>
+                      <i><span class="mui-icon mui-icon-close"></span></i>
+                  </a>
+              </volist>
+              <div class="clear"></div>
+        </div>
+        <div class="list">
+            <ul class="mui-table-view mui-table-view-chevron " id="lists">
+                <volist name="result" id="ov">
+                <li class="mui-table-view-cell mui-media">
+                    <a class="mui-navigate-right" href="{$ov.href}">{$ov.name}</a>
+                    <p><label>商品类型：</label><span>{$ov.type}</span><b>￥{$ov.price}</b></p>
+                    <p><label>平台：</label><span>{$ov.platform}</span></p>
+                </li>
+            </volist>
+		</ul>
+        </div>
+	</div>
+</block>

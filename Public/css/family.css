@@ -1,0 +1,855 @@
+/* line 1, ../sass/pc/content/_family_content.scss */
+.family_info_container {
+  margin: 14px 0 38px 0;
+}
+/* line 3, ../sass/pc/content/_family_content.scss */
+.family_info_container .active {
+  display: block;
+}
+
+/* line 9, ../sass/pc/content/_family_content.scss */
+.family_details {
+  float: left;
+  width: 344px;
+  height: 280px;
+  background-color: #F4F4F4;
+  padding: 30px 0px 0px 54px;
+  font-weight: bold;
+}
+/* line 16, ../sass/pc/content/_family_content.scss */
+.family_details p {
+  margin-bottom: 24px;
+}
+/* line 19, ../sass/pc/content/_family_content.scss */
+.family_details b {
+  font-size: 26px;
+}
+/* line 22, ../sass/pc/content/_family_content.scss */
+.family_details a {
+  width: 140px;
+  height: 31px;
+  line-height: 31px;
+  border: 1px solid #FF6C30;
+  background-color: #FF7044;
+  color: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  display: block;
+  float: left;
+  text-decoration: none;
+}
+/* line 35, ../sass/pc/content/_family_content.scss */
+.family_details span {
+  color: #FF6F36;
+}
+
+/* line 40, ../sass/pc/content/_family_content.scss */
+.family_tab {
+  float: left;
+  width: 272px;
+  height: 310px;
+  background-color: #ffffff;
+}
+
+/* line 47, ../sass/pc/content/_family_content.scss */
+.family_title {
+  background-color: #ffffff;
+  margin-bottom: 2px;
+  height: 47px;
+}
+/* line 51, ../sass/pc/content/_family_content.scss */
+.family_title a {
+  color: #000000;
+  text-decoration: none;
+  display: block;
+  float: left;
+  text-align: center;
+  width: 50%;
+  height: 45px;
+  line-height: 45px;
+  border-bottom: 2px solid #000000;
+}
+/* line 62, ../sass/pc/content/_family_content.scss */
+.family_title .selected {
+  color: #38B334;
+  border-bottom: 2px solid #38B334;
+}
+
+/* line 67, ../sass/pc/content/_family_content.scss */
+.tab_list {
+  background-color: #ffffff;
+  display: none;
+  height: 260px;
+  overflow: hidden;
+}
+/* line 72, ../sass/pc/content/_family_content.scss */
+.tab_list li {
+  text-decoration: none;
+  color: #000000;
+  margin-left: 10px;
+  padding-right: 10px;
+  display: block;
+  padding: 4px 10px 7px 0px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* line 84, ../sass/pc/content/_family_content.scss */
+.introduction {
+  text-indent: 30px;
+  padding: 15px 15px 0px;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+/* line 91, ../sass/pc/content/_family_content.scss */
+.members_info {
+  margin-top: 10px;
+  width: 980px;
+  padding-bottom: 10px;
+  background-color: #ffffff;
+}
+
+/* line 97, ../sass/pc/content/_family_content.scss */
+.ranking_title {
+  width: 265px;
+  background: url("../img/family/hat.png") no-repeat 10px 12px;
+  padding-left: 45px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 2px solid #bbbbbb;
+}
+
+/* line 107, ../sass/pc/content/_family_content.scss */
+hr {
+  color: #38B334;
+  width: 150px;
+  border: 1px solid #8ED18A;
+  position: absolute;
+  margin-top: -2px;
+}
+
+/* line 114, ../sass/pc/content/_family_content.scss */
+.ranking {
+  border-right: 1px solid #bbbbbb;
+}
+
+/* line 119, ../sass/pc/content/_family_content.scss */
+.ranking_ul li {
+  padding-top: 4px;
+  display: block;
+  height: 61px;
+  border-bottom: 1px solid #bbbbbb;
+}
+/* line 126, ../sass/pc/content/_family_content.scss */
+.ranking_ul label {
+  margin-top: -4px;
+  padding-left: 5px;
+  position: absolute;
+  display: block;
+  color: #38B334;
+  font-weight: bold;
+  width: 35px;
+  height: 26px;
+}
+/* line 136, ../sass/pc/content/_family_content.scss */
+.ranking_ul .li1 {
+  background: url("../img/family/family_color.png") no-repeat;
+  color: #FFD92F;
+}
+/* line 140, ../sass/pc/content/_family_content.scss */
+.ranking_ul .li2 {
+  background: url("../img/family/family_color.png") no-repeat 0px -70px;
+  color: #FFD92F;
+}
+/* line 144, ../sass/pc/content/_family_content.scss */
+.ranking_ul .li3 {
+  background: url("../img/family/family_color.png") no-repeat 0px -137px;
+  color: #FFD92F;
+}
+/* line 149, ../sass/pc/content/_family_content.scss */
+.ranking_ul img {
+  float: left;
+  margin-left: 20px;
+  border: 1px solid #bbbbbb;
+}
+
+/* line 155, ../sass/pc/content/_family_content.scss */
+.cz_sum {
+  margin-left: 6px;
+  float: left;
+  width: 140px;
+  font-size: 12px;
+}
+/* line 160, ../sass/pc/content/_family_content.scss */
+.cz_sum p {
+  padding-top: 4px;
+  text-align: center;
+  color: #38B334;
+  height: 28px;
+  font-size: 13px;
+  font-weight: bold;
+}
+/* line 168, ../sass/pc/content/_family_content.scss */
+.cz_sum span {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+/* line 174, ../sass/pc/content/_family_content.scss */
+.send_hb {
+  margin-top: 16px;
+  float: left;
+  width: 86px;
+  text-align: center;
+  height: 22px;
+  line-height: 22px;
+  border: 1px solid #06b33d;
+  border-left-color: #9ec4b1;
+  border-bottom-color: #9EC4B1;
+  font-size: 12px;
+}
+
+/* line 186, ../sass/pc/content/_family_content.scss */
+.members {
+  width: 668px;
+}
+
+/* line 189, ../sass/pc/content/_family_content.scss */
+.members_list_title {
+  width: 623px;
+  background: url("");
+}
+
+/* line 194, ../sass/pc/content/_family_content.scss */
+.members_container {
+  padding: 10px 35px;
+  font-size: 13px;
+  position: relative;
+}
+
+/* line 200, ../sass/pc/content/_family_content.scss */
+.banner {
+  width: 596px;
+  height: 514px;
+}
+
+/* line 204, ../sass/pc/content/_family_content.scss */
+.lists {
+  display: none;
+  height: 516px;
+  width: 594px;
+  float: left;
+  border: 1px solid #06b33d;
+  border-radius: 10px;
+}
+/* line 211, ../sass/pc/content/_family_content.scss */
+.lists span {
+  display: inline-block;
+  float: left;
+}
+/* line 215, ../sass/pc/content/_family_content.scss */
+.lists li {
+  margin: 7px 0px 0px 6px;
+  height: 44px;
+  line-height: 45px;
+}
+/* line 219, ../sass/pc/content/_family_content.scss */
+.lists li img {
+  border: 1px solid #bbbbbb;
+  float: left;
+  display: block;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+/* line 226, ../sass/pc/content/_family_content.scss */
+.lists li a {
+  text-decoration: none;
+  color: #06b33d;
+}
+/* line 231, ../sass/pc/content/_family_content.scss */
+.lists .name {
+  width: 95px;
+  text-align: center;
+}
+/* line 235, ../sass/pc/content/_family_content.scss */
+.lists .time {
+  width: 140px;
+}
+/* line 238, ../sass/pc/content/_family_content.scss */
+.lists .value {
+  width: 162px;
+}
+/* line 241, ../sass/pc/content/_family_content.scss */
+.lists .vip {
+  width: 60px;
+}
+/* line 244, ../sass/pc/content/_family_content.scss */
+.lists .ranking_val {
+  width: 52px;
+}
+
+/* line 249, ../sass/pc/content/_family_content.scss */
+#prev {
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 80px;
+  left: 3px;
+  top: 220px;
+  cursor: pointer;
+  background: url("../img/family/family_page.png") no-repeat -10px 5px;
+}
+
+/* line 260, ../sass/pc/content/_family_content.scss */
+#next {
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 80px;
+  left: 632px;
+  top: 220px;
+  cursor: pointer;
+  background: url("../img/family/family_page.png") no-repeat -41px 5px;
+}
+
+/* line 276, ../sass/pc/content/_family_content.scss */
+.family_slidebox {
+  width: 620px;
+  height: 310px;
+  margin: 20px 0 12px 0px;
+}
+/* line 280, ../sass/pc/content/_family_content.scss */
+.family_slidebox img {
+  width: 620px;
+  height: 310px;
+  border-radius: 5px;
+}
+
+/* line 287, ../sass/pc/content/_family_content.scss */
+.family_create_show {
+  width: 345px;
+  height: 310px;
+  margin: 20px 0 12px 0px;
+  background: #fff;
+}
+/* line 293, ../sass/pc/content/_family_content.scss */
+.family_create_show .family_create {
+  height: 116px;
+  padding-top: 35px;
+  text-align: center;
+}
+/* line 298, ../sass/pc/content/_family_content.scss */
+.family_create_show .family_create p {
+  font-size: 13px;
+  margin-top: 10px;
+  background: url(../img/family/love.png) 90px 2px no-repeat;
+}
+/* line 305, ../sass/pc/content/_family_content.scss */
+.family_create_show .family_gate {
+  height: 143px;
+  padding-left: 5px;
+  padding-top: 8px;
+}
+/* line 309, ../sass/pc/content/_family_content.scss */
+.family_create_show .family_gate .img_container {
+  float: left;
+  border: 1px solid #ededed;
+  width: 165px;
+  height: 130px;
+  text-align: center;
+}
+/* line 315, ../sass/pc/content/_family_content.scss */
+.family_create_show .family_gate .img_container img {
+  margin-top: 15px;
+}
+/* line 319, ../sass/pc/content/_family_content.scss */
+.family_create_show .family_gate .family_message {
+  width: 120px;
+  margin-top: 12px;
+  margin-left: 20px;
+  float: left;
+  text-align: center;
+}
+/* line 325, ../sass/pc/content/_family_content.scss */
+.family_create_show .family_gate .family_message p {
+  font-weight: bold;
+  color: #666;
+  margin-bottom: 8px;
+}
+/* line 330, ../sass/pc/content/_family_content.scss */
+.family_create_show .family_gate .family_message span {
+  font-size: 13px;
+}
+/* line 333, ../sass/pc/content/_family_content.scss */
+.family_create_show .family_gate .family_message a {
+  width: 115px;
+  height: 26px;
+  line-height: 26px;
+  margin-top: 5px;
+  background: #FF7044;
+  border: 1px solid #FF7044;
+  display: block;
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+}
+/* line 349, ../sass/pc/content/_family_content.scss */
+.family_create_show .family_show {
+  height: 160px;
+  overflow: hidden;
+}
+/* line 352, ../sass/pc/content/_family_content.scss */
+.family_create_show .family_show .show_title {
+  line-height: 25px;
+  background: #ededed;
+  color: orange;
+  padding-left: 20px;
+}
+/* line 359, ../sass/pc/content/_family_content.scss */
+.family_create_show .family_show ul li {
+  font-size: 14px;
+  padding: 3.5px;
+  margin-left: 10px;
+  border-bottom: 1px dashed #ededed;
+}
+
+/* line 369, ../sass/pc/content/_family_content.scss */
+.family_list_container {
+  width: 666px;
+  height: 525px;
+  background: #fff;
+  margin-bottom: 20px;
+  /*.family_one{
+    float:left;
+    width:216px;
+    height:239px;
+    border-right:1px solid #ededed;
+    border-top:1px solid #ededed;
+    text-align: center;
+    img{
+      margin-top:14px;
+    }
+    span{
+      display:block;
+      font-size:14px;
+      color:#666;
+      font-weight:bold;
+    }
+    p{
+      padding:0px 10px;
+      font-size:14px;
+      overflow: hidden;
+      white-space:nowrap;
+      text-overflow:ellipsis;
+      color:#ccc;
+    }
+    a{
+      width:150px;
+      font-size:14px;
+      padding:3px;
+      text-decoration: none;
+      color:#666;
+      margin-top:20px;
+      display:inline-block;
+      border:1px solid #65BF5F;
+    }
+  }*/
+}
+/* line 375, ../sass/pc/content/_family_content.scss */
+.family_list_container h3 {
+  line-height: 45px;
+  color: #666;
+  padding-left: 60px;
+  background: url(../img/family/hat.png) 28px 13px no-repeat;
+}
+/* line 381, ../sass/pc/content/_family_content.scss */
+.family_list_container h3 a {
+  font-size: 14px;
+  text-decoration: none;
+  display: block;
+  float: right;
+  padding-right: 30px;
+  color: #000000;
+  font-weight: normal;
+}
+
+/* line 429, ../sass/pc/content/_family_content.scss */
+.family_ranking_list {
+  width: 313px;
+  height: 525px;
+  background: #fff;
+  margin-bottom: 20px;
+  border-left: 1px solid #ededed;
+}
+/* line 437, ../sass/pc/content/_family_content.scss */
+.family_ranking_list h3 {
+  line-height: 45px;
+  color: #666;
+  padding-left: 20px;
+}
+/* line 442, ../sass/pc/content/_family_content.scss */
+.family_ranking_list .ranking_list {
+  background: url(../img/family/family_color.png) no-repeat;
+}
+/* line 444, ../sass/pc/content/_family_content.scss */
+.family_ranking_list .ranking_list .ranking_one {
+  height: 67.5px;
+  border-top: 1px solid #ededed;
+}
+/* line 447, ../sass/pc/content/_family_content.scss */
+.family_ranking_list .ranking_list .ranking_one i {
+  float: left;
+  vertical-align: top;
+  margin-left: 5px;
+  font-weight: bold;
+  color: green;
+}
+/* line 455, ../sass/pc/content/_family_content.scss */
+.family_ranking_list .ranking_list .ranking_one img {
+  margin-left: 8px;
+  margin-top: 6.5px;
+  float: left;
+}
+/* line 460, ../sass/pc/content/_family_content.scss */
+.family_ranking_list .ranking_list .ranking_one div {
+  float: left;
+  width: 120px;
+  height: 60px;
+  text-align: center;
+  margin-left: 3px;
+}
+/* line 466, ../sass/pc/content/_family_content.scss */
+.family_ranking_list .ranking_list .ranking_one div p {
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 15px;
+  color: #4DB34D;
+}
+/* line 472, ../sass/pc/content/_family_content.scss */
+.family_ranking_list .ranking_list .ranking_one div span {
+  font-size: 12px;
+  color: #666;
+}
+/* line 477, ../sass/pc/content/_family_content.scss */
+.family_ranking_list .ranking_list .ranking_one a {
+  float: left;
+  width: 60px;
+  font-size: 12px;
+  padding: 3px;
+  margin-top: 20px;
+  border: 1px solid #65BF5F;
+  color: #666;
+  text-align: center;
+  text-decoration: none;
+  margin-left: 8px;
+}
+
+/* line 494, ../sass/pc/content/_family_content.scss */
+.info_top {
+  background-color: #ffffff;
+}
+
+/* line 497, ../sass/pc/content/_family_content.scss */
+.family_logo {
+  width: 310px;
+  display: table-cell;
+  text-align: center;
+  height: 310px;
+}
+/* line 502, ../sass/pc/content/_family_content.scss */
+.family_logo img {
+  margin-top: 60px;
+}
+
+/* line 508, ../sass/pc/content/_family_content.scss */
+.family_all_container {
+  background-color: #ffffff;
+}
+
+/* line 511, ../sass/pc/content/_family_content.scss */
+.organization_list {
+  padding: 0px 0px 20px 10px;
+  margin: 20px 0px 38px 0px;
+  background-color: #ffffff;
+}
+
+/* line 516, ../sass/pc/content/_family_content.scss */
+.number_one {
+  background-color: #ffffff;
+  float: left;
+  width: 485px;
+  height: 350px;
+}
+/* line 521, ../sass/pc/content/_family_content.scss */
+.number_one .logo_pic {
+  position: relative;
+  width: 448px;
+  height: 240px;
+  border: 1px solid #cccccc;
+  text-align: center;
+  padding-top: 20px;
+  overflow: hidden;
+}
+/* line 529, ../sass/pc/content/_family_content.scss */
+.number_one .logo_pic .info {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  height: 45px;
+  line-height: 45px;
+  position: absolute;
+  color: #ffffff;
+  top: 260px;
+}
+/* line 537, ../sass/pc/content/_family_content.scss */
+.number_one .logo_pic .info span {
+  float: left;
+  padding-left: 52px;
+}
+/* line 541, ../sass/pc/content/_family_content.scss */
+.number_one .logo_pic .info .praise {
+  cursor: pointer;
+  padding-left: 15px;
+  background: url("../img/family/praise.png") no-repeat 0px 4px;
+}
+/* line 548, ../sass/pc/content/_family_content.scss */
+.number_one a {
+  display: block;
+  float: left;
+  width: 173px;
+  height: 40px;
+  line-height: 40px;
+  background-color: #ff4f00;
+  border: 1px solid #ff2222;
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  margin: 25px 0px 0px 30px;
+}
+/* line 561, ../sass/pc/content/_family_content.scss */
+.number_one .member_num {
+  width: 218px;
+  height: 86px;
+  float: left;
+  padding-left: 11px;
+}
+/* line 566, ../sass/pc/content/_family_content.scss */
+.number_one .member_num span {
+  font-size: 12px;
+  display: block;
+  float: left;
+  width: 31%;
+  text-align: center;
+}
+/* line 573, ../sass/pc/content/_family_content.scss */
+.number_one .member_num .existing {
+  text-align: left;
+  color: #ff4f00;
+}
+/* line 577, ../sass/pc/content/_family_content.scss */
+.number_one .member_num .sum_all {
+  color: #666666;
+}
+/* line 580, ../sass/pc/content/_family_content.scss */
+.number_one .member_num .residue {
+  text-align: right;
+  color: #00a0e9;
+}
+/* line 584, ../sass/pc/content/_family_content.scss */
+.number_one .member_num label {
+  color: #bbbbbb;
+}
+/* line 588, ../sass/pc/content/_family_content.scss */
+.number_one .progress_all {
+  margin-top: 25px;
+  width: 205px;
+  background-color: #cccccc;
+}
+/* line 592, ../sass/pc/content/_family_content.scss */
+.number_one .progress_all p {
+  height: 7px;
+  background-color: #ff4f00;
+}
+
+/* line 599, ../sass/pc/content/_family_content.scss */
+.list_row {
+  width: 242px;
+  height: 164px;
+  margin-bottom: 15px;
+}
+/* line 603, ../sass/pc/content/_family_content.scss */
+.list_row .logo_pic {
+  padding-top: 8px;
+  width: 227px;
+  height: 112px;
+}
+/* line 607, ../sass/pc/content/_family_content.scss */
+.list_row .logo_pic .info {
+  height: 27px;
+  line-height: 27px;
+  font-size: 12px;
+  top: 120px;
+}
+/* line 612, ../sass/pc/content/_family_content.scss */
+.list_row .logo_pic .info span {
+  padding-left: 30px;
+}
+/* line 615, ../sass/pc/content/_family_content.scss */
+.list_row .logo_pic .info .praise {
+  background: url("../img/family/praise.png") no-repeat 0px 1px;
+}
+/* line 620, ../sass/pc/content/_family_content.scss */
+.list_row a {
+  width: 84px;
+  height: 21px;
+  line-height: 21px;
+  margin: 8px 0px 0px 2px;
+  font-size: 12px;
+}
+/* line 628, ../sass/pc/content/_family_content.scss */
+.list_row .member_num {
+  width: 128px;
+  height: 45px;
+  padding-left: 5px;
+}
+/* line 633, ../sass/pc/content/_family_content.scss */
+.list_row .progress_all {
+  margin-top: 8px;
+  width: 120px;
+}
+/* line 636, ../sass/pc/content/_family_content.scss */
+.list_row .progress_all p {
+  height: 3px;
+}
+
+/* line 643, ../sass/pc/content/_family_content.scss */
+.family_one {
+  width: 212px;
+  height: 220px;
+  padding: 2px;
+  border: 1px solid #cccccc;
+  margin: 0px 3px 25px 0px;
+}
+/* line 649, ../sass/pc/content/_family_content.scss */
+.family_one .logo_pic {
+  padding-top: 8px;
+  width: 210px;
+  height: 112px;
+  border: none;
+}
+/* line 655, ../sass/pc/content/_family_content.scss */
+.family_one a {
+  margin: 15px 0px 0px 45px;
+  width: 120px;
+}
+/* line 659, ../sass/pc/content/_family_content.scss */
+.family_one .member_num {
+  width: 205px;
+  padding-left: 5px;
+}
+/* line 663, ../sass/pc/content/_family_content.scss */
+.family_one .progress_all {
+  margin-top: 15px;
+  width: 205px;
+}
+
+/* line 671, ../sass/pc/content/_family_content.scss */
+.family_add .family_big_logo {
+  width: 310px;
+  height: 210px;
+  float: left;
+}
+/* line 675, ../sass/pc/content/_family_content.scss */
+.family_add .family_big_logo p {
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #666;
+}
+/* line 682, ../sass/pc/content/_family_content.scss */
+.family_add .family_big_logo img {
+  margin-left: 10px;
+  margin-top: -15px;
+}
+/* line 689, ../sass/pc/content/_family_content.scss */
+.family_add .family_name {
+  width: 400px;
+  float: left;
+  margin-top: 50px;
+}
+/* line 695, ../sass/pc/content/_family_content.scss */
+.family_add .family_small_logo {
+  clear: both;
+  width: 91%;
+  margin: 0 auto;
+  height: 130px;
+  overflow: auto;
+  border: 1px solid #ededed;
+  text-align: center;
+}
+/* line 703, ../sass/pc/content/_family_content.scss */
+.family_add .family_small_logo ul {
+  margin-left: 3px;
+}
+/* line 705, ../sass/pc/content/_family_content.scss */
+.family_add .family_small_logo ul li {
+  float: left;
+  border: 1px solid #ededed;
+  margin: 4px 2px;
+}
+/* line 709, ../sass/pc/content/_family_content.scss */
+.family_add .family_small_logo ul li img {
+  width: 80px;
+  cursor: pointer;
+}
+/* line 717, ../sass/pc/content/_family_content.scss */
+.family_add .family_introduce {
+  margin-top: 20px;
+  margin-left: 40px;
+}
+/* line 720, ../sass/pc/content/_family_content.scss */
+.family_add .family_introduce h5 {
+  font-size: 14px;
+  font-weight: bold;
+  color: #666;
+}
+/* line 725, ../sass/pc/content/_family_content.scss */
+.family_add .family_introduce textarea {
+  width: 90%;
+  height: 100px;
+  padding: 10px;
+  box-shadow: 1px 1px 10px #ccc;
+  resize: none;
+}
+/* line 734, ../sass/pc/content/_family_content.scss */
+.family_add button {
+  width: 110px;
+  height: 40px;
+  margin-left: 40px;
+  background: #5BB85D;
+  border: 1px solid #5BB85D;
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 8px;
+}
+
+/* line 747, ../sass/pc/content/_family_content.scss */
+.add_family_container {
+  width: 90%;
+  margin: 0 auto;
+}
+/* line 750, ../sass/pc/content/_family_content.scss */
+.add_family_container span {
+  font-size: 14px;
+  display: block;
+  padding: 10px 0px;
+  text-align: center;
+  margin-bottom: 15px;
+}

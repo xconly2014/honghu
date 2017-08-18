@@ -1,0 +1,37 @@
+.import_price{
+    float:right;
+    color:red;
+}
+
+
+.btn_two{
+  float:right;
+  margin-right:-6px;
+}
+.btn_two a{
+  display:block;
+  color:#fff;
+
+}
+
+.mui-table-view .mui-media-object{
+  height:60px;
+  max-width: 60px;
+}
+.sch_middle{
+  float:left;
+  width: 45%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  .sch_apple{
+    background: url(../img/apple_sch.png) 60px 0px no-repeat;
+    background-size:20px 20px;
+  }
+  .download_url{
+    position: relative;
+    top:5px;
+  }
+
+}

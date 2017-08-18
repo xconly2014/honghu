@@ -1,0 +1,66 @@
+<extend name="../Common/admin_base" />
+
+<block name="extra_js">
+    <script>
+    $().ready(function(){
+        $('span').click(function(){
+            var organization_id = $(this).attr('alt');
+            url = 'ajax_recommand';
+            var thisSpan = $(this);
+
+            $.post(url,{oid:organization_id},function(data){
+                if(data['state'] == 'true'){
+                    if(data['data'] == 1){
+                        thisSpan.addClass('star_span');
+                    }
+                    if(data['data'] == 0){
+                        thisSpan.removeClass('star_span');
+                    }
+                }
+            });
+        });
+    });
+    </script>
+</block>
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div class="news_list_container">
+                <div class="table_container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>堂会名</th>
+                                <th>堂会logo</th>
+                                <th>创建时间</th>
+                                <th>人数/总人数</th>
+                                <th>总贡献值</th>
+                                <th>查看成员贡献值</th>
+                                <th width="40">推荐</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <foreach name="family_list" item="row">
+                                <tr>
+                                    <td>{$row.name}</td>
+                                    <td>
+                                        <img src="__PUBLIC__/img/family/logo/{$row.pic_name}" alt="堂会logo" width="75" />
+                                    </td>
+                                    <td>{$row.created_date}</td>
+                                    <td>{$row.member_count}/{$row.max_count}</td>
+                                    <td>{$row.sum}</td>
+                                    <td>
+                                        <a href="{:U('Admin/Family/contribute_list',array('organization_id'=>$row['id']))}">查看</a>
+                                    </td>
+                                     <td class="star_td"><span class="{$row.star_class}" alt="{$row.id}"></span></td>
+                                </tr>
+                            </foreach>                               
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>

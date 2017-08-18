@@ -1,0 +1,54 @@
+<extend name="../Common/_mb_layout" />
+
+
+<block name="header_bar">
+    <h1 class="mui-title">充值套餐详情</h1>
+</block>
+
+<block name="main_content">
+    <div class="main_container">
+        <form action="{$submit_url}" method="post">
+            <ul class="mui-table-view">
+                <li class="mui-table-view-cell">
+                    <label>游戏名：</label><span>{$data.game}</span>
+                </li> 
+                
+                <li class="mui-table-view-cell">
+                    <label>总数量：</label><span>{$data.sum}</span>
+                </li> 
+
+                <li class="mui-table-view-cell">
+                    <label>面额：</label><span>{$data.option}</span>
+                </li>
+
+                <li class="mui-table-view-cell">
+                    <label>原价：</label><span>{$data.real_price}</span>
+                </li>
+
+                <li class="mui-table-view-cell">
+                    <label>售价：</label><span>{$data.price}</span>
+                </li>
+
+                <if condition="$data.active eq 1">
+                    <li class="mui-table-view-cell">
+                        <label>剩余数量：</label><span>{$data.result}</span>
+                    </li>
+
+                    <li class="mui-table-view-cell">
+                        <label>购买数量：</label>
+                        <div class="mui-numbox" data-numbox-min="{$data.miniNum}" data-numbox-max="{$data.result}">
+                            <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+                            <input class="mui-numbox-input" type="number" name="number" value="{$data.miniNum}" />
+                            <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+                        </div>
+                    </li>
+                </if>
+            </ul>
+            <if condition="$data.active eq 1">
+                <div class="mui-button-row">
+                    <button class="mui-btn mui-btn-primary mui-btn-block">购买</button>
+                </div>
+            </if>
+        </form>
+    </div>
+</block>

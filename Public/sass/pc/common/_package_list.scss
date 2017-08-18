@@ -1,0 +1,32 @@
+.game_articles  {
+  font-size: 14px;
+  width:264px;
+  height: 570px;
+}
+
+.game_picture{
+  height: 165px;
+  background: url(../img/game_pic_shadow.png) no-repeat;
+  background-position: bottom;
+  img{ 
+    border:2px solid #666;
+  }
+}
+
+.nva{
+  height: 33px;
+  line-height: 33px;
+  text-align: center;
+  font-size: 16px;
+  background: url(../img/nav_bgpic.png);
+  font-weight: bold;
+  color: #fff;
+  border-bottom: 1px solid #F44609;
+}
+
+.show_hidden{
+  border:1px solid #FFA634;
+  height: 371px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}

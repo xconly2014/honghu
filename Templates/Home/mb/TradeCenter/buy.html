@@ -1,0 +1,50 @@
+<extend name ="../Common/_mb_layout" />
+
+
+<block name="header_bar">
+    <h1 class="mui-title">{$title}</h1>
+</block>
+
+<block name="extra_js"> 
+	<script type="text/javascript" src="__PUBLIC__/js/Plugin/IphoneSlideNav/slidernav.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#slider').sliderNav();
+            $('#transformers').sliderNav({items:['autobots','decepticons'], debug: true, height: '300', arrows: false});
+        });
+    </script>
+</block>
+
+<block name="extra_css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/mb/slidernav.css" />
+</block>
+
+<block name="main_content">
+    
+    <div class="main_container">
+         <div id="slider">
+            <div class="slider-content">
+                <ul style="padding-left: 0px;">
+                    <foreach name="game_list" item="v" key="letter">
+                        <li id="{$letter}"><a name="{$letter}" class="title">{$letter}</a>
+                            <ul style="padding-left: 0px;">
+                                <foreach name="v" item="game_obj">
+                                    <notempty name="game_obj">
+                                        <li>
+                                            <if condition="$type eq '2'">
+                                                <a href="{:U('Home/TradeCenter/index',array('gameId'=>$game_obj['id'],'type'=>$type))}" >{$game_obj.name}</a>
+                                            <else/>
+                                                <a href="{:U('Home/TradeCenter/index',array('gameId'=>$game_obj['id']))}" >{$game_obj.name}</a>
+                                            </if>
+                                            
+                                        </li>
+                                    </notempty>
+                                </foreach>
+                            </ul>
+                        </li>
+                    </foreach>
+                </ul>
+            </div>
+        </div>
+    </div>
+</block>

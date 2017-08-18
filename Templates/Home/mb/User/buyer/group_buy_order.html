@@ -1,0 +1,33 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="header_bar">
+    <h1 class="mui-title">一元购订单列表</h1>
+</block>
+
+<block name="extra_css">
+    <link rel="stylesheet" href="__PUBLIC__/css/mb_user.css" />
+</block>
+<block name="main_content">
+    <div class="main_container">
+        <ul class="mui-table-view">
+            <foreach name="order_list" item="list">
+                <li class="mui-table-view-cell mui-collapse">
+                    <a class="mui-navigate-right" href="#">{$list.title}</a>
+                    <ul class="mui-table-view mui-table-view-chevron">
+                        <li class="mui-table-view-cell"><span>订单号：</span>{$list.id}</li>
+                        <li class="mui-table-view-cell"><span>购买时间：</span>{$list.created_date}</li>
+                        <li class="mui-table-view-cell"><span>截止时间：</span>{$list.dued_date}</li>
+                        <li class="mui-table-view-cell"><span>购买人次：</span>{$list.real_payment}人次</li>
+                        <li class="mui-table-view-cell mui-media">
+                            <div><b>云购码：</b><a href="{:U('GroupBuyCz/buy/id/'.$list['group_buy_cz_id'])}" class="red">查看商品</a></div>
+                            <foreach name="list.code_list" item="row">
+                                <label class="codes">{$row}</label>
+                            </foreach>
+                        </li>
+                    </ul>
+                </li>
+            </foreach>
+        </ul>
+       <div class="page">{$show}
+    </div>
+</block>

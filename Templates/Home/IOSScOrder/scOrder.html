@@ -1,0 +1,82 @@
+<extend name="../Common/sc_base" />
+<block name="extra_js">
+    <script type="text/javascript" src="__PUBLIC__/js/lib/dropdown.js"></script>
+</block>
+
+<block name="extra_css">
+    <style>
+        .center_content{
+	        margin-bottom: 38px;
+        }
+    </style>
+</block>
+
+
+<block name="content">
+
+    <div class="row_container">
+        <div class="center_content">
+        <div class='content_left'>
+            <p class="static_field">
+                <label class="form_key">游戏：</label>
+                <label class="form_value">{$gameName}</label>
+            </p>
+            <p class="static_field">
+                <label class="form_key">套餐：</label>
+                <label class="form_value">{$operator}&nbsp;{$details}</label>
+            </p>
+            <p class="static_field">
+                <label class="form_key">平台：</label>
+                <label class="form_value">{$platform}</label>
+            </p>
+            <p class="static_field">
+                <label class="form_key">单价：</label>
+                <label class="form_value">{$scOrderRes.real_payment}元</label>
+            </p>
+            <p class="static_field">
+                <label class="form_key">小计：</label>
+                <label class="form_value">{$scOrderRes.real_payment}元</label>
+            </p>
+        </div>
+        <div class='content_right'>
+            <p class="static_field">
+                <label class="form_key">游戏账号：</label>
+                <label class="form_value">{$accountInfo.account}</label>
+            </p>
+            <p class="static_field">
+                <label class="form_key">游戏角色：</label>
+                <label class="form_value">{$accountInfo.role}</label>
+            </p>
+            <p class="static_field">
+                <label class="form_key">游戏区服：</label>
+                <label class="form_value">{$accountInfo.qufu}</label>
+            </p>
+        </div>
+        <div class="clear"></div>
+            <p class="static_field">
+            <label class="form_key"></label>
+            
+                <span class="sum_text">
+                                         您需要支付<label class="important_label">{$scOrderRes.real_payment}</label>&nbsp;元
+                </span>
+            </p>
+            <form action="{$url}" method="post">
+            <p class="input_field">
+                <label class="form_info">&nbsp;</label>
+                <button type="submit">马上支付</button> 
+            </p>
+            </form>
+        </div>
+    </div>
+</block>
+
+
+<block name="extra_js">
+    <script type="text/javascript">
+        step = 2;
+        $().ready(function(){
+            setProgressBar();
+        });
+
+    </script>
+</block>

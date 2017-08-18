@@ -1,0 +1,39 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="header_bar">
+    <h1 class="mui-title">话费卡</h1>
+</block>
+
+<block name="extra_css">
+    <link rel="stylesheet" href="__PUBLIC__/css/mb_user.css" />
+</block>
+
+<block name="extra_js">
+    <script>
+    $().ready(function(){
+    	$('#payments').change(function(){
+    		$(".payment").text(Math.floor($(this).val()*{$discount}));
+    	});
+    });
+    </script>
+</block>
+
+
+<block name="main_content">
+    <div class="main_container">
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell mui-media">
+                <form action="{:U('')}" method="post">
+                    <select name='payments' style="border:1px solid #ccc!important;" id="payments">
+                        <option value=''>请选择话费卡面额</option>
+                        <option value='30'>30元</option>
+                        <option value='50'>50元</option>
+                        <option value='100'>100元</option>
+                    </select>
+                    <span>可充虎币数：</span><b class='payment'>&nbsp;</b>个<span id='instructions'>(100元=95虎币)</span>
+                    <button class="mui-btn mui-btn-primary mui-btn-block">确认</button>
+                </form>
+            </li>
+        </ul>   
+    </div>
+</block>

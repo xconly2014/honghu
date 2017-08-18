@@ -1,0 +1,72 @@
+<extend name="../Common/admin_base" />
+
+<block name="extra_css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/Chosen/chosen.min.css">
+</block>
+
+<block name="extra_js">
+    <script src="__PUBLIC__/js/admin/game.js"></script>
+    <script src="__PUBLIC__/js/Plugin/Chosen/chosen.jquery.min.js"></script>
+    <script type="text/javascript">
+    $().ready(function(){
+    	$("#selected").chosen({no_results_text: "游戏列表中不存在"});
+    });
+  </script>
+</block>
+
+<block name="content">
+<div class="content_container">
+	<div class="content">
+		<div class="game_strategy_container">
+			<div class="form_container">
+				<form action="{:U('Admin/IOSSc/sc_insert')}" method="post" class="common_form container" id="IOSScAdd">
+					<p>新上架首冲号</p>
+					<li class="required">
+						<label>游戏名字：</label>
+						<select name="game_id"  data-placeholder="请选择游戏" class="chosen-select"  id="selected" tabindex="2" style="width:212px;">
+							<option value=""></option>
+							<foreach name="gameRes" item="gameRes">
+							<option value="{$gameRes.id}">{$gameRes.name}</option>
+							</foreach>
+						</select>
+					</li>
+					<li class="required">
+						<label>标题：</label>
+						<input type="text" name="details" />
+					</li>
+					<li class="required">
+						<label>原价：</label>
+						<input type="text" name="price" />
+					</li>
+					<!-- <li class="required">
+						<label>游戏币数：</label>
+						<input type="text" name="currency_num" />
+					</li> -->
+					<li class="required">
+						<label>折扣：</label>
+						<input type="text" name="discount" />
+					</li>
+					<li class="required">
+						<label>总数量：</label>
+						<input type="text" name="amount" />
+					</li>
+					<li class="required">
+						<label>销售数量：</label>
+						<input type="text" name="sell_amount" />
+					</li>
+					<li>
+                        <button type="submit">添加</button>
+                        <button type="reset">取消</button>
+                    </li>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+</block>
+
+<block name="footer">
+<div class="footer">
+	<p>广州鸿鹄网络科技有限公司</p>
+</div>
+</block>

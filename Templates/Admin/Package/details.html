@@ -1,0 +1,62 @@
+<extend name="../Common/admin_base" />
+
+<!-- <block name="extra_js">
+</block> -->
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div class="game_strategy_container">
+                <div class="common_form container">
+                    <p>代练套餐订单（代练师）</p>
+                    <li class="static_field">
+                        <label class="form_key">标题：</label>
+                        <label class="form_value">{$row.title}</label>
+                    </li>
+                    <li class="static_field">
+                        <label class="form_key">游戏：</label>
+                        <label class="form_value">{$row.game}</label>
+                    </li>
+                    <li class="static_field">
+                        <label class="form_key">平台：</label>
+                        <label class="form_value">{$row.platform}</label>
+                    </li>
+                    <notempty name="row.operator">
+	                        <li class="static_field">
+	                            <label class="form_key">客户端：</label>
+	                            <label class="form_value">{$row.operator}</label>
+	                        </li>
+	                    </notempty>
+                    <li class="static_field">
+                        <label class="form_key">价钱：</label>
+                        <label class="form_value">{$row.price}元</label>
+                    </li>
+                    <li class="static_field">
+                        <label class="form_key">保证金：</label>
+                        <label class="form_value">{$row.security}元</label>
+                    </li>
+                    <li class="static_field">
+                        <label class="form_key">代练时间：</label>
+                        <label class="form_value">{$row.time}天</label>
+                    </li>
+                    <li class="static_field">
+                        <label class="form_key">支付方式：</label>
+                        <label class="form_value">{$row.pay_way}</label>
+                    </li>
+                    <li class="static_field">
+                        <label class="form_key">支付时间：</label>
+                        <label class="form_value">{$row.pay_time}</label>
+                    </li>
+                    <li class="static_field">
+                        <label class="form_key">联系方式：</label>
+                        <label class="form_value">{$row.contact}</label>
+                    </li>   
+                    <li class="static_field">
+                        <label class="form_key"></label>
+                        <button onClick="javascript :history.back(-1);">返回</button>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>

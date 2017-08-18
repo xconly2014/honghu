@@ -1,0 +1,105 @@
+<extend name="../Common/admin_base" />
+
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div class="game_strategy_container">
+                <div class="common_form">
+                    <p>代练套餐订单详情</p>
+	                <div class='left_info'>
+	                    <h4>套餐信息</h4>
+	                    <li class="static_field">
+	                        <label class="form_key">标题：</label>
+	                        <label class="form_value">{$package.title}</label>
+	                    </li>
+	                    <li class="static_field">
+	                        <label class="form_key">游戏：</label>
+	                        <label class="form_value">{$package.game}</label>
+	                    </li>
+	                    <li class="static_field">
+	                        <label class="form_key">平台：</label>
+	                        <label class="form_value">{$package.platform}</label>
+	                    </li>
+	                    <notempty name="package.operator">
+	                        <li class="static_field">
+	                            <label class="form_key">客户端：</label>
+	                            <label class="form_value">{$package.operator}</label>
+	                        </li>
+	                    </notempty>
+	                    <li class="static_field">
+	                        <label class="form_key">状态：</label>
+	                        <label class="form_value">{$package.state}</label>
+	                    </li>
+	                    <li class="static_field">
+	                        <label class="form_key">区服：</label>
+	                        <label class="form_value">{$package.qufu}</label>
+	                    </li>
+	                    <li class="static_field">
+	                        <label class="form_key">价钱：</label>
+	                        <label class="form_value">{$package.price}</label>
+	                    </li>
+	                    <li class="static_field">
+	                        <label class="form_key">保证金：</label>
+	                        <label class="form_value">{$package.security}</label>
+	                    </li>
+	                    <li class="static_field">
+	                        <label class="form_key">承若完成时间：</label>
+	                        <label class="form_value">{$package.time}</label>
+	                    </li>                     
+	                    <li class="static_field">
+	                        <label class="form_key">联系方式：</label>
+	                        <label class="form_value">{$package.contact}</label>
+	                    </li>
+                    </div>
+                    <div class="right_info">
+                        <h4>需求信息</h4>
+	                    <li class="static_field">
+	                        <label class="form_key">账号：</label>
+	                        <label class="form_value">{$account.account}</label>
+	                    </li>
+	                    <li class="static_field">
+	                        <label class="form_key">密码：</label>
+	                        <label class="form_value">{$account.password}</label>
+	                    </li>
+	                    <li class="static_field">
+	                        <label class="form_key">平台：</label>
+	                        <label class="form_value">{$account.platform}</label>
+	                    </li>
+	                    <notempty name="account.operator">
+	                        <li class="static_field">
+	                            <label class="form_key">客户端：</label>
+	                            <label class="form_value">{$account.operator}</label>
+	                        </li>
+	                    </notempty>
+	                    <li class="static_field">
+	                        <label class="form_key">区服：</label>
+	                        <label class="form_value">{$account.qufu}</label>
+	                    </li>
+	                    <li class="static_field">
+	                        <label class="form_key">角色：</label>
+	                        <label class="form_value">{$account.role}</label>
+	                    </li>
+	                    <li class="static_field">
+	                        <label class="form_key">当前状态：</label>
+	                        <label class="form_value">{$account.role_details}</label>
+	                    </li> 
+	                    <li class="static_field">
+	                        <label class="form_key">期望状态：</label>
+	                        <label class="form_value">{$account.role_result}</label>
+	                    </li> 
+	                    <li class="static_field">
+	                        <label class="form_key">联系方式：</label>
+	                        <label class="form_value">{$account.contact_way}</label>
+	                    </li>  
+	                </div>  
+                    <li class="static_field">
+                        <label class="form_key"></label>
+                        <label class="form_key"></label>
+                        <button onClick="javascript :history.back(-1);">返回</button>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>

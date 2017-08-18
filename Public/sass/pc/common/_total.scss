@@ -1,0 +1,35 @@
+.total{
+  font-size:14px;
+  height: 40px;
+  border-bottom:1px dashed #ccc;
+
+  p{
+    padding-left:20px;
+    padding-bottom: 10px;
+    b{
+      color:red;
+    }
+    a{
+      margin-left:500px;
+      text-decoration: none;
+      &:hover{
+        color:orange;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.p_credits {
+  margin: 10px 20px 0 0;
+  display: inline;
+  background:url(../img/dollar.png) no-repeat;
+  float: right; 
+}
+
+.p_hb  {
+  margin: 10px 20px 0 20px;
+  display: inline;
+  float: left;
+  background:url(../img/hubi.png) no-repeat;
+}

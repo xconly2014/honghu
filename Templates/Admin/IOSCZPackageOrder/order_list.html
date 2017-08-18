@@ -1,0 +1,74 @@
+<extend name="../Common/admin_base" />
+
+
+<block name="extra_js">
+    <script type="text/javascript" src="__PUBLIC__/js/admin/change_order_state.js"></script>
+    <script>
+        $().ready(function(){        	
+        	var url = "{:U('Admin/IOSCZPackageOrder/ajax_edit_state')}";
+        	change_state(url);
+        });
+    </script>
+</block>
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div class="cz_order_ios">
+                <div class="table_bar">
+                    <div class="search_box_container">
+                        <div class="search_box">
+                            <form action="{:U('Admin/IOSCZPackageOrder/order_list')}" method="get">
+                                <input type="text" placeholder="请输入充值套餐id" name="packageId">
+                                <button type="submit">搜索</button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table_container">
+                    <table class="data-table">
+                        <thead>
+                        <tr>
+                            <th>订单号</th>
+                            <th>游戏</th>
+                            <th>充值面额</th>
+                            <th>购买数量</th>
+                            <th>付款方式</th>
+                            <th>下单时间</th>
+                            <th width="110px;">状态</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <volist name="orderRes" id="list">
+                            <tr id="row_{$list.id}">
+                                <td>{$list.id}</td>
+                                <td>{$list.name}</td>
+                                <td>{$list.option_text}</td>
+                                <td>{$list.bought_num}</td>
+                                <td>{$list.pay_way}</td>
+                                <td>{$list.pay_time}</td>
+                                <td>
+                                    <a href="javascript:void(0);" class="state">{$list.state}</a>
+                                    <select name="state" class="{$list.id}" style="display:none">
+                                        <foreach name="order_state_text" key="state_val" item="state_text">
+                                        <option value="{$state_val}">{$state_text}</option>
+                                    </foreach>
+                                    </select>   
+                                </td>
+                                
+                                <td>
+                                    <a href="{:U('Admin/IOSCZPackageOrder/details',array('id'=>$list['id']))}">订单查看</a>
+                                </td>
+                            </tr>
+                        </volist>
+                        </tbody>
+                    </table>
+                    <div class="page">{$show}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>

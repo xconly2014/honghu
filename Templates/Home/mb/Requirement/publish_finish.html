@@ -1,0 +1,39 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="header_bar">
+    <h1 class="mui-title">付款成功</h1>
+</block>
+
+<block name="main_content">
+    <div class="main_container">
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell mui-media">
+                <a href="#">
+                    <img class="mui-media-object mui-pull-left" src="__PUBLIC__/img/finish.png">
+                    <div class="mui-media-body">
+                        <span style="color:green;font-size:20px">付款成功</span>
+                        <p class='mui-ellipsis'>若10分钟内未收到通知，可凭 <b style="color:red;">订单号 {$requirement_order_info.id}</b>咨询客服</p>
+                    </div>
+                </a>
+            </li>
+
+            <li class="mui-table-view-cell mui-collapse mui-active">
+                <a class="mui-navigate-right" href="#">订单详情</a>
+                <ul class="mui-table-view mui-table-view-chevron">
+                    <li class="mui-table-view-cell">
+                        <label>订单号：</label><span>{$requirement_order_info.id}</span>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        <label>游戏：</label><span>{$requirement_order_info.game_name}</span>
+                    </li>
+                    <li class="mui-table-view-cell">
+                       <label>需求：</label><span>{$requirement_order_info.title}</span>
+                    </li>
+                    <li class="mui-table-view-cell">
+                       <label>已付代练费用：</label><span>{$requirement_order_info.money}</span>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</block>

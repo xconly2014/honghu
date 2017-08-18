@@ -1,0 +1,49 @@
+<extend name="../Common/admin_base" />
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div class="friend_link_list_container">
+                <div class="table_bar">
+                    <a class="a_style_button" href="{:U('Admin/FriendLink/write_friend_link')}">添加友链</a>
+                    <div class="search_box_container">
+                        <div class="search_box">
+                            <form action="{:U()}" method="post">
+                                <input type="text" placeholder="请输入友链名关键字" name="name">
+                                <button type="submit">搜索</button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table_container">
+                    <table class="data-table">
+                        <thead>
+                        <tr>
+                            <th>编号</th>
+                            <th>友链名</th>
+                            <th>友链地址</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <volist name="friend_link_list" id="vo">
+                            <tr id="row_{$vo.id}">
+                                <td>{$vo.id}</td>
+                                <td>{$vo.name}</td>
+                                <td>{$vo.url}</td>
+                                <td>
+                                    <a  onclick="return confirm('确定删除吗')" href="{:U('Admin/FriendLink/del_friend_link', array('id'=>$vo['id']))}">删除</a>
+                                </td>
+                            </tr>
+                        </volist>
+                        </tbody>
+                    </table>
+                    <div class="page">{$show}</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</block>

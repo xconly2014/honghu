@@ -1,0 +1,23 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="header_bar">
+    <h1 class="mui-title">帮助中心</h1>
+</block>
+
+<block name="main_content">
+    <div class="main_container">
+         <ul class="mui-table-view mui-table-view-chevron">
+             <foreach name="help_list" item="row">
+                 <li class="mui-table-view-cell mui-collapse"><a class="mui-navigate-right" href="#">{$row.name}</a>
+                        <ul class="mui-table-view mui-table-view-chevron">
+                            <foreach name="row['article']" item="v">                               
+                                <li class="mui-table-view-cell">
+                                    <a class="mui-navigate-right" href="{:U('Home/Help/index', array('id'=>$v['id']))}">{$v.name}</a>
+                                </li>
+                            </foreach>                   
+                        </ul>
+                    </li>
+             </foreach>
+         </ul>
+    </div>
+</block>

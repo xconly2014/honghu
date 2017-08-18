@@ -1,0 +1,69 @@
+.singer_r_img {
+  float:left;
+  display:block;
+  width:114px;
+  height:52px;
+  background:url(../img/account_center/sing_week.gif) right 2px no-repeat;
+  vertical-align:middle;
+  float:right;
+  *margin-bottom:-10px;
+
+  &:hover  {
+    background-position:right -53px;
+    text-decoration:none;
+  }
+
+  span {
+    margin-left:14px;
+    font-size:18px;
+    display: block;
+    font-family:'Hiragino Sans GB','Microsoft YaHei',sans-serif !important;
+    font-weight:700;
+    color:#165379;
+  }
+
+  &.current  {
+    background:url(../img/account_center/sing_sing.gif) no-repeat 0 2px;
+  }
+}
+.singer_l_cont  {
+  float:left;
+  height:50px;
+  background:url(../img/account_center/sing_per.gif) no-repeat left 12px;
+  text-indent:23px;
+  font-size:16px;
+}
+#week_day{
+  color: #165379;
+  font-size: 18px;
+}
+
+.sign table{border-collapse: collapse;border-spacing: 0;width:100%;}
+.sign th,.sign td {width: 30px;height: 40px;text-align: center;line-height: 40px;border:1px solid #e3e3e3;}
+.sign th {font-size: 16px;}
+.sign td {color: #404040;vertical-align: middle;}            
+.sign .on {background: url(../img/account_center/sign_have.gif) no-repeat center;}
+.calendar_month_next,.calendar_month_prev{width: 34px;height: 40px;cursor: pointer;background:url(../img/account_center/sign_arrow.png) no-repeat;}
+.calendar_month_next {float: right;background-position:-42px -6px;}
+.calendar_month_span {display: inline;line-height: 40px;font-size: 16px;color: #656565;letter-spacing: 2px;font-weight: bold;}
+.calendar_month_prev {float: left;background-position:-5px -6px;}
+.sign_succ_calendar_title {text-align: center;width:398px;border-left:1px solid #e3e3e3;border-right:1px solid #e3e3e3;background:#fff;}
+.sign_main {border-top:1px solid #e3e3e3;font-family: "Microsoft YaHei",SimHei;}
+#sign_layer{display: none;width: 400px;}
+
+.sign_msg{
+  b{
+    color:red;
+  }
+  p{
+    color:red;
+    font-size:12px;
+    a{
+      text-decoration: none;
+      color:orange;
+    }
+  }
+  li{
+    list-style-type: disc;
+  }
+}

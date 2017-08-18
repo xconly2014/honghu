@@ -1,0 +1,32 @@
+<extend name="../Common/admin_base" />
+
+<block name="extra_js">
+    
+</block>
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div class="friend_link_container">
+                <form class="common_form container" id='FriendLinkAdd' action="{:U('Admin/FriendLink/write_friend_link')}" method="post">
+                    <p>添加友链</p>
+                    <li class="required">
+                        <label>友链名</label>
+                        <input type="text" name="name">
+                    </li>
+                    
+                    <li class="required">
+                        <label>友链地址</label>
+                        <input type="text" name="url">
+                    </li>
+            
+                    <li>
+                        <button type="submit">添加</button>
+                        <button type="reset">取消</button>
+                    </li>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</block>

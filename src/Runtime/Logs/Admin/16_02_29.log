@@ -1,0 +1,833 @@
+[ 2016-02-29T17:18:06+08:00 ] 127.0.0.1 /branches/out_excel/admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000119s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000657s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000755s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `auth_group_access` [ RunTime:0.0035s ]
+SQL: SELECT `rules` FROM auth_group_access a INNER JOIN auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `auth_rule` [ RunTime:0.0033s ]
+SQL: SELECT `condition`,`name` FROM `auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137') AND `type` = 1 AND `status` = 1  [ RunTime:0.0014s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000176s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000383s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0005s ]
+SQL: select A.title,A.r_id,A.parent_id,B.name from menu_structure  as A
+		LEFT JOIN auth_rule as B on A.r_id = B.id
+		where A.r_id in(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137) order by A.r_id asc [ RunTime:0.0026s ]
+SQL: select id,title,bg_img,parent_id from menu_structure where parent_id = 0 order by id asc [ RunTime:0.0004s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.041082s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.041285s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001319s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001519s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001462s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001659s ]
+
+[ 2016-02-29T17:18:48+08:00 ] 127.0.0.1 /branches/out_excel/admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000123s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000564s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000669s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `auth_group_access` [ RunTime:0.0027s ]
+SQL: SELECT `rules` FROM auth_group_access a INNER JOIN auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `auth_rule` [ RunTime:0.0029s ]
+SQL: SELECT `condition`,`name` FROM `auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137') AND `type` = 1 AND `status` = 1  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000091s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000196s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0003s ]
+SQL: select A.title,A.r_id,A.parent_id,B.name from menu_structure  as A
+		LEFT JOIN auth_rule as B on A.r_id = B.id
+		where A.r_id in(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137) order by A.r_id asc [ RunTime:0.0006s ]
+SQL: select id,title,bg_img,parent_id from menu_structure where parent_id = 0 order by id asc [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018399s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018499s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000416s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000509s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000592s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000685s ]
+
+[ 2016-02-29T17:20:20+08:00 ] 127.0.0.1 /branches/out_excel/admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000146s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000659s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000773s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `auth_group_access` [ RunTime:0.0032s ]
+SQL: SELECT `rules` FROM auth_group_access a INNER JOIN auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `auth_rule` [ RunTime:0.0030s ]
+SQL: SELECT `condition`,`name` FROM `auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137') AND `type` = 1 AND `status` = 1  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000090s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000202s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0003s ]
+SQL: select A.title,A.r_id,A.parent_id,B.name from menu_structure  as A
+		LEFT JOIN auth_rule as B on A.r_id = B.id
+		where A.r_id in(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137) order by A.r_id asc [ RunTime:0.0006s ]
+SQL: select id,title,bg_img,parent_id from menu_structure where parent_id = 0 order by id asc [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019470s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019581s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000526s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000625s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000625s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000721s ]
+
+[ 2016-02-29T17:20:50+08:00 ] 127.0.0.1 /branches/out_excel/admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000119s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000593s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000688s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `auth_group_access` [ RunTime:0.0029s ]
+SQL: SELECT `rules` FROM auth_group_access a INNER JOIN auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `auth_rule` [ RunTime:0.0029s ]
+SQL: SELECT `condition`,`name` FROM `auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137') AND `type` = 1 AND `status` = 1  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000087s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000190s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0003s ]
+SQL: select A.title,A.r_id,A.parent_id,B.name from menu_structure  as A
+		LEFT JOIN auth_rule as B on A.r_id = B.id
+		where A.r_id in(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137) order by A.r_id asc [ RunTime:0.0006s ]
+SQL: select id,title,bg_img,parent_id from menu_structure where parent_id = 0 order by id asc [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017864s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017965s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000413s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000506s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000560s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000651s ]
+
+[ 2016-02-29T17:24:24+08:00 ] 127.0.0.1 /branches/out_excel/admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000129s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000644s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000749s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `auth_group_access` [ RunTime:0.0034s ]
+SQL: SELECT `rules` FROM auth_group_access a INNER JOIN auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `auth_rule` [ RunTime:0.0031s ]
+SQL: SELECT `condition`,`name` FROM `auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137') AND `type` = 1 AND `status` = 1  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000091s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000203s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0003s ]
+SQL: select A.title,A.r_id,A.parent_id,B.name from menu_structure  as A
+		LEFT JOIN auth_rule as B on A.r_id = B.id
+		where A.r_id in(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137) order by A.r_id asc [ RunTime:0.0007s ]
+SQL: select id,title,bg_img,parent_id from menu_structure where parent_id = 0 order by id asc [ RunTime:0.0005s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020127s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020246s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000627s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000728s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000848s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000955s ]
+
+[ 2016-02-29T17:27:20+08:00 ] 127.0.0.1 /branches/out_excel/admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000132s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000600s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000704s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `auth_group_access` [ RunTime:0.0030s ]
+SQL: SELECT `rules` FROM auth_group_access a INNER JOIN auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `auth_rule` [ RunTime:0.0028s ]
+SQL: SELECT `condition`,`name` FROM `auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137') AND `type` = 1 AND `status` = 1  [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000087s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000197s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0003s ]
+SQL: select A.title,A.r_id,A.parent_id,B.name from menu_structure  as A
+		LEFT JOIN auth_rule as B on A.r_id = B.id
+		where A.r_id in(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137) order by A.r_id asc [ RunTime:0.0006s ]
+SQL: select id,title,bg_img,parent_id from menu_structure where parent_id = 0 order by id asc [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019440s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019560s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000486s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000585s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000609s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000703s ]
+
+[ 2016-02-29T17:27:20+08:00 ] 127.0.0.1 /branches/out_excel/admin.php/Index/getPicture
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000153s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000711s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000824s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `auth_group_access` [ RunTime:0.0039s ]
+SQL: SELECT `rules` FROM auth_group_access a INNER JOIN auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `auth_rule` [ RunTime:0.0033s ]
+SQL: SELECT `condition`,`name` FROM `auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137') AND `type` = 1 AND `status` = 1  [ RunTime:0.0007s ]
+
+[ 2016-02-29T17:27:27+08:00 ] 127.0.0.1 /branches/out_excel/admin.php/Index/getPicture
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000123s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000543s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000631s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `auth_group_access` [ RunTime:0.0141s ]
+SQL: SELECT `rules` FROM auth_group_access a INNER JOIN auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `auth_rule` [ RunTime:0.0026s ]
+SQL: SELECT `condition`,`name` FROM `auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137') AND `type` = 1 AND `status` = 1  [ RunTime:0.0006s ]
+
+[ 2016-02-29T17:27:57+08:00 ] 127.0.0.1 /branches/out_excel/admin.php/Index/getPicture
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000179s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000836s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000973s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `auth_group_access` [ RunTime:0.0031s ]
+SQL: SELECT `rules` FROM auth_group_access a INNER JOIN auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `auth_rule` [ RunTime:0.0025s ]
+SQL: SELECT `condition`,`name` FROM `auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137') AND `type` = 1 AND `status` = 1  [ RunTime:0.0006s ]
+
+[ 2016-02-29T17:28:57+08:00 ] 127.0.0.1 /branches/out_excel/admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000128s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000659s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000769s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `auth_group_access` [ RunTime:0.0027s ]
+SQL: SELECT `rules` FROM auth_group_access a INNER JOIN auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `auth_rule` [ RunTime:0.0025s ]
+SQL: SELECT `condition`,`name` FROM `auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137') AND `type` = 1 AND `status` = 1  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000089s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000193s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0003s ]
+SQL: select A.title,A.r_id,A.parent_id,B.name from menu_structure  as A
+		LEFT JOIN auth_rule as B on A.r_id = B.id
+		where A.r_id in(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137) order by A.r_id asc [ RunTime:0.0006s ]
+SQL: select id,title,bg_img,parent_id from menu_structure where parent_id = 0 order by id asc [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018654s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018758s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000395s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000490s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000608s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000707s ]
+
+[ 2016-02-29T17:28:58+08:00 ] 127.0.0.1 /branches/out_excel/admin.php/Index/getPicture
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000128s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000591s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000681s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `auth_group_access` [ RunTime:0.0034s ]
+SQL: SELECT `rules` FROM auth_group_access a INNER JOIN auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `auth_rule` [ RunTime:0.0033s ]
+SQL: SELECT `condition`,`name` FROM `auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137') AND `type` = 1 AND `status` = 1  [ RunTime:0.0009s ]
+
+[ 2016-02-29T17:29:03+08:00 ] 127.0.0.1 /branches/out_excel/admin.php/Index/getPicture
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000139s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000660s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000773s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `auth_group_access` [ RunTime:0.0035s ]
+SQL: SELECT `rules` FROM auth_group_access a INNER JOIN auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `auth_rule` [ RunTime:0.0031s ]
+SQL: SELECT `condition`,`name` FROM `auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137') AND `type` = 1 AND `status` = 1  [ RunTime:0.0006s ]
+
+[ 2016-02-29T17:29:11+08:00 ] 127.0.0.1 /branches/out_excel/admin.php/Index/getPicture
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000129s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000619s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000710s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `auth_group_access` [ RunTime:0.0027s ]
+SQL: SELECT `rules` FROM auth_group_access a INNER JOIN auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `auth_rule` [ RunTime:0.0026s ]
+SQL: SELECT `condition`,`name` FROM `auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137') AND `type` = 1 AND `status` = 1  [ RunTime:0.0006s ]
+
+[ 2016-02-29T17:29:14+08:00 ] 127.0.0.1 /branches/out_excel/admin.php/Index/getPicture
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000167s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000778s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000904s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `auth_group_access` [ RunTime:0.0037s ]
+SQL: SELECT `rules` FROM auth_group_access a INNER JOIN auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `auth_rule` [ RunTime:0.0027s ]
+SQL: SELECT `condition`,`name` FROM `auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137') AND `type` = 1 AND `status` = 1  [ RunTime:0.0006s ]
+
+[ 2016-02-29T17:29:17+08:00 ] 127.0.0.1 /branches/out_excel/admin.php/Index/getPicture
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000168s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000751s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000873s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `auth_group_access` [ RunTime:0.0027s ]
+SQL: SELECT `rules` FROM auth_group_access a INNER JOIN auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `auth_rule` [ RunTime:0.0029s ]
+SQL: SELECT `condition`,`name` FROM `auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137') AND `type` = 1 AND `status` = 1  [ RunTime:0.0006s ]
+
+[ 2016-02-29T17:31:37+08:00 ] 127.0.0.1 /branches/out_excel/admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000129s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000733s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000840s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `auth_group_access` [ RunTime:0.0105s ]
+SQL: SELECT `rules` FROM auth_group_access a INNER JOIN auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `auth_rule` [ RunTime:0.0027s ]
+SQL: SELECT `condition`,`name` FROM `auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137') AND `type` = 1 AND `status` = 1  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000106s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000244s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0003s ]
+SQL: select A.title,A.r_id,A.parent_id,B.name from menu_structure  as A
+		LEFT JOIN auth_rule as B on A.r_id = B.id
+		where A.r_id in(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137) order by A.r_id asc [ RunTime:0.0006s ]
+SQL: select id,title,bg_img,parent_id from menu_structure where parent_id = 0 order by id asc [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019378s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019489s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000407s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000503s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000583s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000675s ]
+
+[ 2016-02-29T17:31:37+08:00 ] 127.0.0.1 /branches/out_excel/admin.php/Index/getPicture
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000123s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000790s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000904s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `auth_group_access` [ RunTime:0.0033s ]
+SQL: SELECT `rules` FROM auth_group_access a INNER JOIN auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `auth_rule` [ RunTime:0.0029s ]
+SQL: SELECT `condition`,`name` FROM `auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137') AND `type` = 1 AND `status` = 1  [ RunTime:0.0006s ]
+
+[ 2016-02-29T17:31:42+08:00 ] 127.0.0.1 /branches/out_excel/admin.php/Index/getPicture
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000230s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001104s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001271s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `auth_group_access` [ RunTime:0.0030s ]
+SQL: SELECT `rules` FROM auth_group_access a INNER JOIN auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `auth_rule` [ RunTime:0.0026s ]
+SQL: SELECT `condition`,`name` FROM `auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137') AND `type` = 1 AND `status` = 1  [ RunTime:0.0006s ]
+
+[ 2016-02-29T17:35:36+08:00 ] 127.0.0.1 /branches/out_excel/admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000142s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000795s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000912s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `auth_group_access` [ RunTime:0.0028s ]
+SQL: SELECT `rules` FROM auth_group_access a INNER JOIN auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `auth_rule` [ RunTime:0.0027s ]
+SQL: SELECT `condition`,`name` FROM `auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137') AND `type` = 1 AND `status` = 1  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000090s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000212s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0003s ]
+SQL: select A.title,A.r_id,A.parent_id,B.name from menu_structure  as A
+		LEFT JOIN auth_rule as B on A.r_id = B.id
+		where A.r_id in(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137) order by A.r_id asc [ RunTime:0.0006s ]
+SQL: select id,title,bg_img,parent_id from menu_structure where parent_id = 0 order by id asc [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018842s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018953s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000474s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000605s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000623s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000717s ]
+
+[ 2016-02-29T17:35:36+08:00 ] 127.0.0.1 /branches/out_excel/admin.php/Index/getPicture
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000144s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000701s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000814s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `auth_group_access` [ RunTime:0.0037s ]
+SQL: SELECT `rules` FROM auth_group_access a INNER JOIN auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `auth_rule` [ RunTime:0.0029s ]
+SQL: SELECT `condition`,`name` FROM `auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137') AND `type` = 1 AND `status` = 1  [ RunTime:0.0006s ]
+
+[ 2016-02-29T17:35:43+08:00 ] 127.0.0.1 /branches/out_excel/admin.php/Index/getPicture
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000157s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000703s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000820s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `auth_group_access` [ RunTime:0.0037s ]
+SQL: SELECT `rules` FROM auth_group_access a INNER JOIN auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `auth_rule` [ RunTime:0.0033s ]
+SQL: SELECT `condition`,`name` FROM `auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137') AND `type` = 1 AND `status` = 1  [ RunTime:0.0008s ]
+
+[ 2016-02-29T17:35:47+08:00 ] 127.0.0.1 /branches/out_excel/admin.php/Index/getPicture
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000045s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000228s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000554s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000643s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `auth_group_access` [ RunTime:0.0028s ]
+SQL: SELECT `rules` FROM auth_group_access a INNER JOIN auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `auth_rule` [ RunTime:0.0025s ]
+SQL: SELECT `condition`,`name` FROM `auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137') AND `type` = 1 AND `status` = 1  [ RunTime:0.0006s ]
+
+[ 2016-02-29T17:37:34+08:00 ] 127.0.0.1 /branches/out_excel/admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000140s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000616s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000726s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000087s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000198s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `auth_group_access` [ RunTime:0.0032s ]
+SQL: SELECT `rules` FROM auth_group_access a INNER JOIN auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0003s ]
+SQL: select A.title,A.r_id,A.parent_id,B.name from menu_structure  as A
+		LEFT JOIN auth_rule as B on A.r_id = B.id
+		where A.r_id in(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137) order by A.r_id asc [ RunTime:0.0006s ]
+SQL: select id,title,bg_img,parent_id from menu_structure where parent_id = 0 order by id asc [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022787s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022897s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000489s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000585s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000658s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000776s ]
+
+[ 2016-02-29T17:37:34+08:00 ] 127.0.0.1 /branches/out_excel/admin.php/Index/getPicture
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000153s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000695s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000812s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0003s ]
+SQL: select id, year, month, day, numbers from order_count where year='2016' and month='2' order by day [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: sum E:\wamp\www\branches\out_excel\src\Admin\Model\CountOrderMgrModel.class.php 第 13 行.
+NOTIC: [8] Undefined index: 2 E:\wamp\www\branches\out_excel\src\Admin\Model\CountOrderMgrModel.class.php 第 13 行.
+
+[ 2016-02-29T17:37:52+08:00 ] 127.0.0.1 /branches/out_excel/admin.php/Index/getPicture
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000131s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000571s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000664s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0002s ]
+SQL: select id, year, month, day, numbers from order_count where year='2015' and month='11' order by day [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: sum E:\wamp\www\branches\out_excel\src\Admin\Model\CountOrderMgrModel.class.php 第 13 行.
+NOTIC: [8] Undefined index: 11 E:\wamp\www\branches\out_excel\src\Admin\Model\CountOrderMgrModel.class.php 第 13 行.
+
+[ 2016-02-29T17:38:27+08:00 ] 127.0.0.1 /branches/out_excel/admin.php/Index/getPicture
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000162s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000715s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000829s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0003s ]
+SQL: select id, year, month, day, numbers from order_count where year='2015' and month='10' order by day [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: sum E:\wamp\www\branches\out_excel\src\Admin\Model\CountOrderMgrModel.class.php 第 13 行.
+NOTIC: [8] Undefined index: 10 E:\wamp\www\branches\out_excel\src\Admin\Model\CountOrderMgrModel.class.php 第 13 行.
+
+[ 2016-02-29T17:49:14+08:00 ] 127.0.0.1 /branches/out_excel/admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000120s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000575s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000671s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000086s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000194s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `auth_group_access` [ RunTime:0.0034s ]
+SQL: SELECT `rules` FROM auth_group_access a INNER JOIN auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0007s ]
+SQL: select A.title,A.r_id,A.parent_id,B.name from menu_structure  as A
+		LEFT JOIN auth_rule as B on A.r_id = B.id
+		where A.r_id in(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137) order by A.r_id asc [ RunTime:0.0014s ]
+SQL: select id,title,bg_img,parent_id from menu_structure where parent_id = 0 order by id asc [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023734s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000553s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000649s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000583s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000675s ]
+
+[ 2016-02-29T17:49:14+08:00 ] 127.0.0.1 /branches/out_excel/admin.php/Index/getPicture
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000134s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000673s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000769s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0002s ]
+SQL: select id, year, month, day, numbers from order_count where year='2016' and month='2' order by day [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: sum E:\wamp\www\branches\out_excel\src\Admin\Model\CountOrderMgrModel.class.php 第 13 行.
+NOTIC: [8] Undefined index: 2 E:\wamp\www\branches\out_excel\src\Admin\Model\CountOrderMgrModel.class.php 第 13 行.
+
+[ 2016-02-29T17:49:32+08:00 ] 127.0.0.1 /branches/out_excel/admin.php/Index/outExcel
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000160s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000757s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000889s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0003s ]
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'money' in 'field list'
+
+[ 2016-02-29T17:49:49+08:00 ] 127.0.0.1 /branches/out_excel/admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000123s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000556s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000658s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000087s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000196s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `auth_group_access` [ RunTime:0.0029s ]
+SQL: SELECT `rules` FROM auth_group_access a INNER JOIN auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0002s ]
+SQL: select A.title,A.r_id,A.parent_id,B.name from menu_structure  as A
+		LEFT JOIN auth_rule as B on A.r_id = B.id
+		where A.r_id in(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137) order by A.r_id asc [ RunTime:0.0006s ]
+SQL: select id,title,bg_img,parent_id from menu_structure where parent_id = 0 order by id asc [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022780s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022895s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000577s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000676s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000613s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000707s ]
+
+[ 2016-02-29T17:49:49+08:00 ] 127.0.0.1 /branches/out_excel/admin.php/Index/getPicture
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000182s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000836s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000971s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0002s ]
+SQL: select id, year, month, day, numbers from order_count where year='2016' and month='2' order by day [ RunTime:0.0005s ]
+NOTIC: [8] Undefined variable: sum E:\wamp\www\branches\out_excel\src\Admin\Model\CountOrderMgrModel.class.php 第 13 行.
+NOTIC: [8] Undefined index: 2 E:\wamp\www\branches\out_excel\src\Admin\Model\CountOrderMgrModel.class.php 第 13 行.
+
+[ 2016-02-29T17:49:50+08:00 ] 127.0.0.1 /branches/out_excel/admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000165s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000763s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000902s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000119s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000267s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `auth_group_access` [ RunTime:0.0042s ]
+SQL: SELECT `rules` FROM auth_group_access a INNER JOIN auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0003s ]
+SQL: select A.title,A.r_id,A.parent_id,B.name from menu_structure  as A
+		LEFT JOIN auth_rule as B on A.r_id = B.id
+		where A.r_id in(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137) order by A.r_id asc [ RunTime:0.0007s ]
+SQL: select id,title,bg_img,parent_id from menu_structure where parent_id = 0 order by id asc [ RunTime:0.0003s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030605s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030746s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000603s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000734s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000806s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000930s ]
+
+[ 2016-02-29T17:49:51+08:00 ] 127.0.0.1 /branches/out_excel/admin.php/Index/getPicture
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000143s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000803s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000932s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0002s ]
+SQL: select id, year, month, day, numbers from order_count where year='2016' and month='2' order by day [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: sum E:\wamp\www\branches\out_excel\src\Admin\Model\CountOrderMgrModel.class.php 第 13 行.
+NOTIC: [8] Undefined index: 2 E:\wamp\www\branches\out_excel\src\Admin\Model\CountOrderMgrModel.class.php 第 13 行.
+
+[ 2016-02-29T17:50:03+08:00 ] 127.0.0.1 /branches/out_excel/admin.php/Index/outExcel
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000222s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000830s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000986s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0004s ]
+SQL: select year,month,day,numbers from order_count where year = year('2015-11-10') and month = month('2015-11-10') [ RunTime:0.0005s ]
+
+[ 2016-02-29T17:54:44+08:00 ] 127.0.0.1 /branches/out_excel/admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000160s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000757s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000887s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000105s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000240s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `auth_group_access` [ RunTime:0.0035s ]
+SQL: SELECT `rules` FROM auth_group_access a INNER JOIN auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0003s ]
+SQL: select A.title,A.r_id,A.parent_id,B.name from menu_structure  as A
+		LEFT JOIN auth_rule as B on A.r_id = B.id
+		where A.r_id in(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137) order by A.r_id asc [ RunTime:0.0007s ]
+SQL: select id,title,bg_img,parent_id from menu_structure where parent_id = 0 order by id asc [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027425s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027562s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000595s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000719s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000815s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000932s ]
+
+[ 2016-02-29T17:54:44+08:00 ] 127.0.0.1 /branches/out_excel/admin.php/Index/getPicture
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000141s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000740s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000905s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0002s ]
+SQL: select id, year, month, day, numbers from order_count where year='2016' and month='2' order by day [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: sum E:\wamp\www\branches\out_excel\src\Admin\Model\CountOrderMgrModel.class.php 第 13 行.
+NOTIC: [8] Undefined index: 2 E:\wamp\www\branches\out_excel\src\Admin\Model\CountOrderMgrModel.class.php 第 13 行.
+
+[ 2016-02-29T17:54:55+08:00 ] 127.0.0.1 /branches/out_excel/admin.php/Index/outExcel
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000123s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000592s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000700s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0002s ]
+SQL: select year,month,day,numbers from order_count where year = year('2015-10-08') and month = month('2015-10-08') [ RunTime:0.0004s ]
+
+[ 2016-02-29T17:57:21+08:00 ] 127.0.0.1 /branches/out_excel/admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000139s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000729s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000839s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000086s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000199s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `auth_group_access` [ RunTime:0.0027s ]
+SQL: SELECT `rules` FROM auth_group_access a INNER JOIN auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0002s ]
+SQL: select A.title,A.r_id,A.parent_id,B.name from menu_structure  as A
+		LEFT JOIN auth_rule as B on A.r_id = B.id
+		where A.r_id in(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137) order by A.r_id asc [ RunTime:0.0006s ]
+SQL: select id,title,bg_img,parent_id from menu_structure where parent_id = 0 order by id asc [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021952s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022062s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000555s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000651s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000674s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000769s ]
+
+[ 2016-02-29T17:57:21+08:00 ] 127.0.0.1 /branches/out_excel/admin.php/Index/getPicture
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000137s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000622s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000715s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0002s ]
+SQL: select id, year, month, day, numbers from order_count where year='2016' and month='2' order by day [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: sum E:\wamp\www\branches\out_excel\src\Admin\Model\CountOrderMgrModel.class.php 第 13 行.
+NOTIC: [8] Undefined index: 2 E:\wamp\www\branches\out_excel\src\Admin\Model\CountOrderMgrModel.class.php 第 13 行.
+
+[ 2016-02-29T18:01:36+08:00 ] 127.0.0.1 /branches/out_excel/admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000136s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000593s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000698s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000086s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000198s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `auth_group_access` [ RunTime:0.0030s ]
+SQL: SELECT `rules` FROM auth_group_access a INNER JOIN auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0003s ]
+SQL: select A.title,A.r_id,A.parent_id,B.name from menu_structure  as A
+		LEFT JOIN auth_rule as B on A.r_id = B.id
+		where A.r_id in(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137) order by A.r_id asc [ RunTime:0.0006s ]
+SQL: select id,title,bg_img,parent_id from menu_structure where parent_id = 0 order by id asc [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022840s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022964s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000643s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000753s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000695s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000818s ]
+
+[ 2016-02-29T18:01:36+08:00 ] 127.0.0.1 /branches/out_excel/admin.php/Index/getPicture
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000155s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000815s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000934s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0002s ]
+SQL: select id, year, month, day, numbers from order_count where year='2016' and month='2' order by day [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: sum E:\wamp\www\branches\out_excel\src\Admin\Model\CountOrderMgrModel.class.php 第 13 行.
+NOTIC: [8] Undefined index: 2 E:\wamp\www\branches\out_excel\src\Admin\Model\CountOrderMgrModel.class.php 第 13 行.
+
+[ 2016-02-29T18:01:47+08:00 ] 127.0.0.1 /branches/out_excel/admin.php/Index/outExcel
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000045s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000261s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001254s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001461s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0004s ]
+SQL: select day,numbers,money from order_count where year = year('2015-11-10') and month = month('2015-11-10') [ RunTime:0.0005s ]
+
+[ 2016-02-29T18:05:39+08:00 ] 127.0.0.1 /branches/out_excel/admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000122s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000606s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000703s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000088s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000200s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `auth_group_access` [ RunTime:0.0032s ]
+SQL: SELECT `rules` FROM auth_group_access a INNER JOIN auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0002s ]
+SQL: select A.title,A.r_id,A.parent_id,B.name from menu_structure  as A
+		LEFT JOIN auth_rule as B on A.r_id = B.id
+		where A.r_id in(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137) order by A.r_id asc [ RunTime:0.0006s ]
+SQL: select id,title,bg_img,parent_id from menu_structure where parent_id = 0 order by id asc [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022930s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023031s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000483s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000573s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000598s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000689s ]
+
+[ 2016-02-29T18:05:39+08:00 ] 127.0.0.1 /branches/out_excel/admin.php/Index/getPicture
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000119s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000539s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000623s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0002s ]
+SQL: select id, year, month, day, numbers from order_count where year='2016' and month='2' order by day [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: sum E:\wamp\www\branches\out_excel\src\Admin\Model\CountOrderMgrModel.class.php 第 13 行.
+NOTIC: [8] Undefined index: 2 E:\wamp\www\branches\out_excel\src\Admin\Model\CountOrderMgrModel.class.php 第 13 行.
+
+[ 2016-02-29T18:05:50+08:00 ] 127.0.0.1 /branches/out_excel/admin.php/Index/outExcel
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000120s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000572s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000669s ]
+SQL: select id from admin_user where uid = '72' [ RunTime:0.0002s ]
+SQL: select day,numbers,money from order_count where year = year('2015-10-08') and month = month('2015-10-08') [ RunTime:0.0003s ]
+

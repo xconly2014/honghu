@@ -1,0 +1,76 @@
+<extend name="../Common/home_base" />
+
+<block name="custom_css">
+    <link rel="stylesheet" href="__PUBLIC__/css/web_map.css" />
+</block>
+
+<block name="content">
+    <div class="row_container">
+        <div class="web_map_container">
+            <div class="web_map">
+                <h2>热门游戏</h2>
+                <div class="web_map_content">
+                    <foreach name="suggest_list" item="row">
+                        <a href="{:U('Home/CZIOS/chongzhi_info',array('gameId'=>$row['game_id']))}">{$row.name}</a>
+                    </foreach>
+                </div>
+            </div>
+
+            <div class="web_map">
+                <h2>网站服务</h2>
+                <div class="web_map_content">
+                    <a href="{:U('Home/CZIOS/index')}">苹果充值</a>
+                    <a href="{:U('Home/SCH/index')}">首充号</a>
+                    <a href="{:U('Home/GroupBuy/cz_package_all')}">充值团购</a>
+                    <a href="{:U('Home/GroupBuy/show_all')}">一元购</a>
+                    <a href="{:U('Home/CreditsStore/index')}">积分商城</a>
+                    <a href="{:U('Home/TrafficOrder/mb_flow_index')}">流量充值</a>
+                    <a href="{:U('Home/TradeCenter/index', array('type'=>3))}">代练套餐</a>
+                    <a href="{:U('Home/TradeCenter/index', array('type'=>4))}">代练需求</a>
+                    <a href="{:U('Home/TradeCenter/index', array('type'=>2))}">账号交易</a>
+                </div>
+            </div>
+
+            <div class="web_map">
+                <h2>用户中心</h2>
+                <div class="web_map_content">
+                    <a href="{:U('Home/Login/index')}">登录</a>
+                    <a href="{:U('Home/Register/reg_tel')}">注册</a>
+                    <a href="{:U('Home/User/info')}">基本资料</a>
+                    <a href="{:U('Home/User/security_center')}">安全中心</a>
+                    <a href="{:U('Home/User/authentication')}">身份认证</a>
+                    <a href="{:U('Home/User/credits')}">我的积分</a>
+                    <a href="{:U('Home/User/coins_list')}">我的虎币</a>
+                    <a href="{:U('Home/User/chongzhi_list')}">充值记录</a>
+                </div>               
+            </div>
+
+            <div class="web_map">
+                <h2>帮助中心</h2>
+                <div class="web_map_content">
+                    <a href="{:U('Home/Help/index',array('id'=>1))}">常见问题</a>
+                    <a href="{:U('Home/Help/index',array('id'=>2))}">账号注册</a>
+                    <a href="{:U('Home/Help/index',array('id'=>11))}">首充号购买</a>
+                    <a href="{:U('Home/Help/index',array('id'=>17))}">积分规则</a>
+                    <a href="{:U('Home/Help/index',array('id'=>10))}">苹果充值帮助</a>
+                    <a href="{:U('Home/Help/index',array('id'=>18))}">支付问题</a>
+                    <a href="{:U('Home/Help/index',array('id'=>21))}">账号发布和购买</a>
+                    <a href="{:U('Home/Help/index',array('id'=>23))}">代练功能帮助</a>
+                    <a href="{:U('Home/Help/index',array('id'=>20))}">4G流量购买</a>
+                    <a href="{:U('Home/Help/index',array('id'=>24))}">手游充值团购</a>
+                    <a href="{:U('Home/Help/index',array('id'=>25))}">一元购</a>
+                </div>               
+            </div>
+
+            <div class="web_map">
+                <h2>关于我们</h2>
+                <div class="web_map_content">
+                    <a href="{:U('Home/Help/index',array('id'=>4))}">用户协议</a>
+                    <a href="{:U('Home/Help/index',array('id'=>19))}">联系我们</a>
+                    <a href="{:U('Home/Help/index',array('id'=>7))}">关于轰轰虎</a>
+                </div>               
+            </div>
+
+        </div>
+    </div>
+</block>

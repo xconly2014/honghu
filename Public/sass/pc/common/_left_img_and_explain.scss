@@ -1,0 +1,69 @@
+.cz_game_info  {
+  width:220px;
+  padding-right: 5px;
+  padding-left: 10px;
+
+  img{
+    margin:23px 0 20px 23px;
+  }
+  h5{
+    text-align: center;
+  }
+}
+
+.instructions_div{
+  width: 100%;
+  //border-top: 1px solid #ccc;
+  margin-top: 23px;
+
+  label{
+    display: block;
+    margin-left:20px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    height:30px;
+    line-height: 30px; 
+  }
+
+  hr{
+    border-top:3px solid #4091E9;
+  }
+
+  ul{
+    margin-top: 10px;
+
+  }
+
+  li{
+    list-style-type: decimal;
+    padding:2px 8px 2px 0px;
+    line-height: 20px;
+    font-size: 12px;
+    margin-left: 26px;
+    a{
+      color: #666;
+      text-decoration: none;
+      &:hover{
+        color: #f00;
+      }
+    }
+  }
+
+}
+
+.problem_title{
+  height: 24px;
+  padding: 50px 0  0 8px;
+  border-bottom: 1px solid #ccc;
+  img{
+    margin:  0 5px 0 0; 
+    height: 18px;
+    float: left;
+  }
+  p{
+    font-size: 13px;
+    width: 120px;
+    float: left;
+  }
+}

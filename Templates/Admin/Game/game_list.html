@@ -1,0 +1,86 @@
+<extend name="../Common/admin_base" />
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+                <div class="game_list_container">
+                    <div class="table_bar">
+                        <a class="a_style_button" href="{:U('Admin/Game/on_sale')}">上架新游戏</a>
+
+                        <div class="search_box_container">
+                            <div class="search_box">
+                                <form action="{:U('Admin/Game/game_list')}" method="get">
+                                    <input type="text" placeholder="请输入游戏名" name="name">
+                                    <button type="submit">搜索</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="table_container">
+                    <table class="data-table">
+                        <thead>
+                        <tr>
+                            <th class>编号</th>
+                            <th class>名称</th>
+                            <th class>游戏币</th>
+                            <th class>缩略图</th>
+                            <th class>ios平台</th>
+                            <th class>android平台</th>
+                            <th class>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <volist name="game_list" id="vo">
+                            <tr id="row_{$vo.id}">
+                                <td>{$vo.id}</td>
+                                <td>{$vo.name}</td>
+                                <td>{$vo.currency_name}</td>
+                                <td>
+                                    <img width="68px" height="68px" src="/game_pic/{$vo.thumbnail_path}">
+                                </td>
+                                <if condition="$vo.ios_platform == true">
+                                    <td>
+                                        <a href="{:U('Admin/Game/shelves', array('game_id'=>$vo['id'], 'platform'=>1, 'flag'=>0))}">下架</a>
+                                    </td>
+                                    <else />
+                                    <td>
+                                        <a href="{:U('Admin/Game/shelves', array('game_id'=>$vo['id'], 'platform'=>1, 'flag'=>1))}">上架</a>
+                                    </td>
+                                </if>
+                                <if condition="$vo.android_platform == true">
+                                    <td>
+                                        <a href="{:U('Admin/Game/shelves', array('game_id'=>$vo['id'], 'platform'=>2, 'flag'=>0))}">下架</a>
+                                    </td>
+                                    <else />
+                                    <td>
+                                        <a href="{:U('Admin/Game/shelves', array('game_id'=>$vo['id'], 'platform'=>2, 'flag'=>1))}">上架</a>
+                                    </td>
+                                </if>
+                                <td>
+                                    <a href="{:U('Admin/IOSCZPackage/on_sale', array('game_id'=>$vo['id']))}">充值套餐</a>
+                                    <a href="{:U('Admin/Game/game_edit', array('game_id'=>$vo['id']))}">编辑</a>
+                                    <a href="{:U('Admin/Game/list_option', array('game_id'=>$vo['id']))}">查看面额</a>
+                                </td>
+                            </tr>
+                        </volist>
+                        </tbody>
+                    </table>
+                    <div class="page">{$show}</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</block>
+
+<block name="footer">
+    <div class="footer">
+        <p>
+            广州鸿鹄网络科技有限公司
+        </p>
+    </div>
+</block>
+
+<block name="extra_js">
+</block>

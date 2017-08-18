@@ -1,0 +1,66 @@
+<extend name="../Common/admin_base" />
+
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div class="game_strategy_container">
+                <div class="common_form container">
+                    <p>充值套餐订单详情</p>
+                    <li class="static_field">
+                        <label class="form_key">游戏：</label>
+                        <label class="form_value">{$orderRes.game}</label>
+                    </li>
+                    <li class="static_field">
+                        <label class="form_key">面额：</label>
+                        <label class="form_value">{$orderRes.option}</label>
+                    </li>
+                    <li class="static_field">
+                        <label class="form_key">单面额价格：</label>
+                        <label class="form_value">{$orderRes.price}</label>
+                    </li>
+                    <li class="static_field">
+                        <label class="form_key">总数量：</label>
+                        <label class="form_value">{$orderRes.sum_num}</label>
+                    </li>                     
+                    <li class="static_field">
+                        <label class="form_key">游戏账号：</label>
+                        <label class="form_value">{$orderRes.account}</label>
+                    </li>
+                    <li class="static_field">
+                        <label class="form_key">游戏密码：</label>
+                        <label class="form_value">{$orderRes.password}</label>
+                    </li>
+                    <li class="static_field">
+                        <label class="form_key">游戏区服：</label>
+                        <label class="form_value">{$orderRes.qufu}</label>
+                    </li>
+                    <li class="static_field">
+                        <label class="form_key">游戏角色：</label>
+                        <label class="form_value">{$orderRes.role}</label>
+                    </li>
+                    <li class="static_field">
+                        <label class="form_key">购买数量：</label>
+                        <label class="form_value">{$orderRes.buy_num}</label>
+                    </li>
+                    <li class="static_field">
+                        <label class="form_key">支付：</label>
+                        <label class="form_value">{$orderRes.payment}</label>
+                    </li>
+                    <li class="static_field">
+                        <label class="form_key">玩家支付时间：</label>
+                        <label class="form_value">{$orderRes.pay_time}</label>
+                    </li> 
+                    <li class="static_field">
+                        <label class="form_key">联系方式：</label>
+                        <label class="form_value">{$orderRes.contact_way}</label>
+                    </li>   
+                    <li class="static_field">
+                        <label class="form_key"></label>
+                        <button onClick="javascript :history.back(-1);">返回</button>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>

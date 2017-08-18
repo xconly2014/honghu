@@ -1,0 +1,51 @@
+<extend name="../Common/admin_base" />
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div class="news_list_container">
+                <div class="table_bar">
+                    <a class="a_style_button" href="{:U('Admin/NmTicket/add_nm')}">添加糯米券</a>
+                    <div class="search_box_container">
+                        <div class="search_box">
+                            <form action="{:U('Admin/NmTicket/nm_list')}" method="get">
+                                <input type="text" placeholder="请输入糯米券号" name="keyword">
+                                <button type="submit">搜索</button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table_container">
+                    <table class="data-table">
+                        <thead>
+                        <tr>
+                            <th>编号</th>
+                            <th>糯米券</th>
+                            <th>金额</th>
+                            <th>是否已使用</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <volist name="nm_list" id="list">
+                            <tr id="row_{$vo.id}">
+                                <td>{$list.id}</td>
+                                <td>{$list.code}</td>
+                                <td>{$list.payment}</td>
+                                <td>{$list.is_used}</td>
+                                <td>
+                                    <a href="{:U('Admin/NmTicket/del_nm', array('id'=>$list['id']))}" onclick="return confirm('确定删除吗?');">删除</a>
+                                </td>
+                            </tr>
+                        </volist>
+                        </tbody>
+                    </table>
+                    <div class="page">{$show}</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</block>

@@ -1,0 +1,195 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="header_bar">
+    <h1 class="mui-title">手机流量充值</h1>
+</block>
+
+
+<block name="extra_css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/mb_flow.css">
+</block>
+
+<block name="extra_js">
+    <script>
+        $().ready(function(){
+            triggerClickEvent();
+
+            $('#tel').blur(function(){
+                getTrafficOption();
+                $('#option_id').val('');
+            });
+        });
+
+        function triggerClickEvent(){
+            $('.flow_text').click(function(){
+                if(checkTel()){
+                    $('.flow_text').css({background:'#fff',color:'#494949'});
+                    $(this).css({background:'#fc3d38',color:'#fff'});
+                    $('#option_error').text('');
+                    
+                    var option_id = $(this).attr('id');
+                    $('#option_id').val(option_id);
+
+                    //根据用户虎币数来判断是否可用虎币支付
+                    var payment = $(this).children('span').text();
+                    var userCoins = {$userCoins};
+                    if(payment > userCoins){
+                        $("input[value='hb']").removeAttr('checked');
+                        $("input[value='mobile_alipay']").attr('checked','checked');
+                        $("input[value='hb']").attr('disabled','disabled');
+                        $('#unable').text('虎币不足');
+                    }else{
+                        $("input[value='hb']").removeAttr('disabled');
+                        $('#unable').text('');
+                    }
+                }
+            });
+        }
+
+        function updateInfo(err){
+            $('#info').text(err);
+        }
+
+        function mobileFormat(value, element) {
+            var length = value.length;
+            var mobile = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+            return (length == 11 && mobile.test(value));
+        }
+
+        function updateOption(option_list,type_flag){
+            var container = $('#flow_option');
+            container.empty();
+            var optionCount = option_list.length;
+            var child = "";
+            for(i=0; i<optionCount; i++){
+                var div_child = document.createElement("div");
+                div_child.id = option_list[i].id;
+                div_child.className = "flow_text";
+
+                var label_child = document.createElement("label");
+                label_child.innerHTML = option_list[i].real_num + 'M';
+
+                var span_child = document.createElement("span");
+                span_child.innerHTML = option_list[i].real_price;
+
+                var del_child = document.createElement("del");
+
+                var del_span = document.createElement("span");
+                del_span.innerHTML = option_list[i].price;
+
+                $(del_child).append(del_span);
+                $(div_child).append(label_child);
+                $(div_child).append(span_child);
+                $(div_child).append(del_child);
+                
+                container.append(div_child);
+
+                $(span_child).before('售价');
+                $(span_child).after('元');
+                $(del_span).before('原价');
+                $(del_span).after('元');
+                if(!type_flag){
+                    del_child.remove();
+                    $('.flow_text').css('line-height','33px');
+                    $('.flow_text label').css('margin-bottom','-5px');
+                }
+            }//for
+            triggerClickEvent();
+        }
+
+        function checkTel(){
+            var mobile = "";
+            mobile = $('#tel').val();
+            if(!mobile || !mobileFormat(mobile, "")){
+                updateInfo('请输入正确的手机号码');
+                return false;
+            }
+            return mobile;
+        }
+
+        function beforeSubmit(){
+            if(!checkTel()){
+                return false;
+            }
+            if($('#option_id').val() == ''){
+                $('#option_error').text('请选择充值面额');
+                return false;    
+            }
+
+            return true;
+        }
+
+        function getTrafficOption(){
+            var mobile = checkTel();
+            if(!mobile){
+                return;
+            }
+
+            var url = "{:U('Home/TrafficOrder/get_traffic_option')}";
+            var data = {'mobile':mobile};
+
+            $.post(url,data,function(ret_value){
+                if(ret_value.status){
+                    updateInfo(ret_value.mobile_info);
+                    updateOption(ret_value.data,ret_value.type_flag);
+                }
+                else{
+                }
+            },'json');
+        }
+    </script>
+</block>
+
+<block name="main_content">
+    <div class="main_container">
+        <h6 style="margin-bottom:10px;">受运营商影响，每月底最后两天，移动号码流量充值暂不受理！</h6>
+        <form class="mb_cash_desk" action="" method="post" onsubmit="return beforeSubmit()">
+            <div class="mui-input-row">
+                <input type="text" class="mui-input-clear" name="tel" id="tel" placeholder="请输入您的手机号" />
+            </div>
+            <div class="mui-input-row">
+                <p id="info" style="color:#f00; font-size: 12px;"></p>
+            </div>
+            <div class="flow_option" id="flow_option">
+                <foreach name="traffic_list" item="row">
+                    <div class="flow_text" id="{$row.id}">
+                        <label>{$row.real_num}M</label>
+                        售价<span>{$row.real_price}</span>元
+                        <del>原价<span>{$row.price}</span></del>
+                    </div>
+                </foreach>                
+            </div>
+            <div class="mui-input-row">
+                <p id="option_error" style="color:#f00; font-size: 12px;"></p>
+            </div>
+            <input id="option_id" type="hidden" name="option_id"/>
+            <h4 style="clear:both;">支付方式选择</h4>
+            <ul class="mui-table-view">
+                <li class="mui-table-view-cell">
+                    <input type="radio" name="pay_way" value="sp_mobile"/>
+                    <label class="china_union"></label>
+                </li>
+
+                <li class="mui-table-view-cell">            
+                    <input type="radio" name="pay_way" value="mobile_alipay" checked/>
+                    <label class="zfb"></label>
+                </li>
+
+                <li class="mui-table-view-cell">            
+                    <input type="radio" name="pay_way" value="wx"/>
+                    <label class="wx"></label>
+                </li>
+            
+                <li class="mui-table-view-cell">
+                    <input type="radio" name="pay_way" value="hb" />
+                    <label class="hb"></label>
+                    <span id="unable" style="display: block;color:#f00;"></span>
+                </li>                             
+            </ul>
+
+            <div class="mui-button-row">
+                <button class="mui-btn mui-btn-primary mui-btn-block">立即充值</button>
+            </div>
+        </form>
+    </div>
+</block>

@@ -1,0 +1,84 @@
+<extend name="../Common/admin_base" />
+
+<block name="extra_css">
+    <link rel="stylesheet" href="__PUBLIC__/css/order_tag.css" />
+</block>
+
+<block name="extra_js">
+    <script>
+        $().ready(function(){
+            $('.color_container .bg_color').click(function(){
+                var color = $(this).attr('alt');
+                $('.selected_color').css({background:color,border:0});
+                $('.bg').val(color);
+            });
+            var first_color = $('.color_container .bg_color').first().attr('alt');
+            $('.selected_color').css({background:first_color,border:0});
+        });
+    </script>
+</block>
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div class="cz_option_container">
+                <div class="add_cz_option">
+                    <form class="common_form" action="" method="post">
+                        <p>添加充值订单标签</p>
+                        <li class="required">
+                            <label>标签内容：</label>
+                            <input type="text" name="name"/>
+                        </li>
+                        <li class="required">
+                            <label>标签颜色：</label>
+                            <span class="selected_color"></span>
+                        </li>
+                        <input type="hidden" name="bg" class="bg"/>
+                        <div class="color_container">
+                            <div class="bg_color" style="background:#00AAEE" alt="#00AAEE"></div>
+                            <div class="bg_color" style="background:#FF6600" alt="#FF6600"></div>
+                            <div class="bg_color" style="background:#EE3333" alt="#EE3333"></div>
+                            <div class="bg_color" style="background:#00AA88" alt="#00AA88"></div>
+                            <div class="bg_color" style="background:#5BC0DE" alt="#5BC0DE"></div>
+                            <div class="bg_color" style="background:#D9534F" alt="#D9534F"></div>
+                            <div class="bg_color" style="background:#55DD88" alt="#55DD88"></div>
+                            <div class="bg_color" style="background:#5CB85C" alt="#5CB85C"></div>
+                            <div class="bg_color" style="background:#F0AD4E" alt="#F0AD4E"></div>
+                            <div class="bg_color" style="background:#F20C00" alt="#F20C00"></div>
+                        </div>
+
+                        <li>
+                            <label>&nbsp;</label>
+                            <button type="submit">添加</button>
+                        </li>
+                    </form>
+                    <p>备注：<label>点击颜色块选择你所添加订单标签的背景颜色！</label></p>
+                </div>
+
+                <div class="dotline"></div>
+
+                <div class="table_container">
+                    <table class="data-table">
+                        <thead>
+                        <tr>
+                            <th>内容</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <volist name="tag_list" id="row">
+                            <tr>
+                                <td>
+                                    <span class="tag_content" style="display:inline-block;background:{$row.bg}">{$row.name}</span>
+                                </td>
+                                <td>
+                                    <a href="{:U('Admin/OrderTag/del_tag', array('id'=> $row['id']))}" onclick="return confirm('确定要删除吗？')">删除</a>
+                                </td>
+                            </tr>
+                        </volist>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+</block>

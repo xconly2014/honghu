@@ -1,0 +1,53 @@
+<extend name="../Common/account_index" />
+
+<block name="extra_js">
+    <script src="__PUBLIC__/js/Plugin/layer/layer.js"></script>
+    <script type="text/javascript">
+        function kickMember(uId){
+            layer.confirm('确定要把该成员踢出堂会吗？其贡献值将被折算成虎币返还!', function(index){
+                $.post("family_kick", {'uid':uId}, function(data){
+                    if(data['status']){
+                        layer.alert(data['msg'],function(){
+                            window.location.href="members_manage";
+                        });
+                        layer.title('轰轰虎提示');
+                    }
+                });
+                layer.close(index);
+            });
+            layer.title('轰轰虎提示');
+            return false;
+        }
+    </script>
+</block>
+<block name="content">
+    <div class="menu_bar_content">
+        <div class="user_center_list">
+            <table cellspacing="0px">
+                <tr>
+                    <th class="first">头像</th>
+                    <th>堂员</th>
+                    <th>贡献值</th>
+                    <th>VIP等级</th>
+                    <th>操作</th>
+                </tr>
+                <foreach name="members" item="list">
+                    <tr>
+                        <td><img src="__PUBLIC__/{$list.pic}" width="40" height="40" alt="{$list.nick_name}"></td>
+                        <td>{$list.nick_name}</td>
+                        <td>{$list.contribt_sum}</td>
+                        <td>{$list.vip}</td>
+                        <td>
+                            <a href="javascript:void(0)" onclick="return kickMember('{$list.user_id}')">踢除</a>
+                        </td>
+                    </tr>
+                </foreach>
+            </table>
+        </div>
+
+        <div class="page_container">
+            <div class="page">{$page}</div>
+        </div>
+
+    </div>
+</block>

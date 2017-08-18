@@ -1,0 +1,170 @@
+<extend name="../Common/home_base" />
+
+<block name="custom_css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/trade_center.css">
+</block>
+
+<block name="extra_js">
+    <script type="text/javascript" src="__PUBLIC__/js/common/sell.js"></script>
+    <script type="text/javascript">
+        $().ready(function(){
+            $('.name').text("");
+            $('.form_name').val("");
+
+            $('.type').text("");
+            $('.form_type').val("");
+            $("input[name='type']").attr("checked",false);
+
+            var a = $('.search_list > a');
+            var aLength =a.length;
+            var div = $('.search_game > div');
+            for(var i = 0; i < aLength; i++){
+                a[i].index = i;
+
+                a[i].onclick = function(){
+                    for(var i = 0; i < aLength; i++){
+                        if(a[i] && div[i]){
+                            a[i].className='';
+                            div[i].style.display='none';
+                        }
+                    }
+                    if(div[this.index]){
+                        this.className='is_active';
+                        div[this.index].style.display='block';
+                    }
+
+                }
+            }
+
+            $(".search_list a:eq(0)").addClass("is_active");
+            $(".search_game div:eq(0)").addClass("block");
+
+            $(".game_unit > a > img").each(function(){
+                var picPath = $(this).attr('alt');
+                $(this).attr('src', "" + "/game_pic/" + picPath);
+            });
+        });
+        
+        function checkInfo(){
+     	   var is_trainer = "{$is_trainer}";
+     	   return check(is_trainer);
+        }
+
+        </script>
+</block>
+
+<block name="content">
+    <div class="row_container">
+        <div class="center_content">
+            <!--<div class="activity">商品推荐</div>-->
+
+            <div class="inline_div game_list">
+                <div class="title_bar">
+                    <h3>游戏选择</h3>
+                </div>
+                <div class="search_list">
+                    <a href='javascript:void(0)' class="is_active" id="recommend">推荐</a>   
+                    <foreach name="game_list" item="v" key="letter">
+                        <a href='javascript:void(0)'>{$letter}</a>
+                    </foreach>
+                </div>
+                <div class="search_game">
+                    <div style="display: block;">
+                        <ul>
+                            <foreach name="suggest_list" item="suggest_game"> 
+                                <notempty name="suggest_game">
+                                    <li class="game_unit">
+                                        <a href="javascript:void(0)" onclick="setGameName('{$suggest_game.name}', '{$suggest_game.game_id}')">
+                                            <img src="" alt="{$suggest_game.thumbnail_path}" width="80px" height="80px"/>
+                                            <p>{$suggest_game.name}</p>
+                                        </a>
+                                    </li>
+                               </notempty>
+                             </foreach>
+                        </ul>
+                    </div>
+                    <foreach name="game_list" item="v" key="letter">
+                        <div>
+                            <ul>
+                                <foreach name="v" item="game_obj">
+                                    <notempty name="game_obj">
+                                        <li class="game_unit">
+                                            <a href="javascript:void(0)" onclick="setGameName('{$game_obj.name}', '{$game_obj.id}')">
+                                                <img src="" alt="{$game_obj.pic}" width="80px" height="80px"/>
+                                                <p>{$game_obj.name}</p>
+                                            </a>
+                                        </li>
+                                    </notempty>
+                                </foreach>
+                            </ul>
+                        </div>
+                    </foreach>
+                </div>
+
+                <div class="title_bar">
+                    <h3>类型选择</h3>
+                </div>
+                <div class="type_container">
+                    <foreach name="type" item="type_value" key="type_name" >
+                        <label>
+                            <input type="radio" name="type" value="{$type_name}" onclick="setType(this.value)"/>{$type_value}
+                        </label>
+                    </foreach>
+                </div>
+                <div class="infos">
+                    <p>您当前的选择是：
+                        <span class="name"></span>
+                        <label>></label>
+                        <span class="type"></span>
+                    </p>
+                    <p class="error_msg">
+                        <label>需进行代练师身份认证才能发布套餐</label>
+                        <a href="{:U('Home/User/authentication')}"><b>>>马上去认证>></b></a>
+                    </p>
+                </div>
+                <div class="next">
+                    <form action="{:U()}" method="post" onsubmit="return checkInfo()">
+                        <input type="hidden" class="form_name" name="form_name">
+                        <input type="hidden" class="form_type" name="form_type">
+                        <p class="input_field">
+                            <label class="form_info">&nbsp;</label>
+                            <button type="submit">下一步</button>
+                        </p>
+                    </form>
+                </div>
+
+            </div>
+            <div class="inline_div game_package">
+                <div class="game_picture"><img src="__PUBLIC__/img/train.jpg" alt="代练与需求推荐" /></div>
+                <div class="nva">最新代练套餐/需求</div>
+                <div class="package_list">
+                    <ul>
+                        <foreach name="package_list" item="row">
+                            <li>
+                                <span>
+                                    <a href="{:U('Home/Package/buy?id='.$row['id'])}">
+                                        {$row.name}
+                                    </a>
+                                    <br><span>{$row.game_name}【套餐】</span>
+                                </span>
+                                <p><b>{$row.price}</b><b>元</b></p>
+                            </li>
+                        </foreach>
+
+                        <foreach name="requirement_list" item="row">
+                            <li>
+                                <span>
+                                    <a href="{:U('Home/Requirement/receive?id='.$row['id'])}">
+                                        {$row.name}
+                                    </a>
+                                    <br><span>{$row.game_name}【需求】</span>
+                                </span>
+                                <p><b>{$row.price}</b><b>元</b></p>
+                            </li>
+                        </foreach>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>

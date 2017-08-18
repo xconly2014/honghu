@@ -1,0 +1,36 @@
+<extend name="../Common/admin_base" />
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div class="game_list_container">
+                <div class="table_bar">
+                    <a  class="a_style_button" href="{:U('Admin/Game/suggest_add')}">添加推荐游戏</a>
+                </div>
+
+                <div class="table_container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>编号</th>
+                                <th>游戏名</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <foreach name="suggest_list" item="vo">
+                                <tr id="row_{$vo.id}">
+                                    <td>{$vo.id}</td>
+                                    <td>{$vo.game_name}</td>
+                                    <td>
+                                        <a href="{:U('Admin/Game/suggest_del',array('id'=>$vo['id']))}">删除</a>
+                                    </td>
+                                </tr>
+                            </foreach>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>

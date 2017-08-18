@@ -1,0 +1,181 @@
+/* line 1, ../sass/pc/content/_strategy_evoluation_content.scss */
+.strategy_evoluation_info {
+  min-height: 700px;
+  margin-top: 10px;
+  padding-bottom: 30px;
+}
+/* line 6, ../sass/pc/content/_strategy_evoluation_content.scss */
+.strategy_evoluation_info h3 {
+  text-align: center;
+  padding-top: 10px;
+  font-size: 24.5px;
+}
+/* line 12, ../sass/pc/content/_strategy_evoluation_content.scss */
+.strategy_evoluation_info .strategy_evoluation_message {
+  width: 750px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+/* line 16, ../sass/pc/content/_strategy_evoluation_content.scss */
+.strategy_evoluation_info .strategy_evoluation_message span {
+  margin-left: 25px;
+  font-size: 14px;
+}
+/* line 22, ../sass/pc/content/_strategy_evoluation_content.scss */
+.strategy_evoluation_info .strategy_evoluation_info_content {
+  width: 930px;
+  min-height: 650px;
+  margin: 0 auto;
+  margin-top: 15px;
+  background: #ffffff;
+  padding: 15px;
+  border: 5px solid #ededed;
+  border-radius: 10px;
+}
+
+/* line 35, ../sass/pc/content/_strategy_evoluation_content.scss */
+.strategy_evoluation_container {
+  background-color: #fff;
+  margin-bottom: 38px;
+}
+
+/* line 39, ../sass/pc/content/_strategy_evoluation_content.scss */
+.strategy_evoluation_list {
+  width: 704px;
+  height: 610px;
+  margin: 0 5px;
+}
+/* line 43, ../sass/pc/content/_strategy_evoluation_content.scss */
+.strategy_evoluation_list a {
+  color: #D33302;
+  text-decoration: none;
+}
+/* line 47, ../sass/pc/content/_strategy_evoluation_content.scss */
+.strategy_evoluation_list ul {
+  display: block;
+  height: 516px;
+  border-top: 2px solid #CBCBCB;
+  border-bottom: 2px solid #CBCBCB;
+}
+/* line 52, ../sass/pc/content/_strategy_evoluation_content.scss */
+.strategy_evoluation_list ul li {
+  height: 51px;
+  line-height: 51px;
+}
+/* line 56, ../sass/pc/content/_strategy_evoluation_content.scss */
+.strategy_evoluation_list ul li:nth-child(2n+1) {
+  background-color: #efefef;
+}
+/* line 59, ../sass/pc/content/_strategy_evoluation_content.scss */
+.strategy_evoluation_list ul li span {
+  color: #2973BF;
+  padding-left: 10px;
+}
+/* line 63, ../sass/pc/content/_strategy_evoluation_content.scss */
+.strategy_evoluation_list ul li:hover {
+  background-color: #FF8343;
+}
+/* line 65, ../sass/pc/content/_strategy_evoluation_content.scss */
+.strategy_evoluation_list ul li:hover a {
+  color: #fff;
+}
+
+/* line 73, ../sass/pc/content/_strategy_evoluation_content.scss */
+.strategy_evoluation_title {
+  height: 45px;
+  border-top: 5px solid #d46c20;
+  color: #2973B9;
+  font-weight: bold;
+  line-height: 45px;
+  font-size: 18px;
+}
+
+/* line 82, ../sass/pc/content/_strategy_evoluation_content.scss */
+.header_title {
+  display: block;
+  float: left;
+  width: 440px;
+  padding-left: 25px;
+}
+
+/* line 89, ../sass/pc/content/_strategy_evoluation_content.scss */
+.padding_left {
+  padding-left: 110px;
+  width: 370px;
+}
+
+/* line 94, ../sass/pc/content/_strategy_evoluation_content.scss */
+.strategy_evoluation_search_list {
+  padding-top: 60px;
+  margin-top: 50px;
+  border: 3px solid #FF9934;
+  border-radius: 10px;
+  margin-bottom: 160px;
+}
+
+/* line 103, ../sass/pc/content/_strategy_evoluation_content.scss */
+.search_game_info {
+  padding: 0px 140px 75px 115px;
+}
+/* line 105, ../sass/pc/content/_strategy_evoluation_content.scss */
+.search_game_info img {
+  border-radius: 160px;
+  padding: 5px;
+  background-color: #fff;
+}
+/* line 110, ../sass/pc/content/_strategy_evoluation_content.scss */
+.search_game_info p {
+  text-align: center;
+  color: #1264B6;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 15px;
+}
+
+/* line 121, ../sass/pc/content/_strategy_evoluation_content.scss */
+.search_list_ul li {
+  color: #1264B6;
+  line-height: 36px;
+}
+/* line 124, ../sass/pc/content/_strategy_evoluation_content.scss */
+.search_list_ul li a {
+  text-decoration: none;
+  color: #1264B6;
+  width: 500px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: inline-block;
+}
+
+/* line 136, ../sass/pc/content/_strategy_evoluation_content.scss */
+.recommended {
+  margin-bottom: 38px;
+  color: #4D6CD8;
+}
+/* line 139, ../sass/pc/content/_strategy_evoluation_content.scss */
+.recommended a {
+  text-decoration: none;
+  color: #4D6CD8;
+}
+/* line 143, ../sass/pc/content/_strategy_evoluation_content.scss */
+.recommended h2 {
+  margin-bottom: 20px;
+  display: inline-block;
+  margin-left: 7px;
+  width: 388px;
+}
+
+/* line 150, ../sass/pc/content/_strategy_evoluation_content.scss */
+.current_list, .hot_list {
+  width: 50%;
+}
+/* line 152, ../sass/pc/content/_strategy_evoluation_content.scss */
+.current_list li, .hot_list li {
+  line-height: 30px;
+}
+
+/* line 157, ../sass/pc/content/_strategy_evoluation_content.scss */
+.hot_list li {
+  margin-left: 8px;
+}

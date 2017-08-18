@@ -1,0 +1,35 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="header_bar">
+    <h1 class="mui-title">付款成功</h1>
+</block>
+
+<block name="main_content">
+    <div class="main_container">
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell success-header">
+                <img class="mui-media-object mui-pull-left" src="__PUBLIC__/img/finish.png">
+                <span style="color:green;font-size:20px">付款成功</span>
+                <p style="margin-left: 50px;">我们将为尽快为您审核,通过后第一时间可供玩家购买 !
+                若有疑问，可凭 <b style="color:red;">订单号  {$package_order_info.id}</b>咨询客服</p>
+            </li>
+
+            <li class="mui-table-view-cell mui-collapse  mui-active"><a class="mui-navigate-right" href="#">订单详情</a>
+                <ul class="mui-table-view mui-table-view-chevron">
+                    <li class="mui-table-view-cell">
+                        <label>订单号：</label><span>{$package_order_info.id}</span>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        <label>游戏：</label><span>{$package_order_info.game_name}</span>
+                    </li>
+                    <li class="mui-table-view-cell">
+                       <label>套餐：</label><span>{$package_order_info.title}</span>
+                    </li>
+                    <li class="mui-table-view-cell">
+                       <label>已缴纳保证金：</label><span>{$package_order_info.real_payment}</span>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</block>

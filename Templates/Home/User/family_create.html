@@ -1,0 +1,80 @@
+<extend name="../Common/account_index" />
+
+<block name="custom_css">
+    <link rel="stylesheet" href="__PUBLIC__/css/family.css" />
+    <style>
+        .input_field span.error{
+            margin-left:130px;
+        }
+        .form_info,.form_key,.form_value{
+            font-size:14px;
+            color:#666;
+            font-weight:bold;
+        }
+    </style>
+</block>
+
+<block name="extra_js">
+    <script src="__PUBLIC__/js/family.js"></script>
+    <script src="__PUBLIC__/js/Plugin/layer/layer.js"></script>
+    <script>
+        $().ready(function(){
+
+            $('#family_create').validate(window.family_create);
+
+             //获取第一个logo    
+            clickLogo($('.family_small_logo ul li img').first(),false);
+
+            //点击获取logo
+            $('.family_small_logo ul li img').click(function(){
+                clickLogo($(this),false);
+            });
+        });
+    </script>
+</block>
+
+<block name="content">
+    <div class="menu_bar_content">
+        <div class="user_center_list">
+            <div class="family_add">
+                <form id="family_create" action="{:U('Home/User/family_create')}" method="post">
+                    <div class="family_big_logo">
+                        <p>堂会LOGO</p>
+                        <img src="" alt="" width="300"/>
+                    </div>
+
+                    <div class="family_name">
+                        <p class="static_field">
+                            <label class="form_key">堂会名：</label>
+                            <label class="form_value family_logo_name"></label>
+                        </p>
+                        <p class="input_field">
+                            <label class="form_info">我的昵称：</label>
+                            <input type="text" name="nick_name" placeholder="请输入您在堂会中的昵称" />
+                        </p>
+                    </div>
+
+                    <input class="family_logo_id" type="hidden" name="family_logo_id" />
+
+                    <div class="family_small_logo">
+                        <ul>
+                            <foreach name="family_logo" item="row">
+                                <li>
+                                    <img src="__PUBLIC__/img/family/logo/{$row.pic_name}" alt="{$row.name}" id="{$row.id}"/>
+                                </li>
+                            </foreach>                            
+                        </ul>                    
+                    </div>
+
+                    <div class="family_introduce">
+                        <h5>堂会简介</h5>
+                        <p class="input_field">
+                            <textarea name="introduction" placeholder="本堂会乃天下第一堂，望各位土豪大展生手！"></textarea>
+                        </p>
+                    </div>
+                    <button>创建</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</block>

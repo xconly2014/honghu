@@ -1,0 +1,22 @@
+<extend name="../Common/admin_base" />
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div class="news_strategy_container">
+                <form class="common_form container" action="{:U('Admin/Help/categoryInsert')}" method="post">
+                    <p>添加帮助目录</p>
+                    <li class="required">
+                        <label>目录名</label>
+                        <input type="text" name="name" />
+                    </li>
+
+                     <li>
+                        <button type="submit">添加</button>
+                        <button type="reset">取消</button>
+                    </li>
+                </form>
+            </div>
+        </div>
+    </div>
+</block>

@@ -1,0 +1,49 @@
+<extend name="../Common/admin_base" />
+
+<block name="extra_css">
+    <style>
+        .common_form li input[type='text']{
+	        width:680px;
+        }
+        #placeholder{
+	          min-width: 300px;
+        }
+    </style>
+</block>
+
+<block name="content">
+<div class="content_container">
+	<div class="content">
+		<div class="game_strategy_container">
+			<div class="form_container">
+				<form action="{:U('Admin/SysConfig/add')}" method="post" class="common_form container" id="seo_add_item">
+					<p>添加SEO配置</p>
+					
+					<li class="required">
+						<label>title：</label>
+						<input type="text" name="meta_title"/>
+					</li>
+					<li class="required">
+						<label>keyword：</label>
+						<input type="text" name="meta_keyword" />
+					</li>
+					<li class="required">
+						<label>description：</label>
+						<input type="text" name="meta_description" />
+					</li>
+					<li class="required">
+						<label>URL：</label>
+						<input type="text" name="url" />
+					</li>
+					<li>
+					    <label id="placeholder">&nbsp;</label>
+                        <button type="submit">添加</button>
+                        <button type="reset">取消</button>
+                    </li>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+</block>
+

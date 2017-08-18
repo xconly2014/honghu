@@ -1,0 +1,54 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="extra_js">
+    <script type="text/javascript" src="__PUBLIC__/js/common/activity.js"></script>
+    <script type="text/javascript">
+        $().ready(function(){
+        	is_activity({$activity_time});
+        });
+    </script>
+</block>
+
+<block name="header_bar">
+    <h1 class="mui-title">商品详情页</h1>
+</block>
+
+<block name="extra_css">
+    <link rel="stylesheet" href="__PUBLIC__/css/mb_credits.css" />
+</block>
+
+<block name="main_content">
+    <div class="main_container">
+        <ul class="mui-table-view mui-grid-view">
+            <li class="mui-table-view-cell mui-media mui-col-xs-12">
+                <img class="mui-media-object" src="__PUBLIC__/upload/goods_pic/{$data.pic_name}">
+            </li>
+        </ul>
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell">
+                <label>商品名：</label><span>{$data.name}（颜色随机）</span>
+            </li>
+            <li class="mui-table-view-cell">
+                <label>所需积分：</label><span class="import_price del_line">{$data.credits}积分</span>
+                <notempty name="data.discount_credits">
+			        <span class="import_price">{$data.discount_credits}积分</span>
+			    </notempty> 
+            </li>
+            <li class="mui-table-view-cell">
+                <label>库存数量：</label><span>{$data.remaining}个</span>
+            </li>
+            <li class="mui-table-view-cell">
+                <label>已购买人数：</label><span>{$data.exchange_num}人</span>
+            </li>
+            <li class="mui-table-view-cell">
+                <label>配送：</label><span class="import_price">免费包邮</span>
+            </li>
+        </ul>
+        <form action="{$url}" method="post">
+            <input type="hidden" name="jifen" value="{$data.credits}">
+            <div class="mui-button-row">
+                <button class="mui-btn mui-btn-primary mui-btn-block" <if condition="$data.remaining eq 0">disabled='disabled' style="opacity:0.4; filter:'alpha(opacity=40)';"</if>>立即兑换</button>
+            </div>
+        </form>
+    </div>
+</block>

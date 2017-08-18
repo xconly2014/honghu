@@ -1,0 +1,330 @@
+<extend name="../Common/home_base" />
+
+<block name="custom_css">
+    <link href="__PUBLIC__/css/jquery.slideBox.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/index.css">
+    <style>
+        html body{
+            background:#F7CE8E;
+        }
+    </style>
+</block>
+<block name="extra_js">
+    <script src="__PUBLIC__/js/Plugin/slideBox/jquery.slideBox.min.js" type="text/javascript"></script>
+    <script src="__PUBLIC__/js/module/index.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $().ready(function(){
+
+            $('#strategy').click(function(){
+                $('#strategy_more').attr('href',"{:U('Home/Strategy/strategy_list')}");
+            });
+            $('#evoluation').click(function(){
+                $('#strategy_more').attr('href',"{:U('Home/Evoluation/evoluation_list')}");
+            });
+
+            $('.tel_alert').hover(function(){
+                $('.tel_div').css('display','block');
+            },function(){
+                $('.tel_div').css('display','none');
+            });
+        });
+    </script>
+</block>
+
+
+<block name="home_notice">
+    <div class="top_notice">
+        <p>
+            <img src="__PUBLIC__/img/horn.gif" alt="网站提示" width="15px" height="15px" />
+            <span>警方提示：最近有不法分子冒充轰轰虎工作人员行骗，除腾讯手游充值需向轰轰虎客服提供验证码外，轰轰虎不会以任何形式向玩家索取验证码、用户名、密码，玩家下单手游充值时也无需支付押金。</span>
+            <label id="close"></label>
+        </p>
+    </div>
+</block>
+
+
+<!-- <block name="home_login_btn">
+    <li class="home_login_btn" id="home_login_btn">
+        <img src="__PUBLIC__/img/login_run.gif" alt="" />
+    </li>
+</block> -->
+
+<!-- <block name="login_phone">
+    <if condition="is_login()">
+        <div class="login_float login_float_in" id="home_login_window">
+            <div class="user_header_info">
+                <img src="__PUBLIC__{$user_info.head_img}" alt="用户头像" />
+                
+                <p><a href="{:U('Home/User/info')}">个人中心</a></p>
+            </div>
+            <ul class="login_in">
+                <a href="{:U('Home/User/coins_list')}">虎 币：{$user_info.coins}</a>
+                <a href="{:U('Home/User/credits')}">积 分：{$user_info.credit}</a>
+                <a href="{:U('Home/User/info')}">今 日 签 到</a>
+            </ul>
+        </div>
+        <else/>
+        <div class="login_float login_float_out" id="home_login_window">
+            <ul class="login_out">
+                <li>
+                    <label>&nbsp;</label>
+                    <span id="info"></span>
+                </li>
+                <li>
+                    <input placeholder="请输入用户名" id="uname"/>
+                </li>
+                <li>
+                    <input placeholder="请输入密码" id="upwd" type="password"/>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" rel="nofollow" id="login">登录</a>
+                    <a href="{:U('Register/index')}" rel="nofollow">注册</a>
+                </li>
+            </ul>
+        </div>
+    </if>
+</block> -->
+
+<block name="content">
+
+    <div class="fixed">
+        <ul>
+            <li>
+                <a rel="nofollow" target="_blank">
+                    <img src="__PUBLIC__/img/float_window/qq.png" alt="QQ">
+
+                    <script charset="utf-8" type="text/javascript" src="http://wpa.b.qq.com/cgi/wpa.php?key=XzkzODAwNzI2M18yNjE4OTZfNDAwODA2MjQwMF8"></script>
+                </a>
+            </li>
+            <li>
+                <a href="{:U('Home/Suggest/suggest')}" target="_blank">
+                    <img src="__PUBLIC__/img/float_window/suggestion.png" alt="建议收集">
+                    <p>建议收集</p>
+                </a>
+            </li>
+            <li class="tel_alert">
+                <a href="javascript:void(0)">
+                    <img src="__PUBLIC__/img/float_window/telephone.png" alt="客服电话">
+                    <p>客服电话</p>
+                    <div class="tel_div">400-806-2400</div>
+                </a>
+
+            </li>
+            <li class="go_top" style="display: list-item;">
+                <a href="javascript:;">
+                    <img src="__PUBLIC__/img/float_window/go_top.png" alt="回到顶部">
+                    <p>回到顶部</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="float_right" id="remind">
+        <p>掌握最新优惠折扣</p>
+        <img src="__PUBLIC__/img/triangle.png">
+    </div>
+    <div class="float_right">
+        <div class="bar_code_container">
+            <img src="__PUBLIC__/img/bar_code.png" alt="微信二维码" width="150px" height="150px" />
+        </div>
+    </div>
+    <div class="row_container" >
+        <div class="box_left">
+            <div class="top_pic_container">
+                <div id="slideboxContainer" class="slideBox">
+                    <ul class="items">
+                        <volist name="banners" id="one_item">
+                            <li>
+                                <a href="{$one_item.href}" >
+                                    <img src="__PUBLIC__/upload/banner/{$one_item.img}" alt="{$one_item.title}"/>
+                                </a>
+                            </li>
+                        </volist>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="box_right">
+            <div class="part_margin quick_button_container">
+                <div class="quick_button_top">
+                    <div class="top_deco"></div>
+                </div>
+                <div class="quick_button">
+                    <div class="wrapper_container">
+                        <a class="hot_buy" href="{:U('Home/CZIOS/index')}">苹果充值</a>
+                        <a href="{:U('Home/TradeCenter/buy')}">我要购买</a>
+                        <a class="hot_buy" href="{:U('Home/TradeCenter/sell')}">我要出售</a>
+                        <a class="hot_buy" href="{:U('Home/TrafficOrder/mb_flow_index')}">流量充值</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row_container">
+        <div class="box_left">
+            <div class="cz_game_container">
+                <label class="cz_game_title">游戏充值</label>
+                <a class="letter_more_game" href="{:U('Home/CZIOS/index')}">>>>更多游戏</a>
+
+                <div class="letter_bar_content" id="czios_list">
+                    <ul class="letter_bar" id="letter">
+                        <li style="width:45px;margin-right:20px;">
+                            <a href='javascript:void(0)' class="tab_on">推荐</a>
+                        </li>
+
+                        <foreach name="letter_bar" item="v">
+                            <li>
+                                <a href='javascript:void(0)'>{$v}</a>
+                            </li>
+                        </foreach>
+                    </ul>
+
+                    <div class="letter_bar_tc" id="推荐" style="display:block">
+                        <foreach name="suggest_list" item="suggest_game">
+                            <notempty name="suggest_game">
+                                <li class="cz_game_info suggest_game_list" >
+                                    <a href="{:U('CZIOS/chongzhi_info?gameId='.$suggest_game['game_id'])}">
+                                        <img src="" alt="{$suggest_game['thumbnail_path']}" width="90px" height="90px"/>
+                                        <p>{$suggest_game.name}</p>
+                                    </a>
+                                </li>
+                            </notempty>
+                        </foreach>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row_container">
+        <div class="box_left part_margin">
+            <div class="news_container">
+                <div class="news_title">公告</div>
+                <div class="news_content">
+                    <ul>
+                        <foreach name="news_list" item="row" key="index">
+                            <a href="{:U('Home/News/index?newsId='.$row['id'])}">
+                                <li title="{$row.title}">
+                                    <if condition="$index lt 3 ">
+                                        <img src="__PUBLIC__/img/hot.gif" alt="公告-火" width="29px" height="19px" />
+                                    </if>
+                                    {$row.title}
+                                </li>
+                            </a>
+                        </foreach>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="box_right">
+            <div class="sc_container part_margin">
+                <div class="tab_title_container">
+                    <label>首充号</label>
+                    <!--<div class="tab_title" id="tab_title">
+                        <li name="ios_sc_list" class="click">苹果</li>
+                        <li name="android_sc_list">安卓</li>
+                    </div>-->
+                    <div class="more">
+                        <a href="{:U('Home/SCH/index')}">>>>更多</a>
+                    </div>
+                </div>
+                <div class="tab_content" id="tab_content">
+                    <div id="ios_sc_list">
+                        <ul class="common_ul_list" id='iossc'></ul>
+                    </div>
+                    <!--<div id="android_sc_list" style="display: none">
+                        <ul class="common_ul_list" id='androidsc'></ul>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row_container">
+        <div class="box_left">
+            <div class="inline_div game_strategy_evoluation part_margin" id="strategy_evoluation">
+                <div class="tab_title_container">
+                    <div class="tab_title" id="game_strategy_evoluation_title">
+                        <li name="game_strategy" class="click" id="strategy">攻略</li>
+                        <li name="game_evoluation" id="evoluation">资讯</li>
+                    </div>
+                    <div class="more">
+                        <a href="{:U('Home/Strategy/strategy_list')}" id="strategy_more">>>>更多</a>
+                    </div>
+                </div>
+                <div class="tab_content" id="game_strategy_evoluation_content">
+                    <div id="game_strategy">
+                        <ul class="common_ul_list" id="strategy_ul"></ul>
+                    </div>
+                    <div id="game_evoluation" style="display: none">
+                        <ul class="common_ul_list" id='evoluation_ul'></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="box_right">
+            <div class="cz_package_container part_margin">
+                <div class="deco">充值团购</div>
+                <ul class="common_ul_list" id='czpackage_ul'></ul>
+            </div>
+        </div> -->
+    </div>
+
+
+
+    <div class="row_container">
+        <div class="box_left">
+            <div class="part_margin friend_link_container">
+                <div class="friend_link_title">友情链接</div>
+                <div class="friend_link_content">
+                    <ul>
+                        <foreach name="friend_link_list" item="row">
+                            <li><a href="{$row.url}" target="_blank">{$row.name}</a></li>
+                        </foreach>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="box_right">
+            <div class="part_margin package_requirement_container">
+                <div class="package_requirement_title">
+                    <li class="selected">代练需求</li>
+                    <li>代练套餐</li>
+                    <li>账号交易</li>
+                </div>
+                <div class="package_requirement_content">
+                    <ul style="display:block">
+                        <foreach name="requirement_list" item="row">
+                            <a href="{:U('Home/Requirement/receive?id='.$row['id'])}">
+                                <li>
+                                    <p>{$row.name}</p>
+                                    <span>{$row.game_name}<b>{$row.price}元</b></span>
+                                </li>
+                            </a>
+                        </foreach>
+                    </ul>
+                    <ul>
+                        <foreach name="package_list" item="row">
+                            <a href="{:U('Home/Package/buy?id='.$row['id'])}">
+                                <li>
+                                    <p>{$row.name}</p>
+                                    <span>{$row.game_name}<b>{$row.price}元</b></span>
+                                </li>
+                            </a>
+                        </foreach>
+                    </ul>
+                    <ul>
+                        <foreach name="account_trade_list" item="row">
+                            <a href="{:U('Home/AccountTrade/buy?id='.$row['id'])}">
+                                <li>
+                                    <p>{$row.name}</p>
+                                    <span>{$row.game_name}<b>{$row.price}元</b></span>
+                                </li>
+                            </a>
+                        </foreach>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>

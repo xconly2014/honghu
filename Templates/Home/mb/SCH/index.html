@@ -1,0 +1,78 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="extra_css">
+    <link rel="stylesheet" href="__PUBLIC__/css/mb_sch.css" />
+    <link rel="stylesheet" href="__PUBLIC__/css/mb_chongzhi.css" />
+</block>
+<block name="extra_js">
+    <script type="text/javascript" src="__PUBLIC__/js/global_checker.js"></script>
+    <script src="__PUBLIC__/js/Plugin/layer/layer.js"></script>
+    <script src="__PUBLIC__/js/common/sch_common.js"></script>
+    <script type="text/javascript">
+        is_login = "{$is_login}";
+    </script>
+
+</block>
+
+<block name="header_bar">
+    <h1 class="mui-title">首充号游戏选择</h1>
+</block>
+
+<block name="main_content">
+    <div class="main_container">
+        <!--<div id="segmentedControl" class="mui-segmented-control">
+            <a class="mui-control-item mui-active" href="#item1mobile">
+                苹果首充号
+            </a>
+
+            <a class="mui-control-item" href="#item2mobile">
+                安卓首充号
+            </a>
+        </div>-->
+        <include file="../Common/alert_login" />
+        <div class="mui-content-padded">
+            <div id="item1mobile" class="mui-control-content mui-active">
+                <ul class="mui-table-view">
+                    <foreach name="iosScGameList" item="iosList">
+                        <li class="mui-table-view-cell mui-media">
+
+                            <img class="mui-media-object mui-pull-left" src="/game_pic/{$iosList.thumbnail_path}" />
+                            <div class="sch_middle">
+                                <b class='mui-media-body mui-ellipsis' style="color:#666;">{$iosList.name}</b>
+                                <p class="sch_apple">适用于：</p>
+                                <p class="sch_download">下载：
+                                    <a href="{$iosList.ios_url}" class="download_url">
+                                        <img src="__PUBLIC__/img/download_sch.png" alt="游戏下载" width="22" />
+                                    </a>
+                                </p>
+                            </div>
+
+                            <div class="btn_two">
+                                <a  class="mui-btn" href="{:U('Home/SCH/account_ios',array('gameId'=>$iosList['game_id']))}" style="background:#559adf;">
+                                    首充号
+                                </a>
+                                <a class="mui-btn" style="background:#ff682f;margin-top:8px;" href='javascript:void(0);' onclick="getGift('{$iosList.game_id}')">
+                                    礼&nbsp; &nbsp;包
+                                </a>
+                            </div>
+
+                        </li>
+                    </foreach>
+                </ul>
+            </div>
+
+            <!--<div id="item2mobile" class="mui-control-content">
+                <ul class="mui-table-view mui-grid-view mui-grid-9">
+                    <foreach name="androidScGameList" item="androidList"> 
+                        <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+                            <a href="{:U('Home/SCH/account_android',array('gameId'=>$androidList['game_id']))}">                       
+                                <img src="/game_pic/{$androidList.thumbnail_path}" width="45" height="45"/>
+                                <div style="font-size:12px" class="mui-ellipsis-2">{$androidList.name}</div>
+                            </a>
+                        </li>
+                    </foreach>
+                </ul> 
+            </div>-->
+        </div>
+    </div>
+</block>

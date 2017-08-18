@@ -1,0 +1,25 @@
+﻿
+.nva{
+  margin-top:5px;
+  img{
+    opacity:0;
+    opacity:1\9;
+    -webkit-animation-name:scale;
+    -webkit-animation-duration:1s;
+    -webkit-animation-fill-mode:forwards;
+    box-sizing:border-box;
+  }
+}
+
+@-webkit-keyframes scale{
+  0%{opacity:0;-webkit-transform:scale(0.6,0.6);}
+    100%{opacity:1;-webkit-transform:scale(1,1);}
+}
+@-ms-keyframes scale{
+  0%{opacity:0;-webkit-transform:scale(0.6,0.6);}
+    100%{opacity:1;-webkit-transform:scale(1,1);}
+}
+@keyframes scale{
+  0%{opacity:0;-webkit-transform:scale(0.6,0.6);}
+  100%{opacity:1;-webkit-transform:scale(1,1);}
+}

@@ -1,0 +1,26 @@
+<extend name="../Common/account_index" />
+
+<block name="extra_js">
+    <script type="text/javascript" src="__PUBLIC__/js/module/user_center/security_center.js"></script>
+</block>
+
+<block name="content">
+    <div class="menu_bar_content">
+        <div class="message_reset">
+            <include file="../Common/component/user_security_center_tab"/>
+
+            <form class="mobile_bind_modify" action="{$submit_url}">
+                <img src="__PUBLIC__/img/finish.png"/>
+                <span>您已经绑定过手机</span>
+                <p>手机绑定可用于找回密码等安全服务，有效保护您的账号安全</p>
+
+                <!--
+                <p class="input_field">
+                    <label class="form_info"> &nbsp;</label>
+                    <button type="submit">修改</button>
+                </p>
+                -->
+            </form>
+        </div>
+    </div>
+</block>

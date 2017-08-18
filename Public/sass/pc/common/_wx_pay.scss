@@ -1,0 +1,80 @@
+.wx_order_msg{
+    height:50px;
+    padding:20px 0 10px 0;
+
+    p  {
+        margin:5px 10px;
+        label  {
+            color:#f00;
+        }
+    }
+}
+.wx_pay_container{
+    width:930px;
+    height:530px;
+    margin:0 auto;
+    border-top:4px solid #4b5b78;
+    padding:12px 25px 0px 25px;
+    background:#FFFFFF;
+    margin-bottom:50px;
+    .wx_top{
+        margin-bottom: 20px;
+        font-size: 18px;
+    }
+    .wx_left{
+        float:left;
+        margin-left:130px;
+
+        .wx_left_top{
+            img{
+                width:298px;
+                height:298px;
+                border:1px solid #ddd;
+                margin-bottom:20px;
+            }
+            
+        }
+
+        .wx_left_bottom{
+            padding:8px 0px 8px 125px;            
+            height:44px;
+            background: url(../img/sao.png) 50px 8px no-repeat #ff7674;
+
+            p{
+                font-size: 15px;
+                line-height: 22px;
+                color: #fff;
+                font-weight: 700;
+            }
+        }                
+    }
+    .wx_right{
+        float:left;
+        margin-left:50px;
+        margin-top:-20px;
+    }
+}
+
+.review_order_container  {
+    margin-left:20px;
+    display:none;
+
+    span {
+        background: url("../img/finish.png") no-repeat 0px 0px;
+        display: block;
+        padding-left: 50px;
+        width: 180px;
+        height: 44px;
+        color: green;
+        font-size: 16px;
+        line-height: 44px;
+        margin-top: 20px;
+    }
+
+    p  {
+        label  {
+            color:#f00;
+        }
+    }
+
+}

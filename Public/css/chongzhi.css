@@ -1,0 +1,218 @@
+/* line 1, ../sass/pc/content/_chongzhi_content.scss */
+.activity {
+  width: 70%;
+  height: 200px;
+}
+
+/* line 6, ../sass/pc/content/_chongzhi_content.scss */
+.center_content {
+  background-color: #fff;
+  margin-bottom: 38px;
+}
+
+/* line 12, ../sass/pc/content/_chongzhi_content.scss */
+.czios_container {
+  height: 630px;
+  border-bottom-left-radius: 15px;
+}
+
+/* line 19, ../sass/pc/content/_chongzhi_content.scss */
+.game_list {
+  width: 635px;
+  margin: 0  25px 0 42px;
+}
+
+/* line 26, ../sass/pc/content/_chongzhi_content.scss */
+.cz_container {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding-top: 20px;
+  height: 640px;
+  background-color: #fff;
+  margin-bottom: 38px;
+}
+
+/* line 35, ../sass/pc/content/_chongzhi_content.scss */
+.cz_info_box {
+  width: 620px;
+  margin-left: 50px;
+}
+/* line 39, ../sass/pc/content/_chongzhi_content.scss */
+.cz_info_box h3 {
+  text-align: center;
+  padding-right: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #4688B9;
+  margin-left: -150px;
+}
+
+/* line 49, ../sass/pc/content/_chongzhi_content.scss */
+.chongzhi_steps_container {
+  margin-top: 50px;
+  height: 120px;
+  position: relative;
+}
+
+/* line 55, ../sass/pc/content/_chongzhi_content.scss */
+.chongzhi_form_container {
+  margin-top: 50px;
+}
+
+/* line 59, ../sass/pc/content/_chongzhi_content.scss */
+.chongzhi_modify {
+  background: #ededed;
+  height: 700px;
+  padding-top: 30px;
+}
+/* line 63, ../sass/pc/content/_chongzhi_content.scss */
+.chongzhi_modify .modify_warning {
+  width: 636px;
+  height: 273px;
+  margin-left: 80px;
+  background: url("../img/chongzhi_modify_bg.png") no-repeat 0px 0px;
+}
+/* line 68, ../sass/pc/content/_chongzhi_content.scss */
+.chongzhi_modify .modify_warning h2 {
+  color: #1195EB;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+/* line 75, ../sass/pc/content/_chongzhi_content.scss */
+.chongzhi_modify .modify_warning ul li {
+  list-style-type: square;
+  list-style-position: inside;
+  padding: 10px;
+}
+/* line 83, ../sass/pc/content/_chongzhi_content.scss */
+.chongzhi_modify .cz_modify_form {
+  margin-left: 80px;
+}
+
+/* line 88, ../sass/pc/content/_chongzhi_content.scss */
+.content_left {
+  float: left;
+  width: 50%;
+  border-right: 1px solid #ccc;
+}
+
+/* line 93, ../sass/pc/content/_chongzhi_content.scss */
+.content_right {
+  float: left;
+}
+
+/* line 97, ../sass/pc/content/_chongzhi_content.scss */
+.chongzhi_form {
+  float: left;
+  margin-left: 15px;
+  margin-top: 60px;
+}
+
+/* line 103, ../sass/pc/content/_chongzhi_content.scss */
+.orderInfo {
+  border: 1px solid #ccc;
+  min-height: 369px;
+}
+
+/* line 108, ../sass/pc/content/_chongzhi_content.scss */
+.attention {
+  margin: 10px;
+  margin-top: 50px;
+  float: right;
+  width: 270px;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+}
+/* line 115, ../sass/pc/content/_chongzhi_content.scss */
+.attention h4 {
+  padding-top: 8px;
+  color: #f00;
+  text-align: center;
+}
+/* line 120, ../sass/pc/content/_chongzhi_content.scss */
+.attention li {
+  color: #FF9933;
+  list-style-type: decimal;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  line-height: 25px;
+  font-size: 14px;
+  margin-left: 26px;
+}
+
+/* line 132, ../sass/pc/content/_chongzhi_content.scss */
+.search_game {
+  overflow: auto;
+}
+
+/* line 137, ../sass/pc/content/_chongzhi_content.scss */
+.orange {
+  color: #F44609;
+}
+
+/* line 141, ../sass/pc/content/_chongzhi_content.scss */
+.game_infos {
+  margin-top: 60px;
+}
+
+/* line 144, ../sass/pc/content/_chongzhi_content.scss */
+.button {
+  width: 112px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  float: right;
+  color: #fff;
+  font-weight: bold;
+  margin: -8px 30px 0 0;
+  background: url(../img/button.png) no-repeat;
+}
+
+/* line 157, ../sass/pc/content/_chongzhi_content.scss */
+.cz_game_info img {
+  margin-bottom: 0px;
+}
+
+/* line 162, ../sass/pc/content/_chongzhi_content.scss */
+.instructions_div {
+  border-top-style: none;
+  margin-top: 5px;
+}
+
+/* line 167, ../sass/pc/content/_chongzhi_content.scss */
+.remind {
+  padding: 2px 5px 2px 0px;
+  line-height: 20px;
+  font-size: 12px;
+  margin-left: 11px;
+  color: #f00;
+}
+
+/* line 174, ../sass/pc/content/_chongzhi_content.scss */
+.cz_game_info {
+  margin-left: 50px;
+}
+
+/* line 178, ../sass/pc/content/_chongzhi_content.scss */
+.input_field span.error {
+  width: 150px;
+}
+
+/* line 182, ../sass/pc/content/_chongzhi_content.scss */
+.no_result {
+  margin: 0 auto;
+  width: 240px;
+  height: 350px;
+  margin-top: 100px;
+  padding-left: 150px;
+  background: url(../img/search_cry.png) 2px 3px no-repeat;
+}
+/* line 190, ../sass/pc/content/_chongzhi_content.scss */
+.no_result p {
+  margin-left: 10px;
+  padding-top: 80px;
+  font-size: 18px;
+  color: #f00;
+  font-weight: bold;
+}

@@ -1,0 +1,60 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="header_bar">
+    <h1 class="mui-title">一元购公开详情</h1>
+</block>
+
+<block name="extra_css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/mb_group_buy.css">
+</block>
+
+<block name="extra_js">
+</block>
+
+<block name="main_content">
+    <div class="main_container">
+        <ul class="mui-table-view">
+           <li class="mui-table-view-cell mui-media">
+                <img class="mui-media-object mui-pull-left" src="__PUBLIC__/upload/game_pic/{$bgczRes.pic}"/>
+                <div class="mui-media-body">
+                    {$bgczRes.option_text}<b class="import_price">￥1.00元</b>
+                    <p class='mui-ellipsis'><del>价值：￥{$bgczRes.price}</del></p>
+                </div>
+            </li>
+            <li class="mui-table-view-cell">
+                <h3>幸运云购码：{$bgczRes.lucky_code}</h3>
+            </li>
+            
+            <li class="mui-table-view-cell mui-collapse">
+                <a class="mui-navigate-right" href="#">本期幸运者信息</a>
+                <div class="mui-collapse-content info">
+                    <p><span>幸运者：</span><b class='orange'>{$luckyManInfo.name}</b></p>
+                    <p><span>本云参与：</span><b class='orange'>{$luckyManInfo.times}人次</b></p>
+                    <p><span>云购时间：</span><b class='orange'>{$luckyManInfo.pay_time}</b></p>
+                    <p><span>揭晓时间：</span><b class='orange'>{$bgczRes.release_time}</b></p>
+                </div>
+            </li>
+            <li class="mui-table-view-cell mui-collapse">
+                <a class="mui-navigate-right" href="#">查看幸运者本期的云购码</a>
+                <div class="mui-collapse-content code">
+                    <foreach name='luckyManInfo.codes' item='codeList'>
+                        <if condition="$codeList eq $bgczRes['lucky_code']">
+                            <span class='orange'>{$codeList}</span> 
+                        <else />
+                            <span>{$codeList}</span>
+                        </if>
+                     </foreach>
+                </div>          
+            </li>
+            <li class="mui-table-view-cell mui-collapse">
+                <a class="mui-navigate-right" href="#">本期幸运码计算过程</a>
+                <div class="mui-collapse-content info">
+                    <p><span>时间和：</span><b class='orange'>{$gbData.sum}</b><label>(S)</label></p>
+                    <p><span>参与人次：</span><b class='orange'>{$bgczRes.price}</b><label>(N)</label></p>
+                    <p><span>固定值：</span><b class='orange'>10000001</b><label>(V)</label></p>
+                    <p><span>幸运码：</span><b class='orange'>{$bgczRes.lucky_code}</b><label>(S%N+V)</label></p>
+                </div>
+            </li>                        
+        </ul>
+    </div>
+</block>

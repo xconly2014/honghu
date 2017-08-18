@@ -1,0 +1,30 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="header_bar">
+    <h1 class="mui-title">代练需求列表</h1>
+</block>
+
+<block name="extra_css">
+    <link rel="stylesheet" href="__PUBLIC__/css/mb_user.css" />
+</block>
+<block name="main_content">
+    <div class="main_container">
+        <ul class="mui-table-view">
+            <foreach name="requirement_list" item="list">
+                <li class="mui-table-view-cell mui-collapse">
+                    <a class="mui-navigate-right" href="#">{$list.title}</a>
+                    <ul class="mui-table-view mui-table-view-chevron">
+                        <li class="mui-table-view-cell"><span>游戏：</span>{$list.game_name}</li>
+                        <li class="mui-table-view-cell"><span>平台：</span>{$list.platform}</li>
+                        <li class="mui-table-view-cell"><span>状态：</span>{$list.state}</li>
+                        <li class="mui-table-view-cell">
+                            <div>
+                                <span>我的角色：</span>{$list.role}<a class="red" href="{:U('Home/Requirement/receive', array('id'=>$list['id']))}">查看</a>
+                            </div>
+                        </li>    
+                    </ul>
+                </li>
+            </foreach>
+        </ul>
+    </div>
+</block>

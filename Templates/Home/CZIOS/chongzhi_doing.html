@@ -1,0 +1,115 @@
+<extend name="../Common/chongzhi_base" />
+
+<block name="extra_js">
+    <script type="text/javascript">
+        step = 4;
+        $().ready(function(){
+            setProgressBar();
+            $('.btn_close').click(function(){
+                $('.alert_container').css('display','none');
+            });
+            sleepBtn();
+        });
+        function sleepBtn(){
+            var time = 3;
+            var interval = setInterval(function(){
+                
+                --time;
+                if(time > 0){
+                    $('.btn_close').text('我知道了（'+time+'）');
+                }
+                if(time <= 0){
+                    $('.btn_close').css('opacity','1').removeAttr('disabled').text('我知道了');
+                    clearInterval(interval);
+                }
+            },1000);
+        }
+    </script>
+</block>
+<block name="content">
+    <div class="alert_container">
+       <div class="alert_content">
+            <div class="alert_msg">
+                <p>亲，岁末网络塞车，充值可能延迟30分钟到账</p>
+                <p>请勿登陆游戏并耐心等待哦！</p>
+                <img style="height: 150px;width:150px;" src="__PUBLIC__/img/cz_doing_qr_code.jpg"/>
+                <span>关注公众号,查询订单状态和最新优惠信息！</span>
+                <p class="input_field">
+                    <button class="btn_close" type="submit" disabled>我知道了（3）</button>
+                </p>
+               <!-- <p class="extra_info">温馨提示：</p>
+                <span>前往银承派注册，最高可获10元虎币奖励！</span>
+                <span>银承派，您身边的票据理财专家</span>
+                <a href="{$extra_url}">立即前往</a>-->
+            </div>
+        </div>
+    </div>
+    <div class="row_container">
+        <div class="finish_page">
+            <div class="pay_finish">
+                <span>下单成功</span>
+                <p>客服人员正在处理订单,请耐心等待&nbsp;!</p>
+                <div class="alert_text">若10分钟内未收到通知，可凭<strong>&nbsp;订单号&nbsp;{$orderInfo.id}&nbsp;</strong>咨询客服！<br><b>充值期间请不要登录游戏！</b>
+                    <p style="color:#ffa631">充值微信登录的游戏，可能会延迟到账，工作人员会联系您获取微信授权验证码，谢谢合作！</p>
+                </div>
+            </div>
+
+            <div class="recommend_buy">
+                <ul>
+                    <a href="{:U('Home/User/info')}">
+                        <li class="recommend_user">
+                           个人中心
+                        </li>
+                    </a>
+
+                    <a href="{:U('Home/CreditsStore/index')}">
+                        <li class="recommend_credits">
+                            积分商城
+                        </li>
+                    </a>
+
+                    <a href="{:U('Home/GroupBuy/index')}">
+                        <li class="recommend_group">
+                           团 &nbsp;&nbsp;&nbsp;&nbsp; 购
+                        </li>
+                    </a>
+                    <li class="finish_goods">
+                        
+                    </li>
+                </ul>
+            </div>
+
+            <div class="pay_finish_info">
+                <h3>苹果充值</h3>
+                <p>
+                    <label class="finish_key">订单号：</label>
+                    <label class="finish_value">{$orderInfo.id}</label>
+                </p>
+                <p>
+                    <label class="finish_key">游 &nbsp;&nbsp; 戏：</label>
+                    <label class="finish_value">{$orderInfo.game_name}</label>
+                </p>
+                <p>
+                    <label class="finish_key">充值面额：</label>
+                    <label class="finish_value" >{$orderInfo.details}</label>
+                </p>
+                <p>
+                    <label class="finish_key">数量：</label>
+                    <label class="finish_value">{$orderInfo.number}</label>
+                </p>
+            </div>
+
+            <div class="finish_line"></div>
+
+            <div class="qr_code_container">
+                <p>
+                    <span>关注掌握</span>
+                    <span>最新折扣！</span>
+                </p>
+                <img src="__PUBLIC__/img/bar_code.png" width="110" height="110" />
+
+            </div>
+        </div>
+    </div>
+</block>
+

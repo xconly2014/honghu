@@ -1,0 +1,31 @@
+<extend name="../Common/admin_base" />
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div class="news_list_container">
+                <div class="table_container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>昵称</th>
+                                <th>加入时间</th>
+                                <th>贡献值</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <foreach name="member_list" item="row">
+                                <tr>
+                                    <td>{$row.nick_name}</td>
+                                    <td>{$row.created_date}</td>
+                                    <td>{$row.contribt_sum}</td>
+                                </tr>
+                            </foreach>                               
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>

@@ -1,0 +1,89 @@
+<extend name="../Common/account_index" />
+
+<block name="custom_css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/coinscenter.css">
+</block>
+
+<block name="extra_js">
+    <script>
+        $().ready(function(){
+            $('#coins_cz').validate({
+                rules:{
+                    payments:{
+                        required:true,
+                        digits:true,
+                        range:[1,1000]
+                    }             
+                },
+
+                messages:{
+                    payments:{
+                        required:'充值金额不能为空',
+                        digits:'请输入整数',
+                        range:$.validator.format("请输入1至1000的数字")
+                    }
+                },
+
+                errorPlacement: function(error, element) {
+                    error.appendTo(element.parent());
+                    error.siblings("span").remove();
+                },
+
+                errorElement:"span",
+
+                success: function(span) {
+                    span.attr("class","success");
+                },
+
+                onfocusout: function(element) {
+                    $(element).valid();
+                }
+            });
+
+            $('.payment_input').blur(function(){
+                var class_state = $(this).siblings('span').attr('class');
+                if(class_state == 'success'){
+                    var payment = ($(this).val()) * {$discount};
+                    $('.coins_num').text(payment);
+                }else{
+                    $('.coins_num').text('');
+                }               
+            });
+        });
+    </script>
+</block>
+
+<block name="content">
+    <div class="menu_bar_content">
+        <div class="user_center_list">
+            <div class="coins_total">
+                <p>
+                    <span>我的虎币：</span>
+                    <b>{$coins_total}</b>
+                </p>                
+            </div>
+
+            <form class="coins_cz" id="coins_cz" submit="{:U('')}" method="post">
+                <p class="input_field required">
+                    <label class="form_info">充值：</label>
+                    <input class="payment_input" type="text" name="payments" placeholder="请填入充值金额(元)"/>
+                </p>
+
+                <p class="static_field">
+                    <label class="form_key">可充虎币数：</label>
+                    <label class="form_value coins_num" style="color:red"></label>&nbsp;个
+                    <em class="coins_message" style="display:inline-block;padding-left:50px; color:#999">(1元=1虎币)</em>
+                </p>
+
+                <p class="input_field">
+                    <label class="form_info">&nbsp;</label>
+                    <button class="show_btn" type="submit">充值</button>
+                </p>
+
+                <p style="font-size: 14px;color:#007AFF;margin-left: 15px;">
+                    >>>游戏点卡/话费卡支付，请点击<a style="color:#ff0000;margin-left: 5px;text-decoration: none;" target="_blank" href="{:U('Home/CoinsCenter/card')}">这里</a>
+                </p>
+            </form>
+        </div>
+    </div>
+</block>

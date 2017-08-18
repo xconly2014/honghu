@@ -1,0 +1,67 @@
+<extend name="../Common/home_base" />
+
+
+<block name="custom_css">
+    <link rel="stylesheet" href="__PUBLIC__/css/strategy_evoluation.css" />
+    <style>
+        .show_hidden li em{
+        	display:block;
+        }
+        .show_hidden li{
+	       margin-right:10px;
+        }
+        
+    </style>
+</block>
+
+<block name="content">
+    <div class="row_container">
+        <div class="center_content strategy_evoluation_container">
+            <div class="navigation_bar">
+                <div class="crumbs_nav">
+	                <div class="crumbs_nav_item">
+	                    <a href="{:U('/')}">首页</a>
+	                    <i>></i>
+	                </div>
+	                <div class="crumbs_nav_item">
+	                    <a class="goods_show">{$type}</a>
+	                </div>
+	            </div>    
+            </div>
+            <div class="inline_div strategy_evoluation_list" id="game_strategy_evoluation_content">
+                <div class="strategy_evoluation_title">
+                    <span class="header_title  padding_left">{$type}</span><span class="header_game">游戏</span>
+                </div>
+                <ul>
+                    <foreach name="res_list" item="list">
+                        <li>
+                            <a href="{:U('Home/Strategy/index',array('strategyId'=>$list['id']))}">
+                                <label class="header_title" style="width: 410px">{$list.title}</label>
+                                <span>{$list.game_name}</span>
+                            </a>
+                        </li>
+                    </foreach>
+                </ul>
+                <div class="page">{$page}</div>
+                
+            </div>
+            <div class="inline_div game_articles">
+                <div class="game_picture">
+                    <img src="__PUBLIC__/img/tuangou.jpg" alt="团购推荐"/>
+                </div>
+                <div class="nva">最新团购</div>
+                <ul class="show_hidden">
+                    <foreach name="cz_package" item="vo">
+                        <li>
+                            <span>
+                                <a href="{:U('Home/IOSCZPackage/buy', array('id'=>$vo['id']))}">{$vo.option_text}</a>
+                                <b>{$vo.price}元</b>
+                            </span>
+                        </li>
+                    </foreach>
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</block>

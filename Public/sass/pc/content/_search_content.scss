@@ -1,0 +1,74 @@
+.search_result{
+    width:980px;
+    min-height:470px;
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+.center_text{
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    line-height: 22px;
+    color: #1363B8;
+}
+
+.search_ul{
+    display: block;
+    li{
+        margin-top: 30px;
+        display: block;
+        float: left;
+        width: 194px;
+        height: 300px;
+        font-weight: bold;
+        img{
+            border-radius: 90px;
+            padding: 5.9px 6px 6px 6.8px;
+            background: url("../img/sawtooth.png") no-repeat;
+            background-color: #7ECEF4;
+
+        }
+        label,span,a{
+           @extend.center_text;
+        }
+        a{
+            text-decoration: none;
+        }
+    }
+}
+
+.pic{
+   width: 160px;
+   padding: 0px 17px;
+}
+
+
+.no_result{
+    margin: 0 auto;
+    width: 240px;
+    height: 350px;
+    margin-top: 100px;
+    padding-left: 150px;
+    background: url(../img/search_cry.png) 2px 3px no-repeat;
+    p{
+        margin-left: 10px;
+        padding-top: 80px;
+        font-size: 18px;
+        color: #f00;
+        font-weight: bold;
+    }
+    
+    a  {
+        display: inline-block;
+        background: url(../img/button.png) 0px 10px no-repeat;
+        border-radius: 10px;
+        width:160px;
+        padding-top:20px;
+        text-decoration: none;
+        padding-left:5px;
+        color:#000;
+        font-size:16px;
+        height: 50px;
+    }
+}

@@ -1,0 +1,43 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="extra_js">
+    <script>
+        $().ready(function(){
+            $('.suggest_btn').click(function(){
+                var advice_msg = $('#advice_message').val();
+                var contact_way_msg = $('#contact_way').val();
+                var url = "{:U('Home/Suggest/suggest')}";
+                if(advice_msg == '' || contact_way_msg == ''){
+                    $('.mobile_error').html('建议和联系方式都不能为空噢~').css({'color':'#f00','margin-left':'10px'});
+                    return false;
+                }
+
+                $.post(url,{advice:advice_msg,contact_way:contact_way_msg},function(data){
+                        if(data == 'success'){
+                            alert('提交成功，我们会尽快处理！');
+                            $('#advice_message').val('');
+                            $('#contact_way').val('');
+                        }
+                });
+            });
+        });
+    </script>
+</block>
+
+<block name="header_bar">
+    <h1 class="mui-title">建议及反馈</h1>
+</block>
+
+<block name="main_content">
+    <div class="main_container">
+        <div class="mobile_error"></div>
+        <form action="" method="post">
+            <textarea name="suggest" id="advice_message" cols="30" rows="10" placeholder="您的宝贵建议，就是我们进步的源泉噢！您找不到所要充值的游戏，也可以反馈在这里哦"></textarea>
+            <textarea name="contact_way" id="contact_way"  rows="5" placeholder="留下您的QQ,邮箱或者手机号码都可以噢~"></textarea>
+            
+            <a class="mui-btn mui-btn-block mui-btn-primary suggest_btn" href="javascript:void(0);">提交</a>
+            <button class="mui-btn mui-btn-block" type="reset">取消</button>
+
+        </form>         
+    </div>
+</block>

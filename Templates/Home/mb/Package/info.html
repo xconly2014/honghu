@@ -1,0 +1,36 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="header_bar">
+    <h1 class="mui-title">代练套餐详情</h1>
+</block>
+
+<block name="main_content">
+    <div class="main_container">
+        <form action="{$submit_url}" method="post">
+            <ul class="mui-table-view">
+                <li class="mui-table-view-cell">
+                    <label>代练标题：</label><span>{$package_info.title}</span>
+                </li>
+
+                <li class="mui-table-view-cell">
+                    <label>代练价格：</label><span>{$package_info.price}元</span>
+                </li> 
+                
+                <li class="mui-table-view-cell">
+                    <label>代练区服：</label><span>{$package_info.qufu}</span>
+                </li> 
+
+                <li class="mui-table-view-cell">
+                    <label>代练时间：</label><span>{$package_info.spend_day}天</span>
+                </li>
+
+                <li class="mui-table-view-cell">
+                    <label>已缴保证金：</label><span>{$package_info.security_price}元</span>
+                </li>                      
+            </ul>
+            <div class="mui-button-row">
+                <button class="mui-btn mui-btn-primary mui-btn-block">我要购买</button>
+            </div>
+        </form>
+    </div>
+</block>

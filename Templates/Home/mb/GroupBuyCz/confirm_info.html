@@ -1,0 +1,61 @@
+﻿<extend name="../Common/_mb_layout" />
+
+
+<block name="extra_css">
+
+    <style>
+        H4{
+            width: 100%;
+            text-align: center;
+        }
+
+    </style>
+</block>
+
+<block name="header_bar">
+    <h1 class="mui-title">信息填写</h1>
+</block>
+
+<block name="main_content">
+
+    <div class="main_container">
+        <h4>{$title}</h4>
+        <form class="mb_bgcz_info_form" id="mb_gbcz_info_form" action="{$submit_url}" method="post">
+            <div class="mobile_error"></div>
+            <input type="text" name="cz_contact_way" placeholder="请输入联系方式">
+            
+            <if condition="$game.tx_flag == '1'">
+                <select name="cz_login_way">
+                    <option value>请选择登录方式</option>
+                    <option value="weixin">微信</option>
+                    　　 <option value="qq">QQ</option>
+                </select>
+            </if>
+
+            <input type="text" name="cz_qufu" placeholder="请填写您的游戏区服">
+
+             <input type="text" name="cz_role" placeholder="请填写您的游戏角色">
+
+             <input type="text" name="cz_account" placeholder="请输入您的游戏账号"/>
+
+             <input type="password" name="cz_password" placeholder="请填写您的游戏密码">
+
+            <div class="mui-button-row">
+                <button class="mui-btn mui-btn-primary mui-btn-block">确认</button>
+            </div>
+        </form>
+    </div>
+        
+</block>
+
+<block name="extra_js">
+    <script type="text/javascript" src="__PUBLIC__/js/Plugin/jqueryForm/jQuery_Validation.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/global_checker.js"></script>
+    <script type="text/javascript">
+        $().ready(function(){
+            $("#mb_gbcz_info_form").validate(window.gbcz_option,true);
+
+        });
+    </script>
+    <script src="__PUBLIC__/js/common/gbzc_lucker_common.js"></script>
+</block>

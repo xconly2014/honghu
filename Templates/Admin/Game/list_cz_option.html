@@ -1,0 +1,95 @@
+<extend name="../Common/admin_base" />
+
+<block name="extra_js">
+    <script src="__PUBLIC__/js/admin/game.js"></script>
+</block>
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div class="cz_option_container">
+                <div class="add_cz_option">
+                    <form class="common_form" id='iosCZOptionAdd' action="{:U('Admin/Game/add_option', array('game_id'=>$game_id))}" method="post">
+                        <p>添加充值面额</p>
+                        <li class="required">
+                            <label>游戏币数量</label>
+                            <input type="text" name="currency" class="currency"/>
+                        </li>
+                        <li class="required">
+                            <label>价格(/元)</label>
+                            <input type="text" name="price" class="price"/>
+                        </li>
+                        <li>
+                            <label>括号文本</label>
+                            <input type="text" name="option_text"/>
+                        </li>
+                        <li class="required">
+                            <label>折扣</label>
+                            <input type="text" name="rate" value="1.0"/>
+                        </li>
+                        <li class="required">
+                            <label>优先级</label>
+                            <input type="text" name="priority" value="0"/>
+                        </li>
+                        <li>
+                            <label>&nbsp;</label>
+                            <button type="submit">添加</button>
+                        </li>
+                    </form>
+                    <p>备注：<label>优先级数值越大，前台显示越靠前（默认为0，按价格排序）</label></p>
+                </div>
+
+                <div class="dotline"></div>
+                <div class="table_container">
+                    <table class="data-table">
+                        <thead>
+                        <tr>
+                            <th>价格</th>
+                            <th>详情</th>
+                            <th>折扣</th>
+                            <th>优先级</th>
+                            <th>当前状态</th>
+                            <th>操作</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <volist name="ios_options" id="vo">
+                            <tr>
+                                <td>{$vo.price}</td>
+                                <td>{$vo.detail}</td>
+                                <td>{$vo.rate}</td>
+                                <td>{$vo.priority}</td>
+                                <if condition="$vo.hide == 0">
+                                    <td>显示</td>
+                                <else />
+                                    <td>隐藏</td>
+                                </if>
+                                <if condition="$vo.hide == 0">
+                                    <td>
+                                        <a href="{:U('Admin/Game/ios_option_operate', array('game_id'=>$game_id, 'op_id'=>$vo['id'], 'hide'=>1))}">隐藏</a>
+                                    </td>
+                                    <else />
+                                    <td>
+                                        <a href="{:U('Admin/Game/ios_option_operate', array('game_id'=>$game_id, 'op_id'=> $vo['id'], 'hide'=>0))}">显示</a>
+                                    </td>
+                                </if>
+                                <td>
+                                    <a href="{:U('Admin/Game/ios_option_del', array('game_id'=>$game_id, 'op_id'=> $vo['id']))}">删除</a>
+                                </td>
+                            </tr>
+                        </volist>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+</block>
+
+<block name="footer">
+    <div class="footer">
+        <p>
+            广州鸿鹄网络科技有限公司
+        </p>
+    </div>
+</block>

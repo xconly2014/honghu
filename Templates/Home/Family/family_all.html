@@ -1,0 +1,78 @@
+<extend name="../Common/home_base" />
+
+<block name="custom_css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/family.css">
+</block>
+
+<block name="extra_js">
+    <block name="extra_js">
+    <script>
+        $().ready(function(){
+
+            $('#first').hover(
+                function(){
+                    $('#first .info').animate({'top':215},100);
+                },
+                function(){
+                    $('#first .info').animate({'top':260},100)
+                }
+            );
+
+            $('.list_row').each(function(index){
+                var divNode = $(this);
+                divNode.find('.logo_pic').hover(
+                    function(){
+                        divNode.find('.info').animate({'top':95},100);
+                    },
+                    function(){
+                        divNode.find('.info').animate({'top':120},100);
+                    }
+                );
+            });
+        });
+    </script>
+
+</block>
+
+<block name="content">
+    <div class="row_container">
+        <div class="center_content">
+            <div class="family_all_container">
+                <div class="organization_list">
+                    <div class="ranking_title" style="width: 100%;border: none;">所有堂会</div>
+                    <div class="number_one">
+                        <div class="logo_pic" id="first">
+                            <img src="__PUBLIC__/img/family/logo/{$first.logo}" width="300" height="189" alt="{$first.name}" />
+                            <div class="info"><span>{$first.name}</span></div>
+                        </div>
+                        <div class="member_num">
+                            <div class="progress_all"><p style="width: {$first.progress}%;"></p></div>
+                            <span class="existing">{$first.member_count}<br><label>已加入</label></span>
+                            <span class="sum_all">{$first.max_count}<br><label>最多</label></span>
+                            <span class="residue">{$first.residue}<br><label>剩余</label></span>
+                        </div>
+                        <a href="{:U('Home/Family/family_info',array('id'=>$first['id']))}">查看堂会</a>
+                    </div>
+
+                    <foreach name="all_list" item="list">
+                        <div class="number_one list_row">
+                            <div class="logo_pic">
+                                <img src="__PUBLIC__/img/family/logo/{$list.logo}" width="160" height="101" alt="{$list.name}" />
+                                <div class="info"><span>{$list.name}</span></div>
+                            </div>
+                            <div class="member_num">
+                                <div class="progress_all"><p style="width: {$list.progress}%;"></p></div>
+                                <span class="existing">{$list.member_count}<br><label>已加入</label></span>
+                                <span class="sum_all">{$list.max_count}<br><label>最多</label></span>
+                                <span class="residue">{$list.residue}<br><label>剩余</label></span>
+                            </div>
+                            <a href="{:U('Home/Family/family_info',array('id'=>$list['id']))}">查看堂会</a>
+                        </div>
+                    </foreach>
+                    <div class="clear"></div>
+                    <div class="page">{$show}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>

@@ -1,0 +1,51 @@
+<extend name="../Common/admin_base" />
+
+<block name="extra_js">
+    
+</block>
+
+<block name="content">
+    <div class="content_container">
+        <div class="cz_option_container">
+            <div class="add_cz_option">
+                <form class="common_form" action="" method="post">
+                    <p>添加ID卡</p>
+                    <li class="required">
+                        <label>ID卡：</label>
+                        <input type="text" name="name"/>
+                    </li>
+                    <li>
+                        <label>&nbsp;</label>
+                        <button type="submit">添加</button>
+                    </li>
+                </form>
+            </div>
+            
+            <div class="dotline"></div>
+
+            <div class="table_container">
+                <table class="data-table">
+                    <thead>
+                    <tr>
+                        <th>ID卡</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <volist name="card_list" id="row">
+                        <tr>
+                            <td>
+                                {$row.name}
+                            </td>
+                            <td>
+                                <a href="{:U('Admin/CZOrderIOS/del_card', array('id'=> $row['id']))}" onclick="return confirm('确定要删除吗？')">删除</a>
+                            </td>
+                        </tr>
+                    </volist>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</block>

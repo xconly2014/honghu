@@ -1,0 +1,67 @@
+﻿<extend name ="../Common/_mb_layout" />
+
+<block name="header_bar">
+    <h1 class="mui-title">首充号介绍</h1>
+</block>
+
+
+<block name="extra_css">
+    <link rel="stylesheet" href="__PUBLIC__/css/swiper.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/css/swiper.css">
+    <style>
+    </style>
+</block>
+
+<block name="main_content">
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide swiper-slide1">
+            <a href="{:U('Home/SCH/index')}" id='pass'>跳过&gt;&gt;</a>
+            <div class="img_div">
+                    <img src="__PUBLIC__/img/swiper/sch01.png"  class="imgs" id="pic" >
+            </div>
+        </div>  
+        <div class="swiper-slide swiper-slide2">
+            <div class="img_div">
+
+                    <img src="__PUBLIC__/img/swiper/sch02.png" class="imgs">
+
+            </div>
+        </div>
+        <div class="swiper-slide swiper-slide3">
+            <div class="img_div">
+
+                    <img src="__PUBLIC__/img/swiper/sch03.png"  class="imgs">
+                    <a href="{:U('Home/SCH/index')}" id="sch">进&nbsp;&nbsp;入</a>
+
+            </div>
+        </div>
+    </div>
+    
+   <img src="__PUBLIC__/img/swiper/arrow.png" style="width:20px;height:15px; top:460px; left:150px;" id="arrow" class="resize"> 
+   <div class="swiper-pagination"></div> 
+  
+	<script>
+	
+	scaleW=window.innerWidth/320;
+	scaleH=window.innerHeight/480;
+	var resizes = document.querySelectorAll('.resize');
+	for (var j=0; j<resizes.length; j++) {
+		resizes[j].style.width=parseInt(resizes[j].style.width)*scaleW+'px';
+		resizes[j].style.height=parseInt(resizes[j].style.height)*scaleH+'px';
+		resizes[j].style.top=parseInt(resizes[j].style.top)*scaleH+'px';
+		resizes[j].style.left=parseInt(resizes[j].style.left)*scaleW+'px'; 
+	}
+			  
+	var mySwiper = new Swiper ('.swiper-container', {
+	direction : 'vertical',
+	pagination: '.swiper-pagination',
+	mousewheelControl : true
+	})         
+	</script> 
+</div>
+</block>
+
+<block name="extra_js">
+    <script src="__PUBLIC__/js/mb/swiper.min.js"></script>
+</block>

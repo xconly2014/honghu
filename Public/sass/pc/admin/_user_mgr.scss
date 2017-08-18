@@ -1,0 +1,63 @@
+.user_list_container  {
+  padding:20px; 
+}
+
+.group_list_container  {
+  width:650px;
+  padding:30px;
+}
+
+.group_add_container  {
+  width:1100px;
+  padding:30px;
+  table{
+    border: 1px solid #bbb;
+  }
+  td{
+    border: 1px solid #bbb;
+  }
+  th{
+    border: 1px solid #bbb;
+    padding: 8px;
+  }
+}
+
+.parent_item  {
+  font-weight: bold;
+}
+
+.auth_list_item  {
+  margin-top:20px;
+  height: 30px;
+  line-height: 30px;
+
+
+
+
+label  {
+  display: inline-block;
+  margin-left:10px;
+  text-align: left;
+}
+
+  label.parent_item {
+    width:140px;
+    font-size:16px;
+    font-weight: bold;
+    display:block;
+    min-height: 50px;
+    line-height: 12px;
+    float: left;
+
+
+  }
+
+  label.item_label  {
+    font-size:14px;
+    width:200px;
+    display: block;
+    height: 15px;
+    line-height: 15px;
+    float: left;
+  }
+}

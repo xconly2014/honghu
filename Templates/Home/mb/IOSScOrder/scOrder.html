@@ -1,0 +1,49 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="header_bar">
+    <h1 class="mui-title">购买信息确认页</h1>
+</block>
+
+<block name="main_content">
+    <div class="main_container">
+        <h4>套餐信息</h4>
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell">
+                <label>游戏：</label><span>{$gameName}</span>
+            </li>
+            <li class="mui-table-view-cell">
+                <label>套餐：</label><span>{$details}</span>
+            </li> 
+
+            <li class="mui-table-view-cell">
+                <label>平台：</label><span>{$operator}&nbsp;{$platform}</span>
+            </li>
+
+            <li class="mui-table-view-cell">
+                <label>单价：</label><span>{$scOrderRes.real_payment}元</span>
+            </li>
+
+            <li class="mui-table-view-cell">
+                <label>小计：</label><b style="color:red;font-weight:bold;font-size:20px;">{$scOrderRes.real_payment}元</b></span>
+            </li>       
+        </ul>
+        <h4>账号信息</h4>
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell">
+                <label>游戏账号：</label><span>{$accountInfo.account}</span>
+            </li>
+            <li class="mui-table-view-cell">
+                <label>游戏角色：</label><span>{$accountInfo.role}</span>
+            </li> 
+
+            <li class="mui-table-view-cell">
+                <label>游戏区服：</label><span>{$accountInfo.qufu}</span>
+            </li>
+        </ul>
+        <form action="{$url}" method="post">
+            <div class="mui-button-row">
+                <button class="mui-btn mui-btn-primary mui-btn-block">马上支付</button>
+            </div>
+        </form>
+    </div>
+</block>

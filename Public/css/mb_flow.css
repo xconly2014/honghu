@@ -1,0 +1,375 @@
+/* line 1, ../sass/pc/common/_cash_desk.scss */
+.pay_info {
+  font-size: 14px;
+  line-height: 26px;
+  padding: 10px 15px;
+  background: #f4faff;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+/* line 9, ../sass/pc/common/_cash_desk.scss */
+.pay_info span b {
+  color: red;
+}
+
+/* line 15, ../sass/pc/common/_cash_desk.scss */
+.pay_way {
+  height: 36px;
+  line-height: 36px;
+  padding-left: 30px;
+  margin: 0 auto;
+  border-left: 1px solid #bcccee;
+  border-top: 1px solid #bcccee;
+  border-right: 1px solid #bcccee;
+  border-bottom: 3px solid #bcccee;
+  font-size: 14px;
+  background: url(../img/background-1.jpg) repeat-x;
+}
+/* line 26, ../sass/pc/common/_cash_desk.scss */
+.pay_way span {
+  padding-right: 10px;
+}
+/* line 29, ../sass/pc/common/_cash_desk.scss */
+.pay_way a {
+  color: #5194ef;
+  display: inline-block;
+  min-width: 135px;
+  padding: 0 10px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+}
+/* line 37, ../sass/pc/common/_cash_desk.scss */
+.pay_way a:hover {
+  color: #ff8501;
+}
+/* line 42, ../sass/pc/common/_cash_desk.scss */
+.pay_way a.active {
+  color: #ff8501;
+  background: #fff;
+  border-left: 3px solid #bcccee;
+  border-right: 3px solid #bcccee;
+  border-top: 3px solid #bcccee;
+}
+
+/* line 51, ../sass/pc/common/_cash_desk.scss */
+.pay_way_list {
+  border-left: 3px solid #bcccee;
+  border-right: 3px solid #bcccee;
+  border-bottom: 3px solid #bcccee;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: #fff;
+}
+/* line 59, ../sass/pc/common/_cash_desk.scss */
+.pay_way_list ul {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  min-height: 240px;
+}
+/* line 66, ../sass/pc/common/_cash_desk.scss */
+.pay_way_list ul li {
+  float: left;
+  margin-left: 22px;
+  margin-top: 30px;
+}
+/* line 70, ../sass/pc/common/_cash_desk.scss */
+.pay_way_list ul li span.checked {
+  border: 1px solid red;
+}
+/* line 75, ../sass/pc/common/_cash_desk.scss */
+.pay_way_list ul.default_way {
+  display: block;
+}
+/* line 78, ../sass/pc/common/_cash_desk.scss */
+.pay_way_list .online_payment {
+  clear: both;
+  padding: 20px 0 20px 43px;
+  color: #f00;
+  font-size: 12px;
+  font-weight: bold;
+}
+/* line 85, ../sass/pc/common/_cash_desk.scss */
+.pay_way_list .online_payment a {
+  color: #00f;
+  font-size: 14px;
+}
+/* line 91, ../sass/pc/common/_cash_desk.scss */
+.pay_way_list .pay_next {
+  height: 38px;
+  background: #F3F5FC;
+  width: 944px;
+  padding: 11px 0 0 30px;
+  border-top: 1px solid #BCCCEE;
+}
+/* line 98, ../sass/pc/common/_cash_desk.scss */
+.pay_way_list .pay_next button {
+  text-decoration: none;
+  font-size: 12px;
+  background: #FF811A;
+  border: 1px solid #FF811A;
+  width: 86px;
+  height: 28px;
+  display: inline-block;
+  text-align: center;
+  line-height: 28px;
+  border-radius: 3px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+/* line 112, ../sass/pc/common/_cash_desk.scss */
+.pay_way_list .pay_next button:hover {
+  text-decoration: underline;
+}
+
+/* line 118, ../sass/pc/common/_cash_desk.scss */
+.credits {
+  display: inline-block;
+  width: 144px;
+  height: 38px;
+  vertical-align: middle;
+  background: url(../img/credits.png) no-repeat 0 0;
+}
+
+/* line 126, ../sass/pc/common/_cash_desk.scss */
+.hb {
+  display: inline-block;
+  width: 144px;
+  height: 38px;
+  vertical-align: middle;
+  background: url(../img/hb.png) no-repeat 0 0;
+  border: 1px solid #ededed;
+}
+
+/* line 135, ../sass/pc/common/_cash_desk.scss */
+.hb_details {
+  margin-left: 400px;
+  width: 275px;
+  height: 180px;
+  border: 1px solid #ff9936;
+  float: right;
+  margin-right: 70px;
+  margin-top: 50px;
+}
+/* line 143, ../sass/pc/common/_cash_desk.scss */
+.hb_details p {
+  padding: 20px 15px 0px 15px;
+  line-height: 25px;
+  color: red;
+}
+/* line 148, ../sass/pc/common/_cash_desk.scss */
+.hb_details a {
+  background: url(../img/hb_cz.png) no-repeat;
+  display: block;
+  line-height: 30px;
+  width: 108px;
+  height: 31px;
+  margin-left: 140px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* line 164, ../sass/pc/common/_cash_desk.scss */
+.mpbalance {
+  display: inline-block;
+  width: 144px;
+  height: 38px;
+  vertical-align: middle;
+  background: url(../img/mpbalance.png) no-repeat 0 0;
+}
+
+/* line 172, ../sass/pc/common/_cash_desk.scss */
+.vcoins {
+  display: inline-block;
+  width: 144px;
+  height: 38px;
+  vertical-align: middle;
+  background: url(../img/vcoin.png) no-repeat 0 0;
+}
+
+/* line 180, ../sass/pc/common/_cash_desk.scss */
+.gs, .ny, .js, .zs, .ms, .pf, .xy, .yz, .gd, .jt, .gf, .zg, .bj, .pa, .wx, .zfb, .cft, .kq, .zf, .yd, .dx, .lt {
+  background: url(../img/pay_way.png) no-repeat 0 0;
+  display: inline-block;
+  width: 142px;
+  height: 36px;
+  vertical-align: middle;
+  border: 1px solid #ededed;
+}
+
+/* line 188, ../sass/pc/common/_cash_desk.scss */
+.china_union {
+  background: url(../img/china_union.png) no-repeat;
+  width: 142px;
+  height: 36px;
+  display: inline-block;
+  vertical-align: middle;
+  border: 1px solid #ededed;
+}
+
+/* line 196, ../sass/pc/common/_cash_desk.scss */
+.gs {
+  background-position: 0 0;
+}
+
+/* line 200, ../sass/pc/common/_cash_desk.scss */
+.ny {
+  background-position: -180px 0;
+}
+
+/* line 204, ../sass/pc/common/_cash_desk.scss */
+.js {
+  background-position: -360px 0;
+}
+
+/* line 208, ../sass/pc/common/_cash_desk.scss */
+.zs {
+  background-position: -540px 0;
+}
+
+/* line 212, ../sass/pc/common/_cash_desk.scss */
+.ms {
+  background-position: -720px 0;
+}
+
+/* line 216, ../sass/pc/common/_cash_desk.scss */
+.pf {
+  background-position: 0 -70px;
+}
+
+/* line 220, ../sass/pc/common/_cash_desk.scss */
+.xy {
+  background-position: -180px -70px;
+}
+
+/* line 224, ../sass/pc/common/_cash_desk.scss */
+.yz {
+  background-position: -360px -70px;
+}
+
+/* line 228, ../sass/pc/common/_cash_desk.scss */
+.gd {
+  background-position: -540px -70px;
+}
+
+/* line 232, ../sass/pc/common/_cash_desk.scss */
+.jt {
+  background-position: -720px -70px;
+}
+
+/* line 236, ../sass/pc/common/_cash_desk.scss */
+.gf {
+  background-position: 0 -140px;
+}
+
+/* line 240, ../sass/pc/common/_cash_desk.scss */
+.zg {
+  background-position: -180px -140px;
+}
+
+/* line 244, ../sass/pc/common/_cash_desk.scss */
+.bj {
+  background-position: -360px -140px;
+}
+
+/* line 248, ../sass/pc/common/_cash_desk.scss */
+.pa {
+  background-position: -540px -140px;
+}
+
+/* line 252, ../sass/pc/common/_cash_desk.scss */
+.wx {
+  background-position: -720px -140px;
+}
+
+/* line 256, ../sass/pc/common/_cash_desk.scss */
+.zfb {
+  background-position: 0 -210px;
+}
+
+/* line 260, ../sass/pc/common/_cash_desk.scss */
+.cft {
+  background-position: -180px -210px;
+}
+
+/* line 264, ../sass/pc/common/_cash_desk.scss */
+.kq {
+  background-position: -360px -210px;
+}
+
+/* line 268, ../sass/pc/common/_cash_desk.scss */
+.zf {
+  background-position: -540px -210px;
+}
+
+/* line 272, ../sass/pc/common/_cash_desk.scss */
+.yd {
+  background-position: 0 -280px;
+}
+
+/* line 276, ../sass/pc/common/_cash_desk.scss */
+.dx {
+  background-position: -180px -280px;
+}
+
+/* line 280, ../sass/pc/common/_cash_desk.scss */
+.lt {
+  background-position: -360px -280px;
+}
+
+/* line 285, ../sass/pc/common/_cash_desk.scss */
+.mb_cash_desk li label {
+  margin-left: 10px;
+}
+
+/* line 290, ../sass/pc/common/_cash_desk.scss */
+.hb_credits_info {
+  margin-top: 5px;
+}
+/* line 293, ../sass/pc/common/_cash_desk.scss */
+.hb_credits_info label {
+  font-size: 14px;
+  color: #f00;
+}
+/* line 297, ../sass/pc/common/_cash_desk.scss */
+.hb_credits_info p {
+  font-size: 12px;
+  color: #FF9933;
+}
+
+/* line 2, ../sass/mb_flow.scss */
+.flow_option {
+  width: 100%;
+  min-height: 150px;
+  margin: 0 auto;
+}
+/* line 6, ../sass/mb_flow.scss */
+.flow_option .flow_text {
+  float: left;
+  width: 30%;
+  min-height: 60px;
+  margin: 5px 0;
+  margin-left: 2.5%;
+  background: #fff;
+  color: #494949;
+  border: 1px solid #c0bfbf;
+  text-align: center;
+  border-radius: 5px;
+}
+/* line 18, ../sass/mb_flow.scss */
+.flow_option .flow_text label {
+  display: block;
+  font-size: 18px;
+}
+/* line 22, ../sass/mb_flow.scss */
+.flow_option .flow_text del {
+  font-size: 12px;
+  color: #ccc;
+  display: block;
+}

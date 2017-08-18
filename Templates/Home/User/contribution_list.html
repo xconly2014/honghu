@@ -1,0 +1,35 @@
+<extend name="../Common/account_index" />
+
+<block name="content">
+    <div class="menu_bar_content">
+        <div class="user_center_list">
+            <div class="total">
+                <p class="p_hb" style="background:none">
+                    <span>贡献值：</span>
+                    <b>{$total_sum}</b>
+                </p>                
+            </div>
+            <table cellspacing="0px">
+                <tr>
+                    <th class="first">时间</th>
+                    <th>来源</th>
+                    <th>贡献值</th>
+                    <th>收入+/支出-</th>
+                </tr>
+                <foreach name="record_list" item="row">
+                    <tr>
+                        <td>{$row.created_date}</td>
+                        <td>{$row.type}</td>
+                        <td>{$row.unit}</td>
+                        <td>{$row.operation}</td>
+                    </tr>
+                </foreach>
+            </table>
+        </div>
+
+        <div class="page_container">
+            <div class="page">{$show}</div>
+        </div>
+
+    </div>
+</block>

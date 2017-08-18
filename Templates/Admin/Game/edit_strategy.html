@@ -1,0 +1,68 @@
+<extend name="../Common/admin_base" />
+
+<block name="extra_css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/Chosen/chosen.min.css">
+</block>
+
+<block name="extra_js">
+    <script type="text/javascript" src="__PUBLIC__/js/ue_import.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/add_ons/ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/add_ons/ueditor/ueditor.all.min.js"></script>
+    <script src="__PUBLIC__/js/Plugin/Chosen/chosen.jquery.min.js"></script>
+    <script type="text/javascript">
+    $().ready(function(){
+    	$("#selected").chosen({no_results_text: "游戏列表中不存在"});
+
+        window.onload=function(){
+            window.UEDITOR_CONFIG.initialFrameWidth=800  //初始化编辑器宽度,默认1000
+            window.UEDITOR_CONFIG.initialFrameHeight=320  //初始化编辑器高度,默认320
+            UE.getEditor('content');
+        }
+    });
+  </script>
+</block>
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div class="game_strategy_container">
+                <form class="common_form container" action="{$submit_url}" method="post">
+                    <p>修改游戏攻略</p>
+                    <li class="required">
+                        <label>文章题目</label>
+                        <input type="text" name="title" value="{$data[0].title}"/>
+                    </li>
+                    <li class="required">
+                        <label>游戏名字</label>
+                        <select name='game_id'  data-placeholder="请选择游戏" class="chosen-select"  id="selected" tabindex="2" style="width:212px;">
+                            <option value=''></option>
+                            <volist name='game' id='vo'>
+                                <option value="{$vo.id}" <if condition="$vo['id'] eq $data[0]['game_id']">selected='selected'</if>>{$vo.name}</option>
+                            </volist>
+                        </select>
+                    </li>
+                    <li class="required">
+                        <label>html标题</label>
+                        <input type="text" name="meta_title" value="{$data[0].meta_title}"/>
+                    </li>
+                    <li class="required">
+                        <label>html描述</label>
+                        <input type="text" name="meta_desc" value="{$data[0].meta_desc}"/>
+                    </li>
+                    <li class="required">
+                        <label>html关键字</label>
+                        <input type="text" name="meta_keyword" value="{$data[0].meta_keyword}"/>
+                    </li>
+                    <li>
+                        <textarea id="content" name="content">{$data[0].content}</textarea>
+                    </li>
+                    <li>
+                        <button type="submit">修改</button>
+                        <button type="submit">取消</button>
+                    </li>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</block>

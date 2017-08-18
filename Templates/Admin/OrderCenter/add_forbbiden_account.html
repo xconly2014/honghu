@@ -1,0 +1,49 @@
+<extend name="../Common/admin_base" />
+
+<block name="extra_css">
+    <link rel="stylesheet" href="__PUBLIC__/css/Chosen/chosen.min.css" />
+</block>
+
+<block name="extra_js">
+    <script src="__PUBLIC__/js/Plugin/Chosen/chosen.jquery.min.js"></script>
+    <script type="text/javascript">
+        $().ready(function(){
+            $('#selected').chosen({
+                no_results_text:"游戏列表中不存在"
+            });
+        });
+    </script>
+</block>
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div class="game_strategy_container">
+                <div class="form_container">
+                    <form action="{:U('Admin/CZOrderIOS/add_forbbiden_account')}" method="post" class="common_form container">
+                        <p>添加封号账号</p>
+                        <li class="required">
+                            <label>游戏名字：</label>
+                            <select name="game_id" data-placeholder="请选择游戏" class="closen-select" id="selected" tabindex="2" style="width:212px;">
+                                <option value=""></option>
+                                <foreach name="gameRes" item="gameRes">
+                                    <option value="{$gameRes.id}">{$gameRes.name}</option>
+                                </foreach>
+                            </select>
+                        </li>
+
+                        <li class="required">
+                            <label>账号名：</label>
+                            <input type="text" name="account" />
+                        </li>
+
+                        <li>
+                            <button type="submit">添加</button>
+                            <button type="reset">取消</button>
+                        </li>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>

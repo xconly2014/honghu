@@ -1,0 +1,38 @@
+.page{
+	overflow:hidden;
+	margin:0;
+	padding:0;
+	
+	a{
+		float:left;
+		display:block;
+		overflow:hidden;
+		margin:5px 2px;
+		padding:2px 10px;
+	 	border:1px solid #D7DBDC;
+	 	text-decoration: none;
+	 	color:#404548;
+	 	background-color:#F6FFFF;
+	 	&:hover{
+	 		background-color:#72B939;
+	 		color:#fff;
+	 	}	
+	}
+	a.current{
+		background-color:#72B939;
+		color:#fff;
+	}
+	
+	span{
+		float:left;
+		display:block;
+		overflow:hidden;
+		color:#404548;
+	 	background-color:#F6FFFF;
+		margin:5px;
+		padding:5px 8px;
+	 	border:1px solid #D7DBDC;
+		font-size:12px;
+	}
+}
+

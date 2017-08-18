@@ -1,0 +1,38 @@
+<div class="main_container">
+    <h4>收银台</h4>
+    <ul class="mui-table-view">
+        <li class="mui-table-view-cell">
+            <label>支付商品：</label><label>{$pay_title}</label>
+        </li>
+        <li class="mui-table-view-cell">
+            <label>金额：</label><b style="color:red;font-weight:bold;font-size:20px;">{$pay_price}</b>元
+        </li>
+    </ul>
+    <h4>支付方式选择</h4>
+    <form class="mb_cash_desk" action="{$submit_url}" method="post">
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell">
+                <input type="radio" name="pay_way" value="sp_mobile"/>
+                <label class="china_union"></label>
+            </li>
+
+            <li class="mui-table-view-cell">
+                <input type="radio" name="pay_way" value="mobile_alipay" checked/>
+                <label class="zfb"></label>
+            </li>
+
+            <li class="mui-table-view-cell">
+                <input type="radio" name="pay_way" value="wx"/>
+                <label class="wx"></label>
+            </li>
+
+        </ul>
+        <p style="padding-top:5px;">
+            <label>话费卡支付：</label>
+            <a href="{:U('Home/CoinsCenter/card')}" style="color:red;">>>>请点这里>>></a>
+        </p>
+        <div class="mui-button-row">
+            <button class="mui-btn mui-btn-primary mui-btn-block">下一步</button>
+        </div>
+    </form>
+</div>

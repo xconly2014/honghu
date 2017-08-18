@@ -1,0 +1,56 @@
+<extend name="../Common/at_base" />
+
+<block name="custom_css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/jquery.slideBox.css"/>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/account_trade.css">
+</block>
+
+<block name="extra_js">
+    <script type="text/javascript" src="__PUBLIC__/js/global_checker.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/common/account_trade_common.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/module/trade_center.js"></script>
+</block>
+
+<block name="content">
+    <div class="row_container">
+        <div class="account_trade_verify">
+                <h3>确认交易信息</h3>
+                <form action="{$submit_url}" method="post" id='account_trade_verify'>
+                    <p class="static_field">
+                        <label class="form_key">商品标题：</label>
+                        <span class="form_value">{$info.title}</span>
+                    </p>
+                    <p class="static_field">
+                        <label class="form_key">游戏名称：</label>
+                        <span class="form_value">{$info.game_name}</span>
+                    </p>
+                    <p class="static_field">
+                        <label class="form_key">账号价格：</label>
+                        <span class="form_value important_label">{$info.price}&nbsp;&nbsp;</span>元
+                    </p>
+                    <p class="static_field">
+                        <label class="form_key">数量：</label>
+                        <span class="form_value">1</span>
+                    </p>
+                    <p class="input_field required">
+                        <label class="form_info">手机号码：</label>
+                        <input type="text" name="tel" id="tel" placeholder="请输入手机号码" />
+                    </p>
+                    <p class="input_field required">
+                        <label class="form_info">联系QQ：</label>
+                        <input type="text" name="qq_code" id="qq_code" placeholder="请输入联系QQ" />
+                    </p>
+
+                    <p class="input_field">
+                        <label class="form_info">&nbsp;</label>
+                        <button type="submit">确定</button>
+                    </p>
+                </form>
+                <ul>
+                    <li>为确保交易顺利进行，请填写正确的手机号码和联系QQ</li>
+                    <li>发货过程中，我们可能会电话联系您，请保持电话畅通</li>
+                </ul>
+        </div>
+
+    </div>
+</block>

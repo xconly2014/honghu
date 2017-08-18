@@ -1,0 +1,48 @@
+<extend name="../Common/account_index" />
+
+<block name="custom_css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/coinscenter.css">
+</block>
+
+<block name="extra_js">
+    <script src="__PUBLIC__/js/module/cash_desk.js"></script>
+    <script>
+        $().ready(function(){
+            cash_desk_active();
+
+            $('#coins_cz').validate({
+                rules:{
+                    type:'required'
+                },
+
+                messages:{
+                    type:'请选择充值方式'
+                },
+
+                errorPlacement: function(error, element) {
+                    error.appendTo(element.parent());
+                    error.siblings("span").remove();
+                },
+
+                errorElement:"span",
+
+                success: function(span) {
+                    span.attr("class","success");
+                },
+
+                onfocusout: function(element) {
+                    $(element).valid();
+                }
+            });
+        });
+
+    </script>
+</block>
+
+<block name="content">
+    <div class="row_container">
+        <div class="menu_bar_content">
+            <include file="Bank/coins_desk"/>
+        </div>
+    </div>
+</block>

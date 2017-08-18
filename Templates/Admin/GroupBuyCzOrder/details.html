@@ -1,0 +1,48 @@
+<extend name="../Common/admin_base" />
+
+<!-- <block name="extra_js">
+</block> -->
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div class="game_strategy_container">
+                <div class="common_form container">
+                    <p>一元购订单详情</p>
+                    <li class="static_field">
+                        <label class="form_key">标题：</label>
+                        <label class="form_value">{$orderRes.title}</label>
+                    </li>
+                    <li class="static_field">
+                        <label class="form_key">游戏：</label>
+                        <label class="form_value">{$orderRes.game}</label>
+                    </li>
+                    <li class="static_field">
+                        <label class="form_key">价钱：</label>
+                        <label class="form_value">{$orderRes.price}</label>
+                    </li> 
+                    <li class="static_field">
+                        <label class="form_key">购买数量：</label>
+                        <label class="form_value">{$orderRes.buy_num}</label>
+                    </li>
+                    <li class="static_field">
+                        <label class="form_key">支付方式：</label>
+                        <label class="form_value">{$orderRes.way}</label>
+                    </li>
+                    <li class="static_field">
+                        <label class="form_key" style="float:left;line-height: 20px;">云购码：</label>
+                        <label class="form_value" style="width:300px;">
+                            <foreach name="orderRes.code" item="codeList">
+                                <span style="float:left;">{$codeList}</span>
+                            </foreach>
+                        </label>
+                    </li>   
+                    <li class="static_field">
+                        <label class="form_key"></label>
+                        <button onClick="javascript :history.back(-1);">返回</button>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>

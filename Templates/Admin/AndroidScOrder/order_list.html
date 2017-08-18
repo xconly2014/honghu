@@ -1,0 +1,74 @@
+<extend name="../Common/admin_base" />
+
+<block name="extra_js">
+    <script type="text/javascript" src="__PUBLIC__/js/admin/change_order_state.js"></script>
+    <script>
+        $().ready(function(){        	
+        	var url = "{:U('Admin/AndroidScOrder/ajax_edit_state')}";
+        	change_state(url);
+        });
+    </script>
+</block>
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div class="game_list_container">
+                <div class="table_bar">
+                    <div class="search_box_container">
+                        <div class="search_box">
+                            <form action="{:U('Admin/AndroidScOrder/order_list')}" method="get">
+                                <input type="text" name="title" placeholder="输入要搜的订单号或首充号标题">
+                                <button type="submit">搜索</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table_container">
+                    <table class="data-table">
+                        <thead>
+                        <tr>
+                            <th>单号</th>
+                            <th>交易号</th>
+                            <th>标题</th>
+                            <th>购买时间</th>
+                            <th>游戏</th>
+                            <th>游戏币</th>
+                            <th>价格</th>
+                            <th>折扣</th>
+                            <th width="80px">状态</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <foreach name="orderList" item="list">
+                            <tr>
+                                <td>{$list.id}</td>
+                                <td>{$list.id_no}</td>
+                                <td>{$list.details}</td>
+                                <td>{$list.pay_time}</td>
+                                <td>{$list.name}</td>
+                                <td>{$list.currency_name}</td>
+                                <td>{$list.price}</td>
+                                <td>{$list.discount}</td>
+                                <td>
+                                    <a href="javascript:void(0);" class="state">{$list.state}</a>
+                                    <select name="state" class="{$list.id}" style="display:none">
+                                        <option value="1">待处理</option>
+                                        <option value="2">处理中</option>
+                                        <option value="3">已完成</option>
+                                    </select>   
+                                </td>
+                                <td><a href="{:U('Admin/AndroidScOrder/details',array('id'=>$list['id']))}">查看</a></td>
+                            </tr>
+                        </foreach>
+                        </tbody>
+                    </table>
+                    <div class="page">{$show}</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</block>

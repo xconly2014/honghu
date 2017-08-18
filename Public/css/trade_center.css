@@ -1,0 +1,624 @@
+/* line 1, ../sass/pc/content/_trade_center_content.scss */
+.center_content {
+  height: auto;
+}
+
+/* line 5, ../sass/pc/content/_trade_center_content.scss */
+.activity {
+  width: 70%;
+  height: 200px;
+}
+
+/* line 10, ../sass/pc/content/_trade_center_content.scss */
+.game_list {
+  width: 70%;
+  height: 549px;
+  background-color: #fff;
+}
+
+/* line 16, ../sass/pc/content/_trade_center_content.scss */
+.title_bar {
+  width: 100px;
+  padding: 5px;
+  margin: 0 auto;
+}
+
+/* line 22, ../sass/pc/content/_trade_center_content.scss */
+.search_game {
+  height: 240px;
+  overflow: auto;
+}
+
+/* line 27, ../sass/pc/content/_trade_center_content.scss */
+.type_container {
+  padding: 10px;
+}
+/* line 30, ../sass/pc/content/_trade_center_content.scss */
+.type_container input[type=radio] {
+  margin-left: 100px;
+}
+
+/* line 35, ../sass/pc/content/_trade_center_content.scss */
+.infos {
+  margin: 30px 0 0 30px;
+}
+/* line 37, ../sass/pc/content/_trade_center_content.scss */
+.infos p {
+  font-size: 14px;
+}
+/* line 41, ../sass/pc/content/_trade_center_content.scss */
+.infos span {
+  font-size: 18px;
+  color: #F44609;
+}
+
+/* line 47, ../sass/pc/content/_trade_center_content.scss */
+.error_msg {
+  display: none;
+  margin-top: 10px;
+}
+/* line 51, ../sass/pc/content/_trade_center_content.scss */
+.error_msg label {
+  color: red;
+}
+/* line 55, ../sass/pc/content/_trade_center_content.scss */
+.error_msg a {
+  text-decoration: none;
+}
+/* line 57, ../sass/pc/content/_trade_center_content.scss */
+.error_msg a:hover {
+  color: #FF9933;
+  text-decoration: underline;
+}
+
+/* line 64, ../sass/pc/content/_trade_center_content.scss */
+.next {
+  margin: 0 auto;
+  width: 100px;
+}
+
+/* line 69, ../sass/pc/content/_trade_center_content.scss */
+.game_package {
+  margin-bottom: 10px;
+  border-bottom-right-radius: 10px;
+  height: 549px;
+  background-color: #fff;
+  border: 1px solid #FF9936;
+  border-top: none;
+}
+/* line 76, ../sass/pc/content/_trade_center_content.scss */
+.game_package .game_picture {
+  height: 142px;
+  border-bottom: 1px solid #ccc;
+  background-color: #F1F2F6;
+}
+/* line 81, ../sass/pc/content/_trade_center_content.scss */
+.game_package .game_picture img {
+  width: 282px;
+  height: 134px;
+  margin: 4px 0 0 5px;
+}
+/* line 89, ../sass/pc/content/_trade_center_content.scss */
+.game_package .nva {
+  height: 32px;
+  line-height: 32px;
+  padding-left: 20px;
+  font-size: 16px;
+  background-color: #F1F2F6;
+  font-weight: bold;
+  color: #ff6600;
+  border-bottom: 1px solid #ccc;
+}
+/* line 100, ../sass/pc/content/_trade_center_content.scss */
+.game_package .nva_title {
+  display: inline-block;
+  width: 270px;
+  margin-top: 5px;
+  margin-left: 20px;
+  font-weight: bold;
+}
+/* line 106, ../sass/pc/content/_trade_center_content.scss */
+.game_package .nva_title span {
+  float: right;
+  margin-right: 20px;
+}
+/* line 112, ../sass/pc/content/_trade_center_content.scss */
+.game_package .package_list {
+  margin-top: 10px;
+}
+/* line 114, ../sass/pc/content/_trade_center_content.scss */
+.game_package .package_list li {
+  border-bottom: 1px dashed #ccc;
+  min-height: 30px;
+  overflow: hidden;
+  line-height: 20px;
+}
+/* line 120, ../sass/pc/content/_trade_center_content.scss */
+.game_package .package_list li span {
+  display: inline-block;
+  float: left;
+  margin: 0px 10px 0px 5px;
+  width: 210px;
+}
+/* line 125, ../sass/pc/content/_trade_center_content.scss */
+.game_package .package_list li span a {
+  color: #000;
+  font-size: 14px;
+  text-decoration: none;
+}
+/* line 129, ../sass/pc/content/_trade_center_content.scss */
+.game_package .package_list li span a:hover {
+  color: #ff6600;
+  text-decoration: underline;
+}
+/* line 134, ../sass/pc/content/_trade_center_content.scss */
+.game_package .package_list li span span {
+  font-size: 12px;
+  color: #aaa;
+}
+/* line 140, ../sass/pc/content/_trade_center_content.scss */
+.game_package .package_list li p b {
+  color: red;
+  margin-left: 5px;
+  line-height: 40px;
+  font-size: 14px;
+}
+
+/* line 151, ../sass/pc/content/_trade_center_content.scss */
+.recommand_god {
+  height: 200px;
+  background-color: #f0f0f0;
+}
+
+/* line 158, ../sass/pc/content/_trade_center_content.scss */
+.selector_set {
+  height: 32px;
+  padding-top: 12px;
+  padding-left: 8px;
+}
+
+/* line 164, ../sass/pc/content/_trade_center_content.scss */
+.selector_item {
+  display: inline-block;
+  height: 22px;
+  text-decoration: none;
+  line-height: 22px;
+  border: 1px solid #DDD;
+  font-size: 12px;
+  vertical-align: top;
+  margin: 0 5px 5px 0;
+  padding: 0 0 0 4px;
+  cursor: pointer;
+}
+/* line 176, ../sass/pc/content/_trade_center_content.scss */
+.selector_item:hover {
+  border-color: #e4393c;
+}
+/* line 179, ../sass/pc/content/_trade_center_content.scss */
+.selector_item:hover i {
+  background-color: #e4393c;
+  background-position: 7px -158px;
+}
+/* line 185, ../sass/pc/content/_trade_center_content.scss */
+.selector_item b {
+  display: block;
+  float: left;
+  font-weight: 400;
+  color: #666;
+}
+/* line 192, ../sass/pc/content/_trade_center_content.scss */
+.selector_item em {
+  display: block;
+  float: left;
+  color: #e4393c;
+  font-style: normal;
+}
+/* line 199, ../sass/pc/content/_trade_center_content.scss */
+.selector_item i {
+  display: block;
+  margin-left: 3px;
+  float: left;
+  width: 25px;
+  height: 22px;
+  background: url("../img/search.ele.png") no-repeat 7px -140px;
+}
+
+/* line 211, ../sass/pc/content/_trade_center_content.scss */
+.filter_bar {
+  overflow: hidden;
+  padding: 0px 10px 0px 48px;
+  padding-bottom: 2px;
+  font-size: 14px;
+  background-color: #fff;
+}
+/* line 217, ../sass/pc/content/_trade_center_content.scss */
+.filter_bar ul {
+  float: left;
+  width: 690px;
+  min-height: 160px;
+}
+/* line 222, ../sass/pc/content/_trade_center_content.scss */
+.filter_bar li {
+  float: left;
+  display: block;
+  width: 100%;
+  border-top: 1px dashed #EE4C0E;
+}
+/* line 228, ../sass/pc/content/_trade_center_content.scss */
+.filter_bar li span {
+  margin-right: 20px;
+  width: 70px;
+  font-size: 16px;
+  font-weight: bold;
+  display: block;
+  float: left;
+  height: 65px;
+  line-height: 65px;
+  color: #595758;
+  text-align: right;
+}
+/* line 243, ../sass/pc/content/_trade_center_content.scss */
+.filter_bar li p {
+  padding-top: 23px;
+}
+/* line 247, ../sass/pc/content/_trade_center_content.scss */
+.filter_bar li a {
+  text-decoration: none;
+  margin-bottom: 8px;
+  display: block;
+  float: left;
+  margin-right: 30px;
+  color: #595758;
+}
+/* line 254, ../sass/pc/content/_trade_center_content.scss */
+.filter_bar li a:hover {
+  color: #E95404;
+}
+
+/* line 261, ../sass/pc/content/_trade_center_content.scss */
+.trade_center_sell {
+  background: #fff;
+  margin-left: 38px;
+  float: right;
+  width: 190px;
+  height: 100px;
+}
+/* line 267, ../sass/pc/content/_trade_center_content.scss */
+.trade_center_sell .sell_btn {
+  width: 150px;
+  height: 150px;
+  border-radius: 30px;
+  border: 1px solid #1996B2;
+  margin-left: 15px;
+}
+/* line 273, ../sass/pc/content/_trade_center_content.scss */
+.trade_center_sell .sell_btn a {
+  background: #44CEF5;
+  text-align: center;
+  text-decoration: none;
+  margin: 30px 0px 0px 8px;
+  padding: 3px;
+  width: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 10px;
+  color: #fff;
+  display: inline-block;
+}
+/* line 285, ../sass/pc/content/_trade_center_content.scss */
+.trade_center_sell .sell_btn a:hover {
+  color: #e4393c;
+}
+/* line 291, ../sass/pc/content/_trade_center_content.scss */
+.trade_center_sell .sell_btn_one {
+  margin-left: 20px;
+  width: 100px;
+  height: 100px;
+  background: url(../img/sell_btn_one.png) no-repeat;
+}
+/* line 296, ../sass/pc/content/_trade_center_content.scss */
+.trade_center_sell .sell_btn_one a {
+  width: 40px;
+  display: inline-block;
+  margin-top: 30px;
+  margin-left: 30px;
+  font-size: 16px;
+  text-decoration: none;
+  color: #000;
+}
+/* line 304, ../sass/pc/content/_trade_center_content.scss */
+.trade_center_sell .sell_btn_one a:hover {
+  color: #e4393c;
+}
+
+/* line 311, ../sass/pc/content/_trade_center_content.scss */
+.table_container {
+  margin: 0 auto;
+  height: 126px;
+  padding: 10px 0px 10px 8px;
+  clear: both;
+}
+/* line 317, ../sass/pc/content/_trade_center_content.scss */
+.table_container:hover {
+  background-color: #f0ead8;
+}
+
+/* line 322, ../sass/pc/content/_trade_center_content.scss */
+.goods_info {
+  float: left;
+  width: 450px;
+}
+/* line 326, ../sass/pc/content/_trade_center_content.scss */
+.goods_info a {
+  text-decoration: none;
+  font-size: 24px;
+  color: #dc4a13;
+}
+/* line 332, ../sass/pc/content/_trade_center_content.scss */
+.goods_info p {
+  padding: 2px 0 6px 0;
+  font-size: 12px;
+}
+/* line 336, ../sass/pc/content/_trade_center_content.scss */
+.goods_info p .label {
+  color: #666;
+}
+/* line 340, ../sass/pc/content/_trade_center_content.scss */
+.goods_info p .info {
+  color: #DC4A13;
+  font-weight: bold;
+}
+
+/* line 347, ../sass/pc/content/_trade_center_content.scss */
+.goods_operate {
+  float: left;
+  height: 76px;
+  padding-top: 30px;
+}
+/* line 352, ../sass/pc/content/_trade_center_content.scss */
+.goods_operate span {
+  width: 100px;
+  color: #dc4a13;
+  font-weight: 200;
+  font-size: 19px;
+}
+
+/* line 360, ../sass/pc/content/_trade_center_content.scss */
+.btn {
+  float: left;
+  padding-top: 30px;
+}
+/* line 363, ../sass/pc/content/_trade_center_content.scss */
+.btn a {
+  text-decoration: none;
+  display: block;
+  color: #fff;
+  font-weight: bold;
+  width: 200px;
+  height: 60px;
+  padding-top: 8px;
+  background: url("../img/button.png") no-repeat 45px 0px;
+}
+
+/* line 376, ../sass/pc/content/_trade_center_content.scss */
+.trade_center_info {
+  padding-left: 50px;
+  width: 70%;
+}
+/* line 380, ../sass/pc/content/_trade_center_content.scss */
+.trade_center_info h3 {
+  text-align: center;
+  padding-right: 100px;
+  margin: 20px 0px 20px 0px;
+}
+/* line 386, ../sass/pc/content/_trade_center_content.scss */
+.trade_center_info .game_operator {
+  display: none;
+}
+
+/* line 391, ../sass/pc/content/_trade_center_content.scss */
+label.error {
+  font-size: 12px;
+  background: url("../img/wrong.png") no-repeat 0px 0px;
+  display: inline-block;
+  padding-left: 20px;
+  width: 320px;
+  height: 20px;
+  color: red;
+}
+
+/* line 401, ../sass/pc/content/_trade_center_content.scss */
+label.success {
+  font-size: 12px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url("../img/right.png") no-repeat 0px 0px;
+  position: relative;
+  top: 10px;
+}
+
+/* line 411, ../sass/pc/content/_trade_center_content.scss */
+.no_result {
+  margin: 0 auto;
+  width: 240px;
+  height: 100px;
+  margin-top: 50px;
+  padding-left: 90px;
+  background: url(../img/cry.png) 2px 3px no-repeat;
+}
+/* line 418, ../sass/pc/content/_trade_center_content.scss */
+.no_result p {
+  margin-left: 10px;
+  padding-top: 40px;
+  font-size: 18px;
+  color: #f00;
+  font-weight: bold;
+}
+
+/*.no_result{
+  display: block;
+  width:200px;
+  height: 200px;
+  margin:0 auto;
+  padding-left:86px;
+  background:url(../img/cry.png) 2px 3px no-repeat;
+}*/
+/* line 436, ../sass/pc/content/_trade_center_content.scss */
+.account_trade_container {
+  border: 1px solid #ccc;
+  height: 680px;
+}
+
+/* line 440, ../sass/pc/content/_trade_center_content.scss */
+.img_bar {
+  clear: both;
+  padding-top: 17px;
+  border-top: 1px solid #ccc;
+  height: 120px;
+  text-align: center;
+}
+/* line 446, ../sass/pc/content/_trade_center_content.scss */
+.img_bar img {
+  height: 100px;
+  width: 780px;
+}
+
+/* line 451, ../sass/pc/content/_trade_center_content.scss */
+.trade_content_height {
+  height: 620px;
+}
+
+/* line 455, ../sass/pc/content/_trade_center_content.scss */
+.static_field {
+  font-size: 12px;
+}
+
+/* line 458, ../sass/pc/content/_trade_center_content.scss */
+#security {
+  font-size: 12px;
+  color: #ff0000;
+}
+
+/* line 463, ../sass/pc/content/_trade_center_content.scss */
+.color_bar {
+  height: 33px;
+  background-color: #F4A982;
+}
+
+/* line 467, ../sass/pc/content/_trade_center_content.scss */
+.goods_container {
+  clear: both;
+  margin: 14px 0px 30px;
+  padding: 44px 48px 10px 48px;
+  background-color: #fff;
+  min-height: 421px;
+}
+
+/* line 474, ../sass/pc/content/_trade_center_content.scss */
+.title_nav {
+  height: 50px;
+  line-height: 50px;
+  border-top: 4px solid #D67129;
+  border-bottom: 1px solid #999;
+}
+/* line 479, ../sass/pc/content/_trade_center_content.scss */
+.title_nav span {
+  font-weight: bold;
+  color: #383433;
+  display: block;
+  float: left;
+}
+
+/* line 486, ../sass/pc/content/_trade_center_content.scss */
+.text_left {
+  padding-left: 8px;
+  width: 450px;
+}
+
+/* line 490, ../sass/pc/content/_trade_center_content.scss */
+.text_middle {
+  text-align: center;
+  width: 222px;
+}
+
+/* line 494, ../sass/pc/content/_trade_center_content.scss */
+.text_right {
+  text-align: center;
+  width: 202px;
+}
+
+/* line 1, ../sass/pc/common/_left_img_and_explain.scss */
+.cz_game_info {
+  width: 220px;
+  padding-right: 5px;
+  padding-left: 10px;
+}
+/* line 6, ../sass/pc/common/_left_img_and_explain.scss */
+.cz_game_info img {
+  margin: 23px 0 20px 23px;
+}
+/* line 9, ../sass/pc/common/_left_img_and_explain.scss */
+.cz_game_info h5 {
+  text-align: center;
+}
+
+/* line 14, ../sass/pc/common/_left_img_and_explain.scss */
+.instructions_div {
+  width: 100%;
+  margin-top: 23px;
+}
+/* line 19, ../sass/pc/common/_left_img_and_explain.scss */
+.instructions_div label {
+  display: block;
+  margin-left: 20px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  height: 30px;
+  line-height: 30px;
+}
+/* line 29, ../sass/pc/common/_left_img_and_explain.scss */
+.instructions_div hr {
+  border-top: 3px solid #4091E9;
+}
+/* line 33, ../sass/pc/common/_left_img_and_explain.scss */
+.instructions_div ul {
+  margin-top: 10px;
+}
+/* line 38, ../sass/pc/common/_left_img_and_explain.scss */
+.instructions_div li {
+  list-style-type: decimal;
+  padding: 2px 8px 2px 0px;
+  line-height: 20px;
+  font-size: 12px;
+  margin-left: 26px;
+}
+/* line 44, ../sass/pc/common/_left_img_and_explain.scss */
+.instructions_div li a {
+  color: #666;
+  text-decoration: none;
+}
+/* line 47, ../sass/pc/common/_left_img_and_explain.scss */
+.instructions_div li a:hover {
+  color: #f00;
+}
+
+/* line 55, ../sass/pc/common/_left_img_and_explain.scss */
+.problem_title {
+  height: 24px;
+  padding: 50px 0  0 8px;
+  border-bottom: 1px solid #ccc;
+}
+/* line 59, ../sass/pc/common/_left_img_and_explain.scss */
+.problem_title img {
+  margin: 0 5px 0 0;
+  height: 18px;
+  float: left;
+}
+/* line 64, ../sass/pc/common/_left_img_and_explain.scss */
+.problem_title p {
+  font-size: 13px;
+  width: 120px;
+  float: left;
+}

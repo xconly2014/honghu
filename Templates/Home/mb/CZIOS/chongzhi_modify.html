@@ -1,0 +1,37 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="header_bar">
+    <h1 class="mui-title">订单修改</h1>
+</block>
+
+<block name="main_content">
+    <div class="main_container">
+        <h4>充值订单修改</h4>
+        <form action="{$submit_url}" method="post">
+            <ul class="mui-table-view">
+                <li class="mui-table-view-cell">
+                    <label>游戏名：</label><span>{$order_info.czInfo.game_name}</span>
+                </li> 
+
+                <li class="mui-table-view-cell">
+                    <label>充值金额：</label><span>{$order_info.czInfo.payment}</span>
+                </li>
+
+                <li class="mui-table-view-cell">
+                    <label>购买数量：</label><span>{$order_info.czInfo.number}</span>
+                </li>                       
+            </ul>
+            <input type="text" name="role" value="{$order_info.accountInfo.role}" placeholder="请填写您的游戏角色"/>
+
+            <input type="text" name="qufu" value="{$order_info.accountInfo.qufu}" placeholder="请填写您的游戏区服"/>
+
+             <input type="text" name="account" placeholder="请填写您的游戏账号"/>
+
+             <input type="password" name="password" placeholder="请填写您的游戏密码"/>
+                            
+            <div class="mui-button-row">
+                <button class="mui-btn mui-btn-primary mui-btn-block">提交</button>
+            </div>
+        </form>      
+    </div>
+</block>

@@ -1,0 +1,99 @@
+<extend name="../Common/admin_base" />
+
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div>
+                <div class="common_form">
+                    <p>代练需求订单详情</p>
+                    <div class="left_info">
+                        <h4>需求信息</h4>
+	                    <li class="static_field">
+	                        <label class="form_key">标题：</label>
+	                        <label class="form_value">{$orderRes.title}</label>
+	                    </li>
+	                    <li class="static_field">
+	                        <label class="form_key">游戏：</label>
+	                        <label class="form_value">{$orderRes.game}</label>
+	                    </li>
+	                    <li class="static_field">
+	                        <label class="form_key">平台：</label>
+	                        <label class="form_value">{$orderRes.platform}</label>
+	                    </li>
+	                    <notempty name="orderRes.operator">
+	                        <li class="static_field">
+	                            <label class="form_key">客户端：</label>
+	                            <label class="form_value">{$orderRes.operator}</label>
+	                        </li>
+	                    </notempty>
+	                    <li class="static_field">
+	                        <label class="form_key">价钱：</label>
+	                        <label class="form_value">{$orderRes.price}</label>
+	                    </li>
+	                    <li class="static_field">
+	                        <label class="form_key">保证金：</label>
+	                        <label class="form_value">{$orderRes.security}</label>
+	                    </li>
+	                    <li class="static_field">
+	                        <label class="form_key">承诺完成时间：</label>
+	                        <label class="form_value">{$orderRes.time}</label>
+	                    </li>
+	                    <li class="static_field">
+	                        <label class="form_key">状态：</label>
+	                        <label class="form_value">{$orderRes.state}</label>
+	                    </li>  
+	                    <li class="static_field">
+	                        <label class="form_key">备注：</label>
+	                        <label class="form_value">{$orderRes.remarks}</label>
+	                    </li>               
+	                    <li class="static_field">
+	                        <label class="form_key">是否提供充值：</label>
+	                        <label class="form_value">{$orderRes.provided}</label>
+	                    </li>
+	                </div>
+	                <div class="right_info">
+	                    <h4>账号信息</h4>  
+	                    <li class="static_field">
+	                        <label class="form_key">账号：</label>
+	                        <label class="form_value">{$orderRes.account}</label>
+	                    </li>
+	                    <li class="static_field">
+	                        <label class="form_key">密码：</label>
+	                        <label class="form_value">{$orderRes.password}</label>
+	                    </li>
+	                    <li class="static_field">
+	                        <label class="form_key">区服：</label>
+	                        <label class="form_value">{$orderRes.qufu}</label>
+	                    </li>
+	                    <li class="static_field">
+	                        <label class="form_key">角色：</label>
+	                        <label class="form_value">{$orderRes.role}</label>
+	                    </li>
+	                    <li class="static_field">
+	                        <label class="form_key">当前状态：</label>
+	                        <label class="form_value">{$orderRes.role_details}</label>
+	                    </li> 
+	                    <li class="static_field">
+	                        <label class="form_key">期望状态：</label>
+	                        <label class="form_value">{$orderRes.result}</label>
+	                    </li> 
+	                    <li class="static_field">
+	                        <label class="form_key">玩家联系：</label>
+	                        <label class="form_value">{$orderRes.contact_way}</label>
+	                    </li>
+	                    <li class="static_field">
+	                        <label class="form_key">代练师联系：</label>
+	                        <label class="form_value">{$orderRes.trainer_tel}</label>
+	                    </li>
+	                </div>        
+                    <li class="static_field">
+                        <label class="form_key"></label>
+                        <label class="form_key"></label>
+                        <button onClick="javascript :history.back(-1);">返回</button>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>

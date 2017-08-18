@@ -1,0 +1,72 @@
+<extend name="../Common/account_index" />
+
+<block name="custom_css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/coinscenter.css">
+</block>
+
+<block name="extra_js">
+    <script>
+        $().ready(function(){
+            $('#card').validate({
+                rules:{
+                    payments:'required'
+                },
+
+                messages:{
+                    payments:'请选择您的话费卡面额'
+                },
+
+                errorPlacement: function(error, element) {
+                    error.appendTo(element.parent());
+                    error.siblings("span").remove();
+                },
+
+                errorElement:"span",
+
+                success: function(span) {
+                    span.attr("class","success");
+                },
+
+                onfocusout: function(element) {
+                    $(element).valid();
+                }
+            });
+
+            $('.payment_input').blur(function(){
+                var payment = Math.floor($("select option:selected").val() * {$discount});
+
+                $('.coins_num').text(payment);
+            });
+        });
+    </script>
+</block>
+
+<block name="content">
+    <div class="row_container">
+        <div class="menu_bar_content">
+            <div class="message_reset">
+                <include file="../Common/component/fees_card_tab"/>
+            </div>
+            <form id="card" action="{:U()}" method="post">
+                <p class="input_field">
+                    <label class="form_info">话费卡面额</label>
+                    <select class="payment_input" name="payments">
+                        <option value="">请选择话费卡面额</option>
+                        <option value="30">30元</option>
+                        <option value="50">50元</option>
+                        <option value="100">100元</option>
+                    </select>
+                </p>
+                <p class="static_field">
+                    <label class="form_key">可充虎币数：</label>
+                    <label class="form_value coins_num" style="color:red"></label>&nbsp;个
+                    <em class="coins_message" style="display:inline-block;padding-left:50px; color:#999">(100元=95虎币)</em>
+                </p>
+                <p class="input_field">
+                    <label class="form_info">&nbsp;</label>
+                    <button type="submit">确认</button>
+                </p>
+            </form>
+        </div>
+    </div>
+</block>

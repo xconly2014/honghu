@@ -1,0 +1,57 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="extra_js"> 
+    <script type="text/javascript" src="__PUBLIC__/js/Plugin/jqueryForm/jQuery_Validation.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/common/register_common.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/mb/mb_register.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/global_checker.js"></script>
+    <script type="text/javascript">
+        function change(){
+            var obj = document.getElementById('vcode');
+            obj.src="__CONTROLLER__/vcode?a="+Math.random();
+        }
+    </script>
+</block>
+
+<block name="extra_css">
+<link rel="stylesheet" type="text/css"
+	href="__PUBLIC__/css/mb_login.css" />
+</block>
+
+<block name="header_bar">
+<h1 class="mui-title">用户名注册</h1>
+</block>
+
+<block name="main_content">
+<div class="main_container">
+    <div class="register-container">
+    	<form method="post" action="{$submit_url}" id="bm_nickname_register">
+    		<div class="mobile_error"></div>
+    		<div>
+    			<input type="text" name="nickname" id="nickname" placeholder="用户名" />
+    		</div>
+    		<div>
+    			<input id="password" type="password" name="password_hash" placeholder="密码" />
+    		</div>
+    		<div>
+    			<input type="password" name="confirm_password_hash" placeholder="确认密码" />
+    		</div>
+    		
+    		<div>
+    			<input type="text" name="email" id="email" placeholder="邮箱地址" />
+    		</div>
+    		<div>
+    			<div class="code">
+    				<input type="text" name="vcode" id="check_vcode"  class="check_vcode"  placeholder="验证码" />
+    				<img id="vcode" src="__CONTROLLER__/vcode" alt="验证码"onclick="change()" />
+    			</div>
+    			<div class="agreed">
+    				<label><input type="checkbox" name="xieyi" />
+    				 同意<a href="#" target="_blank">"轰轰虎用户服务协议"</a>
+    				</label>
+    			</div>
+    			<button class="mui-btn mui-btn-primary mui-btn-block">注册</button>
+    	</form>
+    </div>
+</div>
+</block>

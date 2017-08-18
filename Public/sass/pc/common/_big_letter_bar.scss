@@ -1,0 +1,43 @@
+.is_active  {
+  background-color: f0f0f0;
+  color:#fff;
+}
+
+.search_list{
+  line-height:30px;
+  background-color: #f1f2f6;;
+
+  a {
+    display:inline-block;
+    width:60px;
+    text-decoration: none;
+    text-align: center;
+    color:#000;
+
+    &:hover  {
+      background-color: #000;
+      color:#f0f0f0;
+    }
+  }
+}
+
+.search_game {
+  div  {
+    display:none;
+
+    ul  {
+      margin-top:10px;
+      margin-left:10px;
+
+      li{
+        float:left;
+        margin:10px;
+        p  {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+}
+

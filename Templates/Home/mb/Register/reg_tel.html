@@ -1,0 +1,62 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="extra_js"> 
+    <script type="text/javascript" src="__PUBLIC__/js/Plugin/jqueryForm/jQuery_Validation.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/common/register_common.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/mb/mb_register.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/global_checker.js"></script>
+    <script type="text/javascript">
+        function change(){
+            var obj = document.getElementById('vcode');
+            obj.src="__CONTROLLER__/vcode?a="+Math.random();
+        }
+    </script> 
+</block>
+
+<block name="extra_css">
+    <link rel="stylesheet" type="text/css"href="__PUBLIC__/css/mb_login.css" />
+</block>
+
+<block name="header_bar">
+<h1 class="mui-title">手机注册</h1>
+</block>
+
+<block name="main_content">
+<div class="main_container">
+	<div style="text-align: center; margin:0 auto;">
+		<img src="__PUBLIC__/img/reg_mb.jpg" width="100%">
+	</div>
+
+    <div class="reg_tel-container">
+    	<form method="post" action="{$submit_url}" id="bm_tel_register">
+            <div class="mobile_error"></div>
+    		<div>
+    		    <input type="text" name="tel" placeholder="手机号码" id="tel" />
+    		</div>
+    		<div class="code">
+    			<input type="text" name="vcode" id="code"  class="check_vcode code_check" placeholder="验证码" />
+    			<img id="vcode" src="__CONTROLLER__/vcode" alt="验证码" onclick="change()" />
+    			<div class="clear"></div>
+    		</div>
+    		<div class="code">
+    			<input type="text" name="tel_vcode" id="tel_vcode"  class="check_vcode tel_vcode_check" placeholder="短信验证码" />
+    			<input type="button" id="check_vcode_btn" value="获取短信验证码" disabled="disabled"  style="opacity: 0.5;"/>
+    			<div class='clear'></div>
+    		</div>
+    		<div>
+    			<input id="password" type="password" name="password_hash" placeholder="密码" />
+    		</div>
+    		<div>
+    			<input type="password" name="confirm_password_hash" placeholder="确认密码" />
+    		</div>
+    		<div class="agreed">
+    		<label>
+    			<input type="checkbox" name="xieyi" />同意<a href="#" target="_blank">"轰轰虎用户服务协议"</a>
+    		</label>
+    		</div>
+    		<button class="mui-btn mui-btn-primary mui-btn-block">注册</button>
+    	</form>
+    	<span>点击其它注册：</span><a href="{:U('Home/Register/index')}">用户名注册</a>
+    </div>
+</div>
+</block>

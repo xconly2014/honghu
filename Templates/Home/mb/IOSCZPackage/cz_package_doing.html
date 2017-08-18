@@ -1,0 +1,42 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="header_bar">
+    <h1 class="mui-title">下单成功</h1>
+</block>
+
+<block name="main_content">
+    <div class="main_container">
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell mui-hidden">cared
+                <div id="M_Toggle" class="mui-switch mui-active">
+                    <div class="mui-switch-handle"></div>
+                </div>
+            </li>
+            <li class="mui-table-view-cell mui-media">
+                <img class="mui-media-object mui-pull-left" src="__PUBLIC__/img/finish.png">
+                <span style="color:green;font-size:20px">团购成功</span>
+                <p style="margin-left: 50px;">{$order_data.game_name}单的团购订单目前已完成了{$order_data.percentage}%,100%会以短信通知您，请耐心等待！若有疑问，可凭 <b style="color:red;">订单号  {$order_data.oid}</b>咨询客服</p>
+            </li>
+
+            <li class="mui-table-view-cell mui-collapse"><a class="mui-navigate-right" href="#">订单详情</a>
+                <ul class="mui-table-view mui-table-view-chevron">
+                    <li class="mui-table-view-cell">
+                        <label>订单号：</label><span>{$order_data.oid}</span>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        <label>游戏：</label><span>{$order_data.game_name}</span>
+                    </li>
+                    <li class="mui-table-view-cell">
+                       <label>套餐面额：</label><span>{$order_data.text}</span>
+                    </li>
+                    <li class="mui-table-view-cell">
+                       <label>数量：</label><span>{$order_data.num}</span>
+                    </li>
+                    <li class="mui-table-view-cell">
+                       <label>付款金额：</label><span>{$order_data.payment}</span>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</block>

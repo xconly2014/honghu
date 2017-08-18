@@ -1,0 +1,67 @@
+<extend name="../Common/admin_base" />
+
+<block name="extra_js">
+    <script>
+        $().ready(function(){
+            $('.state_no').click(function(){
+                $('.state_result').css('display','inline-block');
+            });
+            $('.state_ok').click(function(){
+                $('.state_result').css('display','none');
+            });
+        });
+    </script>
+</block>
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div class="game_strategy_container">
+                <form class="common_form container"  method="post" action="">
+                    <p>审核代练需求</p>
+                    <li class="static_field">
+                        <label class="form_key">游戏：</label>
+                        <label class="from_value">{$game_name}</label>
+                    </li>
+                    <li class="static_field">
+                        <label class="form_key">标题：</label>
+                        <label class="form_value">{$requirement_info.title}</label>
+                    </li>
+                    <li class="static_field">
+                        <label class="form_key">价格：</label>
+                        <label class="form_value">{$requirement_info.price}</label>
+                    </li>
+                    <li class="static_field">
+                        <label class="form_key">保证金：</label>
+                        <label class="form_value">{$requirement_info.security_price}</label>
+                    </li>                      
+                    <li class="static_field">
+                        <label class="form_key">承诺完成时间：</label>
+                        <label class="form_value">{$requirement_info.spend_day}</label>
+                    </li>
+                    <li class="static_field">
+                        <label class="form_key">发布时间：</label>
+                        <label class="form_value">{$requirement_info.created_date}</label>
+                    </li>
+                    <li class="static_field">
+                        <label class="form_key">审核状态：</label>
+
+                        <label class="state_no"><input type="radio" name="state" value="1">未通过审核</label>
+
+                        <label class="state_ok"><input type="radio" name="state" value="2">通过审核</label>
+                    </li>
+                    <li class="static_field state_result" style="display:none;">
+                         <label class="form_key">不通过理由：</label>
+                         <label class="form_value">
+                             <textarea name="result" cols="30" rows="5"></textarea>
+                         </label>
+                    </li>   
+                    <li class="static_field">
+                        <button type="submit">确定</button>
+                        <button type="reset">取消</button>
+                    </li>
+                </form>
+            </div>
+        </div>
+    </div>
+</block>

@@ -1,0 +1,218 @@
+.finish_page{
+  background:#ffffff;
+  height:629px;
+  margin-bottom:30px;
+  margin-top:20px;
+}
+
+.recommend_buy{
+  width:120px;
+  float:right;
+  margin-right:50px;
+  margin-top:50px;
+  a{
+    text-decoration: none;
+    font-size:16px;
+  }
+  .recommend_user{
+    background:url(../img/recommend_user.png) 70px 17.5px no-repeat;
+    width:120px;
+    line-height:80px;
+    color:#ffa631;
+  }
+
+  .recommend_credits{
+    background:url(../img/recommend_credits.png) 70px 17.5px no-repeat;
+    width:120px;
+    line-height:80px;
+    color:#ff6176;
+  }
+
+  .recommend_group{
+    background:url(../img/recommend_group.png) 70px 17.5px no-repeat;
+    width:120px;
+    line-height:80px;
+    color:#2b9bd5;
+  }
+  .finish_goods{
+    background: url(../img/finish_goods.png) 0px 72px no-repeat;
+    width:100px;
+    height:255px;
+  }
+}
+
+.finish_line{
+  width:850px;
+  height:10px;
+  background:#FFA731;
+  margin-left:75px;
+  border-radius: 5px;
+  z-index: 1000;
+  position: relative;
+}
+
+
+.pay_finish_info  {
+  display:inline-block;
+  width:420px;
+  height: 250px;
+  background: url(../img/note.png) no-repeat;
+  padding: 45px 45px 10px 35px;
+  margin:10px 0px 10px 265px;
+  color:#FD7837;
+  font-weight: bold;
+  h3{
+    text-align: center;
+    padding:5px;
+  }
+  label{
+    line-height:30px;
+  }
+  p{
+    clear:both;
+    label{
+      padding:3px 0px;
+      display:inline-block;
+      &.finish_key{
+        text-align: right;
+        width:100px;
+        vertical-align: top;
+      }
+      &.finish_value{
+        width:305px;
+      }
+    }
+  }
+}
+
+.pay_finish  {
+  padding-left: 280px;
+  padding-top: 30px;
+  height: 175px;
+  display:inline-block;
+
+  span {
+    text-align: center;
+    background: url("../img/plane.png") 150px 37px no-repeat;
+    display: inline-block;
+    padding-left: 90px;
+    width: 320px;
+    height: 100px;
+    color: green;
+    font-size: 20px;
+    font-size:bold;
+    line-height: 100px;
+    font-weight: bold;
+    /*box-shadow: 0px 0px 10px 0px #ccc;*/
+  }
+
+  p  {
+    width:420px;
+    text-align: center;
+    color:#cdcdcd;
+    font-size:16px;
+    padding: 10px 0;
+    font-weight: bold;
+    margin-top:5px;
+  }
+
+  .alert_text  {
+    width:420px;
+    font-size: 15px;
+    font-weight: bold;
+    color:#000000;
+    text-align: center;
+
+    strong  {
+      color:#2e82c5;
+    }
+    b{
+      color:red;
+      margin-top: 8px;
+    }
+  }
+}
+
+.alert_container{
+    width: 100%;
+    height: 100%;
+    position:fixed;
+    left:0;
+    top:0;
+    z-index: 99;
+    background:rgba(0,0,0,0.5);
+
+    .alert_content{
+        height:768px;
+        background: url(../img/cz_alert2.png) no-repeat;
+        background-position:center;
+      background-size:450px 500px;
+        opacity: 0.9;
+        .alert_msg{
+            text-align:center;
+            padding-top:305px;
+            div{  
+                display:block;
+                font-size:18px;                
+            }
+            
+            span{
+                display:block;
+                font-size:13px;
+            }
+            .btn_close{
+              opacity:0.5;
+            }
+            a {
+              margin-top:10px;
+              display: inline-block;
+              width: 115px;
+              line-height: 28px;
+              font-size: 14px;
+              padding: 0 5px;
+              border-radius: 5px;
+              color: black;
+              background-color: #d3d3d3;
+              border: none;
+              text-decoration: none;
+
+              &:hover  {
+                background: #FF9933;
+              }
+          }
+        }
+    }
+}
+
+.extra_info  {
+  color:#f00;
+}
+
+.qr_code_container{
+  width: 195px;
+  height: 185px;
+  position: relative;
+  top:-195px;
+  left: 80px;
+  background: url(../img/yellow_people.png)no-repeat -3px 54px;
+  p{
+    float: left;
+    width: 80px;
+  }
+  span{
+    display: block;
+    color: #FD7837;
+    font-weight: bold;
+  }
+  img{
+    display:block;
+    float: right;
+    margin: -5px 0px 0px 0px;
+  }
+}
+
+/*
+.row_container{
+  position: relative;
+}
+*/

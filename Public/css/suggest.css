@@ -1,0 +1,85 @@
+/* line 1, ../sass/suggest.scss */
+.suggest {
+  background: #fff;
+  width: 980px;
+  height: 569px;
+  margin: 58px 0px 38px 0px;
+  border: 1px solid #ededed;
+}
+
+/* line 9, ../sass/suggest.scss */
+.suggest_container {
+  width: 980px;
+  height: 499px;
+  margin-top: 35px;
+  background: url(../img/suggest_bg.jpg) 35px 10px no-repeat;
+}
+
+/* line 16, ../sass/suggest.scss */
+.suggest_left {
+  margin-top: 15px;
+  float: left;
+}
+/* line 19, ../sass/suggest.scss */
+.suggest_left p {
+  font-size: 24px;
+  background: url(../img/hu_finish.png) no-repeat;
+  height: 100px;
+  line-height: 100px;
+  padding-left: 120px;
+  margin-left: 250px;
+  position: relative;
+  z-index: 999;
+}
+/* line 30, ../sass/suggest.scss */
+.suggest_left textarea {
+  margin-top: -15px;
+  margin-left: 70px;
+  width: 450px;
+  height: 260px;
+  resize: none;
+  border-top: 1px solid #ededed;
+  font-size: 17px;
+  padding: 50px;
+  line-height: 25px;
+  position: relative;
+}
+
+/* line 44, ../sass/suggest.scss */
+.suggest_right {
+  float: left;
+  margin-left: 70px;
+  margin-top: 100px;
+}
+/* line 48, ../sass/suggest.scss */
+.suggest_right p {
+  width: 220px;
+  line-height: 30px;
+  font-size: 17px;
+  color: #f34001;
+}
+/* line 54, ../sass/suggest.scss */
+.suggest_right textarea {
+  margin-top: 10px;
+  width: 175px;
+  height: 135px;
+  resize: none;
+  padding: 15px;
+  font-size: 17px;
+  line-height: 25px;
+}
+/* line 64, ../sass/suggest.scss */
+.suggest_right a {
+  width: 115px;
+  height: 55px;
+  display: block;
+  background: url(../img/button.png) 0px 10px no-repeat;
+  font-size: 18px;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  line-height: 60px;
+  margin-left: 100px;
+  margin-top: 10px;
+}

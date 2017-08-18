@@ -1,0 +1,41 @@
+<extend name="../Common/home_base"/>
+
+<block name="custom_css">
+    <link rel="stylesheet" href="__PUBLIC__/css/news.css" />
+</block>
+
+<block name="content">
+    <div class="row_container">
+        <div class="crumbs_nav">
+            <div class="crumbs_nav_item">
+                <a href="/">首页</a>
+                <i>&gt;</i>
+            </div>
+            <div class="crumbs_nav_item">
+                <a class="goods_show" href="">公告</a>
+                <i class="goods_show">&gt;</i>
+            </div>
+            <div class="crumbs_nav_item">
+                <a class="goods_show">{$news_info.title}</a>
+                <i class="goods_show"></i>
+            </div>
+        </div>
+        <div class="news_info">
+            <h3>{$news_info.title}</h3>
+            <div class="news_message">
+                <span>发布时间：{$news_info.created_date}</span>
+                <span>作者：轰轰虎 </span>
+
+                <!-- 我要分享   start-->
+                <div class="bdsharebuttonbox" style="display:inline;float:right;"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
+                <script>
+                    window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                </script>
+                <!-- 我要分享   end-->
+            </div>
+            <div class="news_info_content">
+                {$news_info.text}
+            </div>
+        </div>
+    </div>
+</block>

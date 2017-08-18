@@ -1,0 +1,37 @@
+<extend name="../Common/account_index" />
+
+<block name="content">
+    <div class="menu_bar_content">
+        <div class="message_reset">
+            <include file="../Common/component/user_security_center_tab"/>
+            <form class="update_password" action="{:U('Home/User/password_modify')}" method="post">
+                <p>
+                    <label>&nbsp;当前密码： &nbsp;</label>
+                    <input type="password" name="oldPasswor">
+                </p>
+
+                <p>
+                    <label>新 密 码： &nbsp;</label>
+                    <input type="password" name="password">
+                </p>
+
+                <p>
+                    <label>确认新密码： &nbsp;</label>
+                    <input type="password" name="rePassword">
+                </p>
+
+                <p class="vcode">
+                    <label>验 证 码： &nbsp;</label>
+                    <input type="text" name="vcode">
+                    <img src="" alt="验证码">
+                    <a href="">换一张？</a>
+                </p>
+
+                <p>
+                    <label>  &nbsp;</label>
+                    <button>提交</button>
+                </p>
+            </form>
+        </div>
+    </div>
+</block>

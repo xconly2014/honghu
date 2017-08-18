@@ -1,0 +1,62 @@
+/* line 1, ../sass/404.scss */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Microsoft Yahei";
+}
+
+/* line 6, ../sass/404.scss */
+.body {
+  width: 750px;
+  height: 500px;
+  margin: 150px auto;
+  background: url(../img/404.png) no-repeat;
+}
+/* line 11, ../sass/404.scss */
+.body .error_404 {
+  width: 300px;
+  margin-left: 300px;
+  margin-top: 95px;
+  font-size: 80px;
+  color: #E58D2C;
+  font-weight: bold;
+}
+/* line 19, ../sass/404.scss */
+.body .error_content {
+  margin-left: 240px;
+}
+/* line 21, ../sass/404.scss */
+.body .error_content p {
+  font-size: 20px;
+  color: #D75642;
+  font-weight: bold;
+}
+/* line 26, ../sass/404.scss */
+.body .error_content span {
+  display: block;
+  margin-top: 10px;
+  color: #B7B7B7;
+}
+/* line 31, ../sass/404.scss */
+.body .error_content ul {
+  margin-left: 30px;
+  margin-top: 3px;
+  color: #B7B7B7;
+}
+/* line 35, ../sass/404.scss */
+.body .error_content ul li {
+  padding: 3px;
+}
+/* line 40, ../sass/404.scss */
+.body .error_content .error_href {
+  margin-top: 10px;
+}
+/* line 42, ../sass/404.scss */
+.body .error_content .error_href a, .body .error_content .error_href b {
+  color: #888989;
+  font-weight: bold;
+}
+/* line 46, ../sass/404.scss */
+.body .error_content .error_href a:hover {
+  color: #E58D2C;
+}

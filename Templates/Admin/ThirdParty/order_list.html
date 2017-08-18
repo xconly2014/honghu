@@ -1,0 +1,89 @@
+<extend name="../Common/admin_base" />
+
+<block name="extra_css">
+    <link rel="stylesheet" href="__PUBLIC__/css/jquery-ui.css" />
+    <link rel="stylesheet" href="__PUBLIC__/css/user_record_list.css" />
+    <style>
+        .search_box_container{
+            width:1000px;
+            float:left;
+        }
+    </style>
+</block>
+
+<block name="extra_js">
+    <script type="text/javascript" src="__PUBLIC__/js/Plugin/jquery-multiselect/jquery-ui.min.js"></script>
+    <script>
+        $().ready(function(){
+             $( ".datepicker" ).datepicker({
+                inline: true,
+                dateFormat: 'yy-mm-dd',//日期格式 
+                monthNames: ['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月'],  
+                dayNamesMin: ['日','一','二','三','四','五','六'], 
+                showMonthAfterYear:true,//是否把月放在年的后面 
+                yearSuffix: '年'
+            });
+        });
+    </script>
+</block>
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div class="cz_order_ios">
+                <div class="table_bar">
+                    <div class="search_box_container">
+                        <div class="search_box">
+                            <form action="{:U('Admin/ThirdParty/order_list')}" method="get">
+                                <input class="datepicker" type="text" placeholder="请选择起始查询日期" name="start_date" value="{$start_date}">
+                                <input class="datepicker" type="text" placeholder="请选择结束查询日期" name="end_date" value="{$end_date}">
+                                <button type="submit">搜索</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <ul>
+                    <li>订单收入：<b>{$count_select.payment}</b></li>
+                    <li>订单数量：<b>{$count_select.number}</b></li>
+                </ul>
+
+                <div class="table_container">
+                    <table class="data-table">
+                        <thead>
+                        <tr>
+                            <th>游戏</th>
+                            <th>充值面额</th>
+                            <th>数量</th>
+                            <th>总金额</th>
+                            <th>付款时间</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <volist name="order_list" id="vo">
+                            <tr id="row_{$vo.id}">
+                                <td>{$vo.name}</td>
+                                <td>{$vo.details}</td>
+                                <td>{$vo.bought_num}</td>
+                                <td>{$vo.real_payment}</td>
+                                <td>{$vo.pay_time}</td>
+                            </tr>
+                        </volist>
+                        </tbody>
+                    </table>
+
+                    <div class="page">{$show}</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</block>
+
+<block name="footer">
+    <div class="footer">
+        <p>
+            广州鸿鹄网络科技有限公司
+        </p>
+    </div>
+</block>

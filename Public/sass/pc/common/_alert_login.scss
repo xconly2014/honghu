@@ -1,0 +1,135 @@
+.theme-popover-mask {
+  z-index: 9998;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:#000;
+  opacity:0.4;
+  filter:alpha(opacity=40);
+  display:none
+}
+
+.theme-popover {
+  z-index:9999;
+  position:fixed;
+  top:50%;
+  left:50%;
+  width:460px;
+  height:320px;
+  margin:-180px 0 0 -330px;
+  border-radius:5px;
+  border:solid 2px #666;
+  background-color:#fff;
+  display:none;
+  box-shadow: 0 0 10px #666;
+}
+
+.theme-poptit {
+  border-bottom:1px solid #ddd;
+  position: relative;
+
+  img  {
+    margin-top:12px;
+    margin-left:12px;
+  }
+}
+
+.theme-popbod {
+  padding:60px 15px;
+  color:#444;
+  height: 148px;
+}
+
+.dform {
+  padding:80px 30px 40px 10px;
+  text-align: center;
+}
+
+.theme-signin {
+  margin: -50px -20px -50px 90px;
+  text-align:left;
+  font-size: 14px;
+}
+
+.login_form  {
+  li  {
+    list-style: none;
+    margin:10px;
+
+    label  {
+      display: inline-block;
+      width:80px;
+      text-align: right;
+    }
+
+    span  {
+      color:red;
+    }
+
+    button {
+      margin-top:10px;
+      margin-right:10px;
+      width:90px;
+      height:30px;
+      background: #FF9933;
+      border:none;
+      border-radius: 5px;
+
+      &:hover  {
+        color:#fff;
+      }
+    }
+  }
+}
+
+.ipt {
+  border: solid 1px #d2d2d2;
+  border-left-color: #ccc;
+  border-top-color: #ccc;
+  border-radius: 2px;
+  box-shadow: inset 0 1px 0 #f8f8f8;
+  background-color: #fff;
+  padding: 4px 6px;
+  height: 21px;
+  line-height: 21px;
+  color: #555;
+  width: 180px;
+  vertical-align: baseline;
+}
+
+.theme-popover-mask {
+  z-index: 9998;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:#000;
+  opacity:0.4;
+  filter:alpha(opacity=40);
+  display:none
+}
+
+.close {
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 20px;
+  color: #000000;
+  text-shadow: 0 1px 0 #000;
+  opacity: 0.6;
+  text-decoration: none;
+  margin-top:2px;
+  margin-right:5px;
+}
+
+label.error {
+  background: url("../img/wrong.png") no-repeat 0px 0px;
+  display: inline-block;
+  padding-left: 20px;
+  width: 320px;
+  height: 20px;
+  color: red;
+}

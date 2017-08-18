@@ -1,0 +1,80 @@
+/* line 1, ../sass/flow.scss */
+.flow_container {
+  width: 980px;
+  min-height: 728px;
+  background: #ffffff;
+  margin-top: 10px;
+  margin-bottom: 38px;
+}
+/* line 7, ../sass/flow.scss */
+.flow_container h6 {
+  padding-top: 10px;
+  margin-left: 20px;
+  color: #ccc;
+}
+
+/* line 14, ../sass/flow.scss */
+.flow_form {
+  margin-left: 50px;
+  padding-top: 20px;
+}
+
+/* line 19, ../sass/flow.scss */
+.flow_info {
+  font-size: 16px;
+  font-weight: bold;
+  color: #5F5B5A;
+}
+
+/* line 25, ../sass/flow.scss */
+#tel {
+  height: 20px;
+  background: #E9E9E9;
+}
+
+/* line 30, ../sass/flow.scss */
+.flow_option {
+  display: inline-block;
+  width: 700px;
+  min-height: 160px;
+}
+
+/* line 36, ../sass/flow.scss */
+.flow_text {
+  float: left;
+  width: 130px;
+  height: 65px;
+  background: #efefef;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  color: #f34001;
+  text-align: center;
+  line-height: 20px;
+  margin: 10px 0;
+  margin-right: 35px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+/* line 50, ../sass/flow.scss */
+.flow_text label {
+  display: block;
+  font-size: 17px;
+  margin-top: 3px;
+}
+/* line 55, ../sass/flow.scss */
+.flow_text del {
+  font-size: 12px;
+  color: #ccc;
+  display: block;
+}
+/* line 60, ../sass/flow.scss */
+.flow_text:hover {
+  background: #f4aa5f;
+  color: #fff;
+}
+
+/* line 66, ../sass/flow.scss */
+.pay_desk {
+  width: 760px;
+  margin-left: 58px;
+}

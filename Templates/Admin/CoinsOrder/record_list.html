@@ -1,0 +1,36 @@
+<extend name="../Common/admin_base" />
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div class="cz_order_ios">
+                <div class="table_container">
+                    <table class="data-table">
+                        <thead>
+                        <tr>
+                            <th>时间</th>
+                            <th>来源</th>
+                            <th>虎币</th>
+                            <th>收入+/支出-</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <foreach name="coins_record_list" item="row">
+                            <tr>
+                                <td>{$row.created_date}</td>
+                                <td>{$row.type_text}</td>
+                                <td>{$row.score}</td>
+                                <td>{$row.operation}</td>
+                                <td>
+                                    <a href="{$row.url}">详情</a>
+                                </td>
+                            </tr>
+                        </foreach> 
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>

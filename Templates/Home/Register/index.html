@@ -1,0 +1,43 @@
+<extend name="../Common/reg_base" />
+
+<block name="reg_container">
+    <form class="register_form" action="{$submit_url}" method="post" id="nickname_form">
+        <p class="input_field required">
+            <label class="form_info">用户名：</label>
+            <input type="text" name="nickname" id="nickname" class="nickname_value"/>
+        </p>
+
+        <p class="input_field required">
+            <label class="form_info">密码：</label>
+            <input id="password" type="password" name="password_hash" />
+        </p>
+
+        <p class="input_field required">
+            <label class="form_info">确认密码：</label>
+            <input type="password" name="confirm_password_hash" />
+        </p>
+
+        <p class="input_field required">
+            <label class="form_info">邮箱地址：</label>
+            <input type="text" name="email" id="email" class="email_value"/>
+        </p>
+
+        <p class="input_field required">
+            <label class="form_info">验证码：</label>
+            <input type="text" name="vcode"  class="check_vcode" id="check_vcode"/>
+            <img id="vcode" src="__CONTROLLER__/vcode" alt="验证码" onclick="change()" />
+            <a href="javascript:void(0);" onclick="change()">换一张</a>
+        </p>
+
+        <p class="input_field">
+            <label class="form_info">&nbsp;</label>
+            <input type="checkbox" name="xieyi"/>
+            同意<a href="#" target="_blank">"轰轰虎用户服务协议"</a>
+        </p>
+
+        <p class="input_field">
+            <label class="form_info">&nbsp;</label>
+            <button type="submit">注册</button>
+        </p>
+    </form>
+</block>

@@ -1,0 +1,53 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="extra_js">
+    <script type="text/javascript" src="__PUBLIC__/js/Plugin/jqueryForm/jQuery_Validation.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/global_checker.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/common/czpackage_common.js"></script>
+    <script type="text/javascript">
+         $().ready(function(){
+        	 addMethod();
+        	 $("#mb_czpackage_game_account").validate(window.czpackage_game_account_option,true);
+         });
+     </script>
+</block>
+<block name="header_bar">
+    <h1 class="mui-title">充值套餐购买信息填写</h1>
+</block>
+
+<block name="main_content">
+    <div class="main_container">
+       <ul class="mui-table-view" style="margin-bottom: 15px;">
+           <li class="mui-table-view-cell">
+               <label>游戏名：</label><span>{$order_info.game_name}</span>
+           </li> 
+
+           <li class="mui-table-view-cell">
+               <label>单价：</label><span>{$order_info.price}</span>
+           </li>
+
+           <li class="mui-table-view-cell">
+               <label>购买数量：</label><span>{$order_info.num}</span>
+           </li>                       
+        </ul>
+        <div class="clear"></div>
+         <form action="{$submit_url}" method="post" id="mb_czpackage_game_account">
+             <div class="mobile_error"></div>  
+             <input type="text" name="cz_contact_way" placeholder="请填写您的手机号码">
+             <if condition="$is_tx == true">
+                 <select name="cz_login_way" style="border:1px solid #ccc!important;">
+                      <option value=''>请选择登录方式</option>
+                      <option value="weixin">微信</option>
+                      <option value="qq">QQ</option>
+                 </select>
+              </if>
+              <input type="text" name="cz_role" placeholder="请填写您的游戏角色"/>
+              <input type="text" name="cz_account" placeholder="请填写您的游戏账号"/>
+              <input type="password" name="cz_password" placeholder="请填写您的游戏密码"/>
+              <label>应付金额：</label><b>{$order_info.payment}&nbsp;元</b>
+              <div class="mui-button-row">
+                  <button class="mui-btn mui-btn-primary mui-btn-block">提交</button>
+              </div>
+        </form>      
+    </div>
+</block>

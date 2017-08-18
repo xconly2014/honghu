@@ -1,0 +1,66 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="header_bar">
+    <h1 class="mui-title">填写代练信息</h1>
+</block>
+
+<block name="extra_js">
+    <script type="text/javascript" src="__PUBLIC__/js/Plugin/jqueryForm/jQuery_Validation.js"></script>
+    <script src="__PUBLIC__/js/common/package_common.js"></script>
+    <script src="__PUBLIC__/js/global_checker.js"></script>
+    <script src="__PUBLIC__/js/mb/mb_package.js"></script>
+</block>
+
+<block name="main_content">
+    <div class="main_container">
+        <form id="package_form" action="{:U('Home/Package/publish', array('gameId'=>$game_id))}" method="post">
+            <div class="mobile_error"></div>
+            <input type="text"  name="title" placeholder="请填写代练套餐标题"/>
+            <div class="mui-table-view" style="margin-bottom:15px;">
+
+                <div class="mui-input-row mui-checkbox mui-left" style="display:inline-block;">
+                    <label>苹果</label>
+                    <input type="checkbox" name="platform[]"class="platform_ios"  value="1" required minlength="1"  title="请至少选择一个游戏平台"/>
+                </div>
+                <div class="mui-input-row mui-checkbox mui-left" style="display:inline-block;">
+                    <label>安卓</label>
+                    <input type="checkbox" name="platform[]" value="2" />
+                </div>
+            </div>
+
+            <input type="text" name="qufu" placeholder="请填写游戏区服" />
+            <textarea name="details" placeholder="请填写代练套餐详情"></textarea>
+            <input type="text" name="spend_day" placeholder="请填代练天数 例如：8或者3-5"/>
+
+            <div class="mui-table-view" style="margin-bottom:15px;">
+                <div>&nbsp;&nbsp;是否提供充值</div>       
+                <div class="mui-input-row mui-radio mui-left" style="display:inline-block;">
+                    <label>是</label>
+                    <input name="cz_provided" type="radio" value="1" checked>
+                </div>
+                <div class="mui-input-row mui-radio mui-left" style="display:inline-block;">
+                    <label>否</label>
+                    <input name="cz_provided" type="radio" value="0">
+                </div>
+            </div>
+
+            <textarea name="remarks" placeholder="请填写代练套餐的相关备注信息"></textarea>
+            <input type="text" name="security_price" placeholder="请输入要付的代练保障金"/>
+
+            <input type="text" name="price" placeholder="请输入代练套餐价格" />
+            <input type="text" name="contact_way" placeholder="请填写你的联系方式" />
+            
+            <div class="mui-table-view">
+            
+               <div class="mui-input-row mui-checkbox">
+                    同意&nbsp;<a style="display:inline-block;line-height:40px;font-size:12px;" href="{:U('Home/Help/index',array('id'=>4))}" target="_blank">”轰轰虎用户服务协议“</a>
+                    <input name="xieyi" type="checkbox">
+                </div>
+            </div> 
+
+            <div class="mui-button-row">
+                <button class="mui-btn mui-btn-primary mui-btn-block">确认</button>
+            </div>
+        </form>
+    </div>
+</block>

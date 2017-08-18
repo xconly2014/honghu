@@ -1,0 +1,65 @@
+<extend name="../Common/admin_base" />
+
+<block name="extra_css">
+    <style>
+        .common_form p{
+            padding-right: 280px;
+        }
+    </style>
+</block>
+
+<block name="extra_js">
+    <script type="text/javascript">
+        $().ready(function(){
+            $("#nm").validate({
+                rules: {
+                    nm_code: "required",
+                    money: "required"
+                },
+
+                messages:{
+                    nm_code:"请填写券码",
+                    money:"请填写金额"
+                },
+                errorPlacement: function(error, element) {
+                    error.appendTo(element.parent());
+                    error.siblings("span").remove();
+                },
+                errorElement:"span",
+                success: function(span) {
+                    span.attr("class","success");
+                },
+                onfocusout: function(element) {
+                    $(element).valid();
+                }
+            });
+
+        });
+    </script>
+</block>
+
+<block name="content">
+<div class="content_container">
+	<div class="content">
+		<div class="game_strategy_container">
+			<div class="form_container">
+				<form action="{:U('Admin/NmTicket/add_nm')}" method="post" class="common_form container" id="nm">
+					<p>添加糯米券</p>
+					<li class="required">
+						<label>券码：</label>
+						<input type="text" name="nm_code" />
+					</li>
+					<li class="required">
+						<label>金额：</label>
+						<input type="text" name="money" />
+					</li>
+					<li>
+                        <button type="submit">添加</button>
+                        <button type="reset">取消</button>
+                    </li>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+</block>

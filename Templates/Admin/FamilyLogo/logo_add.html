@@ -1,0 +1,25 @@
+<extend name="../Common/admin_base" />
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div class="news_strategy_container">
+                <form class="common_form container" action="" method="post" enctype="multipart/form-data">
+                    <p>添加堂会logo</p>
+                    <li class="required">
+                        <label>名字</label>
+                        <input type="text" name="name">
+                    </li>
+                    <li class="required">
+                        <label>图片</label>
+                        <input type="file" name="pic_name">
+                    </li>
+                    <li>
+                        <button type="submit">添加</button>
+                        <button type="reset">取消</button>
+                    </li>
+                </form>
+            </div>
+        </div>
+    </div>
+</block>

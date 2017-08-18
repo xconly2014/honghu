@@ -1,0 +1,50 @@
+<extend name="../Common/home_base" />
+
+<block name="custom_css">
+    <link rel="stylesheet" href="__PUBLIC__/css/suggest.css" />
+</block>
+
+<block name="extra_js">
+    <script>
+        $().ready(function(){
+            $('.suggest_btn').click(function(){
+                var advice_msg = $('#advice_message').val();
+                var contact_way_msg = $('#contact_way').val();
+                var url = "{:U('Home/Suggest/suggest')}";
+                if(advice_msg == '' || contact_way_msg == ''){
+                    alert('建议和联系方式都不能为空噢~');
+                    return false;
+                }
+
+                $.post(url,{advice:advice_msg,contact_way:contact_way_msg},function(data){
+                        if(data == 'success'){
+                            alert('提交成功，我们会尽快处理！');
+                            $('#advice_message').val('');
+                            $('#contact_way').val('');
+                        }
+                });
+            });
+        });
+    </script>
+</block>
+
+<block name="content">
+   <div class="row_container">
+        <div class="suggest">
+            <div class="suggest_container">
+                <form action="" method="post">
+                    <div class="suggest_left">
+                        <p>建议及反馈</p>
+                        <textarea  id="advice_message" name="advice"  placeholder="您的宝贵建议，就是我们进步的源泉噢！您找不到所要充值的游戏，也可以反馈在这里哦"></textarea>
+                    </div>
+                    <div class="suggest_right">
+                        <p>★请留下您的联系方式：</p>
+                        <textarea id="contact_way" name="contact_way" placeholder="QQ,邮箱或者手机号码都可以噢~"></textarea>
+                        <p>我们会尽快回复您哒，如果采纳了您的建议，我们还会有礼物赠送噢~</p>
+                        <a class="suggest_btn" href="javascript:void(0);">提 &nbsp; 交</a>
+                    </div>
+                </form>
+            </div>
+       </div>
+   </div>
+</block>

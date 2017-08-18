@@ -1,0 +1,115 @@
+<div class="pay_info">
+    <span>支付商品：{$pay_title}</span><br>
+    <span>金额：<b>{$pay_price} </b>元</span>
+</div>
+<div class="pay_way">
+    <span>付款方式：</span>
+    <a href="javascript:void(0)" class="active">储蓄卡/信用卡</a>
+    <a href="javascript:void(0)">支付宝/微信支付</a>
+</div>
+<div class="pay_way_list">
+    <form action="{$submit_url}" method="post">
+        <ul class="default_way">
+            <li>
+                <input type="radio" name="pay_way" value="shengpayICBC"/>
+                <span class="gs"></span>
+            </li>
+
+            <li>
+                <input type="radio" name="pay_way" value="shengpayABC"/>
+                <span class="ny"></span>
+            </li>
+
+            <li>
+                <input type="radio" name="pay_way" value="shengpayCCB"/>
+                <span class="js"></span>
+            </li>
+
+            <li>
+                <input type="radio" name="pay_way" value="shengpayCMB"/>
+                <span class="zs"></span>
+            </li>
+
+            <li>
+                <input type="radio" name="pay_way" value="shengpayCMBC"/>
+                <span class="ms"></span>
+            </li>
+
+            <li>
+                <input type="radio" name="pay_way" value="shengpaySPDB"/>
+                <span class="pf"></span>
+            </li>
+
+            <li>
+                <input type="radio" name="pay_way" value="shengpayCIB"/>
+                <span class="xy"></span>
+            </li>
+
+            <li>
+                <input type="radio" name="pay_way" value="shengpayPSBC"/>
+                <span class="yz"></span>
+            </li>
+
+            <li>
+                <input type="radio" name="pay_way" value="shengpayCEB"/>
+                <span class="gd"></span>
+            </li>
+
+            <li>
+                <input type="radio" name="pay_way" value="shengpayCOMM"/>
+                <span class="jt"></span>
+            </li>
+
+            <li>
+                <input type="radio" name="pay_way" value="shengpayGDB"/>
+                <span class="gf"></span>
+            </li>
+
+            <li>
+                <input type="radio" name="pay_way" value="shengpayBOC"/>
+                <span class="zg"></span>
+            </li>
+
+            <li>
+                <input type="radio" name="pay_way" value="shengpayBCCB"/>
+                <span class="bj"></span>
+            </li>
+
+            <li>
+                <input type="radio" name="pay_way" value="shengpaySZPAB"/>
+                <span class="pa"></span>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <input type="radio" name="pay_way" value="alipay" checked/>
+                <span class="zfb"></span>
+            </li>
+            <li>
+                <input type="radio" name="pay_way" value="wx"/>
+                <span class="wx"></span>
+            </li>
+        </ul>
+        <div class="online_payment">
+            请确保您的卡已开通网上支付，否则将无法支付成功。
+            <a href="{:U('Home/Help/index', array('id'=>18))}" target="_blank">相关支付问题</a>
+        </div>
+        <div class="pay_next">
+            <button class="show_btn" type="submit">下一步</button>
+        </div>
+    </form>
+</div>
+<div id="bg"></div>
+<div class="up_box">
+    <h2>网上支付提示<a class="box_close" href="#">关闭</a></h2>
+    <div class="box_content">
+        <div class="box_message">
+            <span>支付完成前，请不要关闭此支付验证窗口。<br>
+支付完成后，请根据您支付的情况点击下面按钮。</span>
+        </div>
+        <div class="box_btn">
+            <button class="btn_no box_close">支付遇到问题</button>
+            <button class="btn_ok">支付完成</button>
+        </div>
+    </div>
+</div>

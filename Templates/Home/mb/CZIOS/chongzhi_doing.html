@@ -1,0 +1,94 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="header_bar">
+    <h1 class="mui-title">下单成功</h1>
+</block>
+
+<block name="extra_css">
+    <link rel="stylesheet" href="__PUBLIC__/css/mb_chongzhi.css" />
+    <style>
+        .cz_suggest{
+            color:#fe7d55;
+            font-size:20px;
+        }
+        .suggest_link{
+            float:right;
+            line-height:30px;
+            color:#0190f7;
+        }
+    </style>
+</block>
+
+<block name="extra_js">
+    <script>
+        $().ready(function(){
+            $('.btn_close').click(function(){
+                $('.alert_container').css('display','none');
+            });
+        });
+    </script>
+</block>
+
+<block name="main_content">
+    <div class="alert_container">
+        <div class="alert_content">
+            <div class="alert_msg">
+                <div>亲，岁末网络塞车,</div>
+                <div>充值可能延迟30分钟到账,</div>
+                <div>请勿登陆游戏并耐心等待哦！</div>
+                <img style="height: 150px;width:150px;" src="__PUBLIC__/img/cz_doing_qr_code.jpg"/>
+                <span>关注公众号,查询订单状态和最新优惠信息！</span>
+                <br>
+                <a class="mui-btn btn_close" href="javascript:void(0)">知道了</a>
+                <!--<p>温馨提示：</p>
+                <span>前往银承派注册，最高可获10元虎币奖励！</span>
+                <span>银承派，您身边的票据理财专家</span>
+                <a style="margin-top:10px" class="mui-btn" href="{$extra_url}">立即前往</a>-->
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="main_container">
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell success-header">
+                <img class="mui-media-object mui-pull-left" src="__PUBLIC__/img/finish.png">
+                <b>下单成功</b>
+                <p>您的订单系统正在受理，请不要登陆游戏，以免造成游戏币不到账，如10分钟内没收到短信通知，可凭订单号<b> {$orderInfo.id} </b>询问在线客服QQ:4008062400，也可以加微信号honghonghu88，谢谢！</p>
+                <p style="font-style:bold;margin-top:5px;color:#DF0000;font-size:24px;">充值微信登录的游戏，可能会延迟到账，工作人员会联系您获取微信授权验证码，谢谢合作！</p>
+            </li>
+
+            <li class="mui-table-view-cell mui-collapse mui-active">
+                <a class="mui-navigate-right" href="#">订单详情</a>
+                <ul class="mui-table-view mui-table-view-chevron">
+                    <li class="mui-table-view-cell">
+                        <label>订单号：</label><span>{$orderInfo.id}</span>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        <label>游戏：</label><span>{$orderInfo.game_name}</span>
+                    </li>
+                    <li class="mui-table-view-cell">
+                       <label>充值面额：</label><span>{$orderInfo.details}</span>
+                    </li>
+                    <li class="mui-table-view-cell">
+                       <label>数量：</label><span>{$orderInfo.number}</span>
+                    </li>
+                </ul>
+            </li>
+
+        </ul>
+         <p style="font-size:20px;color:#aaa;margin:5px;">更多推荐</p>
+         <ul class="mui-table-view">                   
+            <li class="mui-table-view-cell">
+                <a href="{:U('Home/GroupBuy/index')}">
+                   <label class="cz_suggest">团购中心</label><span class="suggest_link">更多优惠游戏充值>></span>
+               </a>
+            </li>
+            <li class="mui-table-view-cell">
+                <a href="{:U('Home/CreditsStore/index')}">
+                   <label class="cz_suggest">积分商城</label><span class="suggest_link">积分兑换实用精品>></span>
+               </a>
+            </li>
+        </ul>
+    </div>
+</block>

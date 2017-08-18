@@ -1,0 +1,416 @@
+/* line 1, ../sass/pc/content/_credits_store_content.scss */
+.credits_store {
+  margin-top: 20px;
+}
+
+/* line 5, ../sass/pc/content/_credits_store_content.scss */
+.credits_store_left {
+  width: 210px;
+  float: left;
+  font-size: 14px;
+  margin-bottom: 38px;
+}
+/* line 10, ../sass/pc/content/_credits_store_content.scss */
+.credits_store_left p {
+  margin: 20px 0px 18px 10px;
+}
+/* line 13, ../sass/pc/content/_credits_store_content.scss */
+.credits_store_left li {
+  margin: 0px 0px 25px 30px;
+  display: block;
+  width: 80%;
+  height: 95px;
+}
+/* line 18, ../sass/pc/content/_credits_store_content.scss */
+.credits_store_left li div {
+  margin: 25px 10px 0px 1px;
+  float: left;
+  color: #ffffff;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 20px;
+  background-color: #FC6800;
+}
+/* line 29, ../sass/pc/content/_credits_store_content.scss */
+.credits_store_left li img {
+  margin: 10px 23px 0px 0px;
+}
+/* line 32, ../sass/pc/content/_credits_store_content.scss */
+.credits_store_left li span {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+/* line 37, ../sass/pc/content/_credits_store_content.scss */
+.credits_store_left li a {
+  text-decoration: none;
+  color: #000000;
+}
+/* line 40, ../sass/pc/content/_credits_store_content.scss */
+.credits_store_left li a:hover {
+  color: #ff0000;
+}
+
+/* line 49, ../sass/pc/content/_credits_store_content.scss */
+.credits_store_right {
+  width: 750px;
+  float: left;
+  margin-left: 15px;
+}
+/* line 54, ../sass/pc/content/_credits_store_content.scss */
+.credits_store_right .news_credits {
+  display: inline-block;
+}
+/* line 57, ../sass/pc/content/_credits_store_content.scss */
+.credits_store_right .news_credits img {
+  width: 750px;
+  height: 250px;
+}
+
+/* line 64, ../sass/pc/content/_credits_store_content.scss */
+.userInfo {
+  margin-bottom: 20px;
+  width: 210px;
+  height: 127px;
+  font-size: 14px;
+  padding-top: 40px;
+  background: url(../img/user_info_bg.png) no-repeat;
+}
+/* line 71, ../sass/pc/content/_credits_store_content.scss */
+.userInfo img {
+  float: left;
+}
+/* line 74, ../sass/pc/content/_credits_store_content.scss */
+.userInfo a {
+  text-decoration: none;
+  color: #000;
+  font-size: 15px;
+}
+/* line 78, ../sass/pc/content/_credits_store_content.scss */
+.userInfo a:hover {
+  color: #ff9936;
+}
+
+/* line 84, ../sass/pc/content/_credits_store_content.scss */
+.user_info_left {
+  float: left;
+  width: 60px;
+  margin: 0px 5px 0px 13px;
+}
+/* line 88, ../sass/pc/content/_credits_store_content.scss */
+.user_info_left img {
+  margin-bottom: 16px;
+  border-radius: 5px;
+}
+/* line 92, ../sass/pc/content/_credits_store_content.scss */
+.user_info_left a {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+/* line 98, ../sass/pc/content/_credits_store_content.scss */
+.user_info_right {
+  float: left;
+}
+/* line 100, ../sass/pc/content/_credits_store_content.scss */
+.user_info_right img {
+  float: left;
+  margin-top: 10px;
+  margin-left: 3px;
+}
+/* line 105, ../sass/pc/content/_credits_store_content.scss */
+.user_info_right a {
+  display: block;
+  float: left;
+  margin: 10px 0 0 5px;
+  font-weight: bold;
+}
+
+/* line 114, ../sass/pc/content/_credits_store_content.scss */
+.reward {
+  background-color: #fff;
+  border-radius: 8px;
+  border-bottom: 3px solid #FF7342;
+}
+
+/* line 120, ../sass/pc/content/_credits_store_content.scss */
+.layer {
+  border: 3px solid #FFA533;
+  border-radius: 5px;
+}
+
+/* line 126, ../sass/pc/content/_credits_store_content.scss */
+.integral_content {
+  margin: 10px 0px 10px 8px;
+  height: 98px;
+  font-size: 11px;
+  color: #6B5F5F;
+}
+/* line 131, ../sass/pc/content/_credits_store_content.scss */
+.integral_content img {
+  float: left;
+  margin: 10px 10px 0px 0px;
+}
+/* line 135, ../sass/pc/content/_credits_store_content.scss */
+.integral_content span {
+  float: left;
+  width: 100px;
+  margin: 25px 0px 3px 0px;
+  color: #F04102;
+  font-size: 16px;
+  display: block;
+  font-weight: bold;
+}
+/* line 144, ../sass/pc/content/_credits_store_content.scss */
+.integral_content label {
+  float: left;
+  color: #C9C9C9;
+}
+
+/* line 152, ../sass/pc/content/_credits_store_content.scss */
+.goods_list {
+  width: 748px;
+  border: 1px solid #FFA533;
+  margin-top: 12px;
+  margin-bottom: 38px;
+}
+/* line 158, ../sass/pc/content/_credits_store_content.scss */
+.goods_list .goods {
+  clear: both;
+}
+/* line 160, ../sass/pc/content/_credits_store_content.scss */
+.goods_list .goods div {
+  float: left;
+  width: 225px;
+  height: 260px;
+  border: 1px solid #ededed;
+  margin-left: 16px;
+  margin-top: 15px;
+  text-align: center;
+  margin-bottom: 10px;
+  background: #faffff;
+}
+/* line 171, ../sass/pc/content/_credits_store_content.scss */
+.goods_list .goods div img {
+  width: 190px;
+  height: 146px;
+  margin-top: 8px;
+}
+/* line 176, ../sass/pc/content/_credits_store_content.scss */
+.goods_list .goods div p {
+  font-size: 12px;
+  height: 35px;
+  font-size: 12px;
+  text-align: left;
+  margin: 0px 18px;
+}
+/* line 183, ../sass/pc/content/_credits_store_content.scss */
+.goods_list .goods div span {
+  display: block;
+  float: left;
+  font-size: 12px;
+  text-align: left;
+  margin: 0 0 5px 16px;
+}
+/* line 190, ../sass/pc/content/_credits_store_content.scss */
+.goods_list .goods div span.credits_price {
+  margin-top: 5px;
+  height: 18px;
+  width: 90px;
+  display: block;
+  float: left;
+  background: url("../img/dollar.png") 0 0 no-repeat;
+}
+/* line 197, ../sass/pc/content/_credits_store_content.scss */
+.goods_list .goods div span.credits_price b {
+  margin-left: 25px;
+  line-height: 18px;
+  color: #FE6F29;
+}
+/* line 204, ../sass/pc/content/_credits_store_content.scss */
+.goods_list .goods div span.goods_left {
+  color: #999;
+  font-weight: bold;
+  margin-top: 3px;
+  width: 90%;
+}
+/* line 210, ../sass/pc/content/_credits_store_content.scss */
+.goods_list .goods div span.goods_left a {
+  display: inline-block;
+  float: right;
+  margin-right: 20px;
+  width: 46px;
+  height: 21px;
+  border: 1px solid #669FBD;
+  color: #669FBD;
+  text-align: center;
+  line-height: 21px;
+  text-decoration: none;
+}
+/* line 222, ../sass/pc/content/_credits_store_content.scss */
+.goods_list .goods div span.goods_left a:hover {
+  color: #FE6F29;
+  border: 1px solid #FE6F29;
+  background: #fff;
+}
+
+/* line 235, ../sass/pc/content/_credits_store_content.scss */
+.single_goods {
+  font-size: 14px;
+}
+
+/* line 239, ../sass/pc/content/_credits_store_content.scss */
+.show_product {
+  margin: 13px 20px 30px 20px;
+  width: 708px;
+  height: 320px;
+}
+/* line 243, ../sass/pc/content/_credits_store_content.scss */
+.show_product img {
+  float: left;
+  border: 1px solid #999999;
+  margin-right: 30px;
+}
+/* line 248, ../sass/pc/content/_credits_store_content.scss */
+.show_product b {
+  padding-top: 20px;
+  display: block;
+  font-size: 18px;
+  height: 70px;
+}
+/* line 254, ../sass/pc/content/_credits_store_content.scss */
+.show_product p {
+  margin-bottom: 20px;
+}
+/* line 256, ../sass/pc/content/_credits_store_content.scss */
+.show_product p label {
+  color: #FC6800;
+  font-weight: bold;
+}
+/* line 261, ../sass/pc/content/_credits_store_content.scss */
+.show_product button {
+  cursor: pointer;
+  font-size: 16px;
+  clear: both;
+  width: 181px;
+  height: 55px;
+  border-radius: 10px;
+  text-align: center;
+  color: #ffffff;
+  border: none;
+  background: url(../img/btn.png);
+}
+
+/* line 274, ../sass/pc/content/_credits_store_content.scss */
+.but_p {
+  margin: 20px 120px 20px 0px;
+  float: left;
+  background-color: #A1CC24;
+  border-radius: 5px;
+  text-align: center;
+  width: 110px;
+  height: 30px;
+  color: #ffffff;
+  line-height: 30px;
+}
+
+/* line 286, ../sass/pc/content/_credits_store_content.scss */
+.goods_details {
+  width: 708px;
+  margin: 0px 30px 0px 20px;
+  min-height: 414px;
+}
+
+/* line 291, ../sass/pc/content/_credits_store_content.scss */
+.details_top {
+  padding-right: 5px;
+  font-size: 16px;
+  color: #FF7727;
+  font-family: oblique;
+  width: 99%;
+  height: 30px;
+  line-height: 40px;
+  border-bottom: 3px solid #FF7727;
+  text-align: right;
+}
+
+/* line 303, ../sass/pc/content/_credits_store_content.scss */
+.details_top_left {
+  float: left;
+  width: 35%;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 5px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  color: #ffffff;
+  background-color: #FF7727;
+}
+
+/* line 316, ../sass/pc/content/_credits_store_content.scss */
+.goods_details_info {
+  width: 673px;
+  min-height: 336px;
+  margin-bottom: 30px;
+  border: 1px solid #FF7727;
+  border-top: 0;
+  padding: 15px;
+}
+
+/* line 325, ../sass/pc/content/_credits_store_content.scss */
+.center_content {
+  width: 748px;
+  min-height: 530px;
+  background-color: #EDEDED;
+}
+
+/* line 330, ../sass/pc/content/_credits_store_content.scss */
+h3 {
+  display: block;
+  padding-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* line 337, ../sass/pc/content/_credits_store_content.scss */
+.finish_title {
+  font-weight: bold;
+  padding-top: 200px;
+  text-align: center;
+}
+
+/* line 342, ../sass/pc/content/_credits_store_content.scss */
+.p_content {
+  padding-top: 20px;
+  text-align: center;
+  margin-left: 40px;
+  color: #ff0000;
+}
+
+/* line 351, ../sass/pc/content/_credits_store_content.scss */
+.unlogin img {
+  margin: 10px 8px 0px 40px;
+}
+/* line 354, ../sass/pc/content/_credits_store_content.scss */
+.unlogin a {
+  display: block;
+  width: 80px;
+  float: left;
+  color: #64BBE4;
+  font-weight: bold;
+  margin: 40px 0px 0px 8px;
+}
+
+/* line 366, ../sass/pc/content/_credits_store_content.scss */
+.singer_r_r a {
+  margin-top: 25px;
+}
+
+/* line 370, ../sass/pc/content/_credits_store_content.scss */
+#week_day {
+  margin-top: 10px;
+}

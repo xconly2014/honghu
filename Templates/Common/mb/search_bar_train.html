@@ -1,0 +1,79 @@
+<block name="extra_css">
+    <style>
+        dl dd {
+	         width:25%;
+        }
+        dl dd:hover ul{
+	        width:23.5%;
+        }
+    </style>
+</block>
+
+<div class="top_quick_bar_right">
+            <dl>
+                <dd>
+                    <span>
+                        <a href="javascript:void(0)">{$type_category}</a>
+                    </span>
+                    <ul>
+                        <foreach name="type" item="type_text" key="type_href" >
+				            <li>
+				                <a href="?{$type_url}{$type_href}">{$type_text}</a>
+                            </li>
+                        </foreach>
+                    </ul>
+                 </dd>
+                 <dd>
+                     <span>
+                         <a href="javascript:void(0)">{$platform_category}</a>
+                     </span>
+                     <ul>
+                         <foreach name="platform" item="platform_text" key="platform_href">
+                             <li>
+                                 <a href="?{$platform_url}{$platform_href}">{$platform_text}</a>
+                             </li>
+                         </foreach>
+                     </ul>
+                  </dd>
+                  <dd>
+                      <span>
+                          <a href="javascript:void(0)">{$price_category}</a>
+                      </span>
+                      <ul>
+                          <foreach name="price" item="price_text" key="price_href" >
+				              <li>
+				                  <a href="?{$price_url}{$price_href}">{$price_text}</a>
+                              </li>
+                          </foreach>
+                      </ul>
+                  </dd>
+                  
+                  <dd>
+                      <span>
+                          <a href="javascript:void(0)">{$game_category}</a>
+                      </span>
+                      <ul>
+                          <foreach name="game" item="game_text" key="game_href" >
+				              <li>
+				                  <a href="?{$game_url}{$game_href}">{$game_text}</a>
+                              </li>
+                          </foreach>
+                      </ul>
+                  </dd>
+                  
+              </dl>  
+          </div>
+          
+          <nav class="mui-bar mui-bar-tab">
+                <a class="bar" href="{:U('Home/Package/publish',array('gameId'=>$gameId))}"><span>发布代练代餐</span></a>
+                <a class="bar" href="{:U('Home/Requirement/publish',array('gameId'=>$gameId))}"><span>发布代练需求</span></a>
+          </nav>
+          
+          <nav class="mui-bar mui-bar-tab">
+          <if condition="true == $game_flag">
+                  <a class="bar" href="{:U('Home/Package/publish',array('gameId'=>$gameId))}"><span>发布代练代餐</span></a>
+                  <a class="bar" href="{:U('Home/Requirement/publish',array('gameId'=>$gameId))}"><span>发布代练需求</span></a>
+          <else />
+                <a class="bar" href="{:U('Home/TradeCenter/mb_sell')}"><span>我要出售</span></a>
+          </if>
+          </nav>

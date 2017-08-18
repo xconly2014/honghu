@@ -1,0 +1,30 @@
+.search_box_container  {
+  width:300px;
+  float:right;
+}
+
+.search_box {
+  height:40px;
+
+  input[type="text"]{
+    display: inline-block;
+    width:200px;
+    height:32px;
+    margin-top:5px;
+    padding-left: 10px;
+    border:1px solid #f0ad4e;
+    background: #f7fcfe;
+    border-radius: 3px;
+  }
+  button  {
+    width:80px;
+    height:30px;
+    background-color: #00b7ee;
+    border-radius: 5px;
+    border:none;
+
+    &:hover  {
+      color:#fff;
+    }
+  }
+}

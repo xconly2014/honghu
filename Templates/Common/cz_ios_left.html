@@ -1,0 +1,25 @@
+<div class="cz_game_info inline_div">
+     <img width="175px" height="175px" src="/game_pic/{$game_pic}" alt="{$game_name}">
+     <div class="instructions_div">
+     <p class="remind">※&nbsp;亲！一旦付款成功，请不要立即登录游戏噢！请在收到短信后再登录！<p>
+         <ul>
+     		<li>充值的游戏面额越大，优惠更大！</li>
+     		<li>微信游戏需要向客服提供验证码！</li>
+     		<li>如有不懂，请咨询客服QQ：4008062400！</li>
+     		<li>充值时间大概为5分钟，请留意手机短信！</li>
+            <if condition="$is_tx == true">
+            <li style="color:#f00">充值微信登录的游戏，可能会延迟到账，工作人员会联系您获取微信授权验证码，谢谢合作！</li>
+            </if>
+     	</ul>
+     
+     	<div class="problem_title">
+     	    <img src="__PUBLIC__/img/question.png" class="book_pic" alt="常见问题"/>
+     	    <p>常见咨询问题</p>
+     	</div>
+     	<ul>
+     		<li><a href="{:U('Home/Help/index', array('id'=>10))}" target="__blank">充值不到帐怎么办？</a></li>
+     		<li><a href="{:U('Home/Help/index', array('id'=>10))}" target="__blank">充值有哪些优惠？</a></li>
+     		<li><a href="{:U('Home/Help/index', array('id'=>18))}" target="__blank">支付方式有哪些？</a></li>
+     	</ul>
+     </div>
+ </div>

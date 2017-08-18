@@ -1,0 +1,331 @@
+<extend name="../Common/home_base" />
+
+<block name="custom_css">
+    <link rel="stylesheet" href="__PUBLIC__/css/flow.css" />
+</block>
+
+<block name="extra_js">
+    <script src="__PUBLIC__/js/module/cash_desk.js"></script>
+    <script type="text/javascript">
+        var userCoins = "{$userCoins}";
+
+        $().ready(function(){
+            cash_desk_active();
+            
+            triggerClickEvent();
+
+            $('#tel').blur(function(){
+                getTrafficOption();
+                $('#option_id').val('');
+            });
+            
+        });
+
+        function triggerClickEvent(){
+            $('.flow_text').click(function(){
+                if(checkTel()){
+                    $('.flow_text').css({background:'#efefef',color:'#f34001'});
+                    $('.flow_text').removeClass('selected');
+                    $(this).css({background:'#f4aa5f',color:'#ffffff'});
+                    $(this).addClass('selected');
+                    $('#option_error').text('');
+
+                    var option_id = $(this).attr('id');
+                    $('#option_id').val(option_id);
+
+                    //根据用户虎币数来判断是否可用虎币支付
+                    var payment = $(this).children('span').text();
+
+
+                    $('.current_hb').text('当前虎币：'+userCoins);
+                    $('.payment_hb').text('支付虎币：'+payment);
+                    if(payment > userCoins){
+                        $("input[value='hb']").removeAttr('checked');
+                        $("input[value='alipay']").attr('checked','checked');
+                        $("input[value='hb']").attr('disabled','disabled');
+                        $(".hb").removeClass('checked');
+                        $('.unable').text('虎币不足');
+                    }else{
+                        $("input[value='hb']").removeAttr('disabled');
+                        $('.unable').text('');
+                    }    
+                }
+                 
+            });
+        }
+
+        function hbClick(){
+            var payment = $('.selected').children('span').text();
+            var userCoins = {$userCoins};
+            if(payment > userCoins){
+                return false;
+            }else{
+                $(".pay_way_list").find(":radio").removeAttr('checked')
+                $('.hb').prev().attr("checked","checked");
+                $(".pay_way_list").find('li > span').removeClass('checked');
+                $('.hb').addClass('checked');
+            }
+
+        }
+
+        function updateInfo(err){
+            $('#info').text(err);
+        }
+
+        function mobileFormat(value, element) {
+            var length = value.length;
+            var mobile = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+            return (length == 11 && mobile.test(value));
+        }
+
+        function updateOption(option_list,type_flag){
+            var container = $('#flow_option');
+            container.empty();
+            var optionCount = option_list.length;
+            var child = "";
+            for(i=0; i<optionCount; i++){
+                var div_child = document.createElement("div");
+                div_child.id = option_list[i].id;
+                div_child.className = "flow_text";
+
+                var label_child = document.createElement("label");
+                label_child.innerHTML = option_list[i].real_num + 'M';
+
+                var span_child = document.createElement("span");
+                span_child.innerHTML = option_list[i].real_price;
+
+                var del_child = document.createElement("del");
+
+                var del_span = document.createElement("span");
+                del_span.innerHTML = option_list[i].price;
+
+                $(del_child).append(del_span);
+                $(div_child).append(label_child);
+                $(div_child).append(span_child);
+                $(div_child).append(del_child);
+
+                container.append(div_child);
+
+                $(span_child).before('售价');
+                $(span_child).after('元');
+                $(del_span).before('原价');
+                $(del_span).after('元');
+                if(!type_flag){
+                    del_child.remove();
+                    $('.flow_text').css('line-height','33px');
+                    $('.flow_text label').css('margin-top','0px');
+                }
+            }//for
+            triggerClickEvent();
+        }
+
+        function checkTel(){
+            var mobile = "";
+            mobile = $('#tel').val();
+            if(!mobile || !mobileFormat(mobile, "")){
+                updateInfo('请输入正确的手机号码');
+                return false;
+            }
+            return mobile;
+        }
+
+        function beforeSubmit(){
+            if(!checkTel()){
+                return false;
+            }
+
+            if($('#option_id').val() == ''){
+                $('#option_error').text('请选择充值面额');
+                return false;
+            }
+
+            return true;
+        }
+
+        function getTrafficOption(){
+            var mobile = checkTel();
+            if(!mobile){
+                return;
+            }
+
+            var url = "{:U('Home/TrafficOrder/get_traffic_option')}";
+            var data = {'mobile':mobile};
+
+            $.post(url,data,function(ret_value){
+                if(ret_value.status){
+                    updateInfo(ret_value.mobile_info);
+                    updateOption(ret_value.data,ret_value.type_flag);
+                }
+                else{
+                }
+            },'json');
+        }
+    </script>
+</block>
+
+<block name="content">
+    <div class="row_container">
+        <div class="crumbs_nav">
+            <div class="crumbs_nav_item">
+                <a href="{:U('/')}">首页</a>
+                <i>&gt;</i>
+            </div>
+            <div class="crumbs_nav_item">
+                <a>4G流量</a>
+            </div>
+        </div>
+        
+        <div class="flow_container">
+            <h6>受运营商影响，每月底最后两天，移动号码流量充值暂不受理！</h6>
+            <form class="flow_form" action="" method="post" onsubmit="return beforeSubmit()">
+                <li class="input_field">
+                    <label class="form_info flow_info">手机号：</label>
+                    <input type="text" id="tel" name="tel" placeholder="请填写您的手机号码">
+                    <span id="info" style="color:#f00; font-size: 12px;height: 16px;"></span>
+                </li>
+
+                <li class="input_field">
+                    <label class="form_info flow_info" style="margin-top:25px;">面 &nbsp; 值：</label>
+                    <div class="flow_option" id="flow_option">
+                        <foreach name="traffic_list" item="row">
+                            <div class="flow_text" id="{$row.id}">
+                                <label>{$row.real_num}M</label>
+                                售价<span>{$row.real_price}</span>元
+                                <del>原价<span>{$row.price}</span>元</del>
+                            </div>
+                        </foreach>
+                    </div>
+                    <p id="option_error" style="margin-left:350px;font-size:16px;color:red"></p>
+                    <input id="option_id" type="hidden" name="option_id"/>
+                </li>
+                <div class="pay_desk">
+                <div class="pay_way">
+                    <span>付款方式：</span>
+                    <a href="javascript:void(0)" class="active">储蓄卡/信用卡</a>
+                    <a href="javascript:void(0)">支付宝</a>
+                    <a href="javascript:void(0)">虎币</a>
+                </div>
+                <div class="pay_way_list">
+                    <ul class="default_way">
+                        <li>
+                            <input type="radio" name="pay_way" value="shengpayICBC"/>
+                            <span class="gs"></span>
+                        </li>
+
+                        <li>
+                            <input type="radio" name="pay_way" value="shengpayABC"/>
+                            <span class="ny"></span>
+                        </li>
+
+                        <li>
+                            <input type="radio" name="pay_way" value="shengpayCCB"/>
+                            <span class="js"></span>
+                        </li>
+
+                        <li>
+                            <input type="radio" name="pay_way" value="shengpayCMB"/>
+                            <span class="zs"></span>
+                        </li>
+
+                        <li>
+                            <input type="radio" name="pay_way" value="shengpayCMBC"/>
+                            <span class="ms"></span>
+                        </li>
+
+                        <li>
+                            <input type="radio" name="pay_way" value="shengpaySPDB"/>
+                            <span class="pf"></span>
+                        </li>
+
+                        <li>
+                            <input type="radio" name="pay_way" value="shengpayCIB"/>
+                            <span class="xy"></span>
+                        </li>
+
+                        <li>
+                            <input type="radio" name="pay_way" value="shengpayPSBC"/>
+                            <span class="yz"></span>
+                        </li>
+
+                        <li>
+                            <input type="radio" name="pay_way" value="shengpayCEB"/>
+                            <span class="gd"></span>
+                        </li>
+
+                        <li>
+                            <input type="radio" name="pay_way" value="shengpayCOMM"/>
+                            <span class="jt"></span>
+                        </li>
+
+                        <li>
+                            <input type="radio" name="pay_way" value="shengpayGDB"/>
+                            <span class="gf"></span>
+                        </li>
+
+                        <li>
+                            <input type="radio" name="pay_way" value="shengpayBOC"/>
+                            <span class="zg"></span>
+                        </li>
+
+                        <li>
+                            <input type="radio" name="pay_way" value="shengpayBCCB"/>
+                            <span class="bj"></span>
+                        </li>
+
+                        <li>
+                            <input type="radio" name="pay_way" value="shengpaySZPAB"/>
+                            <span class="pa"></span>
+                        </li>
+                    </ul>
+
+                    <ul>
+                        <li>
+                            <input type="radio" name="pay_way" value="alipay" checked/>
+                            <span class="zfb"></span>
+                        </li>
+
+                        <li>
+                            <input type="radio" name="pay_way" value="wx"/>
+                            <span class="wx"></span>
+                        </li>
+                    </ul>
+
+                    <ul>
+                        <li>
+                            <input type="radio" name="pay_way" value="hb" />
+                            <span class="hb" id="unable" onclick="hbClick();"></span>
+                            <label class="unable" style="display: block;color:#f00;"></label>
+                            <div class="hb_credits_info">
+                                <p class="current_hb"></p>
+                                <p class="payment_hb"></p>
+                            </div>
+                        </li> 
+                    </ul>
+                    <div class="online_payment">
+                        请确保您的卡已开通网上支付，否则将无法支付成功。
+                    </div>
+                    <div class="pay_next">
+                        <button class="show_btn" type="submit">下一步</button>
+                    </div>
+                </div>
+                </div>
+            </form>
+
+            <div id="bg"></div>
+            <div class="up_box">
+                <h2>网上支付提示<a class="box_close" href="#">关闭</a></h2>
+                <div class="box_content">
+                    <div class="box_message">
+                        <span>支付完成前，请不要关闭此支付验证窗口。<br>
+            支付完成后，请根据您支付的情况点击下面按钮。</span>
+                    </div>
+                    <div class="box_btn">
+                        <button class="btn_no box_close">支付遇到问题</button>
+                        <button class="btn_ok">支付完成</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</block>

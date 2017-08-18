@@ -1,0 +1,88 @@
+﻿<extend name="../Common/sc_base" />
+
+<block name="extra_css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/shouchonghao.css">
+</block>
+<block name="content">
+
+    <div class="row_container">
+        <div class="center_content">
+            <div class="inline_div left_container">
+                <img src="/game_pic/{$game_pic}" alt="{$gameName}"/>
+                <div class="sch_info">
+                    <p>游戏：<span>{$gameName}</span></p>
+                    <p>套餐：<span>{$scRes.details}</span></p>
+                    <p>平台：<span>{$platform}</span></p>
+                    <notempty name="scRes.operator">
+                        <p>端口：<span>{$scRes.operator}</span></p>
+                    </notempty>
+                    <p>小计：<span>{$realPayment}元</span></p>
+                </div>
+                <ul>
+                    <li>首充号是指您开通一个账号后，首次完成充值的账号。</li>
+                    <li>首充号里面的游戏角色、国家、性别、阵营等都有玩家自己制定。</li>
+                </ul>
+            </div>
+	        <div class="iossc_info inline_div">
+                <form id='sc_game_account' action="{$submit_url}" method="post">
+                    <h3>账号设置</h3>
+                    <p class="input_field required">
+                        <label class="form_info">游戏角色：</label>
+                        <input type="text" name="role" placeholder="请输入您的游戏角色" />
+                    </p>
+                    <p class="input_field required">
+                        <label class="form_info">游戏区服：</label>
+                        <input type="text" name="qufu" placeholder="请输入您的游戏区服" />
+                    </p>
+                    <p class="input_field required">
+                        <label class="form_info">联系方式：</label>
+                        <input type="text" name="contact_way" placeholder="请输入您的联系方式" />
+                    </p>
+                    <p class="input_field required">
+                        <label class="form_info">游戏账号：</label>
+                        <input type="text" name="account" placeholder="请输入您的游戏账号" />
+                    </p>
+                    <p class="input_field required">
+                        <label class="form_info">游戏密码：</label>
+                        <input type="password" name="password" placeholder="请输入您的游戏密码" />
+                    </p>
+                    <p>
+                        <button type="submit" class="button">下一步</button>
+                    </p>
+                </form>
+            </div>
+	        <div class="clear"></div>    
+        </div>
+    </div>
+</block>
+
+<block name="extra_js">
+    <script type="text/javascript" src="__PUBLIC__/js/global_checker.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/common/sch_common.js"></script>
+     <script type="text/javascript">
+        step = 2;
+         function reviewSubmit(form){
+            return form.submit();
+        }
+         
+        $().ready(function(){
+        	addMethod();
+        	$("#sc_game_account").validate(window.sc_game_account_option);
+        	setProgressBar();
+        	});
+    </script> 
+</block>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

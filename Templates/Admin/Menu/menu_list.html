@@ -1,0 +1,46 @@
+<extend name="../Common/admin_base" />
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div class="news_list_container">
+                <div class="table_bar">
+                    <a class="a_style_button" href="{:U('Admin/Menu/add_menu')}">添加菜单</a>
+
+                </div>
+
+                <div class="table_container">
+                    <table class="data-table">
+                        <thead>
+                        <tr>
+                            <th>编号</th>
+                            <th width="300">菜单名称</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <foreach name="menu_list" item="list">
+                            <tr id="row_{$list.id}">
+                                <td>{$list.id}</td>
+                                <if condition="$list['parent_id'] eq 0">
+                                   <td style="text-align: left;font-weight: bold">{$list.title}</td>
+                                <else />
+                                    <td style="text-align: left;padding-left: 40px;">{$list.title}</td>
+                                </if>
+
+                                <td>
+                                    <a href="{:U('Admin/Menu/edit_menu', array('id'=>$list['id']))}">修改</a>
+                                    <if condition="$list['parent_id'] neq 0">
+                                       &nbsp;&nbsp;<a href="{:U('Admin/Menu/del_menu', array('id'=>$list['id']))}" onclick="return confirm('确定删除吗?');">删除</a>
+                                    </if>
+                                </td>
+                            </tr>
+                        </foreach>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</block>

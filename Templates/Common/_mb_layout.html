@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="applicable-device"content="pc,mobile">
+    <meta name="baidu-site-verification" content="exgxIqEXav" />
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=52006351" charset="UTF-8"></script>
+    <title>{$seo_title}</title>
+    <meta name="keywords" content="{$seo_keyword}">
+    
+    <link href="__PUBLIC__/css/mb/mui.min.css" rel="stylesheet"/>
+    <link href="__PUBLIC__/css/mb_index.css" rel="stylesheet"/>
+    <block name="extra_css"></block>
+
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/1.8.2/jquery.min.js"></script>
+    <script src="__PUBLIC__/js/mb/mui.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+        mui.init();
+        $().ready(function(){
+           $('#cnzz_stat_icon_1253269026').find("img").remove();
+        });
+    </script>
+    <block name="extra_js"></block>
+
+</head>
+<body>
+
+<if condition="$type neq 'index'">
+    <header class="mui-bar mui-bar-nav">
+        <a href="javascript:history.back()" class="mui-icon mui-icon-left-nav mui-pull-left"></a>
+        <a href="{:U('/')}" class="mui-icon mui-icon-home mui-pull-right"></a>
+        <block name="header_bar">
+             <h1 class="mui-title">当前页面</h1>
+        </block>
+    </header>
+</if>
+
+<!-- 内容页面 -->
+<div id="mui_content" class="mui-content">
+    <block name="main_content"></block>
+    <div class="mb_footer">
+        <div class="footer_container">
+            <div class="index-tel">
+                <span class="mui-icon mui-icon-phone"></span>
+            <span>24小时客服电话:400-806-2400</span>
+            </div>
+            
+            <div class="index-qq" style="margin-top:10px;">
+                <script charset="utf-8" type="text/javascript" src="http://wpa.b.qq.com/cgi/wpa.php?key=XzkzODAwNzI2M18yNjE4OTZfNDAwODA2MjQwMF8"></script>
+            </div>
+            <div class="suggest">
+                <a href="{:U('Home/Suggest/suggest')}">
+                    <span class="mui-icon mui-icon-compose"></span>
+                    建议反馈
+                </a>
+            </div>
+
+            <script type="text/javascript">
+                var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+                document.write(unescape("%3Cspan id='cnzz_stat_icon_1253269026'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s9.cnzz.com/stat.php%3Fid%3D1253269026%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+            </script>
+            <script type="text/javascript">
+                var _bdhmProtocol = (("https:" == document.location.protocol) ? "https://" : "http://");
+                document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F77eddee7c086e43698c007b8bcbee395' type='text/javascript'%3E%3C/script%3E"))
+            </script>
+        </div>        
+    </div>
+</div>
+    
+    
+</body>
+</html>

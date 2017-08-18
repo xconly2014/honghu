@@ -1,0 +1,44 @@
+<extend name="../Common/admin_base" />
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div class="group_list_container">
+                <div class="table_bar">
+                    <a class="a_style_button" href="{:U('Admin/User/add_group')}">添加组</a>
+                </div>
+
+                <div class="table_container">
+                    <table class="data-table">
+                        <thead>
+                        <tr>
+                            <th>编号</th>
+                            <th>组名</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <volist name="group_list" id="vo">
+                            <tr id="row_{$vo.id}">
+                                <td>{$vo.id}</td>
+                                <td>{$vo.title}</td>
+                                <td>
+                                    <a href="{:U('Admin/User/update_group_access',array('id'=>$vo['id']))}">编辑</a
+                                </td>
+                            </tr>
+                        </volist>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>
+
+<block name="footer">
+    <div class="footer">
+        <p>
+            广州鸿鹄网络科技有限公司
+        </p>
+    </div>
+</block>

@@ -1,0 +1,69 @@
+<extend name="../Common/admin_base" />
+
+<block name="extra_css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/Chosen/chosen.min.css">
+</block>
+
+<block name="extra_js">
+    <script src="__PUBLIC__/js/admin/game.js"></script>
+    <script src="__PUBLIC__/js/Plugin/Chosen/chosen.jquery.min.js"></script>
+    <script type="text/javascript">
+    $().ready(function(){
+    	$("#selected").chosen({no_results_text: "游戏列表中不存在"});
+    });
+  </script>
+</block>
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div class="cz_package_list">
+                <form class="common_form container" id='IOSCZPageAdd' enctype="multipart/form-data" action="{:U('Admin/IOSCZPackage/on_sale')}" method="post">
+                    <p>充值套餐</p>
+                    <li class="required">
+                        <label>游戏名字</label>
+                        <select name='game_id' data-placeholder="请选择游戏" class="chosen-select"  id="selected" tabindex="2" style="width:212px;">
+                            <option value=''></option>
+                            <volist name='game_list' id='vo'>
+                                <option value="{$vo.id}" <if condition="$vo['id'] == $game_id">selected = 'selected'</if>>{$vo.name}</option>
+                            </volist>
+                        </select>
+                    </li>
+                    <li class="required">
+                        <label>最小购买数量</label>
+                        <input type="text" name="mini" />
+                    </li>
+                    <li class="required">
+                        <label class="form_info">购买总数量</label>
+                        <input type="text" name="sum" />
+                    </li>
+                    <li class="required">
+                        <label class="form_info">原价</label>
+                        <input type="text" name="real_price">
+                    </li>
+                    <li class="required">
+                        <label class="form_info">售价（单个）</label>
+                        <input type="text" name="price" />
+                    </li>
+                    <li class="required">
+                        <label class="form_info">面额描述</label>
+                        <textarea cols="30" rows="5" name="option"></textarea>
+                    </li>
+                    <li>
+                        <button type="submit">发布</button>
+                        <button type="reset">取消</button>
+                    </li>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</block>
+
+<block name="footer">
+    <div class="footer">
+        <p>
+            广州鸿鹄网络科技有限公司
+        </p>
+    </div>
+</block>

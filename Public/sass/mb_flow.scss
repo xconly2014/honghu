@@ -1,0 +1,29 @@
+@import "pc/common/cash_desk.scss";
+.flow_option{
+    width:100%;
+    min-height:150px;
+    margin:0 auto;
+    .flow_text{
+        float:left;
+        width:30%;
+        min-height:60px;
+        margin:5px 0;
+        margin-left:2.5%;
+
+        background:#fff;
+        color: #494949;
+        border: 1px solid #c0bfbf;
+        text-align:center;
+        border-radius: 5px;
+        label{
+            display:block;
+            font-size:18px;
+        }
+        del{
+            font-size:12px;
+            color:#ccc;
+            display:block;
+        }
+    }
+}
+    

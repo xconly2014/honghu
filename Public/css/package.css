@@ -1,0 +1,118 @@
+/* line 1, ../sass/pc/content/_package_content.scss */
+.package_info {
+  width: 70%;
+  margin-left: 50px;
+}
+/* line 5, ../sass/pc/content/_package_content.scss */
+.package_info h3 {
+  text-align: center;
+  padding-right: 80px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+/* line 11, ../sass/pc/content/_package_content.scss */
+.package_info .game_operator {
+  display: none;
+}
+
+/* line 16, ../sass/pc/content/_package_content.scss */
+label.error {
+  font-size: 12px;
+  background: url("../img/wrong.png") no-repeat 0px 0px;
+  display: inline-block;
+  padding-left: 20px;
+  width: 320px;
+  height: 20px;
+  color: red;
+}
+
+/* line 26, ../sass/pc/content/_package_content.scss */
+label.success {
+  font-size: 12px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url("../img/right.png") no-repeat 0px 0px;
+  position: relative;
+  top: 10px;
+}
+
+/* line 35, ../sass/pc/content/_package_content.scss */
+.package_container {
+  border: 1px solid #ccc;
+}
+
+/* line 1, ../sass/pc/common/_left_img_and_explain.scss */
+.cz_game_info {
+  width: 220px;
+  padding-right: 5px;
+  padding-left: 10px;
+}
+/* line 6, ../sass/pc/common/_left_img_and_explain.scss */
+.cz_game_info img {
+  margin: 23px 0 20px 23px;
+}
+/* line 9, ../sass/pc/common/_left_img_and_explain.scss */
+.cz_game_info h5 {
+  text-align: center;
+}
+
+/* line 14, ../sass/pc/common/_left_img_and_explain.scss */
+.instructions_div {
+  width: 100%;
+  margin-top: 23px;
+}
+/* line 19, ../sass/pc/common/_left_img_and_explain.scss */
+.instructions_div label {
+  display: block;
+  margin-left: 20px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  height: 30px;
+  line-height: 30px;
+}
+/* line 29, ../sass/pc/common/_left_img_and_explain.scss */
+.instructions_div hr {
+  border-top: 3px solid #4091E9;
+}
+/* line 33, ../sass/pc/common/_left_img_and_explain.scss */
+.instructions_div ul {
+  margin-top: 10px;
+}
+/* line 38, ../sass/pc/common/_left_img_and_explain.scss */
+.instructions_div li {
+  list-style-type: decimal;
+  padding: 2px 8px 2px 0px;
+  line-height: 20px;
+  font-size: 12px;
+  margin-left: 26px;
+}
+/* line 44, ../sass/pc/common/_left_img_and_explain.scss */
+.instructions_div li a {
+  color: #666;
+  text-decoration: none;
+}
+/* line 47, ../sass/pc/common/_left_img_and_explain.scss */
+.instructions_div li a:hover {
+  color: #f00;
+}
+
+/* line 55, ../sass/pc/common/_left_img_and_explain.scss */
+.problem_title {
+  height: 24px;
+  padding: 50px 0  0 8px;
+  border-bottom: 1px solid #ccc;
+}
+/* line 59, ../sass/pc/common/_left_img_and_explain.scss */
+.problem_title img {
+  margin: 0 5px 0 0;
+  height: 18px;
+  float: left;
+}
+/* line 64, ../sass/pc/common/_left_img_and_explain.scss */
+.problem_title p {
+  font-size: 13px;
+  width: 120px;
+  float: left;
+}

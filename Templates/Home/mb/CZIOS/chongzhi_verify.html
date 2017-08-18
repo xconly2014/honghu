@@ -1,0 +1,40 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="header_bar">
+    <h1 class="mui-title">充值信息确认</h1>
+</block>
+
+<block name="main_content">
+    <div class="main_container">
+        <h4>充值订单确认</h4>
+        <form action="{$submit_url}" method="post">
+            <ul class="mui-table-view">
+                <li class="mui-table-view-cell">
+                    <label>订单号：</label><span>{$orderInfo.id}</span>
+                </li>
+                <li class="mui-table-view-cell">
+                    <label>游戏名：</label><span>{$orderInfo.game_name}</span>
+                </li> 
+
+                <li class="mui-table-view-cell">
+                    <label>充值面额：</label><span>{$orderInfo.details}</span>
+                </li>
+
+                <li class="mui-table-view-cell">
+                    <label>购买数量：</label><span>{$orderInfo.number}</span>
+                </li>   
+
+                <li class="mui-table-view-cell">
+                    <label>价格：</label><span>{$orderInfo.payment}元</span>
+                </li>   
+
+                <li class="mui-table-view-cell">
+                    <label>您需要支付：</label><b style="color:red;font-weight:bold;font-size:20px;">{$orderInfo.payment}元</b>
+                </li>       
+            </ul>
+            <div class="mui-button-row">
+                <button class="mui-btn mui-btn-primary mui-btn-block">去支付</button>
+            </div>
+        </form>        
+    </div>
+</block>

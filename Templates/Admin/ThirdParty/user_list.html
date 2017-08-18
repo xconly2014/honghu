@@ -1,0 +1,48 @@
+<extend name="../Common/admin_base" />
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div class="user_list_container">
+                <div class="table_bar">
+                    <div class="search_box_container">
+                        <div class="search_box">
+                            <form action="{:U('Admin/PartnerUser/user_list')}" method="get">
+                                <input type="text" placeholder="请输入用户手机号码或者邮箱" name="name">
+                                <button type="submit">搜索</button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table_container">
+                    <table class="data-table">
+                        <thead>
+                        <tr>
+                            <th>注册时间</th>
+                            <th>上次登录时间</th>
+                            <th>手机</th>
+                            <th>邮箱</th>
+                            <th>支付金额</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <volist name="user_list" id="vo">
+                            <tr>
+                                <td>{$vo.created_date}</td>
+                                <td>{$vo.last_login_time}</td>
+                                <td>{$vo.tel}</td>
+                                <td>{$vo.email}</td>
+                                <td>{$vo.pay_sum}</td>
+                            </tr>
+                        </volist>
+                        </tbody>
+                    </table>
+                    <div class="page">{$show}</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</block>

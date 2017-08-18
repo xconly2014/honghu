@@ -1,0 +1,42 @@
+<extend name="../Common/admin_base" />
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div class="news_list_container">
+                <div class="table_bar">
+                    <div class="search_box_container">
+                        <div class="search_box">
+                            <form action="{:U('Admin/SearchWord/word_list')}" method="get">
+                                <input type="text" placeholder="请输入关键字" name="word">
+                                <button type="submit">搜索</button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table_container">
+                    <table class="data-table">
+                        <thead>
+                        <tr>
+                            <th width='230px'>搜索时间</th>
+                            <th>用户搜索关键词</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <volist name="search_list" id="vo">
+                            <tr>
+                                <td>{$vo.created_date}</td>
+                                <td>{$vo.word}</td>
+                            </tr>
+                        </volist>
+                        </tbody>
+                    </table>
+                    <div class="page">{$show}</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</block>

@@ -1,0 +1,180 @@
+<extend name="../Common/account_index" />
+
+<block name="custom_css">
+    <link type="text/css" rel="stylesheet" href="__PUBLIC__/css/layerModel.plugin.css">
+    <link type="text/css" rel="stylesheet" href="__PUBLIC__/css/layerModel.css">
+    <style>
+        #message{
+            margin-top: 8px;
+            float:left;
+            display:block;
+            width: 160px;
+            text-align:center;
+            color: #ff0000;
+        }
+    </style>
+</block>
+
+<block name="extra_js">
+    <script type="text/javascript" src="__PUBLIC__/js/Plugin/kinFormUpload/jquery.kinFormUpload.1.1.source.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/common/week.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/Plugin/calendar/calendar.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/Plugin/calendar/jquery.layerModel.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/Plugin/calendar/jquery.layerModel.plugin.js"></script>
+
+    <script type="text/javascript">
+
+        $().ready(function(){
+            week();
+            $(".singer_r_img").click(function(){
+                $(this).addClass("current");
+                calUtil.doSign("{:U('Home/User/Sign')}",{$cur_time.year},{$cur_time.month});
+            });
+
+            if($("#uploadImages").length > 0 ){
+                $("#uploadImages").kinFormUpload({
+                    length:1,
+                    zIndex:2,
+                    ext:'jpg,jpeg,png,gif'
+                });
+            }
+
+            $('.notSelected').click(function(){
+                $('#message').text('');
+            });
+            $('button').click(function(){
+            var num = parseInt($('.num').text());
+            if(num == 0){
+                $('#message').text('请先选择要上传的图片');
+                return false;
+            }
+        });
+
+
+            vip_level({$cz_sum},"{$vip_info['start']}","{$vip_info['end']}","{$vip_info['level']}");
+
+        });
+        
+        function vip_level(cz_sum,start,end,level){
+            var offset = 0;
+            if(cz_sum < {$vip_start}){
+                offset = cz_sum / {$vip_start} * 25;
+                              
+            }else{
+                offset = 25+(level-1)*115 +(cz_sum-start)/(end-start)*115;
+            }
+            
+            var sum_offset = offset - 20;
+            $('.part_progress').css('width',offset);
+            $('.vip_credits').css('margin-left',sum_offset);
+        }
+
+    </script>
+</block>
+
+<block name="content">
+    <div class="menu_bar_content">
+        <div class="user_center_list">
+        <div class="user_info_basic">
+            <div class="info_content">
+                <div class ="content">
+                	<div class="picture">
+                    	<div class="head_img">
+                    	    <img src="__PUBLIC__{$img}" class="portrait" alt="用户头像" width="135" height="135"/>
+                    	</div>
+                        <span id="message"></span>
+                    		<form action="{:U('Home/User/uploadImg')}" method="post"  enctype="multipart/form-data" class="img_form">
+                                <input type="file" name="images" id="uploadImages" />
+                    			<if condition="$img neq null">
+					 		        <button>修改</button>
+					 		    <else />
+					 		        <button>保存</button>
+					 		    </if>
+					 		</form>
+                    </div>
+
+                    <div class="user_info inline_div">
+                        <h2>
+                            <strong>欢迎您，{$user_name}</strong>
+                            <if condition="$vip_info neq ''">
+                                <span class="vip_level">{$vip_info.name}</span>
+                            </if>
+                        </h2>
+                        <div class="login_time">
+                            <label>上次登录时间</label>
+                            <span>{$login_time}</span>
+                        </div>
+
+                        <div class="singer">
+                            <if condition="$is_sign == true">
+                                <div class="singer_r_r">
+                                    <a class="singer_r_img current">
+                                        <span id="week_day"></span>
+                                    </a>
+                                </div>
+                                <else/>
+                                <div class="singer_r_r">
+                                    <a class="singer_r_img">
+                                        <span id="week_day"></span>
+                                    </a>
+                                </div>
+                            </if>
+                        </div>
+                        <span class="phone_bind">
+                            <if condition="$is_bind_phone == false">
+                                <img src="__PUBLIC__/img/account_center/icons/phone.png" alt="手机未绑定">
+                                <a href="{:U('Home/User/mobile')}">未绑定</a>
+                                <else/>
+                                <img src="__PUBLIC__/img/account_center/icons/phone_valid.png" alt="手机已绑定">
+                                <a>已绑定</a>
+                            </if>
+                        </span>
+                    </div>
+                    <div class="clear"></div>
+
+
+
+                    <div class="vip">
+                        <p>我的VIP：</p>
+                        <div class="vip_container">
+                            <div class="vip_logo">
+                                <volist name="vip_level" id="vo">
+                                    <span class="vip_level">{$vo.name}<a>&nbsp;</a></span>
+                                </volist>
+                            </div>
+                            <div class="vip_show">
+                                <volist name="vip_level" id="vo">
+                                    <span class="vip_select">▼{$vo.start}</span>
+                                </volist>
+                            </div>
+                            <div class="vip_progress">
+                                <div class="part_progress">
+                                </div>
+                            </div>
+                            <div class="vip_credits">
+                                <a class="cz_sum">{$cz_sum}</a>
+                                <div class="vip_angle"></div>
+                            </div>
+                            <span class="vip_go">>></span>
+                        </div>
+                    </div>
+                    
+                    <ul class="other_info">
+                        <li>
+                            <label class="hubi_pic">虎币:</label>
+                            <span>{$coins}</span>
+                            <a href="{:U('Home/CoinsCenter/card')}">充值</a>
+                        </li>
+                        <li>
+                            <label class="credits_pic">积分:</label>
+                            <span>{$credits}</span>
+                            <a href="{:U('Home/User/credits')}">查看详细</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        </div>
+    </div>
+</block>

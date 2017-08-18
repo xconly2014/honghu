@@ -1,0 +1,23 @@
+<extend name="../Common/account_index" />
+
+<block name="extra_js">
+    <script type="text/javascript" src="__PUBLIC__/js/module/user_center/security_center.js"></script>
+</block>
+
+<block name="content">
+    <div class="menu_bar_content">
+        <div class="message_reset">
+            <include file="../Common/component/user_security_center_tab"/>
+            <form class="mobile_bind_index" action="{$submit_url}" method="post">
+                <img src="__PUBLIC__/img/alert.png"/>
+                <span>您的邮箱未验证</span>
+                <p>系统检测到您是邮箱用户，请先通过验证邮箱</p>
+
+                <p class="input_field">
+                    <label class="form_info"> &nbsp;</label>
+                    <button type="submit">验证邮箱</button>
+                </p>
+            </form>
+        </div>
+    </div>
+</block>

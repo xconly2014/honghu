@@ -1,0 +1,301 @@
+.pay_info{
+  font-size: 14px;
+  line-height: 26px;
+  padding: 10px 15px;
+  background: #f4faff;
+
+  margin:0 auto;
+  margin-bottom: 10px;
+  span b{
+    color:red;
+  }
+}
+
+
+.pay_way{
+  height:36px;
+  line-height:36px;
+  padding-left:30px;
+  margin:0 auto;
+  border-left:1px solid #bcccee;
+  border-top:1px solid #bcccee;
+  border-right:1px solid #bcccee;
+  border-bottom:3px solid #bcccee;
+  font-size: 14px;
+  background: url(../img/background-1.jpg) repeat-x ;
+  span{
+    padding-right:10px;
+  }
+  a{
+    color:#5194ef;
+    display:inline-block;
+    min-width: 135px;
+    padding:0 10px;
+    text-align:center;
+    text-decoration: none;
+    font-weight:bold;
+    &:hover{
+      color:#ff8501;
+    }
+  }
+
+  a.active{
+    color:#ff8501;
+    background:#fff;
+    border-left:3px solid #bcccee;
+    border-right:3px solid #bcccee;
+    border-top:3px solid #bcccee;
+  }
+}
+
+.pay_way_list{
+  border-left:3px solid #bcccee;
+  border-right:3px solid #bcccee;
+  border-bottom:3px solid #bcccee;
+  margin:0 auto;
+  overflow: hidden;
+  background-color: #fff;
+
+  ul{
+    display:none;
+    list-style: none;
+    margin:0;
+    padding:0;
+    min-height: 240px;
+
+    li{
+      float:left;
+      margin-left: 22px;
+      margin-top: 30px;
+      span.checked{
+        border:1px solid red;
+      }
+    }
+  }
+  ul.default_way{
+    display:block;
+  }
+  .online_payment{
+    clear:both;
+    padding: 20px 0 20px 43px;
+    color: #f00;
+    font-size:12px;
+    font-weight: bold;
+
+    a  {
+      color: #00f;
+      font-size:14px;
+    }
+  }
+
+  .pay_next{
+    height: 38px;
+    background: #F3F5FC;
+    width: 944px;
+    padding: 11px 0 0 30px;
+    border-top: 1px solid #BCCCEE;
+
+    button{
+      text-decoration: none;
+      font-size:12px;
+      background:#FF811A;
+      border:1px solid #FF811A;
+      width:86px;
+      height: 28px;
+      display: inline-block;
+      text-align: center;
+      line-height: 28px;
+      border-radius: 3px;
+      color:#fff;
+      font-weight: bold;
+      cursor: pointer;
+      &:hover{
+        text-decoration:underline;
+      };
+    }
+  }
+}
+.credits  {
+  display:inline-block;
+  width:144px;
+  height:38px;
+  vertical-align: middle;
+  background:url(../img/credits.png) no-repeat 0 0;
+}
+
+.hb  {
+  display:inline-block;
+  width:144px;
+  height:38px;
+  vertical-align: middle;
+  background:url(../img/hb.png) no-repeat 0 0;
+  border:1px solid #ededed;
+}
+
+.hb_details{
+  margin-left:400px;
+  width:275px;
+  height:180px;
+  border:1px solid #ff9936;
+  float:right;
+  margin-right:70px;
+  margin-top:50px;
+  p{
+    padding:20px 15px 0px 15px;
+    line-height:25px;
+    color:red;
+  }
+  a{
+    background:url(../img/hb_cz.png) no-repeat;
+    display:block;
+    line-height: 30px;
+    width:108px;
+    height:31px;
+    margin-left:140px;
+    text-align:center;
+    text-decoration: none;
+    color:#fff;
+    font-size:13px;
+    font-weight: bold;
+  }
+  
+}
+
+.mpbalance  {
+  display:inline-block;
+  width:144px;
+  height:38px;
+  vertical-align: middle;
+  background:url(../img/mpbalance.png) no-repeat 0 0;
+}
+
+.vcoins  {
+  display:inline-block;
+  width:144px;
+  height:38px;
+  vertical-align: middle;
+  background:url(../img/vcoin.png) no-repeat 0 0;
+}
+
+.gs,.ny,.js,.zs,.ms,.pf,.xy,.yz,.gd,.jt,.gf,.zg,.bj,.pa,.wx,.zfb,.cft,.kq,.zf,.yd,.dx,.lt{
+  background:url(../img/pay_way.png) no-repeat 0 0;
+  display:inline-block;
+  width:142px;
+  height:36px;
+  vertical-align: middle;
+  border:1px solid #ededed;
+}
+.china_union{
+  background:url(../img/china_union.png) no-repeat;
+  width:142px;
+  height:36px;
+  display:inline-block;
+  vertical-align: middle;
+  border:1px solid #ededed;
+}
+.gs {
+  background-position: 0 0;
+}
+
+.ny {
+  background-position: -180px 0;
+}
+
+.js {
+  background-position: -360px 0;
+}
+
+.zs {
+  background-position: -540px 0;
+}
+
+.ms {
+  background-position: -720px 0;
+}
+
+.pf {
+  background-position: 0 -70px;
+}
+
+.xy {
+  background-position: -180px -70px;
+}
+
+.yz {
+  background-position: -360px -70px;
+}
+
+.gd {
+  background-position: -540px -70px;
+}
+
+.jt {
+  background-position: -720px -70px;
+}
+
+.gf {
+  background-position: 0 -140px;
+}
+
+.zg {
+  background-position: -180px -140px;
+}
+
+.bj {
+  background-position: -360px -140px;
+}
+
+.pa {
+  background-position: -540px -140px;
+}
+
+.wx {
+  background-position: -720px -140px;
+}
+
+.zfb {
+  background-position: 0 -210px;
+}
+
+.cft {
+  background-position: -180px -210px;
+}
+
+.kq {
+  background-position: -360px -210px;
+}
+
+.zf {
+  background-position: -540px -210px;
+}
+
+.yd {
+  background-position: 0 -280px;
+}
+
+.dx {
+  background-position: -180px -280px;
+}
+
+.lt {
+  background-position: -360px -280px;
+}
+
+.mb_cash_desk{
+    li label{
+        margin-left:10px;
+    }
+}
+
+.hb_credits_info  {
+  margin-top:5px;
+
+  label  {
+    font-size:14px;
+    color:#f00;
+  }
+  p {
+    font-size: 12px;
+    color:#FF9933;
+  }
+}

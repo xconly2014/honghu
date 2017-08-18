@@ -1,0 +1,98 @@
+.auth_container{
+    background:#fff;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+}
+.authentication_alert{
+    padding:10px;
+    border: solid #efe0b2 1px;
+    background: #fffce9;
+
+    img {
+        vertical-align: middle;
+        margin-left:220px;
+    }
+
+    span {
+        display: inline-block;
+        width: 320px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    p {
+        margin-left:220px;
+        font-size: 12px;
+        color: #9a9a9a;
+    }
+}
+
+.auth_id_title{
+    margin:20px;
+    border-bottom: 1px solid #999;
+    padding:8px 0px;
+}
+
+.photo_size{
+   position:relative;
+   top:5px;
+   color:#666;
+}
+
+.file_upload{
+    margin-left:130px;
+    width:550px;
+    height:205px;
+    padding:20px;
+    border:1px solid #ccc;
+
+    .photo_left{
+        width:270px;
+        height:200px;
+        border-right:1px dashed #ccc;
+        float:left;
+    }
+
+    .photo_right{
+        width:250px;
+        height:200px;
+        float:left;
+        margin-left:25px;
+    }
+    li{
+        font-size:14px;
+        padding:2px;
+        &.photo_message{
+            color:#666;
+        }
+
+        #face,#back,#body{
+            width:240px;
+            height:135px;
+            border:1px solid #ccc;
+            img{
+                width:240px;
+                height:135px;
+            }
+        }
+
+        #photo_face,#photo_back,#photo_body{
+            margin-top:3px;
+            margin-left:70px;
+        }
+    }
+}
+
+label#error {
+  font-size: 12px;
+  background: url("../img/wrong.png") no-repeat 0px 0px;
+  display: inline-block;
+  padding-left: 20px;
+  width: 320px;
+  height: 20px;
+  position:relative;
+  top:-33px;
+  left:-13px;
+  color: red;
+}

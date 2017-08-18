@@ -1,0 +1,190 @@
+<extend name="../Common/home_base" />
+
+<block name="custom_css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/trade_center.css">
+</block>
+
+<block name="content">
+    <div class="row_container">
+        <div class="navigation_bar">
+            <div class="crumbs_nav">
+	            <div class="crumbs_nav_item">
+	                <a href="{:U('/')}">首页</a>
+	                <i>></i>
+	            </div>
+	            <div class="crumbs_nav_item">
+	                <a href="{:U('Home/TradeCenter/buy')}">交易中心</a>
+	                <i>></i>
+	            </div>
+	            <div class="crumbs_nav_item">
+	                <a class="goods_show">商品展示</a>
+	                <i class="goods_show"></i>
+	            </div>
+	        </div>    
+        </div>
+        <div class="color_bar"></div>
+        <div class="filter_bar">
+            <div class="selector_set">
+                <span>筛选条件：</span>
+	            <volist name="search_line" id="ov">
+	                <a class="selector_item" href="{$ov[1]}">
+	                    <b>{$ov[0]}</b>
+	                    <em>{$ov[2]}</em>
+	                    <i></i>
+	                </a>
+	            </volist>
+	        </div>
+            <ul>
+                <if condition="false == $type_flag">
+                    <li>
+                        <span>{$type_category}</span>
+                        <p>
+                            <foreach name="type" item="type_text" key="type_href" >
+                                <a href="?{$type_url}{$type_href}">{$type_text}</a>
+                            </foreach>
+                        </p>
+                    </li>
+                </if>
+                <if condition="false == $platform_flag">
+                    <li>
+                        <span>{$platform_category}</span>
+                        <p>
+                            <foreach name="platform" item="platform_text" key="platform_href">
+                                <a href="?{$platform_url}{$platform_href}">{$platform_text}</a>
+                            </foreach>
+                        </p>
+                    </li>
+                </if>
+                <if condition="false == $price_flag">
+                    <li>
+                        <span>{$price_category}</span>
+                        <p>
+                            <foreach name="price" item="price_text" key="price_href" >
+                                <a href="?{$price_url}{$price_href}">{$price_text}</a>
+                            </foreach>
+                        </p>
+                    </li>
+                </if>
+                <notempty name="result">
+                <if condition="(false == $game_flag)">
+                    <li>
+                        <span>{$game_category}</span>
+                        <p>
+                            <foreach name="game" item="game_text" key="game_href" >
+                                <a href="?{$game_url}{$game_href}">{$game_text}</a>
+                            </foreach>
+                        </p>
+                    </li>
+                </if>
+                </notempty>
+            </ul>
+            <div class="trade_center_sell">
+                <if condition="(false == $type_flag) and (true == $game_flag) ">
+                    <div class="sell_btn">
+                        <a href="{:U('Home/Package/publish',array('gameId'=>$gameId))}">发布套餐</a>
+                        <a href="{:U('Home/Requirement/publish',array('gameId'=>$gameId))}">发布需求</a>
+                        <a href="{:U('Home/AccountTrade/publish',array('gameId'=>$gameId))}">发布账号</a>
+                    </div>
+                <elseif condition="(true == $type_flag) and (true == $game_flag)"/>
+                    <div class="sell_btn_one">
+                        <a href="{:U($type_href[1],array('gameId'=>$gameId))}">{$type_href[0]}</a>
+                    </div>
+                <else />
+                    <div class="sell_btn_one">
+                        <a href="{:U('Home/TradeCenter/sell')}">我要出售</a>
+                    </div>
+                </if>
+            </div>
+        </div>   
+    </div>
+    <div class="row_container">
+        <div class="goods_container">
+            <div class="title_nav">
+                <span class="text_left">商品信息</span>
+                <span class="text_middle">价格</span>
+                <span class="text_right">操作</span>
+            </div>
+            <empty name="result">
+                <div class="no_result">
+                    <p>没有找到你所要的商品！</p>
+                </div>
+            </empty>
+            <volist name="result" id="ov">
+                <div class="table_container">
+                    <div class="goods_info">
+                        <a href="{$ov.href}">{$ov.name}</a>
+                        <!--<p>
+                            <span class="label">卖家信用：</span>
+                            <span class="info">{$ov.credits}</span>
+                        </p>-->
+                        <p>
+                            <span class="label">物品类型：</span>
+                            <span class="info">{$ov.type}</span>
+                        </p>
+                        <p>
+                            <span class="label">系统平台：</span>
+                            <span class="info">{$ov.platform}</span>
+                        </p>
+                    </div>
+                    <div class="goods_operate text_middle">
+                        <span>￥{$ov.price}</span>
+                    </div>
+                    <div class="btn text_right">
+                       <a href="{$ov.href}">点击购买</a>
+                    </div>
+                </div>
+            </volist>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--     <div class="row_container">
+        <empty name="result">
+            <div class="no_result">
+                <span>没有找到你所要的商品！</span>
+            </div>
+        </empty>
+        <volist name="result" id="ov">
+        <div class="table_container">
+                <div class="goods_info">
+                    <a href="{$ov.href}">{$ov.name}</a>
+                    <p>
+                        <span class="label">卖家信用</span>
+                        <span class="info">{$ov.credits}</span>
+                    </p>
+                    <p>
+                        <span class="label">物品类型</span>
+                        <span class="info">{$ov.type}</span>
+                    </p>
+                    <p>
+                        <span class="label">平台</span>
+                        <span class="info">{$ov.platform}</span>
+                    </p>
+                </div>
+                <div class="goods_operate">
+                    <span>￥{$ov.price}</span>
+                </div>
+        </div>
+        </volist>
+
+    </div> --> 
+    
+    
+    
+    
+</block>

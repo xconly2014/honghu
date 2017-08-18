@@ -1,0 +1,78 @@
+/* line 1, ../sass/pc/content/_search_content.scss */
+.search_result {
+  width: 980px;
+  min-height: 470px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* line 8, ../sass/pc/content/_search_content.scss */
+.center_text, .search_ul li label, .search_ul li span, .search_ul li a {
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  line-height: 22px;
+  color: #1363B8;
+}
+
+/* line 16, ../sass/pc/content/_search_content.scss */
+.search_ul {
+  display: block;
+}
+/* line 18, ../sass/pc/content/_search_content.scss */
+.search_ul li {
+  margin-top: 30px;
+  display: block;
+  float: left;
+  width: 194px;
+  height: 300px;
+  font-weight: bold;
+}
+/* line 25, ../sass/pc/content/_search_content.scss */
+.search_ul li img {
+  border-radius: 90px;
+  padding: 5.9px 6px 6px 6.8px;
+  background: url("../img/sawtooth.png") no-repeat;
+  background-color: #7ECEF4;
+}
+/* line 35, ../sass/pc/content/_search_content.scss */
+.search_ul li a {
+  text-decoration: none;
+}
+
+/* line 41, ../sass/pc/content/_search_content.scss */
+.pic {
+  width: 160px;
+  padding: 0px 17px;
+}
+
+/* line 47, ../sass/pc/content/_search_content.scss */
+.no_result {
+  margin: 0 auto;
+  width: 240px;
+  height: 350px;
+  margin-top: 100px;
+  padding-left: 150px;
+  background: url(../img/search_cry.png) 2px 3px no-repeat;
+}
+/* line 54, ../sass/pc/content/_search_content.scss */
+.no_result p {
+  margin-left: 10px;
+  padding-top: 80px;
+  font-size: 18px;
+  color: #f00;
+  font-weight: bold;
+}
+/* line 62, ../sass/pc/content/_search_content.scss */
+.no_result a {
+  display: inline-block;
+  background: url(../img/button.png) 0px 10px no-repeat;
+  border-radius: 10px;
+  width: 160px;
+  padding-top: 20px;
+  text-decoration: none;
+  padding-left: 5px;
+  color: #000;
+  font-size: 16px;
+  height: 50px;
+}

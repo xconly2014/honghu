@@ -1,0 +1,146 @@
+/* line 1, ../sass/pc/content/_cz_package.scss */
+.cz_package_info {
+  padding: 10px 0px 10px 0px;
+  background-color: #fff;
+  margin-bottom: 38px;
+  margin-top: 10px;
+  min-height: 500px;
+  border: 3px solid #7ECDF4;
+  border-radius: 10px;
+}
+/* line 10, ../sass/pc/content/_cz_package.scss */
+.cz_package_info h3 {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+/* line 15, ../sass/pc/content/_cz_package.scss */
+.cz_package_info .game_operator {
+  display: none;
+}
+
+/* line 20, ../sass/pc/content/_cz_package.scss */
+.cz_package_game_account {
+  border: 1px solid #ccc;
+  padding: 50px 50px 30px;
+  margin-bottom: 38px;
+}
+
+/*.cz_package_details  {
+  margin: 0px auto;
+  padding:30px 50px;
+  height: 400px;
+}*/
+/* line 32, ../sass/pc/content/_cz_package.scss */
+.cz_package {
+  float: left;
+  width: 485px;
+  font-size: 14px;
+  line-height: 32px;
+}
+/* line 37, ../sass/pc/content/_cz_package.scss */
+.cz_package form {
+  margin-left: 70px;
+}
+
+/* line 42, ../sass/pc/content/_cz_package.scss */
+.chongzhi_doing_info {
+  background-color: #fff5d4;
+  padding: 10px 0 10px 240px;
+}
+
+/* line 47, ../sass/pc/content/_cz_package.scss */
+.chongzhi_doing {
+  padding-left: 300px;
+  padding-top: 10px;
+  height: 120px;
+}
+/* line 52, ../sass/pc/content/_cz_package.scss */
+.chongzhi_doing span {
+  background: url("../img/finish.png") no-repeat 0px 0px;
+  display: inline-block;
+  padding-left: 70px;
+  width: 320px;
+  height: 44px;
+  color: green;
+  font-size: 20px;
+  line-height: 44px;
+}
+/* line 63, ../sass/pc/content/_cz_package.scss */
+.chongzhi_doing p {
+  color: #cdcdcd;
+  font-size: 16px;
+  padding: 10px 0;
+}
+/* line 69, ../sass/pc/content/_cz_package.scss */
+.chongzhi_doing .alert_text {
+  color: #000000;
+}
+/* line 72, ../sass/pc/content/_cz_package.scss */
+.chongzhi_doing .alert_text strong {
+  color: #0000ff;
+}
+
+/* line 78, ../sass/pc/content/_cz_package.scss */
+.dashed_line {
+  min-height: 500px;
+  float: left;
+  border-right: 3px dashed #0175A8;
+}
+
+/* line 85, ../sass/pc/content/_cz_package.scss */
+.left {
+  float: left;
+  width: 485px;
+}
+/* line 88, ../sass/pc/content/_cz_package.scss */
+.left .left_content {
+  margin-left: 150px;
+  margin-top: 20px;
+}
+/* line 91, ../sass/pc/content/_cz_package.scss */
+.left .left_content img {
+  margin-right: 20px;
+  width: 180px;
+  height: 180px;
+}
+/* line 96, ../sass/pc/content/_cz_package.scss */
+.left .left_content h5 {
+  margin-top: 30px;
+  color: #d33302;
+}
+/* line 100, ../sass/pc/content/_cz_package.scss */
+.left .left_content p {
+  width: 235px;
+  color: #d33302;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+/* line 110, ../sass/pc/content/_cz_package.scss */
+.progress {
+  margin-top: 20px;
+  width: 180px;
+  height: 40px;
+  font-size: 12px;
+}
+/* line 115, ../sass/pc/content/_cz_package.scss */
+.progress span {
+  color: #FF9936;
+  margin: 0px 5px;
+}
+
+/* line 120, ../sass/pc/content/_cz_package.scss */
+.progress_bar {
+  width: 180px;
+  border-radius: 3px;
+  border: 1px solid #FF9936;
+  margin-bottom: 8px;
+}
+
+/* line 126, ../sass/pc/content/_cz_package.scss */
+.num {
+  border: 1px solid #FF9936;
+  background-color: #FF9936;
+  height: 8px;
+}

@@ -1,0 +1,20 @@
+.layerModel_loading{padding-top: 5px;text-align: center;font-family:'微软雅黑';font-size: 14px;}
+.layerModel_loading img {vertical-align:middle;margin-right: 10px;}
+.layerModel_loading .msg_tip {display: inline-block;padding-top: 1px;}
+.layer_alert {max-width: 270px;word-wrap: break-word; word-break: normal;}
+.layer_alert_content{ padding:8px;font-family: "华文行楷";font-size: 16px;}
+.layer_alert_btn_bar{ width:100%; padding:2px 0; text-align: center;}
+.btn_sure{ width:150px;height:32px;line-height:30px;border:1px solid; border-radius:2px; cursor:pointer; font-family: "华文行楷";font-size: 16px; padding:0 12px; margin-bottom:5px; }
+.btn_sure{border-color:#c3c3c3; background:#ececec; color:#333; background:-webkit-gradient(linear,center bottom,center top,from(#ececec),to(#f4f4f4)); background:-moz-linear-gradient(90deg,#ececec,#f4f4f4); }
+.btn_sure:hover{ background:#4787ed; background:-webkit-gradient(linear,center bottom,center top,from(#4787ed),to(#4d90fe)); background:-moz-linear-gradient(90deg, #4787ed, #4d90fe); border-color:#3079ed; color:#fff; }
+
+.tb_cart_head_ok{font-weight:700;	font-size: 12px;padding-left:40px;line-height: 32px;background:transparent url("../img/account_center/cart_sprits.png") no-repeat 9999px 9999px;background-position: 0 -64px;}
+.tb_cart_head_succ{display: inline-block;float: left;height: 34px;width:35px;background:transparent url("../img/account_center/cart_sprits.png") no-repeat 9999px 9999px;background-position: 0 -64px;}
+.tb_cart_head_succ_txt{font-size: 12px;padding-left:35px;padding-right:35px;line-height: 32px;}
+.tb_cart_head_fail{	display: inline-block;float: left;height: 35px;width:35px;background:transparent url("../img/account_center/cart_sprits.png") no-repeat 9999px 9999px;background-position: 0 -98px;}
+.tb_cart_head_fail_txt {font-weight:700;font-size: 12px;padding-left:40px;line-height: 32px;}
+.tb_cart_text{margin-top: 10px;margin-bottom: 5px;text-align: center;}
+.tb_cart_sure{margin-top: 10px;margin-bottom: 5px;text-align: center;}
+.tb_cart_checkout{background:transparent url("../img/account_center/cart_sprits.png") no-repeat 9999px 9999px;background-position: 0 0;display: inline-block;margin-right: 10px;width:112px;height:32px;color: white;text-align: center;line-height: 30px;font-size: 12px;text-decoration: none;}
+.gwc_mes_box{width: 400px;padding: 30px 5px 10px 20px;}
+.continue_shopping{color:#36C;}

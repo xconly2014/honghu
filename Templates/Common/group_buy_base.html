@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{$seo_title}</title>
+    <meta name="keywords" content="{$seo_keyword}">
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <link rel="shortcut icon" type="image/png" href="__PUBLIC__/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+    <block name="custom_css"></block>
+
+    <script type="text/javascript" src="__PUBLIC__/js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/Plugin/jqueryForm/jQuery_Validation.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/global_checker.js"></script>
+
+    <script type="text/javascript">
+        $().ready(function(){
+        	
+        	if("{$activity_time}"){
+        		$('.del_line').css('text-decoration','line-through');
+        	}
+        	
+            //点击搜索时，如果为空则获得焦点
+            $('.search_submit').click(function(){
+                var name = $('.search_text').val();
+                if(name==''){
+                    $('.search_text').focus();
+                    return false;
+                }
+            });
+
+        });
+    </script>
+
+    <block name="extra_js"></block>
+
+</head>
+
+<body>
+<include file="TopBar/group_buy_top"/>
+<block name="content"></block>
+<include file="FooterBar/index"/>
+</body>
+
+

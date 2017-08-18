@@ -1,0 +1,112 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="extra_css">
+    <link rel="stylesheet" href="__PUBLIC__/css/jquery.multiselect.css" />
+    <link rel="stylesheet" href="__PUBLIC__/css/jquery-ui.css" />
+    <link rel="stylesheet" href="__PUBLIC__/css/mb_chongzhi.css" />
+
+    <style>
+       
+        .ui-state-default .ui-icon {
+            background-image: url(__PUBLIC__/img/ui-icons_ef8c08_256x240.png);
+        }
+    </style>
+</block>
+
+<block name="header_bar">
+    <h1 class="mui-title">再充一次信息填写</h1>
+</block>
+
+<block name="main_content">
+    <div class="main_container">
+        <if condition="$is_show eq 1">
+            <h4>游戏名字：{$game_name}</h4>
+            <form  id="cz_info_form" action="{$submit_url}" method="post">
+            <div class="mobile_error"></div>
+            <select id="cz_option" name="cz_option[]" multiple="multiple" onchange="get_sum()">
+               <foreach name="option" item="vo">
+                    <option credits_multiple="{$vo.multiple}" price="{$vo.price}" value="{$vo.id}">{$vo.text}</option>
+                </foreach>
+            </select>
+
+            <select name="cz_number" id="cz_number" onchange="get_sum()">
+                <option value>请选择充值数量</option>
+                <for start="1" end="11">
+                    <option value="{$i}">{$i}</option>
+                </for>
+                <option value="20">20</option>
+                <option value="30">30</option>
+                <option value="50">50</option>
+            </select>
+
+            <input type="text" id="cz_contact_way" name="cz_contact_way" value="{$order_info.accountInfo.contact_way}" placeholder="请输入联系方式">
+            
+            <if condition="$is_tx == true">
+                <select id="cz_login_way" name="cz_login_way">
+                    <option value>请选择登录方式</option>
+                    <option value="weixin">微信</option>
+                    　　 <option value="qq">QQ</option>
+                </select>
+            </if>
+
+            <input type="text" name="cz_qufu" value="{$order_info.accountInfo.qufu}" placeholder="请填写您的游戏区服">
+
+             <input type="text" name="cz_role" value="{$order_info.accountInfo.role}" placeholder="请填写您的游戏角色">
+
+             <input type="text" name="cz_account" value="{$order_info.accountInfo.account}" placeholder="请输入您的游戏账号"/>
+
+             <input type="password" name="cz_password" placeholder="请填写您的游戏密码">
+              
+             <input type="text" name="remark" placeholder="请填写您要充值游戏的备注信息" value="{$order_info.czInfo.remark}" />
+            <label>应付金额：</label><label style="color:red;font-weight:bold;" id="sum"></label>&nbsp;元&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<del id="del_price"></del>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  
+  
+            <label>可获积分：</label>
+            <if condition="$double_flag eq 1">
+                <label class="form_value del_line" id="credits"></label>
+                <label style="color:red;font-weight:bold;" class="form_value important_label" id="double_credits"></label>
+                <else/>
+                <label style="color:red;font-weight:bold;" id="credits"></label>
+            </if>
+
+            <div class="mui-button-row">
+                <button class="mui-btn mui-btn-primary mui-btn-block">确认</button>
+            </div>
+            </form>
+        <else />
+            <div style="width:40%;text-align:center;margin-left:30%;margin-top:50px;">
+                <img src="__PUBLIC__/img/search_cry.png" alt="下架了" />
+                <p>该游戏已下架了哦~</p>
+            </div>
+        </if>
+    </div>
+</block>
+
+<block name="extra_js">
+    <script type="text/javascript" src="__PUBLIC__/js/Plugin/jqueryForm/jQuery_Validation.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/global_checker.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/Plugin/jquery-multiselect/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/Plugin/jquery-multiselect/jquery.multiselect.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/lib/js_map.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/lib/arithmetic.js"></script>
+    <script type="text/javascript">
+        $().ready(function(){
+            $("#cz_option").multiselect({
+                header: false,
+                height: 200,
+                minWidth: 200,
+                selectedList: 10,//预设值最多显示10被选中项
+                noneSelectedText: "请选择充值面额",
+            });
+
+            get_value("{$order_info.czInfo.option_id}",{$order_info.czInfo.number},"{$order_info.accountInfo.qufu_type}");
+
+            $('.ui-multiselect-menu').attr('style','width:95%');
+            var totalWidth = $(window).width();
+            var width = totalWidth -26;
+            $('.ui-multiselect').width(width);             
+        });
+    </script>
+    <script src="__PUBLIC__/js/common/chongzhi_common.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/mb/mb_chongzhi.js"></script>
+</block>

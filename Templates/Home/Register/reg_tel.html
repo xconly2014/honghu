@@ -1,0 +1,31 @@
+<extend name="../Common/reg_base" />
+
+<block name="reg_container">
+    <form id="tel_form" class="register_form" vcode="{$vcode}" action="{$submit_url}" method="post">
+        <p class="input_field required">
+            <label class="form_info">手机号码：</label>
+            <input type="text" name="tel" class="tel_value" id="tel"/>
+        </p>
+        <include file="../Common/vcode_dlg"/>
+        <p class="input_field required">
+            <label class="form_info">密码：</label>
+            <input id="password" type="password" name="password_hash" />
+        </p>
+
+        <p class="input_field required">
+            <label class="form_info">确认密码：</label>
+            <input type="password" name="confirm_password_hash" />
+        </p>
+
+        <p class="input_field">
+            <label class="form_info">&nbsp;</label>
+            <input type="checkbox" name="xieyi"/>
+            同意<a href="#" target="_blank">"轰轰虎用户服务协议"</a>
+        </p>
+
+        <p class="input_field">
+            <label class="form_info">&nbsp;</label>
+            <button type="submit">注册</button>
+        </p>
+    </form>
+</block>

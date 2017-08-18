@@ -1,0 +1,42 @@
+/* line 1, ../sass/mb_sch.scss */
+.import_price {
+  float: right;
+  color: red;
+}
+
+/* line 7, ../sass/mb_sch.scss */
+.btn_two {
+  float: right;
+  margin-right: -6px;
+}
+
+/* line 11, ../sass/mb_sch.scss */
+.btn_two a {
+  display: block;
+  color: #fff;
+}
+
+/* line 17, ../sass/mb_sch.scss */
+.mui-table-view .mui-media-object {
+  height: 60px;
+  max-width: 60px;
+}
+
+/* line 21, ../sass/mb_sch.scss */
+.sch_middle {
+  float: left;
+  width: 45%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+/* line 28, ../sass/mb_sch.scss */
+.sch_middle .sch_apple {
+  background: url(../img/apple_sch.png) 60px 0px no-repeat;
+  background-size: 20px 20px;
+}
+/* line 32, ../sass/mb_sch.scss */
+.sch_middle .download_url {
+  position: relative;
+  top: 5px;
+}

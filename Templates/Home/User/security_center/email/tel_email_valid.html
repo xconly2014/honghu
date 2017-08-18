@@ -1,0 +1,41 @@
+<extend name="../Common/account_index" />
+
+<block name="extra_js">
+    <script src="__PUBLIC__/js/common/security_common.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/module/user_center/security_center.js"></script>
+    <script>
+    $().ready(function(){
+        $('.tel_vcode').css('opacity','1');
+        $('.vcode_box > a[class=tel_vcode]').click(function(){
+            $('.get_vcode').css('display','inline-block');
+        });
+    });
+         
+    </script>
+</block>
+
+<block name="content">
+    <div class="menu_bar_content">
+        <div class="message_reset">
+            <include file="../Common/component/user_security_center_tab"/>
+            <div class="change_progress">
+                <b class="selected">1</b><span class="selected">验证身份 →</span>
+                <b>2</b><span>邮箱设置 →</span>
+                <b>3</b><span>成功</span>
+            </div>
+
+            <form id="tel_email" class="vcode_form" vcode="{$vcode}" action="{$submit_url}" method="post">
+                <p class="static_field">
+                    <label class="form_key">手机号码：</label>
+                    <label class="form_value" id="tel">{$tel}</label>
+                </p>
+                <include file="../Common/vcode_dlg"/>
+                <p class="input_field">
+                    <label class="form_info"> &nbsp;</label>
+                    <button type="submit">提交</button>
+                </p>
+            </form>
+
+        </div>
+    </div>
+</block>

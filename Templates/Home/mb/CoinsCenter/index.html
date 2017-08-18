@@ -1,0 +1,58 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="header_bar">
+    <h1 class="mui-title">虎币充值</h1>
+</block>
+
+<block name="extra_css">
+    <link rel="stylesheet" href="__PUBLIC__/css/mb_user.css" />
+</block>
+
+<block name="extra_js">
+    <script>
+    $().ready(function(){
+    	
+    	$('#payments').keyup(function(){
+            $('#coins_num').text($(this).val());
+        });
+    	
+    	$('#payments').focus(function(){
+		    $('.mobile_error span').remove();
+		});
+    	
+    	$('#buy').click(function(){
+    		var payment = $.trim($('#payments').val());
+    		if(payment == '' || payment < '1'){
+    			$(".mobile_error").html("<span class='error'>请输入非0整数</span>");
+    			return false;
+    		}
+    		return true;
+    	});
+    });
+    </script>
+</block>
+
+
+<block name="main_content">
+    <div class="main_container">
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell mui-media">
+                <img src='__PUBLIC__/img/hubi.png' class='mini_logo'/>我的虎币：<b class="payment">{$coins_total}</b>
+            </li>
+            <li class="mui-table-view-cell mui-media">
+                <form action="{:U('')}" method="post">
+                    <div class="mobile_error"></div>
+                    <input type="text" name="payments" id="payments" placeholder="请填入充值金额(元)" onkeyup="value = value.replace(/\D/g,'')"/>
+                    <label>可充虎币数：</label>
+                    <label id="coins_num" class="payment"></label>&nbsp;个
+                    <span id='instructions'>(1元=1虎币)</span>
+                    <button class="mui-btn mui-btn-primary mui-btn-block" id='buy'>购买</button>
+                </form>
+            </li>
+            <li class="mui-table-view-cell mui-media">
+                <p>点击其他充值：<!-- <a href="{:U('Home/CoinsCenter/fees')}" class="link">话费支付</a>、 --><a href="{:U('Home/CoinsCenter/card')}" class="link">话费卡</a></p>
+            </li>
+        </ul>
+
+    </div>
+</block>

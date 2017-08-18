@@ -1,0 +1,32 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="header_bar">
+    <h1 class="mui-title">付款成功</h1>
+</block>
+
+<block name="main_content">
+    <div class="main_container">
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell mui-media">
+                <a href="#">
+                    <img class="mui-media-object mui-pull-left" src="__PUBLIC__/img/finish.png">
+                    <div class="mui-media-body">
+                        <span style="color:green;font-size:20px">充值成功</span>
+                    </div>
+                </a>
+            </li>
+
+            <li class="mui-table-view-cell mui-collapse mui-active">
+                <a class="mui-navigate-right" href="#">虎币充值详情</a>
+                <ul class="mui-table-view mui-table-view-chevron">
+                    <li class="mui-table-view-cell">
+                        <label>已为您的账户充值：</label><b style="color:red;">{$coins_num}</b>虎币
+                    </li>
+                    <li class="mui-table-view-cell">
+                       <label>您当前的虎币数量：</label><b style="color:red;">{$coins_total}</b>个
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</block>

@@ -1,0 +1,33 @@
+<extend name="../Common/home_base" />
+
+<block name="custom_css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/help.css">
+</block>
+
+<block name="content">
+    <div class="row_container  help_container">
+        <div class="menu_bar_container">
+            <div class="menu_bar">
+                <div class="menu_container">
+                    <div class="box">
+                        <foreach  name="help_list" item="row">
+                            <h1>{$row.name}</h1>
+                            <div class="text">
+                                <foreach name="row['article']" item="v">
+                                    <li class="<?php if($cur_page == $v['id'])echo 'active';?>">
+                                        <a href="{:U('Home/Help/index?id='.$v['id'])}">{$v.name}</a>
+                                    </li>
+                                </foreach>
+                            </div>
+                        </foreach>                        
+                    </div>
+               </div>
+            </div>
+        </div>
+
+        <div class="help_info">
+           {$help_info.text}
+        </div>
+        <div class="clear"></div>
+    </div>
+</block>

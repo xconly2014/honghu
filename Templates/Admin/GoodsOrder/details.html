@@ -1,0 +1,46 @@
+<extend name="../Common/admin_base" />
+
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div class="game_strategy_container">
+                <div class="common_form container">
+                    <p>积分商品订单详情</p>
+                    <li class="static_field">
+                        <label class="form_key">商品名称：</label>
+                        <label class="form_value">{$orderRes.name}</label>
+                    </li>
+                    <li class="static_field">
+                        <label class="form_key">商品积分：</label>
+                        <label class="form_value">{$orderRes.credits}</label>
+                    </li>
+                    <li class="static_field">
+                        <label class="form_key">实扣积分：</label>
+                        <label class="form_value">{$orderRes.real_pay_credits}</label>
+                    </li>
+                    <li class="static_field">
+                        <label class="form_key">收件人：</label>
+                        <label class="form_value">{$orderRes.recipient}</label>
+                    </li>
+                    <li class="static_field">
+                        <label class="form_key">收件手机：</label>
+                        <label class="form_value">{$orderRes.contact_way}</label>
+                    </li>
+                    <li class="static_field">
+                        <label class="form_key">收件地址：</label>
+                        <label class="form_value">{$orderRes.place}</label>
+                    </li> 
+                    <li class="static_field">
+                        <label class="form_key">订单状态：</label>
+                        <label class="form_value">{$orderRes.state}</label>
+                    </li>
+                    <li class="static_field">
+                        <label class="form_key"></label>
+                        <button onClick="javascript :history.back(-1);">返回</button>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>

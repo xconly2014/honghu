@@ -1,0 +1,236 @@
+﻿<extend name="../Common/home_base" />
+
+<block name="custom_css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/group_buy.css">
+</block>
+
+<block name="content">
+    <div class="row_container">
+    <include file="../Common/alert_login" />
+        <div class="crumbs_nav">
+            <div class="crumbs_nav_item">
+                <a href="{:U('/')}">首页</a>
+                <i>&gt;</i>
+            </div>
+            <div class="crumbs_nav_item">
+                <a href="{:U('Home/GroupBuy/index')}">手游团购专区 </a>
+                <i>&gt;</i>
+            </div>
+            <div class="crumbs_nav_item">
+                <a>一元购详情</a>
+                <i></i>
+            </div>
+        </div>
+        <div class="center_content part_margin">
+            <div class='content_top'>
+                <div class='gb_info'>
+                     <img src="/game_pic/{$game_pic}" class='game_img' alt="{$game_pic}" />
+                    <div class='info'>
+                        <label>{$bgczRes.option_text}</label>
+                        <span>价值：￥{$bgczRes.price}</span>
+                        <div class='progress_bar'>
+                            <div class='bg_color' style="width:{$bg_width};"></div>
+                        </div>
+                        <ul>
+                            <li><span id='orange'>{$paidNum}</span><span>&nbsp;&nbsp;&nbsp;&nbsp;{$bgczRes.price}</span><p class='blue'>{$end}</p></li>
+                            <li><span>已参与</span><span>总需人数</span><p>剩余</p></li>
+                        </ul>
+                        <form onsubmit="return checkBeforeSubmit()" action="{$submit_url}" method="post">
+                            <div id='choose'>
+                                <span>我要参与</span>
+                                <a href='javascript:void(0);' id='reduce'>-</a>
+                               <input type='text' name='num' id='num' value="{$max_num == '0' ? '0' : '1'}" onkeyup="value = value.replace(/\D/g,'')"/>
+                                <a href='javascript:void(0);' id='add'>+</a>
+                                <span>最大购买数</span><p id ='max'>{$max_num}</p>
+                                <div class='clear' style='color:#f00;text-align: center;' id='errer_info'></div>
+                               
+                            </div>
+                            
+                            <button class='submit' style="margin-left:110px;">立即组团抢购</button>
+                            <div class="submit" id="show_time" style="display:none;"></div>
+                            <p class='clear'></p>
+                        </form>
+                        <div class='process'>
+                           <div class='process_left'>怎么玩儿</div>
+                           <div class='process_right'>
+                               <ul>
+                                   <li>
+                                       <img src="__PUBLIC__/img/car.png" alt="选择商品"/>
+                                       <strong>1.选择商品</strong>
+                                   </li>
+                                   <li>
+                                       <img src="__PUBLIC__/img/money.png" alt="支付"/>
+                                       <strong>2.支付</strong>
+                                   </li>
+                                   <li>
+                                       <img src="__PUBLIC__/img/lucky.png" alt="抽出幸运者"/>
+                                       <strong>3.抽出幸运者</strong>
+                                   </li>
+                               </ul>
+                               <div class='clear'></div>
+                           </div>
+                        </div>
+                        <div class='clear'></div>
+                    </div>
+                </div>
+                <div class='record'>
+                <div class="title_nav">
+                    <ul class='title_list'>
+                        <li class='selected'>最新一元购</li>
+                        <li>我的一元购</li>
+                    </ul>
+                </div>
+                <div class='buy_record'>
+                    <div class='show'>
+                        <ul class='show_hidden new_record'>
+                                <foreach name='new_group_buy' item='newGroupBuyList'>
+                                    <li>
+                                        <span><a href="{:U('Home/GroupBuyCz/buy',array('id'=>$newGroupBuyList['id']))}">{$newGroupBuyList.option_text}</a></span>
+                                        <p>
+                                            <img src="/game_pic/{$newGroupBuyList.pic}" alt="{$newGroupBuyList.game_name}"/>
+                                            <span><del>{$newGroupBuyList.price}元</del><b>￥1元</b></span>
+                                            <a href="{:U('Home/GroupBuyCz/buy',array('id'=>$newGroupBuyList['id']))}">{$newGroupBuyList.game_name}</a>
+                                            <p class='clear'></p>
+                                        </p>
+                                    </li>
+                                </foreach>
+                            </ul>
+                    </div>
+                    <div>
+                        <if condition="is_login()">
+                            
+                            <ul class='show_hidden my_record'>
+                                <foreach name='my_record' item='myRecordList'>
+                                    <li>
+                                        <span><a href="{:U('Home/GroupBuyCz/buy',array('id'=>$myRecordList['id']))}">{$myRecordList.option_text}</a></span>
+                                        <em>{$myRecordList.name}<b>{$myRecordList.real_payment}人次</b></em>
+                                    </li>
+                                </foreach>
+                            </ul>
+                        <else />
+                            <a href="{:U('Home/Login/index')}" class='login_link'>请先登录</a>
+                        </if>
+                    </div>   
+                </div>
+                </div>
+                <div class='clear'></div>
+            </div>
+            <div class="all_record">
+                <div class="record_title">
+                    <ul class='title_list'>
+                        <li class='selected'>所有参与记录</li>
+                        <li>常见问题</li>
+                    </ul>    
+                </div>
+                <div class='all_info'>
+
+                    <div class="record_info show">
+                        <ul>
+                            <foreach name='all_record' item='allRecordList'>
+                                <li class="show_btn">
+                                    <img src="__PUBLIC__{$allRecordList.img}" alt="用户头像"/>
+                                    <label>{$allRecordList.user}</label><span>云购码：{$allRecordList.simple_code}</span>
+
+                                    <if condition="$allRecordList.flag gt 0">
+                                        <button class="check_more">查看更多</button>
+                                        <div class="code_show">
+                                            <foreach name="allRecordList['codes_list']" item="row" >
+                                                <p style="display:inline-block">{$row}&nbsp;&nbsp;</p>
+                                            </foreach>
+                                        </div>
+                                    </if>
+                                </li>
+                            </foreach>
+                        </ul>
+                    </div>
+
+                    <div class="problem">
+                        <p>☆&nbsp;什么是轰轰虎一元购？</p>
+                        <span class="introduce">
+                            轰轰虎1元购是一种全新的手游充值模式，只需1元就有可能买到一件商品。轰轰虎一元购把一件商品平分成若干“等份”出售，每份1元，当一件商品所有“等份”售出后抽出一名幸运者，该幸运者即可获得此商品。
+                        </span>
+                        <p>☆&nbsp;规则</p>
+                        <ul>
+                            <li>每件商品平分成相应“等份”，每份1元，1份对应1个“一元云购码”。</li>
+                            <li>同一件商品可以购买多次或者一次购买多份。</li>
+                            <li>当一件商品所有“等份”售出后计算出“幸运一元购码”，拥有“幸运一元购码”者即可获得此商品。</li>
+                        </ul>
+                        <p>☆&nbsp;幸运一元购码是怎么计算出来的？</p>
+                        <ul>
+                            <li>当该商品满员时，取出所有商品最后100条购买记录。</li>
+                            <li>将这100条时间记录的时、分、秒、毫秒取出来，形成100个数相加。</li>
+                            <li>将"100个数所得总和"除以"总需参与人次"，得到一个余数，把该余数与10000001相加，得到幸运一元购码。</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</block>
+
+<block name="extra_js">
+    <script type="text/javascript" src="__PUBLIC__/js/module/group_buy_cz.js"></script>
+    <script type="text/javascript">
+        function updateErrorMsg(errorMsg){
+            $("#errer_info").text(errorMsg);
+        }
+
+        function checkBeforeSubmit(){
+            if(!is_login){
+                open_dlg();
+                return false;
+            }
+
+            if("{$max_num}" == '0'){
+                updateErrorMsg('您已经购买满数');
+                return false;
+            }
+            return true;
+        }
+        
+        $().ready(function(){
+            is_login = "{$is_login}";
+            $('.theme-poptit .close').click(function(){close_dlg();});
+            $('#reset').click(function(){
+                close_dlg();
+            });
+            
+            var endTime = new Date(parseInt('{$release_time}'));
+            var nowTime = new Date(parseInt('{$nowTime}'));
+            var nMS = endTime.getTime() - nowTime.getTime();
+            if('{$active}' == '0'){
+            	$('#choose').next().remove();
+            	$('#choose').after("<input type='button' class='submit' value='已经满员' />");
+            	$('#show_time').css('display','block');
+            	var interval = setInterval(function() {
+                    var myM = Math.floor(nMS / (1000 * 60)) % 60;
+                    var myS = Math.floor(nMS / 1000) % 60;
+                    var myMS = (Math.floor(nMS / 100) % 10);
+                    nMS = nMS-100;
+                    if (myM >= 0) {
+                        var str ='&nbsp;&nbsp;&nbsp;'+'离公布：'+ (myM<10?'0'+ myM: myM) + "：" + (myS<10?'0'+ myS: myS) + "：" + (myMS<10?'0'+ myMS: myMS);//myMS 9号改
+                        $('#show_time').html(str);
+                    } else {
+                    	clearInterval(interval);
+                    	$('#show_time').html('');
+						$('#show_time').css("background-image","url(__PUBLIC__/img/buffer.gif)");
+                        var url = "{:U('Home/GroupBuyCz/ajax_get_lucky_code')}";
+                        var id = {$Think.get.id};
+                    	   $.post(url,{id:id},function(msg){
+                    	       if(msg){
+                    	    	   setTimeout(function(){
+                    	    		   $('#show_time').css("background-image","");
+                    	   	           $('#show_time').html('幸运云购码：'+ msg);
+                    	    	   },3000);
+                    	       }
+                    	   },'json');
+                    } 
+                    
+              }, 100);
+            } 
+         }); 
+        
+    </script>
+</block>

@@ -1,0 +1,54 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="extra_js">
+    <script src="__PUBLIC__/js/Plugin/layer/layer.js"></script>
+    <script type="text/javascript">
+        function kickMember(uId){
+            layer.confirm('确定要把该成员踢出堂会吗？其贡献值将被折算成虎币返还!', function(index){
+                $.post("family_kick", {'uid':uId}, function(data){
+                    if(data['status']){
+                        layer.alert(data['msg'],function(){
+                            window.location.href="members_manage";
+                        });
+                        layer.title('轰轰虎提示');
+                    }
+                });
+                layer.close(index);
+            });
+            layer.title('轰轰虎提示');
+            return false;
+        }
+    </script>
+</block>
+
+<block name="header_bar">
+    <h1 class="mui-title">堂员管理</h1>
+</block>
+
+<block name="extra_css">
+    <link rel="stylesheet" href="__PUBLIC__/css/mb_user.css" />
+</block>
+
+<block name="main_content">
+    <div class="main_container">
+        <table cellspacing="0px" class="mb_table">
+            <tr class="list_head">
+                <th>堂员</th>
+                <th>贡献值</th>
+                <th>VIP等级</th>
+                <th>操作</th>
+            </tr>
+            <foreach name="members" item="list">
+                <tr>
+                    <td>{$list.nick_name}</td>
+                    <td>{$list.contribt_sum}</td>
+                    <td>{$list.vip}</td>
+                    <td>
+                        <a href="javascript:void(0)" onclick="return kickMember('{$list.user_id}')">踢除</a>
+                    </td>
+                </tr>
+            </foreach>
+        </table>
+        <div class="page">{$page}</div>
+    </div>
+</block>

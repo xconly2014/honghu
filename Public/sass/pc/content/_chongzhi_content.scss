@@ -1,0 +1,197 @@
+.activity  {
+  width:70%;
+  height:200px;
+}
+
+.center_content{
+  background-color: #fff;
+  margin-bottom: 38px;
+
+}
+
+.czios_container{
+  height: 630px;
+  border-bottom-left-radius: 15px;
+}
+
+
+
+.game_list  {
+  width: 635px;
+  margin: 0  25px 0 42px;
+}
+
+
+
+.cz_container  {
+  width:100%;
+  border:1px solid #ccc;
+  padding-top: 20px;
+  height: 640px;
+  background-color: #fff;
+  margin-bottom: 38px;
+}
+
+.cz_info_box{
+  width:620px;
+  margin-left:50px;
+
+  h3{
+    text-align:center;
+    padding-right: 50px;
+    margin-top:20px;
+    margin-bottom: 20px;
+    color:#4688B9;
+    margin-left:-150px;
+  }
+}
+
+.chongzhi_steps_container {
+  margin-top:50px;
+  height: 120px;
+  position: relative;
+}
+
+.chongzhi_form_container  {
+  margin-top:50px;
+}
+
+.chongzhi_modify{
+    background:#ededed;
+    height:700px;
+    padding-top:30px;
+    .modify_warning{
+      width:636px;
+      height:273px;
+      margin-left:80px;
+      background: url("../img/chongzhi_modify_bg.png") no-repeat 0px 0px;
+      h2{
+        color:#1195EB;
+        padding-top:10px;
+        padding-bottom: 20px;
+        text-align: center;
+      }
+      ul{      
+        li{
+          list-style-type:square;
+          list-style-position: inside;
+          padding:10px;
+        }        
+      }
+    }
+
+    .cz_modify_form{
+      margin-left:80px;
+    }
+}
+
+.content_left{
+  float: left;
+  width: 50%;
+  border-right:1px solid #ccc;
+}
+.content_right{
+  float: left;
+}
+
+.chongzhi_form{
+  float: left;
+  margin-left: 15px;
+  margin-top:60px;
+}
+
+.orderInfo{
+  border:1px solid #ccc;
+  min-height:369px;
+}
+
+.attention{
+  margin: 10px;
+  margin-top:50px;
+  float: right;
+  width: 270px;
+  border:1px solid #bbb;
+  border-radius: 8px;
+  h4{
+    padding-top: 8px;
+    color: #f00;
+    text-align: center;
+  }
+  li{
+   color: #FF9933;
+   list-style-type: decimal;
+   padding-top: 2px;
+   padding-bottom: 2px;
+   line-height: 25px;
+   font-size: 14px;
+   margin-left: 26px;
+  } 
+}
+
+
+.search_game{
+  overflow: auto;
+
+}
+
+.orange{
+  color: #F44609;
+}
+
+.game_infos{
+  margin-top: 60px;
+}
+.button{
+  width: 112px;
+  height: 40px;
+  border: none;
+  cursor:pointer;
+  float: right;
+  color: #fff;
+  font-weight: bold;
+  margin: -8px 30px 0 0 ;
+  background: url(../img/button.png) no-repeat;
+}
+
+.cz_game_info {
+  img {
+    margin-bottom: 0px;
+  }
+}
+
+.instructions_div{
+  border-top-style: none;
+  margin-top: 5px;
+}
+
+.remind{
+  padding:2px 5px 2px 0px;
+  line-height: 20px;
+  font-size: 12px;
+  margin-left: 11px;
+  color: #f00;
+}
+.cz_game_info{
+  margin-left: 50px;
+}
+
+.input_field span.error{
+  width: 150px;
+}
+
+.no_result {
+    margin: 0 auto;
+    width: 240px;
+    height: 350px;
+    margin-top: 100px;
+    padding-left: 150px;
+    background: url(../img/search_cry.png) 2px 3px no-repeat;
+
+    p{
+      margin-left: 10px;
+      padding-top: 80px;
+      font-size: 18px;
+      color: #f00;
+      font-weight: bold;
+    }
+}

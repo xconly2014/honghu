@@ -1,0 +1,38 @@
+<div class="theme-popover">
+    <div class="theme-poptit">
+        <a href="javascript:void(0);" title="关闭" class="close">×</a>
+        <img src="__PUBLIC__/img/honghonghulogo.png" width="160px" height="60px">
+    </div>
+
+    <div class="theme-popbod dform">
+        <form class="theme-signin" name="loginform" method="post" onsubmit="return login_user()">
+            <ol class="login_form">
+                <li>
+                    <label>用户名：</label>
+                    <input class="ipt" type="text" id="uname" size="20" />
+                </li>
+                <li>
+                    <label>密&nbsp;&nbsp;&nbsp;码：</label>
+                    <input class="ipt" type="password" id="upwd" size="20px"/>
+                </li>
+                <li>
+                    <label>&nbsp;</label>
+                    <span id="info">&nbsp;</span>
+                </li>
+                <li>
+                    <label>&nbsp;</label>
+                    <button type="submit" name="submit" id="cz_login">登录</button>
+                    <button type="reset" id="reset">取消</button>
+                </li>
+                <li>
+                    <a href="{:U('Home/Register/reg_tel')}">没有账号？？马上注册</a>
+                </li>
+            </ol>
+        </form>
+    </div>
+   
+</div>
+ <div class="loading_login" style="display:none;position:absolute;left:40%;top:45%;z-index:99999999;">
+    <img src="__PUBLIC__/img/loading.gif" alt="" style="margin-top:10px;margin-left:40%;"/>
+</div>
+<div class="theme-popover-mask"></div>

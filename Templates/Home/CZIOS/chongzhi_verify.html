@@ -1,0 +1,55 @@
+<extend name="../Common/chongzhi_base" />
+
+<block name="content">
+    <div class="row_container">
+        <div class="orderInfo">
+            <form method="post" action="{$submit_url}" class="chongzhi_form">
+                <p class="static_field">
+                    <label class="form_key">游戏：</label>
+                    <label class="form_value">{$orderInfo.game_name}</label>
+                </p>
+                <p class="static_field">
+                    <label class="form_key">充值面额：</label>
+                    <label class="form_value">{$orderInfo.details}</label>
+                </p>
+                <p class="static_field">
+                    <label class="form_key">数量：</label>
+                    <label class="form_value">{$orderInfo.number}</label>
+                </p>
+                <p class="static_field">
+                    <label class="form_key">价格：</label>
+                    <label class="form_value">{$orderInfo.payment} 元</label>
+                </p>
+                <p class="static_field">
+                <label class="form_key"></label>
+                    <span class="sum_text">您需要支付
+                        <label class="important_label">{$orderInfo.payment}</label>&nbsp;元
+                    </span>
+                </p>
+                <p class="input_field">
+                    <label class="form_info">&nbsp;</label>
+                    <button type="submit">马上支付</button>
+                </p>
+            </form>
+            <div class='attention'>
+                <h4>充值注意</h4>
+                <ul>
+                    <li>只支持苹果手机游戏正版游戏充值！不支持安卓，越狱等版本！</li>
+                    <li>付款成功后，请退出游戏耐心等候充值，切记不能登陆游戏，会造成充值不到帐，充值完成会有短信通知！</li>
+                    <li>如游戏账号信息填写不正确，订单会重新打回到您的个人中心，请认真核对！</li>
+                    <li>如有不明白，欢迎咨询客服QQ：4008062400。</li>
+                </ul>
+            </div>
+            <div class='clear'></div>
+        </div>    
+    </div>
+</block>
+
+<block name="extra_js">
+    <script type="text/javascript">
+        step = 2;
+        $().ready(function(){
+            setProgressBar();
+        });
+    </script>
+</block>

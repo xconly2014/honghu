@@ -1,0 +1,131 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="header_bar">
+    <h1 class="mui-title">一元购详情</h1>
+</block>
+
+<block name="extra_css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/mb_group_buy.css">
+</block>
+
+<block name="extra_js">
+    <script type="text/javascript" src="__PUBLIC__/js/global_checker.js"></script>
+    <script>
+        function checkBeforeSubmit(){
+            
+           
+            
+            if(!is_login){
+                open_dlg();
+                return false;
+            }
+
+             if("{$max_num}" == "0"){
+                alert('您已经购买满数');
+                return false;
+            }
+            
+             return true;
+        }
+
+        $().ready(function(){
+            is_login = "{$is_login}";
+            $('.theme-poptit .close').click(function(){close_dlg();});
+            $('#reset').click(function(){
+                close_dlg();
+            });
+        	var endTime = new Date(parseInt('{$lastPayTime}'));
+            var nowTime = new Date(parseInt('{$nowTime}'));
+            var nMS = endTime.getTime() - nowTime.getTime();
+            if('{$active}' == '0'){
+            	$('.controls').remove();
+            	$('button').remove();
+            	$('#show_time').after("<p class='mui-btn mui-btn-primary mui-btn-block'>已经满员</p>");
+            	$('#show_time').css('display','block');
+            	var interval = setInterval(function() {
+                    var myM = Math.floor(nMS / (1000 * 60)) % 60;
+                    var myS = Math.floor(nMS / 1000) % 60;
+                    var myMS = (Math.floor(nMS / 100) % 10);
+                    nMS = nMS-100;
+                    if (myM >= 0) {
+                        var str ='离公布时间：'+ (myM<10?'0'+ myM: myM) + "：" + (myS<10?'0'+ myS: myS) + "：" + (myMS<10?'0'+ myMS: myMS);//myMS 9号改
+                        $('#show_time').html(str);
+                    } else {
+                    	clearInterval(interval);
+                    	$('#show_time').html('');
+    					$('#show_time').css("background-image","url(__PUBLIC__/img/mb_buffer.gif)");
+                        var url = "{:U('Home/GroupBuyCz/ajax_get_lucky_code')}";
+                        var id = {$Think.get.id};
+                    	   $.post(url,{id:id},function(msg){
+                    	       if(msg){
+                    	    	   setTimeout(function(){
+                    	    		   $('#show_time').css("background-image","");
+                    	   	           $('#show_time').html('幸运云购码：'+ msg);
+                    	    	   },3000);
+                    	       }
+                    	   },'json');
+                    }
+              }, 100);
+            }
+            
+            var end = {$end};
+            $('.max_buy').click(function(){
+                var max_buy = $(this).text();
+               
+                if(max_buy>=end){
+                    $('#num').val(end);
+                }
+                if(max_buy<end){
+                     $('#num').val(max_buy);
+                }
+                
+            });
+        });
+    </script>
+</block>
+
+<block name="main_content">
+    <div class="main_container">
+        <include file="../Common/alert_login" />
+        <form onsubmit="return checkBeforeSubmit()" action="{$submit_url}" method="post">
+            <ul class="mui-table-view">
+               <li class="mui-table-view-cell mui-media">
+                    <img class="mui-media-object mui-pull-left" src="__PUBLIC__/upload/game_pic/{$bgczRes.pic}"/>
+                    <div class="mui-media-body">
+                        {$bgczRes.option_text}<b class="import_price">￥1.00元</b>
+                        <p class='mui-ellipsis'><del>价值：￥{$bgczRes.price}</del></p>
+                    </div>
+                </li>
+                
+                <li class="mui-table-view-cell">
+                    <div class="progress_all">
+                        <div style="width:{$bg_width}" class="progress"></div>
+                    </div>
+                    <div class="people">
+                        <span class="people_buy">{$paidNum}<br><i>已参与</i></span>
+                        <span class="people_all">{$bgczRes.price}<br><i>总需人次</i></span>
+                        <span class="people_left">{$end}<br><i>剩余</i></span>
+                    </div> 
+                </li> 
+
+                <li class="mui-table-view-cell controls">
+                    <label>购买数量：</label>
+                    <div class="mui-numbox" data-numbox-min="{$max_num == '0' ? '0' : '1'}" data-numbox-max="{$max_num}">
+                        <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+                        <input class="mui-numbox-input" type="number" id="num" name="num" value="{$max_num == '0' ? '0' : '1'}"/>
+                        <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+                    </div>
+                </li>
+                <li class="mui-table-view-cell controls">
+                    <label>最大购买数：</label>
+                    <span class="max_buy">{$max_num}</span>
+                </li>                                 
+            </ul>
+            <div class="mui-button-row">
+                <button class="mui-btn mui-btn-primary mui-btn-block">购买</button>
+                <p class="mui-btn mui-btn-primary mui-btn-block" style="height:57px;display:none" id='show_time'>购买</p>
+            </div>
+            
+        </form>
+    </div>
+</block>

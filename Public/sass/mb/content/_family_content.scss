@@ -1,0 +1,170 @@
+.family_info_container{
+   color: #000000;
+   background-color: #ffffff;
+   width: 100%;
+ }
+.info_top{
+  border-bottom: 1px solid #bbbbbb;
+}
+
+.family_details{
+  padding-top: 3%;
+  margin-left: 3%;
+  float: left;
+  width: 57%;
+  p{
+    color: #000000;
+    width: 100%;
+    margin-bottom: 6%;
+  }
+  span{
+    color: #FF6F36;
+  }
+}
+.pic{
+  width: 40%;
+  float: left;
+  img{
+    margin-top: 18%;
+  }
+}
+
+.div_btn{
+  width: 100%;
+  height: 50px;
+  padding-top: 10px;
+  border-bottom: 1px solid #bbbbbb;
+  a{
+    display: block;
+    float: left;
+    width: 30%;
+    height: 28px;
+    line-height: 28px;
+    color: #ffffff;
+    text-align: center;
+    background-color: #FF7044;
+    margin-left: 13%;
+  }
+}
+.members_list_title{
+  font-weight: bold;
+  padding:10px;
+  border-bottom: 1px solid #bbbbbb;
+
+}
+
+.mui-navigate-right{
+  span{
+    display: inline-block;
+    width: 110px;
+    text-align: left;
+    margin-right: 20px;
+    float: right;
+  }
+}
+
+.mui-table-view-cell.mui-collapse .mui-collapse-content{
+  padding: 8px 8px;
+}
+.members_row{
+  padding-top: 10px;
+  img{
+    float: left;
+  }
+  p{
+    margin-top: 6px;
+    float: left;
+    width: 70%;
+    text-align: center;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+.ranking_container{
+  background:#fff;
+  margin-bottom: 20px;
+}
+.ranking_list{
+  background:url(../img/family/family_color.png) no-repeat;
+  border-bottom:1px solid #ededed;
+  .ranking_one{
+    height:68.5px;
+    border-top:1px solid #ededed;
+    i{
+      float:left;
+      vertical-align: top;
+      margin-left:5px;
+      font-weight:bold;
+      color:green;
+
+    }
+
+    label{
+      width:35%;
+      margin-top:6.5px;
+      text-align:center;
+      float:left;
+    }
+    div{
+      width:35%;
+      float:left;
+      height:60px;
+      text-align: center;
+      margin-left:3px;
+      p{
+        font-size:15px;
+        font-weight: bold;
+        margin:0;
+        margin-top:15px;
+        color:#4DB34D;
+      }
+      span{
+        font-size:12px;
+        color:#666;
+      }
+    }
+    a{
+      float:left;
+      width:60px;
+      width:20%;
+      font-size:12px;
+      padding:3px;
+      margin-top:20px;
+      border:1px solid #65BF5F;
+      color:#666;
+      text-align:center;
+      text-decoration: none;
+      margin-left:8px;
+    }
+  }
+}
+
+.button_container{
+  height: 57px;
+  margin-top: 6px;
+  background-color: #bbbbbb;
+}
+
+.add_family_container{
+  width:90%;
+  margin:0 auto;
+  text-align: center;
+  .member_nick_name{
+    visibility: hidden;
+  }
+  span{
+    font-size:14px;
+    width:100%;
+    display:block;
+    position: relative;
+    top:10px;
+  }
+}

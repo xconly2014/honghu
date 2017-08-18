@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>{$seo_title}</title>
+<meta name="keywords" content="{$seo_keyword}">
+
+<link rel="stylesheet" href="__PUBLIC__/Home/Css/bootstrap.min.css" />
+<link rel="stylesheet" href="__PUBLIC__/Home/Css/information.css" />
+<!-- <link rel="stylesheet" href="__PUBLIC__/Home/Css/package.css" /> -->
+</head>
+<body>
+
+	<div class="panel panel-default panel2">
+		<div class="panel-heading">
+       		玩家订单信息
+     	</div>
+     	<div class="panel-body">
+			<form action="__URL__/pay" method="post" class='form-horizontal'>
+					<div class="form-group">
+						<label for="hu_account" class="col-sm-2 control-label">详情</label>
+						<div class="col-sm-8">
+							<label class="control-label">{$data.hu_title}&nbsp;&nbsp;{$data.hu_game_name}&nbsp;{$data.hu_qufu}</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="hu_password" class="col-sm-2 control-label">代练时间</label>
+						<div class="col-sm-8">
+							<label class="control-label">{$data.hu_days}天</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="hu_price" class="col-sm-2 control-label">代练价格</label>
+						<div class="col-sm-8">
+							<label class="control-label">{$data.hu_price}元</label>
+						</div>
+					</div>					
+					<div class="form-group">
+						<label for="hu_security" class="col-sm-2 control-label">是否支持充值</label>
+						<div class="col-sm-8">
+							<label class="control-label">{$data.hu_provided}</label>
+						</div>
+					</div>
+					
+					<div class="form-group">
+		             <div class="col-sm-offset-2 col-sm-6">
+		             	<label class="control-label">您需要支付：{$data.hu_price}元</label>	
+		             </div>
+		         </div>										
+		      	<div class="form-group">
+		             <div class="col-sm-offset-2 col-sm-6">
+		             <!-- 订单id -->
+		             	<input type="hidden" name="oid" value="{$data.oid}">
+		                <button type="submit" class="btn btn-default">支付</button>
+		             </div>
+		         </div>
+			</form>
+		</div>
+	</div>
+</html>
+

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>{$seo_title}</title>
+    <meta name="keywords" content="{$seo_keyword}">
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/user.css">
+    <block name="custom_css"></block>
+
+    <!-- js -->
+    <script type="text/javascript" src="__PUBLIC__/js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/Plugin/jqueryForm/jQuery_Validation.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/global_checker.js"></script>
+    <block name="extra_js"></block>
+    <script type="text/javascript">
+        function change(){
+            var obj = document.getElementById('vcode');
+            obj.src="__CONTROLLER__/vcode?a="+Math.random();
+        }
+    </script>
+</head>
+
+<body>
+<include file="TopBar/index"/>
+<div class="row_container  help_container">
+    <div class="menu_bar_container">
+        <div class="menu_bar">
+            <div class="menu_container">
+                
+                <!-- <div class="box">
+                    <h1><img src="__PUBLIC__/img/menu/requirement.png"/>交易中心</h1>
+                    <div class="text">
+                        
+                        
+                            <a target="_blank" href="{:U('Home/TradeCenter/buy')}">我要购买</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="{:U('Home/TradeCenter/sell')}">我要出售</a>
+                        </li>
+                    </div>
+                </div> -->
+                <div class="box">
+                    <h1>账号中心</h1>
+                    <div class="text">
+                        <li class="<?php if($cur_page == 'info')echo 'active';?>">
+                            <a href="{:U('Home/User/info')}">基本资料</a>
+                        </li>
+                        <li class="<?php if($cur_page == 'security_center')echo 'active';?>">
+                            <a href="{:U('Home/User/security_center')}">安全中心</a>
+                        </li>
+                        <li class="<?php if($cur_page == 'authentication')echo 'active';?>">
+                            <a href="{:U('Home/User/authentication')}">身份认证</a>
+                        </li>
+                        <li class="<?php if($cur_page == 'credits')echo 'active';?>">
+                            <a href="{:U('Home/User/credits')}">我的积分</a>
+                        </li>
+                        <li class="<?php if($cur_page == 'coins_list')echo 'active';?>">
+                            <a href="{:U('Home/User/coins_list')}">我的虎币</a>
+                        </li>
+                        <li class="<?php if($cur_page == 'grow_record_list')echo 'active';?>">
+                            <a href="{:U('Home/User/grow_record_list')}">vip成长值</a>
+                        </li>
+                        <li class="<?php if($cur_page == 'message')echo 'active';?>">
+                            <a href="{:U('Home/User/message')}">我的消息</a>
+                        </li>
+                        <if condition="isUserJoinOrganizationEver(get_uid())">
+                            <li class="<?php if($cur_page == 'contribution_list')echo 'active';?>">
+                                <a href="{:U('Home/User/contribution_list')}">我的贡献值</a>
+                            </li>
+                        </if>
+                        <if condition="isUserOrganizationMgr(get_uid()) eq true">
+                            <li class="<?php if($cur_page == 'members_manage')echo 'active';?>">
+                                <a href="{:U('Home/User/members_manage')}">我的堂会</a>
+                            </li>
+                        </if>
+                    </div>
+                </div>
+                <div class="box">
+                    <h1>订单中心</h1>
+                    <div class="text">
+                        <li class="<?php if($cur_page == 'chongzhi_list')echo 'active';?>">
+                            <a href="{:U('Home/User/chongzhi_list')}">苹果充值</a>
+                        </li>
+                      <!--   <li  class="<?php if($cur_page == 'cz_package_order')echo 'active';?>">
+                            <a href="{:U('Home/User/cz_package_order')}">充值团购</a>
+                        </li> -->
+                        <li class="<?php if($cur_page == 'my_requirement')echo 'active';?>">
+                            <a href="{:U('Home/User/my_requirement')}">代练需求</a>
+                        </li>
+                        <li class="<?php if($cur_page == 'my_package')echo 'active';?>">
+                            <a href="{:U('Home/User/my_package')}">代练套餐</a>
+                        </li>
+                        <li class="<?php if($cur_page == 'my_account_trade')echo 'active';?>">
+                            <a href="{:U('Home/User/my_account_trade')}">账号交易</a>
+                        </li>
+                        <!-- <li class="<?php if($cur_page == 'group_buy_order')echo 'active';?>">
+                            <a href="{:U('Home/User/group_buy_order')}">一元购</a>
+                        </li> -->
+                        <li class="<?php if($cur_page == 'goods_order')echo 'active';?>">
+                            <a href="{:U('Home/User/goods_order')}">商品兑换</a>
+                        </li>
+                        <li class="<?php if($cur_page == 'sc_order_list')echo 'active';?>">
+                            <a href="{:U('Home/User/sc_order_list')}">首充号</a>
+                        </li>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <block name="content"></block>
+</div>
+<include file="FooterBar/index"/>
+

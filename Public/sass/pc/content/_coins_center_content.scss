@@ -1,0 +1,24 @@
+.coins_cz_finish{
+    background:url(../img/hb_finish_bg.png)  0px 50px no-repeat;
+    width:549px;
+    height:350px;
+    margin-left:100px;
+    border-radius:10px;
+    text-align: center;
+    div{
+        margin-top:5px;
+        font-weight: bold;
+    }
+    .cz_over{
+       font-size:40px; 
+       margin-bottom: 10px;      
+    }
+    b{
+        color:#F27E4C;
+    }
+}
+.coins_finish_container{
+    background:url(../img/hu_finish.png) 120px 130px no-repeat;
+    padding-top:120px;
+    padding-left:130px;
+}

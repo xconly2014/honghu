@@ -1,0 +1,82 @@
+<extend name="../Common/admin_base" />
+
+<block name="extra_css">
+    <style>
+        .common_form p{
+            padding-right: 280px;
+        }
+        .sub{
+            margin-left: 50px;
+        }
+    </style>
+</block>
+
+<block name="extra_js">
+    <script type="text/javascript">
+        $().ready(function(){
+            $("#menu").validate({
+                rules: {
+                    type: "required",
+                    pid: "required",
+                    name:'required'
+                },
+                messages:{
+                    type:"请选择导航类型",
+                    pid:"请选择父级导航",
+                    name:"请填写导航栏的名称"
+                },
+                errorPlacement: function(error, element) {
+                    error.appendTo(element.parent());
+                    error.siblings("span").remove();
+                },
+                errorElement:"span",
+                success: function(span) {
+                    span.attr("class","success");
+                },
+                onfocusout: function(element) {
+                    $(element).valid();
+                }
+            });
+
+
+        });
+    </script>
+</block>
+
+<block name="content">
+<div class="content_container">
+	<div class="content">
+		<div class="game_strategy_container">
+			<div class="form_container">
+				<form action="{$url}" method="post" class="common_form container" id="menu">
+					<p>修改后台导航栏</p>
+					<li class="input_field">
+						<label class="form_key">导航类型：</label>
+                        <label class="form_value" style="text-align:left;">{$row.type_text}</label>
+
+					</li>
+                    <li class="required" id="top_menu" <if condition="$row['type'] eq 1">style='display:none;'</if>>
+                        <label>选择父导航：</label>
+                        <select name="pid">
+                            <option value="">请选择父级导航</option>
+                            <foreach name="top_list" item="list">
+                                <option value="{$list.id}" <if condition="$list.id eq $row['parent_id']"> selected</if>>{$list.title}</option>
+                            </foreach>
+                        </select>
+                    </li>
+
+                    <li class="required">
+                        <label>导航栏名名称：</label>
+                        <input type="text" name="name" placeholder="请填写导航栏的名称" value="{$row.title}"/>
+                    </li>
+
+					<li>
+                        <button type="submit">修改</button>
+                        <button type="reset">取消</button>
+                    </li>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+</block>

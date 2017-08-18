@@ -1,0 +1,173 @@
+<extend name="../Common/at_base" />
+
+<block name="custom_css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/jquery.slideBox.css"/>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/account_trade.css">
+</block>
+
+<block name="content">
+    <div class="row_container">
+
+        <div class="crumbs_nav">
+            <div class="crumbs_nav_item">
+                <a href="/package_time/">首页</a>
+                <i>&gt;</i>
+            </div>
+            <div class="crumbs_nav_item">
+                <a href="{:U('Home/TradeCenter/buy')}">交易中心</a>
+                <i>&gt;</i>
+            </div>
+            <div class="crumbs_nav_item">
+                <a>成品号详情</a>
+                <i></i>
+            </div>
+        </div>
+        <p style="height: 10px;"></p>
+
+        <div class="account_content">
+            <div class="container_left">
+                <div class="left_top">
+                    <img src="/game_pic/{$info.game_pic}" class="game_pic" alt="{$info.game_name}"/>
+
+                    <div class="account_info">
+                        <h4>{$info.title}</h4>
+                        <p>
+                            <label>游戏名称：</label>{$info.game_name}
+                        </p>
+                        <p>
+                            <label>账号价格：</label>
+                            <span>{$info.price}&nbsp;&nbsp;</span>元
+                        </p>
+                        <p>
+                            <label>商品类型：</label>成品号
+                        </p>
+                        <p>
+                            <label>游戏区服：</label>{$info.qufu}
+                        </p>
+                        <p>
+                            <label>交易类型：</label>寄售交易
+                        </p>
+                        <p>
+                            <label>保障服务：</label>
+                            <img src="__PUBLIC__/img/send.jpg" id="send" alt="寄售交易"/>
+                        </p>
+                        <div class="service">
+                            <img src="__PUBLIC__/img/send.jpg" id="send" alt="寄售交易"/>寄售交易，货在轰轰虎，付款后立即发货
+                        </div>
+                        <if condition="$can_buy eq 1">
+                            <form action="{$url}" method="post">
+                                <button>购&nbsp;买</button>
+                            </form>
+                        </if>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="left_bottom">
+                    <div class="navli">
+                        <ul class="nav_li">
+                            <li class="selected">商品截图</li>
+                            <li>商品详情</li>
+                        </ul>
+                     </div>
+                    <div class="details_content">
+                        <div class="on">
+                             <div id="slideboxContainer" class="slideBox" style="display:block;width: 400px; height: 270px;">
+                                <ul class="items">
+                                    <foreach name="info.img" item="list">
+                                        <li><a><img src="__PUBLIC__/{$list}" width="400" height="270"/></a></li>
+                                    </foreach>
+                                </ul>
+                           </div>
+                        </div>
+                        <div>
+                            <p>
+                                <label>操作系统：</label>{$info.system}
+                                <img src="__PUBLIC__/img/{$info.system_img}" alt="系统标识"/>
+                            </p>
+                            <notempty name="info.operator">
+                                <p>
+                                    <label>客户端口：</label>{$info.operator}
+                                </p>
+                            </notempty>
+                            <p>
+                                <label>游戏名称：</label>{$info.game_name}
+                            </p>
+                            <p>
+                                <label>游戏等级：</label>{$info.level}
+                            </p>
+                            <p>
+                                <label>游戏角色：</label>{$info.juese}
+                            </p>
+                            <p>
+                                <label>游戏职业：</label>{$info.zhiye}
+                            </p>
+                            <p>
+                                <label>交易详情：</label>{$info.details}
+                            </p>
+                            <p>
+                                <label>备注：</label>{$info.remark}
+                            </p>
+                        </div>
+                    </div>
+				</div>
+            </div>
+            <div class="container_right">
+                <div class="seller_container">
+                    <div class="seller_info">
+                        <ul class="nav_li">
+                            <li>购买帮助</li>
+                        </ul>
+                        <div class="clear"></div>
+                        <p><a href="#">什么是账号交易</a></p>
+                        <p><a href="#">购买账户如何被找回</a></p>
+                        <p><a href="#">购买账户需要注意什么</a></p>
+                    </div>
+                </div>
+                <div class="seller_container">
+                    <div class="seller_info">
+                        <ul class="nav_li">
+                            <li>商品推荐</li>
+                        </ul>
+                        <div class="clear"></div>
+                        <foreach name='recommendRes' item='list'>
+                            <div class="goods">
+                                <img src="/game_pic/{$list.pic}" alt="{$list.name}"/>
+                                <h4>
+                                    <a href="{$list.href}">{$list.name}</a>
+                                </h4>
+                            </div>
+                        </foreach>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</block>
+<block name="extra_js">
+    <script type="text/javascript" src="__PUBLIC__/js/Plugin/slideBox/jquery.slideBox.min.js" ></script>
+    <script type="text/javascript">
+        step = 1;
+        $().ready(function(){
+        	
+        	$('#slideboxContainer').slideBox();
+        	
+        	$('#send').mouseover(function(){
+        		$('.service').show('2');
+        	});
+        	$('#send').mouseout(function(){
+        		$('.service').hide('2');
+        	});
+        	
+            
+        	$(".navli li").each(function(index){
+                var liNode = $(this);
+                $(this).mouseover(function(){
+                    $(".details_content .on").removeClass('on');
+                    $(".navli li").removeClass('selected');
+                    $(".details_content > div").eq(index).addClass('on');
+                    liNode.addClass('selected');
+                });
+            });
+        });
+    </script>
+</block>

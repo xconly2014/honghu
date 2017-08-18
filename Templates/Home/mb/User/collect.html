@@ -1,0 +1,107 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="extra_css">
+    <style>
+        h4{
+            text-align: center;
+            margin-top: 18px;
+        }
+         .mui-table-view{
+             position: static;
+             margin-bottom:15px;
+             border:1px solid #ccc;
+             border-radius: 3px;
+             padding:3px 0px;
+         }
+        #uploadImg{
+            height:32px;
+        }
+        #select{
+            display: none;
+        }
+
+    </style>
+</block>
+
+<block name="header_bar">
+    <h1 class="mui-title">圣诞集赞</h1>
+</block>
+
+<block name="main_content">
+
+    <div class="main_container">
+        <if condition="$is_activity eq false">
+            <div class="mui-table-view">
+                <img src="__PUBLIC__/img/cry.png" style="position: relative; left: 36.5%;">
+                <p style="text-align: center">亲，我们的集赞活动已结束了！</p>
+            </div>
+        <else />
+
+            <h4>填写信息</h4>
+            <form action="{$url}" method="post" enctype="multipart/form-data" id="mb_collect_form">
+                <div class="mobile_error"></div>
+                <input type="text" name="contact" value="" placeholder="填写的您的手机号码或QQ"/>
+                <div class="mui-table-view">
+                    <label>&nbsp;&nbsp;上传图片：</label>
+                    <label id="uploadImg">
+                        <input type="file" name="photo" id="uploadImages" />
+                    </label>
+                </div>
+                <div class="mui-table-view">
+                    <div>&nbsp;&nbsp;兑换礼品类型：</div>
+                    <div class="mui-input-row mui-radio mui-left" style="display:inline-block;" onclick="hideSelect()">
+                        <label>流量</label>
+                        <input name="type" type="radio" value="1" checked>
+                    </div>
+                    <div class="mui-input-row mui-radio mui-left" style="display:inline-block;" onclick="showSelect()">
+                        <label>充值号</label>
+                        <input name="type" type="radio" value="2">
+                    </div>
+                    <div class="mui-input-row mui-radio mui-left" style="display:inline-block;" onclick="showSelect()">
+                        <label>游戏币</label>
+                        <input name="type" type="radio" value="3">
+                    </div>
+                </div>
+                <select name="game" style="border:1px solid #ccc!important;" id="select">
+                    <option value="">&nbsp;&nbsp;请选择游戏</option>
+                    <foreach name="game_list" item="list" >
+                        <option value="{$list.id}">{$list.letter}&nbsp;&nbsp;{$list.name}</option>
+                    </foreach>
+                </select>
+
+
+                <div class="mui-button-row">
+                    <button class="mui-btn mui-btn-primary mui-btn-block">确认</button>
+                </div>
+            </form>
+        </if>
+    </div>
+
+</block>
+
+<block name="extra_js">
+    <script type="text/javascript" src="__PUBLIC__/js/Plugin/kinFormUpload/jquery.kinFormUpload.1.1.source.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/Plugin/jqueryForm/jQuery_Validation.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/common/collect_praise _common.js"></script>
+    <script type="text/javascript">
+
+        $().ready(function(){
+            $("#mb_collect_form").validate(window.window.collect_form_option,true);
+            $('#uploadImg').click(function(){
+                check_img();
+            });
+        });
+
+        function check_img(){
+            var num = $('i').html();
+            if(num == 0){
+                $('#photo-error').remove();
+                $('.mobile_error').css('display','block').append("<span id='photo-error' class='error' style='display: inline;'>请上传您的分享截图</span>");
+                return false;
+            }
+            $('#photo-error').remove();
+            return true;
+        }
+
+    </script>
+</block>

@@ -1,0 +1,84 @@
+<extend name="../Common/admin_base" />
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div class="table_bar">
+                <a href="{:U('Game/on_sale')}">上架游戏</a>
+                <div class="search_box_container">
+                    <div class="search_box">
+                        <div>
+                            <input type="text" placeholder="请输入游戏名">
+                            <input type="button" value="搜索" onclick="alert('按游戏名搜索，ajax返回')">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--
+                        <div class="table_container">
+                                <li>
+                                    <span class="game_num">编号</span>
+                                    <span class="game_name">名称</span>
+                                    <span class="game_thumbnail">缩略图</span>
+                                    <span class="game_ios">ios平台</span>
+                                    <span class="game_android">android平台</span>
+                                    <span class="game_operation">操作</span>
+                                </li>
+                            <volist name="game_list" id="vo">
+                                <li>
+                                    <span class="game_num">{$vo.id}</span>
+                                    <span class="game_name">{$vo.name}</span>
+                                    <span>{$vo.thumbnail_path}</span>
+                                    <span>{$vo.ios_platform}</span>
+                                    <span>{$vo.android_platform}</span>
+                                </li>
+                            </volist>
+                        </div>
+            -->
+            <div class="table_container">
+                <table class="data-table">
+                    <thead>
+                    <tr>
+                        <th>
+                            <input type="checkbox"/>
+                        </th>
+                        <th class>dddd编号</th>
+                        <th class>名称</th>
+                        <th class>缩略图</th>
+                        <th class>ios平台</th>
+                        <th class>android平台</th>
+                        <th class>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <volist name="game_list" id="vo">
+                        <tr>
+                            <td><input type="checkbox"/></td>
+                            <td>{$vo.id}</td>
+                            <td>{$vo.name}</td>
+                            <td>{$vo.thumbnail_path}</td>
+                            <td>{$vo.ios_platform}</td>
+                            <td>{$vo.android_platform}</td>
+                            <td>
+                                <a href="{:U('Game/edit')}">编ddd辑</a>
+                                <a href="{:U('Game/game_del')}">删除</a>
+                                <a href="{:U('Game/add_option', array('gameId'=>$vo.id))}">d面额</a>
+                            </td>
+                        </tr>
+                    </volist>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</block>
+
+<block name="footer">
+    <div class="footer">
+        <p>
+            广州鸿鹄网络科技有限公司
+        </p>
+    </div>
+</block>

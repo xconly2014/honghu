@@ -1,0 +1,41 @@
+.web_map_container{
+    margin:30px auto;
+}
+
+.web_map{
+    margin: 0 auto;
+    overflow: hidden;
+    background:#fff;
+    margin-bottom: 15px;
+    border: 1px #dddddd solid;
+    border-top-color: #F4A33E;
+    border-top-width: 2px;
+
+    h2{
+        height: 35px;
+        line-height: 35px;
+        margin: 0 20px;
+        border-bottom: 1px #dddddd solid;
+        font-size: 16px;
+        color: #f27d27;
+    }
+    
+    .web_map_content{
+        padding:20px;
+        overflow: hidden;
+        font-size:13px;
+        a{
+            float: left;
+            text-decoration: none;
+            margin-right: 15px;
+            padding: 0 10px;
+            height: 30px;
+            color:#333;
+            line-height: 30px;
+            &:hover{
+                color:#fff;
+                background-color:#3b639f;
+            }
+        }
+    }
+}

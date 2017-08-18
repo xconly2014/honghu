@@ -1,0 +1,11 @@
+<extend name="../Common/_mb_layout" />
+<block name="header_bar">
+    <h1 class="mui-title">{$news_info.title}</h1>
+</block>
+
+<block name="main_content">
+    <div class="main_container">{$news_info.text}</div>
+    <script type="text/javascript">
+        $('.main_container').find('img').css('max-width', "100%");
+    </script>
+</block>

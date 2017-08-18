@@ -1,0 +1,38 @@
+<extend name="../Common/account_index" />
+
+<block name="custom_css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/coinscenter.css">
+</block>
+
+<block name="content">
+    <div class="menu_bar_content">
+        <div class="user_center_list">
+            <div class="total">
+                <p class="p_hb">
+                    <span>虎币：</span>
+                    <b>{$coins_total}</b>
+                    <a href="{:U('CoinsCenter/card')}">>>前往充值</a>
+                </p>                
+            </div>
+            <table cellspacing="0px">
+                <tr class="list_head">
+                    <th>时间</th>
+                    <th>来源</th>
+                    <th>虎币</th>
+                    <th>收入+/支出-</th>
+                </tr> 
+                <foreach name="coins_record_list" item="row">
+                    <tr>
+                        <td>{$row.created_date}</td>
+                        <td>{$row.type}</td>
+                        <td>{$row.score}</td>
+                        <td>{$row.operation}</td>
+                    </tr>
+                </foreach>       
+            </table>
+        </div>
+        <div class="page_container">
+            <div class="page">{$pager}</div>
+        </div>
+    </div>
+</block>

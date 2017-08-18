@@ -1,0 +1,497 @@
+.center_content  {
+  height:auto;
+}
+
+.activity  {
+  width:70%;
+  height:200px;
+}
+
+.game_list  {
+  width:70%;
+  height: 549px;
+  background-color: #fff;
+}
+
+.title_bar  {
+  width:100px;
+  padding:5px;
+  margin:0 auto;
+}
+
+.search_game  {
+  height:240px;
+  overflow: auto;
+}
+
+.type_container  {
+  padding:10px;
+
+  input[type=radio] {
+    margin-left:100px;
+  }
+}
+
+.infos  {
+  margin: 30px 0 0 30px;
+  p  {
+    font-size:14px;
+  }
+
+  span {
+    font-size:18px;
+    color: #F44609;
+  }
+}
+
+.error_msg{
+  display:none;
+  margin-top:10px;
+
+  label{
+    color:red;
+  }
+
+  a{
+    text-decoration: none;
+    &:hover{
+      color:#FF9933;
+      text-decoration: underline;
+    }
+  }
+}
+
+.next {
+  margin:0 auto;
+  width:100px;
+}
+
+.game_package  {
+  margin-bottom: 10px;
+  border-bottom-right-radius: 10px;
+  height:549px;
+  background-color: #fff;
+  border:1px solid #FF9936;
+  border-top:none;
+  .game_picture{
+    height: 142px;
+    border-bottom: 1px solid #ccc;
+    background-color: #F1F2F6;
+
+    img{
+      width: 282px;
+      height: 134px;
+      margin: 4px 0 0 5px;
+    }
+
+  } 
+
+  .nva{
+      height: 32px;
+      line-height: 32px;
+      padding-left: 20px;
+      font-size: 16px;
+      background-color: #F1F2F6;
+      font-weight: bold;
+      color: #ff6600;
+      border-bottom: 1px solid #ccc;
+  } 
+
+  .nva_title{
+    display: inline-block;
+    width: 270px;
+    margin-top: 5px;
+    margin-left:20px;
+    font-weight: bold;
+    span{
+      float: right;
+      margin-right: 20px;
+    }
+  }
+
+  .package_list{
+    margin-top: 10px;
+    li{
+      border-bottom:1px dashed #ccc;
+      min-height:30px;
+      overflow: hidden;
+      line-height: 20px;
+
+      span{
+        display:inline-block;
+        float:left;
+        margin:0px 10px 0px 5px;
+        width:210px;
+        a{
+          color: #000;
+          font-size:14px;
+          text-decoration: none;
+          &:hover{
+            color:#ff6600;
+            text-decoration: underline;
+          }
+        }  
+        span{
+          font-size:12px;
+          color:#aaa;
+        }      
+      }
+      p{
+        b{
+          color:red;
+          margin-left:5px;
+          line-height: 40px;
+          font-size:14px;
+        }
+      }
+    }    
+  }
+}
+
+.recommand_god  {
+  height:200px;
+  background-color: #f0f0f0;
+}
+
+
+
+.selector_set  {
+  height: 32px;
+  padding-top: 12px;
+  padding-left: 8px;
+}
+
+.selector_item  {
+  display: inline-block;
+  height: 22px;
+  text-decoration: none;
+  line-height: 22px;
+  border: 1px solid #DDD;
+  font-size: 12px;
+  vertical-align: top;
+  margin: 0 5px 5px 0;
+  padding: 0 0 0 4px;
+  cursor: pointer;
+
+  &:hover {
+    border-color: #e4393c;
+
+    i {
+      background-color: #e4393c;
+      background-position: 7px -158px;
+    }
+  }
+
+  b  {
+      display: block;
+      float: left;
+      font-weight: 400;
+      color: #666;
+    }
+
+  em  {
+      display: block;
+      float: left;
+      color: #e4393c;
+      font-style: normal;
+    }
+
+  i  {
+      display: block;
+      margin-left: 3px;
+      float: left;
+      width: 25px;
+      height: 22px;
+      background: url('../img/search.ele.png') no-repeat 7px -140px;
+    }
+
+}
+
+
+.filter_bar  {
+  overflow: hidden;
+  padding: 0px 10px 0px 48px;
+  padding-bottom: 2px;
+  font-size: 14px;
+  background-color: #fff;
+  ul{
+    float:left;
+    width:690px;
+    min-height:160px;
+  }
+  li {
+    float: left;
+    display: block;
+    width: 100%;
+    border-top: 1px dashed #EE4C0E;
+
+    span  {
+
+      margin-right:20px;
+      width:70px;
+      font-size: 16px;
+      font-weight: bold;
+      display: block;
+      float: left;
+      height: 65px;
+      line-height: 65px;
+      color: #595758;
+      text-align:right;
+
+    }
+
+    p{
+      padding-top: 23px;
+    }
+
+    a  {
+      text-decoration: none;
+      margin-bottom: 8px;
+      display: block;
+      float: left;
+      margin-right:30px;
+      color: #595758;
+      &:hover{
+        color: #E95404;
+      }
+    }
+  }
+}
+
+.trade_center_sell{
+      background: #fff;
+      margin-left:38px;
+      float:right;
+      width:190px;
+      height:100px;
+      .sell_btn{
+        width:150px;
+        height:150px;
+        border-radius: 30px;
+        border:1px solid #1996B2;
+        margin-left:15px;
+        a{
+          background: #44CEF5;
+          text-align:center;
+          text-decoration: none;
+          margin: 30px 0px 0px 8px;
+          padding:3px;
+          width:30px;
+          font-size:16px;
+          font-weight: bold;
+          border-radius: 10px;
+          color:#fff;
+          display:inline-block;
+          &:hover{
+            color:#e4393c;
+          }
+        }
+      }
+
+      .sell_btn_one{
+        margin-left:20px;
+        width:100px;
+        height:100px;
+        background:url(../img/sell_btn_one.png) no-repeat;
+        a{
+          width:40px;
+          display:inline-block;
+          margin-top:30px;
+          margin-left:30px;
+          font-size:16px;
+          text-decoration: none;
+          color:#000;
+          &:hover{
+            color:#e4393c;
+          }
+        }
+      }
+  }
+
+.table_container  {
+  margin:0 auto;
+  height: 126px;
+  padding:10px 0px 10px 8px;
+  clear: both;
+
+  &:hover  {
+    background-color: #f0ead8;
+  }
+}
+
+.goods_info  {
+  float:left;
+  width:450px;
+
+  a  {
+    text-decoration: none;
+    font-size: 24px;
+    color:#dc4a13;
+  }
+
+  p  {
+    padding:2px 0 6px 0;
+    font-size: 12px;
+
+    .label{
+      color:#666;
+    }
+
+    .info  {
+      color:#DC4A13;
+      font-weight: bold;
+    }
+  }
+}
+
+.goods_operate  {
+  float: left;
+  height:76px;
+  padding-top:30px;
+
+  span  {
+    width: 100px;
+    color: #dc4a13;
+    font-weight: 200;
+    font-size: 19px;
+  }
+}
+
+.btn{
+  float: left;
+  padding-top:30px;
+  a{
+    text-decoration: none;
+    display: block;
+    color:#fff;
+    font-weight: bold;
+    width: 200px;
+    height: 60px;
+    padding-top:8px;
+    background: url("../img/button.png") no-repeat 45px 0px;
+  }
+}
+
+
+.trade_center_info{
+  padding-left:50px;
+  width: 70%;
+
+  h3{
+    text-align:center;
+    padding-right: 100px;
+    margin: 20px 0px 20px 0px;
+  }
+  
+  .game_operator{
+    display: none;
+  }
+}
+
+label.error {
+  font-size: 12px;
+  background: url("../img/wrong.png") no-repeat 0px 0px;
+  display: inline-block;
+  padding-left: 20px;
+  width: 320px;
+  height: 20px;
+  color: red;
+}
+
+label.success {
+  font-size: 12px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url("../img/right.png") no-repeat 0px 0px;
+  position: relative;
+  top: 10px;
+}
+
+.no_result{
+  margin:0 auto;
+  width:240px;
+  height:100px;
+  margin-top:50px;
+  padding-left:90px;
+  background:url(../img/cry.png) 2px 3px no-repeat;
+  p {
+      margin-left:10px;
+      padding-top:40px;
+      font-size:18px;
+      color:#f00;
+      font-weight: bold;
+  }
+}
+
+/*.no_result{
+  display: block;
+  width:200px;
+  height: 200px;
+  margin:0 auto;
+  padding-left:86px;
+  background:url(../img/cry.png) 2px 3px no-repeat;
+}*/
+
+.account_trade_container{
+  border:1px solid #ccc;
+  height: 680px;
+}
+.img_bar{
+  clear: both;
+  padding-top: 17px;
+  border-top: 1px solid #ccc;
+  height: 120px;
+  text-align: center;
+   img{
+    height: 100px;
+    width: 780px;
+  }
+}
+.trade_content_height{
+  height: 620px;
+}
+
+.static_field{
+  font-size: 12px;
+}
+#security{
+  font-size: 12px;
+  color: #ff0000;
+}
+
+.color_bar{
+  height:33px;
+  background-color: #F4A982;
+}
+.goods_container{
+  clear:both;
+  margin:14px 0px 30px;
+  padding: 44px 48px 10px 48px;
+  background-color: #fff;
+  min-height: 421px;
+}
+.title_nav{
+  height: 50px;
+  line-height: 50px;
+  border-top:4px solid #D67129;
+  border-bottom:1px solid #999;
+  span{
+    font-weight: bold;
+    color: #383433;
+    display: block;
+    float: left;
+  }
+}
+.text_left{
+  padding-left: 8px;
+  width: 450px;
+}
+.text_middle{
+  text-align: center;
+  width: 222px;
+}
+.text_right{
+  text-align: center;
+  width: 202px;
+}

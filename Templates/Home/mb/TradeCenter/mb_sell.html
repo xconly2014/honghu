@@ -1,0 +1,125 @@
+<extend name ="../Common/_mb_layout" />
+
+<block name="header_bar">
+    <h1 class="mui-title">{$title}</h1>
+</block>
+
+<block name="extra_css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/mb_trade_center.css">
+    <style>
+    </style>
+</block>
+
+<block name="extra_js">
+   <script type="text/javascript" src="__PUBLIC__/js/common/sell.js"></script>
+   <script type="text/javascript">
+       
+       $().ready(function(){
+    	   getList('');
+    	   
+    	   $('#search_submit').click(function(){
+    		   $('#trade_ul').html('');
+    		   var inputVal = $.trim($('#search_input').val());
+    		   getList(inputVal);
+    	   });
+    	   
+    	   $('#search_input').focus(function(){
+    		   $('#search_input').val('');
+    	   });
+    	   
+    	   $('#shut').click(function(){
+    		   $('.error_msg').hide();
+    	   });
+       });
+       
+       function getList(name){
+    	   $.post("ajax_get_mb_trade",{name:name},function(msg){
+
+    			if(msg.status){
+    				var lis ='';
+    				var function_name= '';
+    				$(msg.data).each(function(i,item){
+    					 function_name = "setGameName('"+item.name+"','"+item.game_id+"')";
+    					 lis += "<li style='float:left' class='mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3'><a href='javascript:void(0)' onclick="+function_name+"><img src='/game_pic/"+item.thumbnail_path+"' width='52px' height='52px' alt='"+item.name+"' /><div style='font-size:10px' class='mui-ellipsis-2'>"+item.name+"</div></a><li>";
+    				});
+    				    lis += "<div class='clear'></div>";
+    				$('.no_content').hide();
+    				$('#trade_ul').append(lis);
+					$('#result').text("搜索结果");
+					if(!name){
+						$('#result').text("热门游戏");
+					}
+					$('#trade_ul_container').show();
+    			}else{
+					$('#trade_ul_container').hide();
+    				$('.no_content').show();
+    			}
+    		},'json');
+    	   
+       }
+       
+       function checkInfo(){
+    	   var is_trainer = "{$is_trainer}";
+    	   return check(is_trainer);
+       }
+    </script>
+</block>
+
+
+<block name="main_content">
+<div class="error_msg">
+		     <div class="error_info">
+		         <div>代练师需要先验证身份认证</div>
+                     <a href="{:U('Home/User/authentication')}">&lt;&lt;马上去认证&gt;&gt;</a>
+                     <p class="p_btn">
+                         <a href="javascript:void(0)" id="shut">取消</a>
+                         <a href="{:U('Home/User/authentication')}" id='sure'>确定</a>
+                     </p>
+		     </div>
+	     </div>
+     <div class="main_container mui-content">
+	     <img src="__PUBLIC__/img/mb_activity.jpg" width="100%" alt='交易中心'/>
+	     <div class="type_container">
+	         <div class="mui-content">
+		         <ul id="type_ul">
+		             <foreach name="type" item="type_value" key="type_name" >
+		                 <li><label><input type="radio" name="type" value="{$type_name}" onclick="setType(this.value)"/>{$type_value}</label></li>
+		             </foreach>
+		         </ul>
+		     </div>
+	     </div>
+	     <div class="search_content">
+	         <input id="search_input" type="text" name="name" placeholder="输入要搜索的游戏">
+	         <button id="search_submit" >
+                 <span class="mui-icon mui-icon-search"style="font-weight:bold;font-size:26px;"></span>      
+             </button>
+	     </div>
+	     <div class="game_list">
+	         <div class='no_content'>
+	             <img src='__PUBLIC__/img/mb_search_cry.png' alt="无结果"/>
+	             <p>抱歉，搜索到 “0” 结果！</p>
+	         </div>
+			 <div id="trade_ul_container">
+				 <p id="result">热门游戏</p>
+		         <ul id="trade_ul" class="mui-table-view mui-grid-view mui-grid-9">
+		         </ul>
+			 </div>
+		    <div class='clear'></div>
+	     </div>
+	    
+	     <form action="{:U()}" method="post" onsubmit="return checkInfo()">
+	           <div class="but_div">
+	               <button type="submit" class="submit">下一步</button>
+	           </div>
+               <input type="hidden" class="form_name" name="form_name">
+               <input type="hidden" class="form_type" name="form_type">
+         </form>
+         <div class="infos">
+             <p>您当前的选择是：
+                 <span class="name"></span>
+                 <label>></label>
+                 <span class="type"></span>
+             </p>
+          </div>
+	</div>
+</block>

@@ -1,0 +1,62 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="header_bar">
+    <h1 class="mui-title">填写交易信息</h1>
+</block>
+
+<block name="extra_js">
+    <script type="text/javascript" src="__PUBLIC__/js/Plugin/kinFormUpload/jquery.kinFormUpload.1.1.source.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/Plugin/jqueryForm/jQuery_Validation.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/global_checker.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/common/account_trade_common.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/mb/mb_account_trade.js"></script>
+    <script type="text/javascript">
+	    $().ready(function(){
+	    	$('#jiaqian').blur(function(){
+	    		var money = parseInt($(this).val());
+	    		$('#security').text(Math.floor(money*0.2));
+	    	});
+	    });
+	</script>
+</block>
+
+<block name="extra_css">
+    <style>
+        .mui-table-view{
+	        position: static;
+        	margin-bottom:15px;
+        	border:1px solid #ccc;
+        	border-radius: 3px;
+        	padding:3px 0px;
+        }
+        #uploadImg{
+	        height:32px;
+        	display: inline-block;
+        }
+    </style>
+</block>
+
+
+<block name="main_content">
+    <div class="main_container">
+        <form action="{$url}" method="post" enctype="multipart/form-data" id='account_trade_form' onsubmit="return check()">
+             <div class="mobile_error"></div>
+             <input type="text" name="title" placeholder="请填写标题">
+             <input type="text" name="jiaqian" placeholder="请填写价钱" id="jiaqian">
+	         <input type="text" name="time" placeholder="请填写商品有效时间">
+	         <textarea rows="3" name="details" placeholder="请填写交易详情"></textarea>
+	         <div class="mui-table-view">
+	               <label>&nbsp;&nbsp;上传图片：</label>
+	               <label id="uploadImg">
+	                   <input type="file" name="images" id="uploadImages" />
+	               </label>
+	         </div>
+	         <ul class="mui-table-view">
+                 <li class="mui-table-view-cell">
+                     <label>保证金：</label><span class="orange" id="security"></span>元&nbsp;&nbsp;<font color="#ccc">(价钱的%20)</font>
+                 </li>
+             </ul>
+            <button class="mui-btn mui-btn-primary mui-btn-block">提交</button>
+        </form>
+    </div>
+</block>

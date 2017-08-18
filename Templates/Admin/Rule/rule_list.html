@@ -1,0 +1,40 @@
+<extend name="../Common/admin_base" />
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div class="news_list_container">
+                <div class="table_bar">
+                    <a class="a_style_button" href="{:U('Admin/Rule/add_rule')}">添加权限</a>
+                </div>
+
+                <div class="table_container">
+                    <table class="data-table">
+                        <thead>
+                        <tr>
+                            <th>编号</th>
+                            <th>链接</th>
+                            <th>权限名</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <volist name="rule_list" id="vo">
+                            <tr id="row_{$vo.id}">
+                                <td>{$vo.id}</td>
+                                <td>{$vo.name}</td>
+                                <td>{$vo.title}</td>
+                                <td>
+                                    <a href="{:U('Admin/Rule/edit_rule', array('id'=>$vo['id']))}">修改</a> | <a href="{:U('Admin/Rule/del_rule', array('id'=>$vo['id']))}" onclick="return confirm('确定删除吗?');">删除</a>
+                                </td>
+                            </tr>
+                        </volist>
+                        </tbody>
+                    </table>
+                    <div class="page">{$page}</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</block>

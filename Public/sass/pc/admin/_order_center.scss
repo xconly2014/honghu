@@ -1,0 +1,22 @@
+.cz_package_list  {
+  width:1200px;
+  padding:30px;
+}
+
+.cz_order_ios  {
+  padding:30px;
+}
+
+.star_td{
+  width: 25px;
+  span{
+    display: block;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    background: url('../img/order_star.png') no-repeat 4px 3px;
+  }
+  .star_span{
+    background: url('../img/order_star.png') no-repeat -44px 3px;
+  }
+}

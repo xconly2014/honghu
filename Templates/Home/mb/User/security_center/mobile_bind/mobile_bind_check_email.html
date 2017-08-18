@@ -1,0 +1,26 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="header_bar">
+    <h1 class="mui-title">邮箱验证</h1>
+</block>
+
+<block name="main_content">
+    <div class="main_container">
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell mui-media">
+                <a href="#">
+                    <img class="mui-media-object mui-pull-left" src="__PUBLIC__/img/alert.png">
+                    <div class="mui-media-body">
+                        <span style="color:#FF9933;font-size:20px">您的邮箱未验证</span>
+                        <p class='mui-ellipsis-2'>系统检测到您是邮箱用户，请先通过验证邮箱</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+        <form action="{$submit_url}" method="post">
+            <div class="mui-button-row">
+                    <button class="mui-btn mui-btn-primary mui-btn-block">马上验证</button>
+            </div>
+        </form>
+    </div>
+</block>

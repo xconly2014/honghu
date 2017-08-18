@@ -1,0 +1,30 @@
+<extend name="../Common/admin_base" />
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div class="news_strategy_container">
+                <form class="common_form container" action="{:U('Admin/Banner/banner_edit',array('id'=>$banner_info['id']))}" method="post">
+                    <p>修改首页轮播图</p>
+
+                     <li class="required">
+                        <label>标题</label>
+                        <input type="text" name="title" value="{$banner_info.title}">
+                    </li>
+                    <li class="required">
+                        <label>链接</label>
+                        <input type="text" name="href" value="{$banner_info.href}">
+                    </li>
+                    <li class="required">
+                        <label>优先级（数值大者靠前）</label>
+                        <input type="text" name="priority" value="{$banner_info.priority}">
+                    </li>
+                    <li>
+                        <button type="submit">修改</button>
+                        <button type="reset">取消</button>
+                    </li>
+                </form>
+            </div>
+        </div>
+    </div>
+</block>

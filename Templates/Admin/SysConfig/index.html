@@ -1,0 +1,53 @@
+<extend name="../Common/admin_base" />
+
+<block name="content">
+
+    <div class="content_container">
+        <div class="content">
+            
+            <div class="table_bar">
+				<a class="a_style_button" href="{:U('Admin/SysConfig/add')}">添加</a>
+				<div class="search_box_container">
+					<div class="search_box">
+						<form action="{:U('Admin/SysConfig/index')}" method="get">
+                            <input type="text" name="url" placeholder="输入您要查找的url" value="{$url}">
+                            
+							<button type="submit">搜索</button>
+						</form>
+					</div>
+				</div>
+			</div>
+
+            <div class="table_container">
+                <table class="data-table">
+                    <thead>
+                    <tr>
+                        <th>编号</th>
+                        <th>标题</th>
+                        <th>关键字</th>
+                        <th>描述</th>
+                        <th>链接</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <volist name="item_list" id="vo">
+                        <tr>
+                            <td>{$vo.id}</td>
+                            <td>{$vo.html_title}</td>
+                            <td>{$vo.html_keyword}</td>
+                            <td>{$vo.html_description}</td>
+                            <td>{$vo.url}</td>
+                            <td width="100">
+                                <a href="{:U('Admin/SysConfig/edit',array('itemId'=>$vo['id']))}">编辑</a>
+                                <a href="{:U('Admin/SysConfig/del',array('itemId'=>$vo['id']))}" onclick="return confirm('确定删除吗?');">删除</a>
+                            </td>
+                        </tr>
+                    </volist>
+                    </tbody>
+                </table>
+                <div class="page">{$page}</div>
+            </div>
+        </div>
+</block>

@@ -1,0 +1,30 @@
+/* line 1, ../sass/pc/content/_coins_center_content.scss */
+.coins_cz_finish {
+  background: url(../img/hb_finish_bg.png) 0px 50px no-repeat;
+  width: 549px;
+  height: 350px;
+  margin-left: 100px;
+  border-radius: 10px;
+  text-align: center;
+}
+/* line 8, ../sass/pc/content/_coins_center_content.scss */
+.coins_cz_finish div {
+  margin-top: 5px;
+  font-weight: bold;
+}
+/* line 12, ../sass/pc/content/_coins_center_content.scss */
+.coins_cz_finish .cz_over {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+/* line 16, ../sass/pc/content/_coins_center_content.scss */
+.coins_cz_finish b {
+  color: #F27E4C;
+}
+
+/* line 20, ../sass/pc/content/_coins_center_content.scss */
+.coins_finish_container {
+  background: url(../img/hu_finish.png) 120px 130px no-repeat;
+  padding-top: 120px;
+  padding-left: 130px;
+}

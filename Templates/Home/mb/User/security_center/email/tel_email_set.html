@@ -1,0 +1,72 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="header_bar">
+    <h1 class="mui-title">邮箱设置</h1>
+</block>
+
+<block name="extra_js">
+    <script type="text/javascript" src="__PUBLIC__/js/Plugin/jqueryForm/jQuery_Validation.js"></script> 
+    <script type="text/javascript" src="__PUBLIC__/js/common/security_common.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/mb/mb_security_center.js"></script>   
+    <script type="text/javascript" src="__PUBLIC__/js/global_checker.js"></script>
+    <script>
+        $().ready(function(){
+            $('#email').blur(function(){
+                var email = $('#email').val();
+                var email_error = $('#email-error').html();
+                if(email_error == '' || (email != '' && email_error == undefined)){
+                    $('#check_email_btn').removeAttr('disabled');
+                }else{
+                    $('#check_email_btn').attr('disabled','disabled');
+                }
+            });
+
+            $('#check_email_btn').click(function(){
+                $.post('__CONTROLLER__/ajax_send_code',{'ticket':$('#email').val(),'type':'email'},function(data){
+                        alert(data.status);
+                        if(data.status == 'true'){
+                            alert('发送成功');
+                                sleepSendBtn();
+
+                        }
+                    });
+            });
+        });
+        function sleepSendBtn(){
+           var time = 60;
+           var interval = setInterval(function(){
+               --time;
+               if(time >= 0){
+                    $('#check_email_btn').css('opacity','0.5').val('重发'+time).prop("disabled","disabled");
+               }
+               if(time < 0){
+                    $('#check_email_btn').css('opacity','1').val('获取邮箱验证码').removeAttr("disabled");
+                   clearInterval(interval);
+               }
+           },1000); 
+       };
+    </script>
+</block>
+
+<block name="extra_css">
+    <link rel="stylesheet" href="__PUBLIC__/css/mb_user_security.css" />
+</block>
+
+<block name="main_content">
+    <div class="main_container">
+        <form id="tel_email_set" action="{$submit_url}" method="post">
+            <div class="mobile_error"></div>
+            <input id="email" type="text" name="email" placeholder="请输入要绑定的邮箱" />
+
+            <div class="code">
+                <input id="email_vcode" type="text" class="check_vcode" name="email_vcode" placeholder="邮箱验证码" />
+                <input type="button" id="check_email_btn" value="获取邮箱验证码" disabled="disabled" />
+                <div class='clear'></div>
+            </div>
+
+            <div class="mui-button-row" style="margin-top:-10px;">
+                <button class="mui-btn mui-btn-primary mui-btn-block">提交</button>
+            </div>
+        </form>
+    </div>
+</block>

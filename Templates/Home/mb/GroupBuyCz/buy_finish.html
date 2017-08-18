@@ -1,0 +1,39 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="header_bar">
+    <h1 class="mui-title">付款成功</h1>
+</block>
+
+
+<block name="extra_css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/mb_group_buy.css">
+</block>
+
+<block name="main_content">
+    <div class="main_container">
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell success-header">
+                <img class="mui-media-object mui-pull-left" src="__PUBLIC__/img/finish.png">
+                <b>付款成功</b>
+                <p>感谢您参加一元购活动，您的订单号为 <b style="color:red;"> {$rowOrder.orderId}</b>，结果将会在参加人数满额后公布，中奖后会以短信方式通知您，祝您好运！</p>
+            </li>
+            <li class="mui-table-view-cell mui-collapse mui-active">
+                <a class="mui-navigate-right" href="#">订单详情</a>
+                <ul class="mui-table-view mui-table-view-chevron">
+                    <li class="mui-table-view-cell">
+                        <label>订单号：</label><span>{$rowOrder.orderId}</span>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        <label>游戏：</label><span>{$rowOrder.game}</span>
+                    </li>
+                    <li class="mui-table-view-cell">
+                       <label>面额：</label><span>{$rowOrder.option_text}</span>
+                    </li>
+                    <li class="mui-table-view-cell">
+                       <label>数量：</label><span>{$rowOrder.payment}</span>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</block>

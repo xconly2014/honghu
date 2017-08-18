@@ -1,0 +1,268 @@
+/* line 1, ../sass/pc/content/_account_content.scss */
+.account_content {
+  background-color: #fff;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 0;
+  border-top-right-radius: 5px;
+}
+
+/* line 8, ../sass/pc/content/_account_content.scss */
+.container_left {
+  margin: 15px 0 0 10px;
+  width: 688px;
+  float: left;
+}
+
+/* line 13, ../sass/pc/content/_account_content.scss */
+.container_right {
+  width: 273px;
+  float: right;
+}
+
+/* line 17, ../sass/pc/content/_account_content.scss */
+.left_top {
+  height: 310px;
+  margin-bottom: 20px;
+}
+
+/* line 21, ../sass/pc/content/_account_content.scss */
+.game_pic {
+  width: 152px;
+  height: 152px;
+  margin: 70px 64px 0 55px;
+  border-radius: 25px;
+}
+
+/* line 27, ../sass/pc/content/_account_content.scss */
+.account_info {
+  position: relative;
+  float: left;
+  width: 400px;
+  padding-top: 20px;
+}
+/* line 33, ../sass/pc/content/_account_content.scss */
+.account_info h4 {
+  color: #FF9936;
+  padding-right: 100px;
+  margin-bottom: 25px;
+  display: block;
+  text-align: center;
+}
+/* line 41, ../sass/pc/content/_account_content.scss */
+.account_info button {
+  margin: 30px 30px 0 0;
+  float: right;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  width: 112px;
+  height: 40px;
+  background: url(../img/button.png) no-repeat;
+  border: none;
+}
+/* line 53, ../sass/pc/content/_account_content.scss */
+.account_info p {
+  color: #000;
+  font-size: 14px;
+  height: 30px;
+  line-height: 30px;
+}
+/* line 58, ../sass/pc/content/_account_content.scss */
+.account_info p label {
+  display: inline-block;
+  width: 80px;
+  text-align: right;
+  color: #999;
+}
+/* line 64, ../sass/pc/content/_account_content.scss */
+.account_info p span {
+  color: #FF9936;
+  font-weight: bold;
+  font-size: 16px;
+}
+/* line 69, ../sass/pc/content/_account_content.scss */
+.account_info p img {
+  border: 1px solid #FF9936;
+  padding: 3px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+/* line 77, ../sass/pc/content/_account_content.scss */
+.service {
+  display: none;
+  position: absolute;
+  top: 243px;
+  margin-left: 10px;
+  width: 300px;
+  height: 28px;
+  line-height: 28px;
+  color: #666;
+  font-size: 14px;
+  background-color: #fff;
+  border: 1px solid #FF9936;
+}
+/* line 89, ../sass/pc/content/_account_content.scss */
+.service img {
+  margin: 0px 10px;
+  vertical-align: middle;
+}
+
+/* line 94, ../sass/pc/content/_account_content.scss */
+.left_bottom {
+  margin-bottom: 10px;
+  width: 670px;
+  border: 3px solid #FFA634;
+  border-bottom: 3px solid #FF7342;
+  border-radius: 12px;
+}
+
+/* line 103, ../sass/pc/content/_account_content.scss */
+.navli {
+  display: block;
+  height: 43px;
+}
+
+/* line 109, ../sass/pc/content/_account_content.scss */
+.nav_li li {
+  margin: -8px 15px 0px 15px;
+  cursor: pointer;
+  float: left;
+  display: block;
+  width: 136px;
+  height: 41px;
+  line-height: 41px;
+  text-align: center;
+  border-radius: 5px;
+  border-bottom: 2px solid #FF7342;
+  background-color: #FE8A4F;
+  color: #FFF;
+  font-weight: bold;
+}
+/* line 124, ../sass/pc/content/_account_content.scss */
+.nav_li .selected {
+  color: #000;
+}
+
+/* line 129, ../sass/pc/content/_account_content.scss */
+.details_content {
+  padding-top: 10px;
+  border-bottom: 3px solid #FFA634;
+  border-radius: 8px;
+  top: 38px;
+  width: 670px;
+  z-index: -1;
+  height: 289px;
+}
+/* line 137, ../sass/pc/content/_account_content.scss */
+.details_content div {
+  display: none;
+}
+/* line 139, ../sass/pc/content/_account_content.scss */
+.details_content div p {
+  font-size: 12px;
+  width: 100%;
+  height: 32px;
+  line-height: 32px;
+}
+/* line 144, ../sass/pc/content/_account_content.scss */
+.details_content div p label {
+  display: inline-block;
+  color: #999;
+  width: 70px;
+  text-align: right;
+}
+/* line 151, ../sass/pc/content/_account_content.scss */
+.details_content div.on {
+  display: block;
+}
+
+/* line 159, ../sass/pc/content/_account_content.scss */
+#slideboxContainer {
+  margin-left: 140px;
+}
+
+/* line 163, ../sass/pc/content/_account_content.scss */
+.account_trade_verify {
+  width: 700px;
+  margin: 30px auto 38px;
+  background-color: #ffffff;
+  padding: 0px 0px 8px 270px;
+  border-radius: 20px;
+  border: 2px solid #2294FE;
+}
+/* line 171, ../sass/pc/content/_account_content.scss */
+.account_trade_verify h3 {
+  padding-top: 15px;
+  padding-right: 300px;
+  margin: auto;
+  text-align: center;
+}
+/* line 178, ../sass/pc/content/_account_content.scss */
+.account_trade_verify ul {
+  margin: 30px 0;
+}
+/* line 181, ../sass/pc/content/_account_content.scss */
+.account_trade_verify ul li {
+  list-style: circle;
+  margin: 5px 0;
+  color: #a0a0a0;
+  font-size: 14px;
+}
+
+/* line 192, ../sass/pc/content/_account_content.scss */
+.seller_container {
+  padding: 30px 12px 12px 12px;
+  background-color: #FFCAA2;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+/* line 197, ../sass/pc/content/_account_content.scss */
+.seller_container li {
+  margin: -30px 0 10px 45px;
+  width: 160px;
+}
+
+/* line 202, ../sass/pc/content/_account_content.scss */
+.seller_info {
+  background-color: #fff;
+  border-radius: 5px;
+  padding-left: 10px;
+}
+/* line 206, ../sass/pc/content/_account_content.scss */
+.seller_info a {
+  text-decoration: none;
+  color: #000;
+  display: block;
+  font-size: 13px;
+  font-weight: normal;
+}
+/* line 212, ../sass/pc/content/_account_content.scss */
+.seller_info a:hover {
+  color: #FF972E;
+}
+/* line 216, ../sass/pc/content/_account_content.scss */
+.seller_info p {
+  height: 42px;
+  font-weight: bold;
+}
+
+/* line 222, ../sass/pc/content/_account_content.scss */
+.goods {
+  height: 86px;
+}
+/* line 224, ../sass/pc/content/_account_content.scss */
+.goods img {
+  float: left;
+  border: 1px solid #FF9E3D;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  margin-right: 8px;
+}
+/* line 232, ../sass/pc/content/_account_content.scss */
+.goods a {
+  padding-top: 10px;
+  color: #666;
+}

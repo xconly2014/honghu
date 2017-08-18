@@ -1,0 +1,83 @@
+<extend name="../Common/admin_base" />
+
+
+
+<block name="extra_js">
+	
+	<script type="text/javascript" src="__PUBLIC__/js/Plugin/kinFormUpload/jquery.kinFormUpload.1.1.source.js"></script>
+    <script src="__PUBLIC__/js/admin/game.js"></script>
+</block>
+
+<block name="content">
+
+    <div class="content_container">
+        <div class="content">
+            <div class="game_on_sale_container">
+
+                <form class="common_form container" id='gameAdd' enctype="multipart/form-data" action="{:U('Admin/Game/on_sale')}" method="post" onsubmit="return check()">
+                    <p>新游戏上架</p>
+                    <li class="required">
+                        <label>游戏名</label>
+                        <input type="text" name="game_name">
+                    </li>
+                    <li class="required">
+                        <label>拼音</label>
+                        <input type="text" name="game_pinyin">
+                    </li>
+                    <li class="required">
+                        <label>货币单位</label>
+                        <input type="text" name="game_currency">
+                    </li>
+                    <li class="required">
+                        <label>id卡说明</label>
+                        <input type="text" name="card_name">
+                    </li>
+                    <li class="required">
+                        <label>充值折扣</label>
+                        <input type="text" value="1.0" name="game_discount">
+                    </li>
+                    <li class="required">
+                        <label>优先级</label>
+                        <input type="text" value="0" name="game_priority">
+                    </li>
+                    <li class="required">
+                        <label>缩略图</label>
+                        <label id='uploadImg'>
+                        <input type="file" name="photo" id="uploadImages" />
+                        <input type="hidden" id="img"/>
+                        </label>
+                        <!-- <input type="file" name="photo" /> -->
+                    </li>
+
+                    <li class="required">
+                        <label>平台</label>
+                        <input type="checkbox" name="platform_ios"/>ios
+                        <input type="checkbox" name="platform_android"/>android
+                    </li>
+                    <li class="required">
+                        <label>腾讯游戏</label>
+                        <input type="radio" value="1" name="tx_game">是
+                        <input type="radio" value="0" name="tx_game">否
+                    </li>
+                    <li class="required">
+                        <label>需要区服</label>
+                        <input type="radio" value="1" name="need_server">是
+                        <input type="radio" value="0" name="need_server">否
+                    </li>
+                    <li class="input_field">
+                        <label>IOS游戏下载URL：</label>
+                        <input type="text" value="" name="url_ios">
+                    </li>
+                    <li class="input_field">
+                        <label>Android游戏下载URL：</label>
+                        <input type="text" value="" name="url_android">
+                    </li>
+                    <li>
+                        <button type="submit">添加</button>
+                        <button type="reset">取消</button>
+                    </li>
+                </form>
+            </div>
+        </div>
+    </div>
+</block>

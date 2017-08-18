@@ -1,0 +1,79 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="header_bar">
+    <h1 class="mui-title">{$search_info.name}</h1>
+</block>
+
+<block name="main_content">
+    <div class="main_container">
+        <notempty name="search_info['isShow']">
+            <ul class="mui-table-view mui-table-view-chevron">
+                <notempty name="search_info['ios_platform']">
+                    <li class="mui-table-view-cell mui-collapse"><a class="mui-navigate-right" href="#">充值入口</a>
+                        <ul class="mui-table-view mui-table-view-chevron">
+                            <if condition="$search_info.ios_platform eq 1">
+                                <li class="mui-table-view-cell"><a class="mui-navigate-right" href="{:U('CZIOS/chongzhi_info?gameId='.$search_info['id'])}">苹果充值</a>
+                                </li>
+                            </if>
+                            
+                        </ul>
+                    </li>
+                </notempty>
+
+                <notempty name="search_info['package']">
+                    <li class="mui-table-view-cell mui-collapse"><a class="mui-navigate-right" href="#">代练套餐</a>
+                        <ul class="mui-table-view mui-table-view-chevron">
+                            <foreach name="search_info['package']" item="row">
+                                <li class="mui-table-view-cell">
+                                    <a class="mui-navigate-right" href="{:U('Package/buy?id='.$row['id'])}">{$row.name}</a>
+                                </li>
+                            </foreach>                   
+                        </ul>
+                    </li>
+                </notempty>
+                
+                <notempty name="search_info['scIos']">
+                    <li class="mui-table-view-cell mui-collapse"><a class="mui-navigate-right" href="#">苹果首充号</a>
+                        <ul class="mui-table-view mui-table-view-chevron">
+                            <foreach name="search_info['scIos']" item="row">
+                                <li class="mui-table-view-cell">
+                                    <a class="mui-navigate-right" href="{:U('Home/IOSSc/addGameAccount?sc_id='.$row['id'])}">{$row.details}</a>
+                                </li>
+                            </foreach>                    
+                        </ul>
+                    </li>
+                </notempty>
+
+                <!--<notempty name="search_info['scAndroid']">
+                    <li class="mui-table-view-cell mui-collapse"><a class="mui-navigate-right" href="#">安卓首充号</a>
+                        <ul class="mui-table-view mui-table-view-chevron">
+                            <foreach name="search_info['scAndroid']" item="row">
+                                <li class="mui-table-view-cell">
+                                    <a class="mui-navigate-right" href="{:U('Home/AndroidSc/addGameAccount?sc_id='.$row['id'])}">{$row.details}</a>
+                                </li>
+                            </foreach>                    
+                        </ul>
+                    </li>
+                </notempty>-->
+                
+                <notempty name="search_info['czPackage']">
+                    <li class="mui-table-view-cell mui-collapse"><a class="mui-navigate-right" href="#">充值套餐</a>
+                        <ul class="mui-table-view mui-table-view-chevron">
+                            <foreach name="search_info['czPackage']" item="row">
+                                <li class="mui-table-view-cell">
+                                    <a class="mui-navigate-right" href="{:U('IOSCZPackage/buy?id='.$row['id'])}">{$row.option_text}</a>
+                                </li>
+                            </foreach>                    
+                        </ul>
+                    </li>
+                </notempty>
+               
+            </ul>
+        <else />
+            <div style="width:30%;text-align:center;margin-left:35%;margin-top:50px;">
+                <img src="__PUBLIC__/img/mb_search_cry.png" alt="搜素不到" />
+            </div>
+            <p style="width:80%;margin:0 auto;text-align:center;margin-top:10px;">抱歉，搜索到 “0” 结果！</p>
+        </notempty>
+    </div>
+</block>

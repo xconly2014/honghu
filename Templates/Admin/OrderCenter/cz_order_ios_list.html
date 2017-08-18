@@ -1,0 +1,222 @@
+﻿<extend name="../Common/admin_base" />
+
+<block name="extra_css">
+    <link rel="stylesheet" href="__PUBLIC__/css/order_tag.css" />
+    <style>
+        td{
+            font-size:13px;
+        }
+    </style>
+</block>
+
+<block name="extra_js">
+    <script>
+        function righthit(obj){
+              var oid = obj.attr('alt');
+              var open = layer.open({
+                type: 1,
+                title: '<b>为订单添加备注标签</b>',
+                shadeClose: true,
+                shade: 0.5,
+                area: ['400px', '300px'],
+                content: '<div id="add_tag"><foreach name="tag_list" item="row"><div class="tag_list" alt="{$row.id}" style="background:{$row.bg}">{$row.name}</div></foreach></div>'
+              }); 
+
+              $('.tag_list').click(function(){
+                var tagId = $(this).attr('alt');
+                var url = 'add_tag_link';
+                $.post(url,{order_id:oid,tag_id:tagId},function(data){
+                    if(data['state'] == 'true'){
+                        window.location.href="order_list";
+                    }
+                });
+              });
+         
+        }
+
+
+        function selCardName(id){
+            var oid = id;
+            var open = layer.open({
+                type: 1,
+                title: '<b>为订单添加ID卡</b>',
+                shadeClose: true,
+                shade: 0.5,
+                area: ['400px','320px'],
+                content: '<select name="card_name" class="card_name_select" style="width: 200px;margin: 30px 0px 30px 100px;"><option>请选择ID卡</option><foreach name="card_names" item="card"><option value="{$card.id}">{$card.name}</option></foreach></select>'
+            });
+
+            $('.card_name_select').change(function() {
+                var cardId = $(this).val();
+                var url = "{:U('Admin/CZOrderIOS/ajax_edit_card')}";
+                var postData = {card_id:cardId,id:id};
+                var aNode  = '#'+id + 'ID';
+
+                $.post(url, postData,function(msg){
+                    if(msg.status){
+                        $(aNode).html(msg.data);
+                    }else{
+                        alert("添加失败");
+                        $(aNode).css('display','block');
+                    }
+                    layer.closeAll();
+                },'json');
+            });
+
+        }
+
+        $().ready(function(){
+        	$('.state').click(function(){
+        		$(this).css('display','none');
+        		$(this).next().css('display','block');
+        	});
+
+        	
+        	$('.state_sel').change(function(){
+                var selectNode = $(this);
+                var state = $(this).val();
+                var oid = $(this).attr('oid');
+                var url = "{:U('Admin/CZOrderIOS/ajax_edit_state')}";
+                var postData = {state:state,id:oid};
+
+                $.post(url, postData,function(msg){
+
+                    if(msg.status){
+                        selectNode.prev().css('display','block').html(msg.data);
+                        selectNode.parent().parent().css('background-color', msg.color);
+                        if(msg.state == 3){
+                            selCardName(oid);
+                        }//if
+                    }//if
+                    else{
+                        alert(msg.msg);
+                        selectNode.prev().css('display','block');
+                    }
+                    selectNode.parent().next().html(msg.username);
+                    selectNode.css('display','none');
+                },'json');
+        		
+        	});
+
+            $('span').each(function(index){
+                var spanNode = $(this);
+                spanNode.click(function(){
+                    var oid = $(spanNode).attr('title');
+                    var url = "{:U('Admin/CZOrderIOS/ajax_star')}";
+                    $.post(url,{oid:oid},function(msg){
+                        if(msg.state){
+                            if(msg.data == 1){
+                                spanNode.addClass('star_span');
+                            }
+                            if(msg.data == 0){
+                                spanNode.removeClass('star_span');
+                            }
+                        }
+                    },'json');
+
+                });
+            });
+            $('.tag_content').hover(function(){
+                $(this).children('b').css('visibility','visible');
+            },function(){
+                $(this).children('b').css('visibility','hidden');
+            });
+
+            $('tr').dblclick(function(){
+                righthit($(this));
+            });
+
+            $('.del_tag').click(function(){
+                var tagLinkId = $(this).attr('alt');
+                var url = 'del_tag_link';
+                $.post(url,{tag_link_id:tagLinkId},function(data){
+                    if(data['state'] == 'true'){
+                        window.location.href="order_list";
+                    }
+                });
+          });
+        });
+    </script>
+</block>
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div class="cz_order_ios">
+                <div class="table_bar">
+                    <a class="a_style_button" href="{:U('Admin/OrderTag/tag_list')}">添加标签</a>
+                    <a class="a_style_button" href="{:U('Admin/CZOrderIOS/card_list')}">添加ID卡</a>
+                    <a class="a_style_button" href="{:U('Admin/CZOrderIOS/forbbiden_account_list')}">添加账号</a>
+                    <div class="search_box_container">
+                        <div class="search_box">
+                            <form action="{:U('Admin/CZOrderIOS/order_list')}" method="post">
+                                <input type="text" placeholder="请输入订单id或者交易号" name="orderId">
+                                <button type="submit">搜索</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table_container">
+                    <table class="data-table">
+                        <thead>
+                        <tr>
+                            <th>订单号</th>
+                            <th>游戏/充值面额</th>
+                            <th>付款时间/方式</th>
+                            <th width="110px">状态</th>
+                            <th>处理人</th>
+                            <th width="110px">ID</th>
+                            <th>操作</th>
+                            <th>备注标签</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <foreach name="order_list" item="vo">
+                            <tr style="background-color: {$vo['color']}" alt="{$vo.oid}">
+                                <td>{$vo.oid}</td>
+                                <td>{$vo.game}/{$vo.option}</td>
+                                <td>{$vo.pay_time}&nbsp;&nbsp;{$vo.pay_way}</td>
+                                <td>
+                                <a href="javascript:void(0);" class="state">{$vo.state}</a>
+                                <select name="state" oid={$vo.oid} class="state_sel" style="display:none">
+                                    <foreach name="order_state_text" key="state_val" item="state_text">
+                                        <option value="{$state_val}">{$state_text}</option>
+                                    </foreach>
+                                </select>
+                                </td>
+                                <td>{$vo.re_user}</td>
+                                <td>
+                                    <a href="javascript:void(0);" class="card_name" id ="{$vo.oid}ID">{$vo.card_name}</a>
+                                    <select name="card_name" oid="{$vo.oid}" class="card_name_sel" style="display:none">
+                                        <option>请选择ID</option>
+                                        <foreach name="card_names" item="card">
+                                            <option value="{$card.id}">{$card.name}</option>
+                                        </foreach>
+                                    </select>
+                                </td>
+                                <td>
+                                    <a href="{:U('Admin/CZOrderIOS/order_view', array('id'=>$vo['oid']))}">详情</a>｜
+                                    <a href="{$vo.coins_href}">虎币</a>
+                                    <if condition="$vo.can_cancle eq 1">
+                                        <a href="{$vo.back_order_href}">退款</a>
+                                    </if>
+                                </td>
+                                <td style="text-align:left;">
+                                    <foreach name="vo['tag_list']" item="row">
+                                        <span class="tag_content" style="display:inline-block;background:{$row.bg}">{$row.name}<b class="del_tag" alt="{$row.id}">x</b></span>
+                                    </foreach>
+                                </td>
+                                <td class="star_td"><span class="{$vo.star_class}" title="{$vo.oid}"></span></td>
+                            </tr>
+                        </foreach>
+                        </tbody>
+                    </table>
+                    <div class="page">{$show}</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</block>

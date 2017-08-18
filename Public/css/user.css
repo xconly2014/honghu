@@ -1,0 +1,641 @@
+/* line 1, ../sass/pc/content/_user_content.scss */
+.menu_bar_content {
+  width: 786px;
+  float: left;
+  margin-left: 10px;
+  position: relative;
+  min-height: 585px;
+  min-height: 644px;
+  background-color: #fff;
+  border-bottom: 4px solid #E4E9EF;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+/* line 14, ../sass/pc/content/_user_content.scss */
+.singer {
+  height: 45px;
+  line-height: 45px;
+  padding-right: 45px;
+  margin-top: 40px;
+}
+
+/* line 21, ../sass/pc/content/_user_content.scss */
+.user_info_basic {
+  padding-bottom: 20px;
+  height: 500px;
+  padding-top: 65px;
+}
+
+/* line 27, ../sass/pc/content/_user_content.scss */
+.info_content {
+  width: 780px;
+}
+
+/* line 32, ../sass/pc/content/_user_content.scss */
+.content {
+  margin: 10px auto 0px;
+  width: 600px;
+}
+/* line 36, ../sass/pc/content/_user_content.scss */
+.content button {
+  float: right;
+  width: 46px;
+  height: 32px;
+  margin: 8px 2px 0 0;
+  background-color: #FF9936;
+  border: 1px solid #FF9936;
+  border-radius: 5px;
+  color: #000;
+}
+/* line 47, ../sass/pc/content/_user_content.scss */
+.content h2 {
+  display: inline-block;
+  margin: 15px 0px 25px 0px;
+}
+/* line 50, ../sass/pc/content/_user_content.scss */
+.content h2 span.vip_level {
+  padding-left: 30px;
+  display: inline-block;
+  width: 75px;
+  margin-right: 0;
+  background: url(../img/big_vip.png) 3px -2px no-repeat;
+  color: #fff;
+}
+/* line 60, ../sass/pc/content/_user_content.scss */
+.content label, .content span {
+  font-size: 14px;
+  color: #888;
+  margin-right: 14px;
+}
+/* line 66, ../sass/pc/content/_user_content.scss */
+.content a {
+  font-size: 14px;
+  text-decoration: none;
+  color: #000;
+}
+/* line 70, ../sass/pc/content/_user_content.scss */
+.content a:hover {
+  color: #f00;
+}
+
+/* line 77, ../sass/pc/content/_user_content.scss */
+.picture {
+  width: 162px;
+  margin: 0 40px 0 8px;
+  float: left;
+}
+
+/* line 83, ../sass/pc/content/_user_content.scss */
+.kinFormUpload {
+  margin-top: 6px;
+}
+
+/* line 87, ../sass/pc/content/_user_content.scss */
+.head_img {
+  margin-left: 15px;
+  border: 2px solid #bbbbbb;
+  width: 135px;
+  height: 135px;
+}
+
+/* line 93, ../sass/pc/content/_user_content.scss */
+.img_form {
+  margin-top: 35px;
+}
+
+/* line 98, ../sass/pc/content/_user_content.scss */
+.vip {
+  margin-top: 15px;
+  margin-bottom: 30px;
+  padding: 10px 0px 10px 10px;
+  border-top: 1px dashed #aaa;
+  border-bottom: 1px dashed #aaa;
+}
+/* line 104, ../sass/pc/content/_user_content.scss */
+.vip p {
+  color: red;
+  font-weight: bold;
+}
+/* line 109, ../sass/pc/content/_user_content.scss */
+.vip .vip_logo {
+  margin-top: 10px;
+}
+/* line 111, ../sass/pc/content/_user_content.scss */
+.vip .vip_logo .vip_level {
+  padding-left: 30px;
+  display: inline-block;
+  width: 70px;
+  font-size: 13px;
+  background: url(../img/small_vip.png) 3px -2px no-repeat;
+  color: #fff;
+}
+/* line 119, ../sass/pc/content/_user_content.scss */
+.vip .vip_logo .vip_level a {
+  font-size: 12px;
+  color: #333;
+}
+/* line 127, ../sass/pc/content/_user_content.scss */
+.vip .vip_show span {
+  font-size: 12px;
+}
+/* line 131, ../sass/pc/content/_user_content.scss */
+.vip .vip_show .vip_select {
+  display: inline-block;
+  width: 83px;
+  margin-left: 18px;
+}
+/* line 137, ../sass/pc/content/_user_content.scss */
+.vip .vip_progress {
+  width: 590px;
+  height: 6px;
+  background: #FFA7A6;
+  border-radius: 3px;
+}
+/* line 142, ../sass/pc/content/_user_content.scss */
+.vip .vip_progress .part_progress {
+  background: #E81325;
+  width: 0px;
+  height: 6px;
+  border-radius: 3px 0px 0px 3px;
+  transition: 2s all ease;
+  -ms-transition: 2s all ease;
+  -webkit-transition: 2s all ease;
+  -moz-transition: 2s all ease;
+}
+/* line 153, ../sass/pc/content/_user_content.scss */
+.vip .vip_credits {
+  margin-left: -20px;
+  display: inline-block;
+  line-height: 12px;
+  position: relative;
+  text-align: center;
+  width: 40px;
+  height: 15px;
+  background: #ccc;
+  border-radius: 3px;
+  margin-top: 15px;
+  transition: 2s all ease;
+  -ms-transition: 2s all ease;
+  -webkit-transition: 2s all ease;
+  -moz-transition: 2s all ease;
+}
+/* line 169, ../sass/pc/content/_user_content.scss */
+.vip .vip_credits .cz_sum {
+  font-size: 12px;
+}
+/* line 172, ../sass/pc/content/_user_content.scss */
+.vip .vip_credits .vip_angle {
+  position: absolute;
+  left: 12.5px;
+  top: -14px;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  border: 7px solid;
+  border-color: #fff #fff #ccc #fff;
+}
+/* line 183, ../sass/pc/content/_user_content.scss */
+.vip .vip_go {
+  margin-left: -5px;
+  font-size: 12px;
+}
+
+/* line 189, ../sass/pc/content/_user_content.scss */
+.phone_bind {
+  display: inline-block;
+  margin-top: 16px;
+}
+/* line 193, ../sass/pc/content/_user_content.scss */
+.phone_bind a {
+  font-size: 13px;
+}
+/* line 197, ../sass/pc/content/_user_content.scss */
+.phone_bind img {
+  position: relative;
+  top: 2px;
+  height: 16px;
+  width: 16px;
+}
+
+/* line 206, ../sass/pc/content/_user_content.scss */
+.other_info li {
+  list-style: none;
+  margin-top: 15px;
+}
+/* line 210, ../sass/pc/content/_user_content.scss */
+.other_info li label {
+  font-weight: bold;
+  color: #000;
+  margin-right: 2px;
+  padding-left: 20px;
+}
+/* line 216, ../sass/pc/content/_user_content.scss */
+.other_info li label.hubi_pic {
+  background: url(../img/hubi.png) no-repeat;
+}
+/* line 220, ../sass/pc/content/_user_content.scss */
+.other_info li label.credits_pic {
+  background: url(../img/dollar.png) no-repeat;
+}
+/* line 225, ../sass/pc/content/_user_content.scss */
+.other_info li span {
+  font-size: 16px;
+  color: #FF9936;
+}
+/* line 230, ../sass/pc/content/_user_content.scss */
+.other_info li a {
+  float: right;
+}
+
+/* line 237, ../sass/pc/content/_user_content.scss */
+.user_set_title {
+  font-size: 14px;
+  line-height: 25px;
+  padding: 0 10px;
+  overflow: hidden;
+  background: url(../img/user_center_bg.png) repeat-x;
+  border-bottom: 1px solid #dfdfdf;
+  font-weight: bold;
+}
+
+/* line 247, ../sass/pc/content/_user_content.scss */
+.message_reset {
+  margin: 20px;
+}
+
+/* line 251, ../sass/pc/content/_user_content.scss */
+.set_list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid #d0e6f3;
+  overflow: hidden;
+}
+/* line 258, ../sass/pc/content/_user_content.scss */
+.set_list li {
+  float: left;
+  margin-right: 10px;
+  background: white;
+  border: 1px solid #d0e6f3;
+  border-bottom: 0;
+  width: 100px;
+  line-height: 30px;
+  text-align: center;
+  font-size: 12px;
+}
+/* line 269, ../sass/pc/content/_user_content.scss */
+.set_list li a {
+  color: #2d66cf;
+  text-decoration: none;
+}
+/* line 272, ../sass/pc/content/_user_content.scss */
+.set_list li a:hover {
+  text-decoration: underline;
+}
+/* line 276, ../sass/pc/content/_user_content.scss */
+.set_list li.selected {
+  background: #e9effd;
+}
+/* line 278, ../sass/pc/content/_user_content.scss */
+.set_list li.selected a {
+  color: #000;
+}
+
+/* line 285, ../sass/pc/content/_user_content.scss */
+.update_password, .bind_telephone {
+  margin-left: 40px;
+  margin-top: 30px;
+}
+/* line 289, ../sass/pc/content/_user_content.scss */
+.update_password p, .bind_telephone p {
+  font-size: 12px;
+}
+/* line 293, ../sass/pc/content/_user_content.scss */
+.update_password input, .bind_telephone input {
+  width: 196px;
+  height: 14px;
+  padding: 5px;
+  margin-bottom: 6px;
+  border: 1px solid #ccc;
+}
+/* line 301, ../sass/pc/content/_user_content.scss */
+.update_password button, .bind_telephone button {
+  width: 115px;
+  line-height: 28px;
+  font-size: 14px;
+  background: #FF9933;
+  padding: 0 5px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+/* line 313, ../sass/pc/content/_user_content.scss */
+.update_password label, .bind_telephone label {
+  text-align: right;
+  width: 120px;
+  float: left;
+  line-height: 26px;
+}
+
+/* line 321, ../sass/pc/content/_user_content.scss */
+.pwd_question, .pwd_question_set {
+  margin-left: 80px;
+  margin-top: 30px;
+}
+
+/* line 326, ../sass/pc/content/_user_content.scss */
+.change_progress {
+  padding: 20px 0px;
+  margin: 0px 10px;
+  border-bottom: 1px dashed #ededed;
+  text-align: center;
+  font-size: 12px;
+}
+/* line 333, ../sass/pc/content/_user_content.scss */
+.change_progress b {
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  border: 1px solid #d2d2d2;
+  display: inline-block;
+  background: #d2d2d2;
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+}
+/* line 344, ../sass/pc/content/_user_content.scss */
+.change_progress b.selected {
+  background: #FF9933;
+  border: 1px solid #FF9933;
+}
+/* line 350, ../sass/pc/content/_user_content.scss */
+.change_progress span {
+  color: #aaaaaa;
+  height: 20px;
+  line-height: 20px;
+  padding: 0px 10px 0px 5px;
+}
+/* line 356, ../sass/pc/content/_user_content.scss */
+.change_progress span.selected {
+  color: #FF9933;
+}
+
+/* line 363, ../sass/pc/content/_user_content.scss */
+.pwd_question_set_finish span, .tel_email_set_finish span, .mobile_bind_finish span {
+  background: url("../img/finish.png") no-repeat 0px 0px;
+  display: inline-block;
+  padding-left: 50px;
+  width: 320px;
+  height: 44px;
+  color: green;
+  font-size: 20px;
+  line-height: 44px;
+  margin-left: 240px;
+  margin-top: 20px;
+}
+/* line 376, ../sass/pc/content/_user_content.scss */
+.pwd_question_set_finish p, .tel_email_set_finish p, .mobile_bind_finish p {
+  margin-top: 20px;
+  margin-left: 240px;
+  letter-spacing: 1px;
+}
+/* line 381, ../sass/pc/content/_user_content.scss */
+.pwd_question_set_finish p a, .tel_email_set_finish p a, .mobile_bind_finish p a {
+  text-decoration: none;
+  color: #ffc074;
+}
+
+/* line 388, ../sass/pc/content/_user_content.scss */
+.pwd_question_modify, .email_modify, .email_auth, .mobile_bind_index, .mobile_bind_modify {
+  padding: 30px;
+  border: solid #efe0b2 1px;
+  background: #fffce9;
+}
+/* line 393, ../sass/pc/content/_user_content.scss */
+.pwd_question_modify img, .email_modify img, .email_auth img, .mobile_bind_index img, .mobile_bind_modify img {
+  vertical-align: middle;
+}
+/* line 397, ../sass/pc/content/_user_content.scss */
+.pwd_question_modify span, .email_modify span, .email_auth span, .mobile_bind_index span, .mobile_bind_modify span {
+  display: inline-block;
+  width: 320px;
+  height: 40px;
+  font-size: 18px;
+}
+/* line 404, ../sass/pc/content/_user_content.scss */
+.pwd_question_modify p, .email_modify p, .email_auth p, .mobile_bind_index p, .mobile_bind_modify p {
+  font-size: 12px;
+  color: #9a9a9a;
+}
+
+/* line 410, ../sass/pc/content/_user_content.scss */
+.tel_email, .mobile_bind {
+  margin-left: 80px;
+  margin-top: 30px;
+}
+
+/* line 415, ../sass/pc/content/_user_content.scss */
+.forget_pwd_container {
+  width: 750px;
+  height: 400px;
+}
+
+/* line 421, ../sass/pc/content/_user_content.scss */
+.user_center_list table {
+  background-color: #fff;
+  width: 785px;
+  font-size: 14px;
+  border-right: 1px solid #fff;
+  border-bottom: 1px solid #bbb;
+}
+/* line 427, ../sass/pc/content/_user_content.scss */
+.user_center_list table .first {
+  background-color: #FCC601;
+  color: #000;
+}
+/* line 432, ../sass/pc/content/_user_content.scss */
+.user_center_list table tr th {
+  color: #fff;
+  background-color: #FE8A4F;
+  font-size: 17px;
+  height: 42px;
+  font-weight: normal;
+}
+/* line 439, ../sass/pc/content/_user_content.scss */
+.user_center_list table tr th, .user_center_list table tr td {
+  padding: 10px;
+  text-align: center;
+  border-left: 1px solid #fff;
+  border-top: 1px solid #fff;
+}
+/* line 444, ../sass/pc/content/_user_content.scss */
+.user_center_list table tr th a, .user_center_list table tr td a {
+  text-decoration: none;
+  color: orange;
+}
+/* line 450, ../sass/pc/content/_user_content.scss */
+.user_center_list table tr td:nth-child(2n+1) {
+  background: #ccc;
+  background: rgba(230, 230, 230, 0.5);
+}
+/* line 456, ../sass/pc/content/_user_content.scss */
+.user_center_list table tr:nth-child(2n+2) {
+  background: #EBEBEB;
+}
+
+/* line 463, ../sass/pc/content/_user_content.scss */
+.page_container {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+}
+
+/* line 469, ../sass/pc/content/_user_content.scss */
+.forget_pwd_title {
+  width: 690px;
+  height: 38px;
+  border-bottom: 1px solid #ededed;
+  margin-bottom: 35px;
+  padding: 20px 0 0 60px;
+}
+/* line 476, ../sass/pc/content/_user_content.scss */
+.forget_pwd_title a {
+  width: 118px;
+  height: 37px;
+  background: #ededed;
+  display: block;
+  float: left;
+  border: 1px solid #ededed;
+  margin-right: 10px;
+  line-height: 37px;
+  text-align: center;
+  border-radius: 5px 5px 0 0;
+  position: relative;
+  text-decoration: none;
+  color: #000;
+}
+/* line 491, ../sass/pc/content/_user_content.scss */
+.forget_pwd_title a.active {
+  background: #3c8fd7;
+  color: #fff;
+}
+
+/* line 500, ../sass/pc/content/_user_content.scss */
+.forget_pad_content div {
+  display: none;
+}
+/* line 503, ../sass/pc/content/_user_content.scss */
+.forget_pad_content .show {
+  display: block;
+}
+
+/* line 508, ../sass/pc/content/_user_content.scss */
+.abut {
+  border: none;
+  border-radius: 3px;
+  background-color: #FF9933;
+  display: inline-block;
+  line-height: 30px;
+  color: #000000;
+  text-align: center;
+  width: 65px;
+  height: 30px;
+  text-decoration: none;
+  opacity: 0.5;
+}
+/* line 520, ../sass/pc/content/_user_content.scss */
+.abut:hover {
+  color: #ffffff;
+}
+
+/* line 525, ../sass/pc/content/_user_content.scss */
+span.infoerror {
+  font-size: 12px;
+  background: url("../img/wrong.png") no-repeat 0px 0px;
+  display: inline-block;
+  padding-left: 20px;
+  height: 20px;
+  color: red;
+}
+
+/* line 534, ../sass/pc/content/_user_content.scss */
+span.infosuccess {
+  font-size: 12px;
+  background: url("../img/right.png") no-repeat 0px 0px;
+  display: inline-block;
+  padding-left: 20px;
+  height: 20px;
+  color: green;
+}
+
+/* line 542, ../sass/pc/content/_user_content.scss */
+.code_show {
+  width: 200px;
+  padding: 10px;
+  border-radius: 10px;
+  background: #ededed;
+  position: absolute;
+  left: 10px;
+  display: none;
+  z-index: 10;
+}
+/* line 551, ../sass/pc/content/_user_content.scss */
+.code_show li {
+  padding: 3px;
+}
+
+/* line 556, ../sass/pc/content/_user_content.scss */
+.forget_pwd_finish {
+  text-align: center;
+  padding-top: 100px;
+}
+
+/* line 560, ../sass/pc/content/_user_content.scss */
+.timing {
+  padding-left: 48px;
+}
+
+/* line 563, ../sass/pc/content/_user_content.scss */
+.hat {
+  position: absolute;
+  margin-top: 6px;
+}
+
+/*.coins_total{
+  width: 165px;
+  position: absolute;
+  left:600px;
+  top:30px;
+  text-align: center;
+  b{
+    color: #ff0000;
+  }
+}*/
+/* line 579, ../sass/pc/content/_user_content.scss */
+.login_time {
+  width: 264px;
+}
+
+/* line 583, ../sass/pc/content/_user_content.scss */
+.pc_singer_l_cont {
+  width: 72px;
+  height: 26px;
+  position: absolute;
+  left: 572px;
+  top: 135px;
+}
+/* line 589, ../sass/pc/content/_user_content.scss */
+.pc_singer_l_cont span {
+  margin-right: 0px;
+  padding-left: 20px;
+  background: url("../img/account_center/sing_per.gif") no-repeat 0px 1px;
+}
+
+/* line 595, ../sass/pc/content/_user_content.scss */
+.singer_r_img {
+  position: absolute;
+  left: 520px;
+  top: 248px;
+}

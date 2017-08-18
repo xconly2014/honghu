@@ -1,0 +1,77 @@
+<extend name ="../Common/_mb_layout" />
+
+<block name="header_bar">
+    <h1 class="mui-title">一元购列表</h1>
+</block>
+
+<block name="extra_css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/mb_group_buy.css">
+</block>
+
+<block name="main_content">
+    <div class="main_container">
+        <div id="segmentedControl" class="mui-segmented-control">
+            <a class="mui-control-item mui-active" href="#item1mobile">
+                进行中
+            </a>
+
+            <a class="mui-control-item" href="#item2mobile">
+                已完成
+            </a>
+        </div>
+
+        <div class="mui-content-padded">
+            <div id="item1mobile" class="mui-control-content mui-active">
+                <ul class="mui-table-view">
+                    <foreach name="group_buy.going.data" item="row">
+                        <li class="mui-table-view-cell mui-media">
+                            <a href="{:U('Home/GroupBuyCz/buy',array('id'=>$row['id']))}">
+                                <img class="mui-media-object mui-pull-left" src="/game_pic/{$row.pic}"/>
+                                <div class="mui-media-body">
+                                    {$row.option_text}<b class="import_price">￥1.00元</b>
+                                    <p class='mui-ellipsis'>
+                                    <div class="progress_all">
+                                        <div style="width:{$row.precent}" class="progress"></div>
+                                    </div>
+                                    <div class="people">
+                                        <span class="people_buy">{$row.buy_number}<br><i>已参与</i></span>
+                                        <span class="people_all">{$row.price}<br><i>总需人次</i></span>
+                                        <span class="people_left">{$row.left_number}<br><i>剩余</i></span>
+                                    </div>
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+                    </foreach>
+                </ul>
+                <div class="page">{$group_buy.going.show}</div>
+            </div>
+
+            <div id="item2mobile" class="mui-control-content">
+                <ul class="mui-table-view">
+                    <foreach name="group_buy.end.data" item="row">
+                        <li class="mui-table-view-cell mui-media">
+                            <a href="{:U('Home/GroupBuyCz/buy',array('id'=>$row['id']))}">
+                                <img class="mui-media-object mui-pull-left" src="/game_pic/{$row.pic}"/>
+                                <div class="mui-media-body">
+                                    {$row.option_text}<b class="import_price">￥1.00元</b>
+                                    <p class='mui-ellipsis'>
+                                    <div class="progress_all">
+                                        <div style="width:{$row.precent}" class="progress"></div>
+                                    </div>
+                                    <div class="people">
+                                        <span class="people_buy">{$row.buy_number}<br><i>已参与</i></span>
+                                        <span class="people_all">{$row.price}<br><i>总需人次</i></span>
+                                        <span class="people_left">{$row.left_number}<br><i>剩余</i></span>
+                                    </div>
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+                    </foreach>
+                </ul>
+                <div class="page">{$group_buy.end.show}</div>
+            </div>
+        </div>
+    </div>
+</block>

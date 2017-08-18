@@ -1,0 +1,33 @@
+<extend name="../Common/account_index" />
+
+<block name="content">
+    <div class="menu_bar_content">
+        <div class="user_center_list">
+            <table cellspacing="0px">
+                <tr>
+                    <th class="first">标题</th>
+                    <th>游戏</th>
+                    <th>平台</th>
+                    <th>状态</th>
+                    <th>我的角色</th>
+                    <th>操作</th>
+                    <th>备注</th>
+                </tr>
+                <foreach name="package_list" item="list">
+                    <tr>
+                        <td>{$list.title}</td>
+                        <td>{$list.game_name}</td>
+                        <td>{$list.platform}</td>
+                        <td>{$list.state}</td>
+                        <td>{$list.role}</td>
+                        <td>
+                            <a class="link_text" href="{$list.href}">{$list.href_text}</a>
+                        </td>
+                        <td>{$list.comment}</td>
+                    </tr>
+                </foreach>
+            </table>
+        </div>
+        <div class="clear"></div>
+    </div>
+</block>

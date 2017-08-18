@@ -1,0 +1,52 @@
+<extend name="../Common/admin_base" />
+
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div class="news_list_container">
+                <div class="table_bar">
+                    <a class="a_style_button" href="{:U('Admin/GiftCode/add_code')}">添加礼包码</a>
+                    <div class="search_box_container">
+                        <div class="search_box">
+                            <form action="{:U('Admin/GiftCode/code_list')}" method="get">
+                                <input type="text" placeholder="请输入游戏名" name="name">
+                                <button type="submit">搜索</button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table_container">
+                    <table class="data-table">
+                        <thead>
+                        <tr>
+                            <th>编号</th>
+                            <th>游戏</th>
+                            <th>礼包码</th>
+                            <th>有效性</th>
+                            <!--<th>操作</th>-->
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <volist name="gift_list" id="vo">
+                            <tr>
+                                <td>{$vo.id}</td>
+                                <td>{$vo.name}</td>
+                                <td>{$vo.code}</td>
+                                <td>{$vo.type}</td>
+                                <!--<td>
+                                    <a href="{:U('Admin/GiftCode/del_code', array('id'=>$vo['id']))}" onclick="return confirm('确定删除吗?');">删除</a>
+                                </td>-->
+                            </tr>
+                        </volist>
+                        </tbody>
+                    </table>
+                    <div class="page">{$show}</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</block>

@@ -1,0 +1,115 @@
+.register_box  {
+  width:795px;
+  height:570px;
+  position: relative;
+}
+
+.title  {
+  margin-bottom: 10px;
+  strong  {
+    font-size:30px;
+    font-weight: normal;
+  }
+
+  span  {
+    color:#999;
+    margin-left:10px;
+    a  {
+      text-decoration:none;
+      color:#007DDB;
+      font-weight: bold;
+    }
+  }
+}
+
+.reg_title{
+  width: 690px;
+  height: 38px;
+  border-bottom:1px solid #ededed;
+  margin-bottom: 35px;
+  padding: 20px 0 0 60px;
+
+  a{
+    width: 118px;
+    height: 37px;
+    background: #ededed;
+    display: block;
+    float: left;
+    border: 1px solid #ededed;
+    margin-right: 10px;
+    line-height: 37px;
+    text-align: center;
+    border-radius: 5px 5px 0 0;
+    position: relative;
+    text-decoration: none;
+    color:#000;
+
+    &.active{
+      background:#3c8fd7;
+      color:#fff;
+    }
+  }
+}
+
+.login_form_container  {
+  width:360px;
+  height:auto;
+  margin-top:50px;
+  float:left;
+  border:2px solid #fafafa;
+  border-radius: 5px;
+  padding:20px;
+}
+
+.title_bar  {
+  width:80%;
+  height:50px;
+}
+
+.register_pic  {
+  position: absolute;
+  z-index: 99;
+  top:60px;
+  left: 550px;
+  width:400px;
+  height: 330px;
+}
+
+.alert_info  {
+  padding:10px;
+
+  label {
+    color:#ff9933;
+  }
+}
+
+.register_finish{
+  background:url(../img/airship.png) 225px 50px no-repeat;
+  min-height:650px;
+
+  .reg_finish_content{
+    position: relative;
+    left:295px;
+    top:135px;
+    h2{
+       letter-spacing: 3px;
+    }
+
+    p{
+      margin-top:15px;
+      margin-left:25px;
+      font-size:17px;
+      a{
+        margin-left:85px;
+        text-decoration: none;
+        color:#003371;
+      }
+    }
+   
+  }
+
+  img{
+    margin-top:265px;
+    margin-left:380px;
+  }
+}

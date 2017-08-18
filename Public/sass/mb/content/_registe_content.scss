@@ -1,0 +1,110 @@
+.register-container{
+  margin: 0 8px;
+  margin-top: 10px;
+  span{
+    color: #007AFF;
+  }
+
+  input{
+    margin-bottom: 8px;
+  }
+
+  a{
+   color: #007AFF;
+   &:hover{
+    color: #ff0000;
+   }
+  }
+
+}
+
+.code{
+  width: 100%;
+
+  .check_vcode{
+   float: left;
+   width: 50%;
+  }
+
+  #vcode{
+   float: left;
+   width: 49%;
+   margin-left: 1%;
+   height: 38px;
+   border:1px solid #bbbbbb;
+   border-radius: 3px;
+  }
+}
+
+.agreed{
+  clear: both;
+  margin-bottom: 10px;
+
+  label{
+    display: block;
+    width: 90%;
+  }
+
+  input{
+    margin: 3px 10px 0px 5px;
+  }
+}
+
+.reg_tel-container{
+  margin: 0 8px;
+  margin-top: 10px;
+
+  a{
+   color: #007AFF;
+   &:hover{
+    color: #ff0000;
+   }
+  }  
+}
+
+.clear{
+  clear: both;
+}
+
+#check_vcode_btn{
+  width: 49%;
+  height: 40px;
+  color: #ffffff;
+  background-color: #007AFF;
+}
+
+span.error {
+    background: url("../img/wrong.png") no-repeat 0px 0px;
+    display: inline-block;
+    padding-left:20px;
+    width: 100%;
+    height: 20px;
+    color: red;
+} 
+
+
+.finish{
+  width: 100%;
+  text-align: center;
+}
+
+.finish_title{
+  padding-top: 15px;
+  margin: 0 auto;
+  width: 40%;
+
+  p  {
+    color: #598218;
+  }
+}
+
+.qrcode {
+  p {
+    font-size: 13px;
+    font-weight: bold;
+
+    a  {
+      font-size:16px;
+    }
+  }
+}

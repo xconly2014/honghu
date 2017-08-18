@@ -1,0 +1,31 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="header_bar">
+    <h1 class="mui-title">积分记录</h1>
+</block>
+
+<block name="extra_css">
+    <link rel="stylesheet" href="__PUBLIC__/css/mb_user.css" />
+</block>
+
+<block name="main_content">
+    <div class="main_container">
+        <table cellspacing="0px">
+            <tr class="list_head">
+                <th>时间</th>
+                <th>操作</th>
+                <th>得分</th>
+                <th>收入+/支出-</th>
+            </tr>
+            <foreach name="credit_record_list" item="row">
+                <tr>
+                    <td>{$row.created_date}</td>
+                    <td>{$row.type}</td>
+                    <td>{$row.score}</td>
+                    <td>{$row.operation}</td>
+                </tr>
+            </foreach>            
+        </table>
+        <div class="page">{$pager}</div>
+    </div>
+</block>

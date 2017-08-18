@@ -1,0 +1,46 @@
+<extend name="../Common/admin_base" />
+
+<block name="extra_css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/Chosen/chosen.min.css">
+</block>
+
+<block name="extra_js">
+    <script src="__PUBLIC__/js/admin/game.js"></script>
+    <script src="__PUBLIC__/js/Plugin/Chosen/chosen.jquery.min.js"></script>
+    <script type="text/javascript">
+    $().ready(function(){
+    	$("#selected").chosen({no_results_text: "游戏列表中不存在"});
+    });
+  </script>
+</block>
+
+<block name="content">
+<div class="content_container">
+	<div class="content">
+		<div class="game_strategy_container">
+			<div class="form_container">
+				<form action="{:U('Admin/GiftCode/add_code')}" method="post" class="common_form container" id="GiftCodeAdd">
+					<p>添加礼包码</p>
+					<li class="required">
+						<label>游戏名字：</label>
+						<select name="game_id"  data-placeholder="请选择游戏" class="chosen-select"  id="selected" tabindex="2" style="width:212px;">
+							<option value=""></option>
+							<foreach name="game_list" item="gameRes">
+							<option value="{$gameRes.id}">{$gameRes.name}</option>
+							</foreach>
+						</select>
+					</li>
+                    <li class="required ">
+                        <label>礼包码：</label>
+                        <textarea rows="4" cols="45" name="code" placeholder="请填写礼包码 多个礼包码请用空格‘’隔开 例如：6666 8888 5555" style="resize:none;"></textarea>
+                    </li>
+					<li>
+                        <button type="submit">添加</button>
+                        <button type="reset">取消</button>
+                    </li>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+</block>

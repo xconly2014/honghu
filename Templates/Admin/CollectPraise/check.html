@@ -1,0 +1,68 @@
+<extend name="../Common/admin_base" />
+
+
+<block name="extra_css">
+    <style>
+        /*.photo_check{
+             width:500px;
+             height:300px;
+         }*/
+    </style>
+</block>
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div class="game_strategy_container">
+                <form class="common_form container"  method="post" action="{$url}">
+                    <p>审核分享集赞信息</p>
+                    <li class="static_field">
+                        <label class="form_key">用户名：</label>
+                        <label class="form_value">{$info.username}</label>
+                    </li>
+                    <li class="static_field">
+                        <label class="form_key">提交时间：</label>
+                        <label class="form_value">{$info.time}</label>
+                    </li>
+                    <li class="static_field">
+                        <label class="form_key">联系方式：</label>
+                        <label class="form_value">{$info.contact}</label>
+                    </li>
+                    <li class="static_field">
+                        <label class="form_key">兑换商品：</label>
+                        <label class="form_value">{$info.type}</label>
+                    </li>
+                    <notempty name="info.game_name">
+                        <li class="static_field">
+                            <label class="form_key">游戏名字：</label>
+                            <label class="form_value">{$info.game_name}</label>
+                        </li>
+                    </notempty>
+
+                    <li class="static_field">
+                        <label class="form_key">审核状态：</label>
+                        <label class="form_value">{$info.active}</label>
+                    </li>
+                    <li class="static_field">
+                        <label class="form_key">分享截图：</label>
+                        <label class="form_value">
+                            <img class="photo_check" src="__PUBLIC__/upload/collect_praise_pic/{$info.img}" />
+                        </label>
+                    </li>
+                    
+                    <li class="static_field">
+                        <label class="form_key">审核状态：</label>
+
+                        <label class="state_no"><input type="radio" name="active" value="{$state_no}">未通过审核</label>
+
+                        <label class="state_ok"><input type="radio" name="active" value="{$state_ok}">通过审核</label>
+                    </li>
+                    <li class="static_field">
+                        <button type="submit">确定</button>
+                        <button type="reset">取消</button>
+                    </li>
+                </form>
+            </div>
+        </div>
+    </div>
+</block>

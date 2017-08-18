@@ -1,0 +1,28 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="header_bar">
+    <h1 class="mui-title">代练套餐</h1>
+</block>
+
+<block name="main_content">
+    <div class="main_container">
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell mui-hidden">cared
+                <div id="M_Toggle" class="mui-switch mui-active">
+                    <div class="mui-switch-handle"></div>
+                </div>
+            </li>
+            <foreach name="package" item="row">
+                <li class="mui-table-view-cell mui-media">
+                    <a href="{:U('Home/Package/buy',array('id'=>$row['id']))}">
+                        <b class="mui-media-object mui-pull-right">{$row.price}</b>
+                        <div class="mui-media-body">
+                            {$row.title}
+                            <p class='mui-ellipsis'>{$row.game_name}</p>
+                        </div>
+                    </a>
+                </li>
+            </foreach>
+        </ul>
+    </div>
+</block>

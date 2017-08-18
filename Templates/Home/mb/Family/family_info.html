@@ -1,0 +1,105 @@
+﻿<extend name="../Common/_mb_layout" />
+
+<block name="extra_css">
+    <link rel="stylesheet" href="__PUBLIC__/css/mb_family.css" />
+    <style>
+        .mui-slider .mui-slider-group .mui-slider-item img{
+            width: 60px;
+        }
+        .mui-slider-indicator {
+            position: relative;
+        }
+    </style>
+</block>
+
+<block name="extra_js">
+    <script src="__PUBLIC__/js/family.js"></script>
+    <script src="__PUBLIC__/js/Plugin/layer/layer.js"></script>
+    <script type="text/javascript">
+        is_login = "{$is_login}";
+        $().ready(function(){
+            /*$('.mui-slider-indicator .mui-indicator:first').addClass('mui-active');*/
+            $('.mui-slider-indicator .mui-indicator').eq('{$page}').addClass('mui-active');
+
+            $('#add_member').click(function(){
+                if(is_login){
+                    alert_member_in({$current_family.id});      
+                }else{
+                    layer.alert('请您先登录再进行操作'); 
+                    layer.title('轰轰虎提示');
+                }
+                
+            });
+        });
+    </script>
+
+</block>
+
+<block name="header_bar">
+    <h1 class="mui-title">{$row.name}堂会</h1>
+</block>
+
+
+
+<block name="main_content">
+    <div class="main_container">
+        <div class="family_info_container">
+            <div class="info_top">
+                <div class="pic">
+                    <img src="__PUBLIC__/img/family/logo/{$current_family.logo}" alt="{$current_family.name}" width="100%"/>
+                </div>
+                <div class="family_details">
+                    <p>堂会名称：<b>{$current_family.name}</b></p>
+                    <p>堂主尊称：<span>{$current_family.nick_name}</span></p>
+                    <p>堂员人数：{$current_family.member_count}</p>
+                    <p>最多人数：{$current_family.max_count}</p>
+                    <p>总贡献值：{$current_family.sum}</p>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <if condition="$add_show eq true">
+                <div class="div_btn">
+                    <a href="javascript:void(0)" id="add_member">加入堂会</a>
+                </div>
+            </if>
+
+            <if condition="$quit_show == true">
+                <div class="div_btn">
+                    <a href="javascript:void(0)" onclick="logout_family({$current_family.id});">退出堂会</a>
+                </div>
+            </if>
+
+            <div class="members_info">
+                <div class="members_list_title">堂会成员</div>
+            </div>
+            <div class="members_container">
+                <div id="slider" class="mui-slider">
+                    <div class="mui-slider-group">
+                        <foreach name="members" item="list" key="k">
+                            <div class="mui-slider-item <if condition='$k eq $page'>mui-active</if>">
+                                <ul class="mui-table-view">
+                                    <foreach name="list" item="row" key="i">
+                                        <li class="mui-table-view-cell mui-collapse">
+                                            <a class="mui-navigate-right" href="#">{$row.nick_name}<span>贡献值：{$row.contribt_sum}</span></a>
+                                            <div class="mui-collapse-content members_row">
+                                                <img src="__PUBLIC__/img/thumbheader.png" width="60" height="60" alt="用户头像" />
+                                                <p>入堂时间：{$row.created_date}</p>
+                                                <p>第{$row.ranking}名&nbsp;&nbsp;等级：{$row.vip}</p>
+                                            </div>
+                                        </li>
+                                    </foreach>
+                                </ul>
+                            </div>
+                        </foreach>
+                    </div>
+                    <div class="mui-slider-indicator">
+                        <foreach name="members" item="list">
+                            <div class="mui-indicator"></div>
+                        </foreach>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</block>

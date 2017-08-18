@@ -1,0 +1,74 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="header_bar">
+    <h1 class="mui-title">账号交易详情</h1>
+</block>
+
+<block name="extra_js">
+    <script>
+        var gallery = mui('.mui-slider');
+        gallery.slider({
+            interval:5000//自动轮播周期，若为0则不自动播放，默认为0；
+        });
+        
+        $().ready(function(){
+        	$('.mui-slider-indicator .mui-indicator:first').addClass('mui-active');
+        });
+    </script>
+</block>
+
+<block name="extra_css">
+    <style>
+        .mui-table-view{
+        	margin-top:15px;
+        }
+        .mui-table-view div{
+	        height:40px;
+        	line-height:40px;
+        }
+    </style>
+</block>
+
+
+<block name="main_content">
+    <div class="main_container">
+        <div id="slider" class="mui-slider">
+        <div class="mui-slider-group mui-slider-loop">
+            <foreach name="info.img" item="list">
+                <div class="mui-slider-item mui-slider-item-duplicate">
+                    <a href="#"><img src="__PUBLIC__/{$list}" height="200"></a>
+                </div>
+            </foreach>
+        </div>
+        <div class="mui-slider-indicator">
+            <foreach name="info.img" item="list">
+                <div class="mui-indicator"></div>
+            </foreach>
+        </div>
+    </div>
+    
+        <form action="{$url}" method="post">
+            <ul class="mui-table-view">
+                <li class="mui-table-view-cell mui-media">
+                <div>商品标题：<strong>{$info.title}</strong></div>
+                <div>账号价格：<strong class="orange">{$info.price}</strong>元
+                    <if condition="$can_buy eq 1">
+                        <button style="float:right;" class="mui-btn-primary">购买</button>
+                    </if>
+                </div>
+                <p class="clear"></p><h4>商品详情</h4></li>
+                <li class="mui-table-view-cell">操作系统：{$info.system}</li>
+                <notempty name="info.operator">
+                    <li class="mui-table-view-cell">客户端口：{$info.operator}</li>
+                </notempty>
+                <li class="mui-table-view-cell">游戏名称：{$info.game_name}</li>
+                <li class="mui-table-view-cell">游戏区服：{$info.qufu}</li>
+                <li class="mui-table-view-cell">游戏等级：{$info.level}</li>
+                <li class="mui-table-view-cell">游戏角色：{$info.juese}</li>
+                <li class="mui-table-view-cell">游戏职业：{$info.zhiye}</li>
+                <li class="mui-table-view-cell">交易详情：{$info.details}</li>
+                <li class="mui-table-view-cell">备注：{$info.remark}</li>
+            </ul>
+        </form>
+    </div>
+</block>

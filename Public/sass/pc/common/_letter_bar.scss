@@ -1,0 +1,60 @@
+.letter_bar  {
+  border-bottom: 1px dashed #ededed;
+  display:inline-block;
+  margin-left:10px;
+  
+  li  {
+    list-style: none;
+    width:28px;
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    float:left;
+    margin-right:10px;
+
+    a  {
+      margin:5px 0px;
+      display: inline-block;
+      line-height: 28px;
+      width: 100%;
+      text-decoration: none;
+      color:#2e82c5;
+      font-size:18px;
+    }
+  }
+}
+
+.letter_bar_content  {
+  height: 345px;
+  margin:0 auto;
+  background:#ffffff;
+  border-radius:10px;
+
+  overflow: auto;
+}
+
+.letter_more_game  {
+  line-height:50px;
+  font-size:16px;  
+  font-weight: bold;  
+  float:right;  
+  color:#ffffff;
+  margin-right:40px;
+  text-decoration: none;
+  &:hover{
+    color:#2e82c5;
+  }
+}
+
+.tab_on  {
+  background-color:#ededed;
+  border-radius: 10px;
+}
+
+.active  {
+  display:block;
+}
+
+.sleep {
+  display: none;
+}

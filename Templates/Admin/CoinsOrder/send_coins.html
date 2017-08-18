@@ -1,0 +1,91 @@
+<extend name="../Common/admin_base" />
+
+<block name="extra_css">
+
+</block>
+<block name="extra_js">
+    <script type="text/javascript">
+    $().ready(function(){
+        $("#send").validate({
+            rules: {
+                name:{
+                    required:true,
+                    remote:{
+                        type:"post",
+                        url : "ajax_check_user",
+                        data:{
+                            name:function(){
+                                return $("#name").val();
+                            }
+                        },
+                        dataType : "json"
+                    }
+                },
+                num:{
+                    required:true,
+                    digits:true
+                },
+                type:'required'
+            },
+            messages:{
+                name:{
+                    required:'请填写用户的手机或邮箱',
+                    remote:'该账号不存在'
+                },
+                num:{
+                    required:'请填写赠送积分数量',
+                    digits:'数量需为整数'
+                },
+                type:'请选择类型'
+
+            },
+            errorPlacement: function(error, element) {
+                error.appendTo(element.parent());
+                error.siblings("span").remove();
+            },
+            errorElement:"span",
+            success: function(span) {
+                span.attr("class","success");
+            },
+            onfocusout: function(element) {
+                $(element).valid();
+            }
+        });
+    });
+  </script>
+</block>
+
+<block name="content">
+<div class="content_container">
+	<div class="content">
+		<div class="send_coins">
+			<div class="form_container">
+				<form action="{:U('Admin/CoinsOrder/send_coins')}" method="post" class="common_form container" id="send">
+					<p>赠送虎币 </p>
+					<li class="required">
+						<label>用户：</label>
+						<input type="text" name="name" placeholder="请输入用户的手机或邮箱" id="name" />
+					</li>
+					<li class="required">
+						<label>数量：</label>
+						<input type="text" name="num" placeholder="请输入要赠送虎币的数量" />
+					</li>
+					<li class="required">
+						<label>类型：</label>
+                        <select name="type" style="width:212px;">
+                            <option value="">-----请选择赠送类型-----</option>
+                            <option value="1">官网赠送</option>
+                            <option value="11">银承派赠送</option>
+                        </select>
+					</li>
+					<li>
+                        <button type="submit">添加</button>
+                        <button type="reset">取消</button>
+                    </li>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+</block>
+

@@ -1,0 +1,26 @@
+*{font-family: "Microsoft Yahei" !important;}
+
+*  {
+  margin:0;
+  padding:0;
+}
+
+* li {
+  list-style: none;
+}
+
+html body  {
+   background:-moz-linear-gradient(top,#ffffff,#f7d195);
+   background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#ffffff), to(#f7d195));
+  filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#ffffff', endColorstr='#f7d195'); /*IE6 & IE7*/
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#ffffff', endColorstr='#f7d195')"; /* IE8 */
+}
+
+.vip_level{
+    padding-left:10px;
+    display: inline-block;
+    width: 50px;
+    font-size: 13px;
+    background: url(../img/small_vip.png) 0px 6px no-repeat;
+    color: #fff;
+}

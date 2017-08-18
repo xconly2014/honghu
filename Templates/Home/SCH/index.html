@@ -1,0 +1,98 @@
+<extend name="../Common/home_base" />
+
+<block name="custom_css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/shouchonghao.css">
+</block>
+
+<block name="extra_js">
+    <script src="__PUBLIC__/js/Plugin/layer/layer.js"></script>
+    <script src="__PUBLIC__/js/common/sch_common.js"></script>
+    <script type="text/javascript">
+        is_login = "{$is_login}";
+    </script>
+</block>
+
+<block name="content">
+    <include file="../Common/alert_login" />
+    <div class="row_container sch_container">
+        <div class="container_top">
+            <img src="__PUBLIC__/img/sc_gift_code.jpg" class='banner' alt="首充号banner"/>
+            <div class="sc_intro_text">
+                <li>
+                    <p>什么是首充号</p>
+                    <label>首充号是指您开通一个账号后，首次完成充值的账号。首充号里面的游戏角色、国家、性别、阵营等都由玩家自己制定！</label>
+                </li>
+                <li>
+                    <p>首充号的好处</p>
+                    <label>轰轰虎提供的首充号安全快捷、价格便宜，充值优惠！</label>
+                </li>
+            </div>
+        </div>
+        <div class='clear'></div>
+        <div class="sc_desc">
+                <li>
+                <img src="__PUBLIC__/img/chongzhi.png" alt="首充"/>
+                <div class="sc_text">
+                    <p>劲爆首充号</p>
+                    <label>全网触冰价　劲爆到底</label>
+                </div>
+            </li>
+            <li>
+                <img src="__PUBLIC__/img/discount.png" alt="折扣"/>
+                <div class="sc_text">
+                    <p>充值享巨惠</p>
+                    <label>款款精品　超值巨惠</label>
+                </div>
+            </li>
+            <li>
+                <img src="__PUBLIC__//img/gifts.png" alt="礼包"/>
+                <div class="sc_text">
+                    <p>免费送礼包</p>
+                    <label>边玩边领游戏内充值礼包</label>
+                </div>
+            </li>
+        </div>
+        <!--<div class="platform_nav">
+            <ul>
+                <li class='selected_li'>苹果首冲号</li>
+                <li>安卓首冲号</li>
+            </ul>
+            <div class="clear"></div>
+        </div>-->
+        <div class="sc_tabs_content">
+	        <div class="sc_list">
+		            <ul>
+		                <foreach name="iosScGameList" item="iosList">       
+		                    <li>
+		                        <a href="{:U('Home/SCH/account_ios',array('gameId'=>$iosList['game_id']))}">
+		                            <img class="img-circle" src="/game_pic/{$iosList.thumbnail_path}" alt="{$iosList.name}" width="92" height="92;" />
+		                        </a>
+                                <p>{$iosList.name}</p>
+                                <a href="{:U('Home/SCH/account_ios',array('gameId'=>$iosList['game_id']))}" class="a_btn">首充号</a>
+                                <p class="p_link" style="height: 28px">
+                                    <a href="{:U('Home/Strategy/search_list',array('gameId'=>$iosList['game_id']))}">攻略</a>
+                                    |
+                                    <a href='javascript:void(0);' onclick="getGift('{$iosList.game_id}')">礼包</a>
+                                    |
+                                    <a target="_blank" href="{$iosList.ios_url}">下载</a>
+                                </p>
+		                    </li>
+		                </foreach>
+		            </ul>
+                </div>
+    
+                <!--<div>
+		            <ul>        
+		                <foreach name="androidScGameList" item="androidList">       
+		                    <li>
+		                        <a href="{:U('Home/SCH/account_android',array('gameId'=>$androidList['game_id']))}">
+		                            <img class="img-circle" src="/game_pic/{$androidList.thumbnail_path}" alt="{$androidList.name}" width="100px" height="100px;" />
+		                            <p>{$androidList.name}</p>
+		                        </a>
+		                    </li>
+		                </foreach>
+		            </ul>
+                </div>-->
+         </div>
+    </div>
+</block>

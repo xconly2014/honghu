@@ -1,0 +1,47 @@
+﻿<extend name="../Common/_mb_layout" />
+
+<block name="header_bar">
+    <h1 class="mui-title">填写玩家信息</h1>
+</block>
+
+<block name="extra_js">
+    <script type="text/javascript" src="__PUBLIC__/js/Plugin/jqueryForm/jQuery_Validation.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/global_checker.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/common/requirement_common.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/mb/mb_requirement.js"></script>
+</block>
+
+
+<block name="main_content">
+    <div class="main_container">
+            
+        <ul class="mui-table-view">
+                <notEmpty name="un_paid_id">
+                    <span>&nbsp;&nbsp;&nbsp;该商品您有未付款的订单</span>>>><a class="orange" href="{:U('Home/RequirementOrder/pay_security',array('orderId'=>$un_paid_id))}">点击付款</a>
+                </notEmpty>
+            <li class="mui-table-view-cell">标题：{$data.title}</li>
+            <li class="mui-table-view-cell">价格：<span class="orange">{$data.money}</span>元</li>
+            <li class="mui-table-view-cell">保证金：<span class="orange">{$data.security_money}</span>元</li>
+            <li class="mui-table-view-cell">时间：<span class="orange">{$data.days}</span>天</li>
+            <li class="mui-table-view-cell">类型：代练需求</li>
+            <li class="mui-media">
+            <form action="{$url}" method="post" id="mb_verify_requirement">
+                <div class="mobile_error"></div>
+                <div style="margin:15px 0 0 15px;">
+                    <input type="text" name="contact" placeholder="请输入您的手机号码"  />
+                </div>
+                <div class="mui-input-row mui-checkbox" style="margin-left:15px;">
+                    同意&nbsp;<a style="display:inline-block;line-height:40px;font-size:12px;" href="{:U('Home/Help/index',array('id'=>4))}" target="_blank">”轰轰虎用户服务协议“</a>
+                    <input name="read" type="checkbox">
+                </div>
+            
+                <div class="mui-button-row">
+                <input type="hidden" name="unpaid_order_id" value="{$un_paid_id}"/>
+                    <button class="mui-btn mui-btn-primary mui-btn-block">确认</button>
+                </div>
+            </ul>
+            </form>
+            </li>
+        </ul>
+    </div>
+</block>

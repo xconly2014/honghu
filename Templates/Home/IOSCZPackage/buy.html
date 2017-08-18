@@ -1,0 +1,119 @@
+﻿<extend name="../Common/home_base" />
+
+<block name="custom_css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/cz_package.css">
+
+</block>
+
+<block name="extra_js">
+    <script type="text/javascript">
+        var minus_count = {$data.miniNum};
+        var maxus_count = {$data.result};
+        function add(thisObj){
+            var curNum = parseInt($(thisObj).next().val());
+            if(curNum < maxus_count ){
+                $(thisObj).next().val(curNum+1);
+            }
+        }
+        function minus(thisObj){
+            var curNum = parseInt($(thisObj).prev().val());
+            if(curNum > minus_count){
+                $(thisObj).prev().val(curNum-1);
+            }
+        }
+        $().ready(function(){
+            $('#num').focusout(function(){
+                var number = parseInt($("#num").val());
+                if(number == 0 || number > maxus_count){
+                    $("#num").val(minus_count);
+                }
+            });
+        });
+
+    </script>
+
+</block>
+
+<block name="content">
+    <div class="row_container">
+        <div class="crumbs_nav">
+            <div class="crumbs_nav_item">
+                <a href="{:U('/')}">首页</a>
+                <i>&gt;</i>
+            </div>
+            <div class="crumbs_nav_item">
+                <a href="{:U('Home/GroupBuy/cz_package_all')}">充值套餐</a>
+                <i>&gt;</i>
+            </div>
+            <div class="crumbs_nav_item">
+                <a>套餐详情</a>
+                <i></i>
+            </div>
+        </div>
+        <div class="cz_package_info">            
+            <div class="cz_package_details">
+                <div  class="left">
+                    <div class="left_content">
+                        <img width="175px" height="175px" src="/game_pic/{$data.pic}" alt="{$data.game}">
+                        <div class="progress">
+                            <div class="progress_bar">
+                                <div class="num" style="width:{$progress}%;"></div>
+                            </div>
+                            <span>{$data.buyNum}/{$data.sum}</span>购买完成率：<span>{$progress}%</span>
+                        </div>
+                        <h5>【什么是轰轰虎手游充值团购】</h5>
+                        <p>
+                            轰轰虎定期提供一定数量游戏专区团购供用户购买，使玩家得到更多的实惠，团购的商品价格更为优惠，为最优价格的一种购物方式。根据薄利多销的原理，轰轰虎可以给出低于原价的团购折扣和单独购买得不到的优质服务。
+                        </p>
+                    </div>                   
+                </div>
+                
+                <div class="dashed_line"></div>
+                <div class='cz_package'>
+                    <form action="{$submit_url}" method="post">
+                        <li class="static_field">
+                            <label class="form_key">游戏名称：</label>
+                            <span class="form_value">{$data.game}</span>
+                        </li>
+                        <li class="static_field">
+                            <label class="form_key">总&nbsp;&nbsp;数&nbsp;&nbsp;量：</label>
+                            <span class="form_value">{$data.sum}</span>
+                        </li>
+                        <li class="static_field">
+                            <label class="form_key">面&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;额：</label>
+                            <span class="form_value">{$data.option}</span>
+                        </li>
+                        <li class="static_field">
+                            <label class="form_key">原价(/笔)：</label>
+                            <span class="form_value">{$data.real_price}元</span>
+                        </li>
+                        <li class="static_field">
+                            <label class="form_key">售价(/笔)：</label>
+                            <span class="form_value">{$data.price}元</span>
+                        </li>
+
+                        <if condition="$data.active eq 1">
+                            <li class="static_field">
+                                <label class="form_key">剩&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;下：</label>
+                                <span class="form_value">{$data.result}</span>
+                            </li>
+                            <br />
+	                        <li class="static_field">
+                            <label class="form_key inline_div">购买数量：</label>
+	                            <div id="counter">
+                                <a href="javascript:void(0)" onclick="add(this)" id="add">+</a>
+                                <input type="text" value="{$data.miniNum}" name="number" id="num" onkeyup="value = value.replace(/\D/g,'')" />
+                                <a href="javascript:void(0)" onclick="minus(this)" id="reduce">-</a>
+	                            </div>
+                            <p class="clear"></p>
+	                        </li>
+	                        <li class="static_field">
+	                           <button type="submit" style="margin-left:100px;margin-top:20px;">购买</button>
+	                        </li>
+                         </if>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>

@@ -1,0 +1,103 @@
+<extend name="../Common/admin_base" />
+
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div>
+                <div class="common_form">
+                    <p>代练需求订单详情(玩家)</p>
+                    <div class="left_info">
+                        <h4>需求信息</h4>
+	                    <li class="static_field">
+	                        <label class="form_key">标题：</label>
+	                        <label class="form_value">{$row.title}</label>
+	                    </li>
+	                    <li class="static_field">
+	                        <label class="form_key">游戏：</label>
+	                        <label class="form_value">{$row.game}</label>
+	                    </li>
+	                    <li class="static_field">
+	                        <label class="form_key">平台：</label>
+	                        <label class="form_value">{$row.platform}</label>
+	                    </li>
+	                    <notempty name="row.operator">
+	                        <li class="static_field">
+	                            <label class="form_key">客户端：</label>
+	                            <label class="form_value">{$row.operator}</label>
+	                        </li>
+	                    </notempty>
+	                    <li class="static_field">
+	                        <label class="form_key">价钱：</label>
+	                        <label class="form_value">{$row.price}</label>
+	                    </li>
+	                    <li class="static_field">
+	                        <label class="form_key">保证金：</label>
+	                        <label class="form_value">{$row.security}</label>
+	                    </li>
+	                    <li class="static_field">
+	                        <label class="form_key">承诺完成时间：</label>
+	                        <label class="form_value">{$row.time}</label>
+	                    </li>
+	                    <li class="static_field">
+	                        <label class="form_key">状态：</label>
+	                        <label class="form_value">{$row.state}</label>
+	                    </li>  
+	                    <li class="static_field">
+	                        <label class="form_key">备注：</label>
+	                        <label class="form_value">{$row.remarks}</label>
+	                    </li>               
+	                    <li class="static_field">
+	                        <label class="form_key">是否提供充值：</label>
+	                        <label class="form_value">{$row.provided}</label>
+	                    </li>
+	                </div>
+	                <div class="right_info">
+	                    <h4>账号信息</h4>  
+	                    <li class="static_field">
+	                        <label class="form_key">账号：</label>
+	                        <label class="form_value">{$row.account}</label>
+	                    </li>
+	                    <li class="static_field">
+	                        <label class="form_key">密码：</label>
+	                        <label class="form_value">{$row.password}</label>
+	                    </li>
+	                    <li class="static_field">
+	                        <label class="form_key">区服：</label>
+	                        <label class="form_value">{$row.qufu}</label>
+	                    </li>
+	                    <li class="static_field">
+	                        <label class="form_key">角色：</label>
+	                        <label class="form_value">{$row.role}</label>
+	                    </li>
+	                    <li class="static_field">
+	                        <label class="form_key">当前状态：</label>
+	                        <label class="form_value">{$row.role_details}</label>
+	                    </li> 
+	                    <li class="static_field">
+	                        <label class="form_key">期望状态：</label>
+	                        <label class="form_value">{$row.result}</label>
+	                    </li> 
+	                    <li class="static_field">
+	                        <label class="form_key">玩家联系：</label>
+	                        <label class="form_value">{$row.contact_way}</label>
+	                    </li>
+	                    <li class="static_field">
+	                        <label class="form_key">支付时间：</label>
+	                        <label class="form_value">{$row.pay_time}</label>
+	                    </li>
+	                    <li class="static_field">
+	                        <label class="form_key">支付方式：</label>
+	                        <label class="form_value">{$row.pay_way}</label>
+	                    </li>
+	                </div>        
+                    <li class="static_field">
+                        <label class="form_key"></label>
+                        <label class="form_key"></label>
+                        <button onClick="javascript :history.back(-1);">返回</button>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>

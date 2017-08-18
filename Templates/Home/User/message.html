@@ -1,0 +1,25 @@
+<extend name="../Common/account_index" />
+
+<block name="content">
+    <div class="menu_bar_content">
+        <div class="user_center_list">
+            <table cellspacing="0px">
+                <tr>
+                    <th width="140">时间</th>
+                    <th>信息内容</th>
+                </tr>
+                <foreach name="message_list" item="row">
+                    <tr>
+                        <td>{$row.created_date}</td>
+                        <td style="text-align:left;text-indent:2em;">{$row.text}</td>
+                    </tr>
+                </foreach>
+            </table>
+        </div>
+
+        <div class="page_container">
+            <div class="page">{$show}</div>
+        </div>
+
+    </div>
+</block>

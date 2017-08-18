@@ -1,0 +1,144 @@
+<extend name="../Common/home_base" />
+
+<block name="custom_css">
+    <link rel="stylesheet" href="__PUBLIC__/css/jquery.slideBox.css" />
+    <link rel="stylesheet" href="__PUBLIC__/css/family.css" />
+</block>
+
+<block name="extra_js">
+    <script src="__PUBLIC__/js/Plugin/slideBox/jquery.slideBox.min.js"></script>
+    <script>
+    $().ready(function(){
+        var scrtime;
+        $('.family_show').hover(function(){
+            clearInterval(scrtime);
+        },function(){
+            scrtime = setInterval(function(){
+                var ul = $(".family_show ul");
+                var liHeight = ul.find("li:last").height();
+                ul.animate({marginTop : liHeight-20 +"px"},500,function(){
+                ul.find("li:first").appendTo(ul)
+                ul.find("li:last").hide();
+                ul.css({marginTop:0});
+                ul.find("li:last").fadeIn(500);
+            });           
+            },1500);
+        }).trigger('mouseleave');
+
+        $('.family_one').each(function(index){
+            var divNode = $(this);
+            divNode.find('.logo_pic').hover(
+                    function(){
+                        divNode.find('.info').animate({'top':95},100);
+                    },
+                    function(){
+                        divNode.find('.info').animate({'top':120},100);
+                    }
+            );
+        });
+    });
+    </script>
+</block>
+
+<block name="content">
+    <div class="row_container">
+        <div class="box_left">
+            <div class="family_slidebox">
+                <a href="{:U('Home/Help/index?id=27')}">
+                    <img src="__PUBLIC__/img/family/family.jpg"/>
+                </a>
+            </div>
+        </div>
+
+        <div class="box_right">
+            <div class="family_create_show">
+                <if condition="is_login()">
+                    <if condition="$is_member neq ''">
+
+                        <div class="family_gate">
+                            <div class="img_container">
+                                <img src="__PUBLIC__/img/family/logo/{$family_info.logo}" width="160" alt="堂会logo" />
+                            </div>
+                            <div class="family_message">
+                                <p>{$family_info.name}</p>
+                                <span>堂主：{$family_info.nick_name}</span><br />
+                                <span>堂会人数：{$family_info.member_count}</span><br />
+                                <a href="{:U('Home/Family/family_info',array('id'=>$family_info['id']))}">进入堂会</a>
+                            </div>
+                        </div>
+                    <else />
+                        <div class="family_create">
+                            <a href="{:U('Home/User/family_create')}">
+                                <img src="__PUBLIC__/img/family/create.png" alt="创建堂会" />
+                            </a>
+                            <p>培养与战友的深厚友谊</p>
+                        </div>
+                    </if>
+
+                <else />
+                    <div class="family_create">
+                        <a href="{:U('Home/User/family_create')}">
+                            <img src="__PUBLIC__/img/family/create.png" alt="创建堂会" />
+                        </a>
+                        <p>培养与战友的深厚友谊</p>
+                    </div>
+                </if>
+                
+                
+               
+                <div class="family_show">
+                    <div class="show_title">
+                        堂会贡献值动态
+                    </div>
+                    <ul>
+                        <foreach name="dynamic_list" item="dynamic">
+                            <li>{$dynamic.nick_name}充值获得&nbsp;&nbsp;{$dynamic.unit}&nbsp;&nbsp;贡献值</li>
+                        </foreach>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row_container">
+        <div class="box_left">
+            <div class="family_list_container">
+                <h3>热门堂会推荐<a href="{:U('Home/Family/family_all')}">更多...</a></h3>
+                <foreach name="recommend_list" item="list">
+                    <div class="number_one list_row family_one">
+                        <div class="logo_pic">
+                            <img src="__PUBLIC__/img/family/logo/{$list.logo}" width="160" height="101" alt="{$list.name}" />
+                            <div class="info"><span>{$list.name}</span></div>
+                        </div>
+                        <div class="member_num">
+                            <div class="progress_all"><p style="width: {$list.progress}%;"></p></div>
+                            <span class="existing">{$list.member_count}<br><label>已加入</label></span>
+                            <span class="sum_all">{$list.max_count}<br><label>最多</label></span>
+                            <span class="residue">{$list.residue}<br><label>剩余</label></span>
+                        </div>
+                        <a href="{:U('Home/Family/family_info',array('id'=>$list['id']))}">查看堂会</a>
+                    </div>
+                </foreach>
+
+            </div>
+        </div>
+        <div class="box_right">
+            <div class="family_ranking_list">
+                <h3>名人堂排行</h3>
+                <div class="ranking_list">
+                    <volist name="ranking_list" id="list" key="k" offset="0" length='7'>
+                        <div class="ranking_one">
+                            <i>{$k}</i>
+                            <img src="__PUBLIC__/img/family/logo/{$list.logo}" alt="{$list.name}" height="55"/>
+                            <div>
+                                <p>{$list.name}</p>
+                                <span>堂会总人数：{$list.member_count}</span>
+                            </div>
+                            <a href="{:U('Home/Family/family_info',array('id'=>$list['id']))}">进入堂会</a>
+                        </div>
+                    </volist>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>

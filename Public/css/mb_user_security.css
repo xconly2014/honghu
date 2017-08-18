@@ -1,0 +1,60 @@
+/* line 2, ../sass/mb/common/_mb_form.scss */
+.code {
+  width: 100%;
+}
+/* line 4, ../sass/mb/common/_mb_form.scss */
+.code .check_vcode {
+  float: left;
+  width: 50%;
+}
+/* line 8, ../sass/mb/common/_mb_form.scss */
+.code img {
+  float: left;
+  width: 49%;
+  margin-left: 1%;
+  height: 38px;
+  border: 1px solid #bbbbbb;
+  border-radius: 3px;
+}
+
+/* line 18, ../sass/mb/common/_mb_form.scss */
+input[type='button'] {
+  float: right;
+  width: 49%;
+  height: 40px;
+  color: #ffffff;
+  background-color: #007AFF;
+}
+
+/* line 27, ../sass/mb/common/_mb_form.scss */
+.static_field {
+  height: 40px;
+  line-height: 40px;
+}
+/* line 30, ../sass/mb/common/_mb_form.scss */
+.static_field .key {
+  text-align: center;
+  display: inline-block;
+  width: 50%;
+}
+/* line 35, ../sass/mb/common/_mb_form.scss */
+.static_field .value {
+  font-weight: bold;
+  display: inline-block;
+  width: 50%;
+}
+
+/* line 42, ../sass/mb/common/_mb_form.scss */
+.clear {
+  clear: both;
+}
+
+/* line 47, ../sass/mb/common/_mb_form.scss */
+span.error {
+  background: url("../img/wrong.png") no-repeat 0px 0px;
+  display: inline-block;
+  padding-left: 20px;
+  width: 100%;
+  height: 20px;
+  color: red;
+}

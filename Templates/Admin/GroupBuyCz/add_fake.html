@@ -1,0 +1,27 @@
+<extend name="../Common/admin_base" />
+
+<block name="content">
+    <div class="content_container">
+        <div class=contet"">
+            <div class="game_strategy_container">
+                <div class="form_container">
+                    <form action="{:U('Admin/GroupBuyCz/add_fake')}" method="post" class="common_form container">
+                        <p>添加一元云购中奖者</p>
+                        <li class="required">
+                            <label>用户名：</label>
+                            <input type="text" name="account" />
+                        </li>
+                        <li class="required">
+                            <label>云购人次：</label>
+                            <input type="text" name="num" />
+                        </li>
+                        <li>
+                        <button type="submit">添加</button>
+                        <button type="reset">取消</button>
+                    </li>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>

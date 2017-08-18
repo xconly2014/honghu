@@ -1,0 +1,783 @@
+/* line 1, ../sass/pc/admin/_top_bar.scss */
+.top_bar {
+  width: 100%;
+  height: 81px;
+  background: #07c url("../../Public/img/top.gif") 0px 0px repeat-x;
+}
+
+/* line 7, ../sass/pc/admin/_top_bar.scss */
+.logout {
+  background-color: #ffffff;
+  font-size: 14px;
+  width: 65px;
+  height: 30px;
+  text-align: center;
+  border-radius: 5px;
+  line-height: 30px;
+  position: absolute;
+  right: 5%;
+  top: 40px;
+}
+/* line 18, ../sass/pc/admin/_top_bar.scss */
+.logout:hover {
+  color: #fff;
+  background-color: #00B7EE;
+}
+/* line 23, ../sass/pc/admin/_top_bar.scss */
+.logout a {
+  color: #000;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+}
+
+/* line 1, ../sass/pc/common/_global.scss */
+* {
+  font-family: "Microsoft Yahei" !important;
+}
+
+/* line 3, ../sass/pc/common/_global.scss */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 8, ../sass/pc/common/_global.scss */
+* li {
+  list-style: none;
+}
+
+/* line 12, ../sass/pc/common/_global.scss */
+html body {
+  background: -moz-linear-gradient(top, #ffffff, #f7d195);
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#f7d195));
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#ffffff', endColorstr='#f7d195');
+  /*IE6 & IE7*/
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#ffffff', endColorstr='#f7d195')";
+  /* IE8 */
+}
+
+/* line 19, ../sass/pc/common/_global.scss */
+.vip_level {
+  padding-left: 10px;
+  display: inline-block;
+  width: 50px;
+  font-size: 13px;
+  background: url(../img/small_vip.png) 0px 6px no-repeat;
+  color: #fff;
+}
+
+/* line 1, ../sass/pc/admin/_search_bar.scss */
+.search_box_container {
+  width: 300px;
+  float: right;
+}
+
+/* line 6, ../sass/pc/admin/_search_bar.scss */
+.search_box {
+  height: 40px;
+}
+/* line 9, ../sass/pc/admin/_search_bar.scss */
+.search_box input[type="text"] {
+  display: inline-block;
+  width: 200px;
+  height: 32px;
+  margin-top: 5px;
+  padding-left: 10px;
+  border: 1px solid #f0ad4e;
+  background: #f7fcfe;
+  border-radius: 3px;
+}
+/* line 19, ../sass/pc/admin/_search_bar.scss */
+.search_box button {
+  width: 80px;
+  height: 30px;
+  background-color: #00b7ee;
+  border-radius: 5px;
+  border: none;
+}
+/* line 26, ../sass/pc/admin/_search_bar.scss */
+.search_box button:hover {
+  color: #fff;
+}
+
+/* line 1, ../sass/pc/admin/_table.scss */
+.table_bar {
+  position: relative;
+  left: 0;
+  top: 0;
+  height: 45px;
+}
+
+/* line 8, ../sass/pc/admin/_table.scss */
+.table_container {
+  margin: 0 auto;
+}
+
+/* line 12, ../sass/pc/admin/_table.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 17, ../sass/pc/admin/_table.scss */
+.data-table {
+  margin: 10px 0;
+  width: 98%;
+}
+/* line 21, ../sass/pc/admin/_table.scss */
+.data-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+/* line 25, ../sass/pc/admin/_table.scss */
+.data-table caption {
+  height: 30px;
+  line-height: 30px;
+  font-weight: 700;
+}
+
+/* line 32, ../sass/pc/admin/_table.scss */
+.data-table thead th,
+.data-table tbody td {
+  padding: 8px;
+  height: 19px;
+  line-height: 19px;
+  font-weight: 400;
+  text-align: center;
+}
+
+/* line 40, ../sass/pc/admin/_table.scss */
+.data-table thead th {
+  text-align: center;
+  color: #fff;
+  background-color: #353535;
+}
+
+/* line 45, ../sass/pc/admin/_table.scss */
+.data-table tbody tr {
+  background-color: #fefefe;
+  color: #686868;
+}
+
+/* line 49, ../sass/pc/admin/_table.scss */
+.data-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* line 53, ../sass/pc/admin/_table.scss */
+.row-selected {
+  width: 15px;
+}
+
+/* line 57, ../sass/pc/admin/_table.scss */
+.data-table tbody td a {
+  text-decoration: none;
+  cursor: auto;
+  color: #4bbd00;
+  margin-right: 10px;
+}
+
+/* line 1, ../sass/pc/admin/_form.scss */
+.common_button, .a_style_button {
+  width: 120px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: #fff;
+  border: 1px solid #f0ad4e;
+}
+/* line 8, ../sass/pc/admin/_form.scss */
+.common_button:hover, .a_style_button:hover {
+  color: #fff;
+  background-color: #f0ad4e;
+}
+
+/* line 14, ../sass/pc/admin/_form.scss */
+.a_style_button {
+  color: #000;
+  padding-top: 5px;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+}
+
+/* line 23, ../sass/pc/admin/_form.scss */
+.required label:first-child::after {
+  content: " *";
+  color: #ff0000;
+  font-family: arial;
+  font-weight: bold;
+}
+
+/* line 30, ../sass/pc/admin/_form.scss */
+.common_form {
+  margin: 0 auto;
+}
+/* line 33, ../sass/pc/admin/_form.scss */
+.common_form p {
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+/* line 39, ../sass/pc/admin/_form.scss */
+.common_form li {
+  margin-top: 20px;
+  margin-left: 60px;
+}
+/* line 43, ../sass/pc/admin/_form.scss */
+.common_form li span {
+  margin-left: 8px;
+}
+/* line 47, ../sass/pc/admin/_form.scss */
+.common_form li label {
+  display: inline-block;
+  font-size: 16px;
+  margin-right: 10px;
+  text-align: right;
+  min-width: 180px;
+}
+/* line 55, ../sass/pc/admin/_form.scss */
+.common_form li input[type='text'] {
+  padding: 5px;
+  width: 200px;
+  height: 18px;
+  border: 1px solid #cdcdcd;
+  border-radius: 4px;
+}
+/* line 63, ../sass/pc/admin/_form.scss */
+.common_form li select {
+  width: 200px;
+  height: 25px;
+}
+/* line 68, ../sass/pc/admin/_form.scss */
+.common_form li button {
+  width: 120px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: #fff;
+  border: 1px solid #f0ad4e;
+  margin: 0 40px;
+}
+/* line 76, ../sass/pc/admin/_form.scss */
+.common_form li button:hover {
+  color: #fff;
+  background-color: #f0ad4e;
+}
+
+/* line 84, ../sass/pc/admin/_form.scss */
+.dotline {
+  border-top: #00686b 1px dashed;
+  overflow: hidden;
+  height: 1px;
+}
+
+/* line 90, ../sass/pc/admin/_form.scss */
+.input_field {
+  font-size: 12px;
+  margin: 12px 0px;
+}
+/* line 94, ../sass/pc/admin/_form.scss */
+.input_field .form_info {
+  vertical-align: top;
+  text-align: right;
+  width: 120px;
+  display: inline-block;
+  margin-right: 10px;
+  line-height: 30px;
+}
+/* line 104, ../sass/pc/admin/_form.scss */
+.input_field .padding {
+  padding-right: 55px;
+}
+/* line 108, ../sass/pc/admin/_form.scss */
+.input_field select {
+  border: 1px solid #ccc;
+  width: 206px;
+  border-radius: 5px;
+  height: 26px;
+}
+/* line 115, ../sass/pc/admin/_form.scss */
+.input_field input[type='radio'] {
+  margin-left: 30px;
+}
+/* line 119, ../sass/pc/admin/_form.scss */
+.input_field input[type='text'], .input_field input[type='password'] {
+  width: 196px;
+  height: 16px;
+  padding: 5px;
+  margin-bottom: 6px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+/* line 127, ../sass/pc/admin/_form.scss */
+.input_field textarea {
+  padding: 5px;
+  width: 202px;
+  resize: none;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+/* line 134, ../sass/pc/admin/_form.scss */
+.input_field button {
+  width: 115px;
+  line-height: 28px;
+  font-size: 14px;
+  background: #FF9933;
+  padding: 0 5px;
+  border-radius: 5px;
+  color: black;
+  cursor: pointer;
+  border: none;
+}
+/* line 145, ../sass/pc/admin/_form.scss */
+.input_field button:hover {
+  color: white;
+}
+/* line 149, ../sass/pc/admin/_form.scss */
+.input_field span.error {
+  background: url("../img/wrong.png") no-repeat 0px 0px;
+  display: inline-block;
+  padding-left: 20px;
+  width: 280px;
+  height: 20px;
+  color: red;
+}
+/* line 157, ../sass/pc/admin/_form.scss */
+.input_field span.success {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url("../img/right.png") no-repeat 0px 0px;
+  position: relative;
+  top: 10px;
+}
+
+/* line 167, ../sass/pc/admin/_form.scss */
+.static_field {
+  font-size: 16px;
+  margin: 12px 50px;
+}
+/* line 171, ../sass/pc/admin/_form.scss */
+.static_field .form_key {
+  text-align: right;
+  width: 120px;
+  display: inline-block;
+  margin-right: 10px;
+  line-height: 30px;
+}
+/* line 179, ../sass/pc/admin/_form.scss */
+.static_field .form_value {
+  text-align: left;
+}
+
+/* line 184, ../sass/pc/admin/_form.scss */
+span.error {
+  font-size: 12px;
+  background: url("../img/wrong.png") no-repeat 0px 0px;
+  padding-left: 20px;
+  width: 180px;
+  height: 20px;
+  color: red;
+}
+
+/* line 193, ../sass/pc/admin/_form.scss */
+span.success {
+  font-size: 12px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url("../img/right.png") no-repeat 0px 0px;
+  position: relative;
+  top: 10px;
+}
+
+/* line 1, ../sass/pc/admin/_game_center.scss */
+.game_list_container {
+  padding: 30px;
+}
+
+/* line 5, ../sass/pc/admin/_game_center.scss */
+.cz_option_container {
+  width: 820px;
+  padding: 30px;
+}
+
+/* line 10, ../sass/pc/admin/_game_center.scss */
+.add_cz_option {
+  width: 750px;
+  height: 420px;
+  margin: 0 auto;
+}
+/* line 15, ../sass/pc/admin/_game_center.scss */
+.add_cz_option p {
+  margin-top: 10px;
+}
+/* line 18, ../sass/pc/admin/_game_center.scss */
+.add_cz_option p label {
+  font-size: 14px;
+  color: #f00;
+}
+
+/* line 25, ../sass/pc/admin/_game_center.scss */
+.game_on_sale_container {
+  width: 700px;
+  padding: 30px;
+}
+
+/* line 30, ../sass/pc/admin/_game_center.scss */
+.sc_edit_container {
+  padding: 15px;
+  width: 540px;
+}
+
+/* line 35, ../sass/pc/admin/_game_center.scss */
+.game_strategy_container {
+  padding: 15px;
+}
+
+/* line 39, ../sass/pc/admin/_game_center.scss */
+.container {
+  margin: 0 auto;
+}
+
+/* line 44, ../sass/pc/admin/_game_center.scss */
+.kinFormUpload_upfilesInfoContent p {
+  font-size: 12px;
+}
+
+/* line 49, ../sass/pc/admin/_game_center.scss */
+#uploadImg {
+  display: inline-block;
+}
+
+/* line 53, ../sass/pc/admin/_game_center.scss */
+#error {
+  font-size: 12px;
+  background: url("../img/wrong.png") no-repeat 0px 0px;
+  display: inline-block;
+  padding-left: 20px;
+  width: 80px;
+  text-align: left;
+  height: 20px;
+  color: red;
+}
+
+/* line 64, ../sass/pc/admin/_game_center.scss */
+#success {
+  font-size: 12px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url("../img/right.png") no-repeat 0px 0px;
+  position: relative;
+  top: 10px;
+}
+
+/* line 1, ../sass/pc/admin/_order_center.scss */
+.cz_package_list {
+  width: 1200px;
+  padding: 30px;
+}
+
+/* line 6, ../sass/pc/admin/_order_center.scss */
+.cz_order_ios {
+  padding: 30px;
+}
+
+/* line 10, ../sass/pc/admin/_order_center.scss */
+.star_td {
+  width: 25px;
+}
+/* line 12, ../sass/pc/admin/_order_center.scss */
+.star_td span {
+  display: block;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  background: url("../img/order_star.png") no-repeat 4px 3px;
+}
+/* line 19, ../sass/pc/admin/_order_center.scss */
+.star_td .star_span {
+  background: url("../img/order_star.png") no-repeat -44px 3px;
+}
+
+/* line 1, ../sass/pc/admin/_user_mgr.scss */
+.user_list_container {
+  padding: 20px;
+}
+
+/* line 5, ../sass/pc/admin/_user_mgr.scss */
+.group_list_container {
+  width: 650px;
+  padding: 30px;
+}
+
+/* line 10, ../sass/pc/admin/_user_mgr.scss */
+.group_add_container {
+  width: 1100px;
+  padding: 30px;
+}
+/* line 13, ../sass/pc/admin/_user_mgr.scss */
+.group_add_container table {
+  border: 1px solid #bbb;
+}
+/* line 16, ../sass/pc/admin/_user_mgr.scss */
+.group_add_container td {
+  border: 1px solid #bbb;
+}
+/* line 19, ../sass/pc/admin/_user_mgr.scss */
+.group_add_container th {
+  border: 1px solid #bbb;
+  padding: 8px;
+}
+
+/* line 25, ../sass/pc/admin/_user_mgr.scss */
+.parent_item {
+  font-weight: bold;
+}
+
+/* line 29, ../sass/pc/admin/_user_mgr.scss */
+.auth_list_item {
+  margin-top: 20px;
+  height: 30px;
+  line-height: 30px;
+}
+/* line 37, ../sass/pc/admin/_user_mgr.scss */
+.auth_list_item label {
+  display: inline-block;
+  margin-left: 10px;
+  text-align: left;
+}
+/* line 43, ../sass/pc/admin/_user_mgr.scss */
+.auth_list_item label.parent_item {
+  width: 140px;
+  font-size: 16px;
+  font-weight: bold;
+  display: block;
+  min-height: 50px;
+  line-height: 12px;
+  float: left;
+}
+/* line 55, ../sass/pc/admin/_user_mgr.scss */
+.auth_list_item label.item_label {
+  font-size: 14px;
+  width: 200px;
+  display: block;
+  height: 15px;
+  line-height: 15px;
+  float: left;
+}
+
+/* line 1, ../sass/pc/common/_left_menu_bar.scss */
+.menu_bar_container {
+  float: left;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background: #EEF6FF;
+  width: 200px;
+}
+
+/* line 9, ../sass/pc/common/_left_menu_bar.scss */
+.menu_bar {
+  width: 100%;
+  height: auto;
+  float: left;
+}
+
+/* line 15, ../sass/pc/common/_left_menu_bar.scss */
+.menu_container {
+  width: 100%;
+}
+
+/* line 19, ../sass/pc/common/_left_menu_bar.scss */
+.box h1 {
+  padding-left: 5px;
+  font-size: 20px;
+  font-weight: normal;
+}
+/* line 23, ../sass/pc/common/_left_menu_bar.scss */
+.box h1 img {
+  margin: -3px 3px 0px 0px;
+  vertical-align: middle;
+}
+
+/* line 28, ../sass/pc/common/_left_menu_bar.scss */
+.text {
+  line-height: 38px;
+  color: #666;
+}
+/* line 32, ../sass/pc/common/_left_menu_bar.scss */
+.text li {
+  list-style: none;
+  width: 100%;
+}
+/* line 36, ../sass/pc/common/_left_menu_bar.scss */
+.text li:hover {
+  background: #a0d8ef;
+}
+/* line 39, ../sass/pc/common/_left_menu_bar.scss */
+.text li.active {
+  background: #ededed;
+}
+/* line 43, ../sass/pc/common/_left_menu_bar.scss */
+.text li a {
+  display: block;
+  width: 85%;
+  padding-left: 30px;
+  text-decoration: none;
+  color: #000000;
+}
+
+/* line 53, ../sass/pc/common/_left_menu_bar.scss */
+.box_title {
+  display: inline-block;
+  width: 85%;
+  text-decoration: none;
+  color: #000;
+}
+
+/* line 60, ../sass/pc/common/_left_menu_bar.scss */
+.menu_bar_content {
+  float: left;
+  width: 780px;
+  padding-top: 40px;
+}
+
+/* line 66, ../sass/pc/common/_left_menu_bar.scss */
+.active {
+  font-weight: bold;
+  background: #a0d8ef;
+}
+
+/* line 1, ../sass/pc/admin/_content.scss */
+.body {
+  background-color: #f1f1f1;
+  font: 14px/1.5 "microsoft yahei", Helvetica, Tahoma, Arial, sans-serif;
+}
+
+/* line 6, ../sass/pc/admin/_content.scss */
+.wrap {
+  width: 100%;
+  height: 100%;
+  background-color: #f7fcfe;
+}
+
+/* line 12, ../sass/pc/admin/_content.scss */
+.content_container {
+  float: left;
+  width: 85%;
+  padding: 10px;
+}
+
+/* line 18, ../sass/pc/admin/_content.scss */
+.content {
+  margin: 0 auto;
+}
+
+/* line 22, ../sass/pc/admin/_content.scss */
+.left_info {
+  margin: 20px 0 20px 0;
+  float: left;
+  width: 49.5%;
+  height: 560px;
+}
+/* line 23, ../sass/pc/admin/_content.scss */
+.left_info h4 {
+  text-align: center;
+}
+
+/* line 32, ../sass/pc/admin/_content.scss */
+.right_info {
+  margin: 20px 0 20px 0;
+  float: left;
+  border-left: 1px solid #ddd;
+  width: 49.5%;
+  height: 560px;
+}
+/* line 33, ../sass/pc/admin/_content.scss */
+.right_info h4 {
+  text-align: center;
+}
+
+/* line 1, ../sass/pc/admin/_footer.scss */
+.footer {
+  width: 100%;
+  height: auto;
+}
+
+/* line 1, ../sass/pc/common/_page.scss */
+.page {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+/* line 6, ../sass/pc/common/_page.scss */
+.page a {
+  float: left;
+  display: block;
+  overflow: hidden;
+  margin: 5px 2px;
+  padding: 2px 10px;
+  border: 1px solid #D7DBDC;
+  text-decoration: none;
+  color: #404548;
+  background-color: #F6FFFF;
+}
+/* line 16, ../sass/pc/common/_page.scss */
+.page a:hover {
+  background-color: #72B939;
+  color: #fff;
+}
+/* line 21, ../sass/pc/common/_page.scss */
+.page a.current {
+  background-color: #72B939;
+  color: #fff;
+}
+/* line 26, ../sass/pc/common/_page.scss */
+.page span {
+  float: left;
+  display: block;
+  overflow: hidden;
+  color: #404548;
+  background-color: #F6FFFF;
+  margin: 5px;
+  padding: 5px 8px;
+  border: 1px solid #D7DBDC;
+  font-size: 12px;
+}
+
+/* line 1, ../sass/pc/admin/_news_content.scss */
+.news_list_container {
+  width: 1000px;
+  padding: 30px;
+}
+
+/* line 6, ../sass/pc/admin/_news_content.scss */
+.news_strategy_container {
+  width: 800px;
+  padding: 15px;
+}
+
+/* line 1, ../sass/pc/admin/_friend_link_content.scss */
+.friend_link_list_container {
+  width: 700px;
+  padding: 30px;
+}
+
+/* line 6, ../sass/pc/admin/_friend_link_content.scss */
+.friend_link_container {
+  width: 800px;
+  padding: 15px;
+}
+
+/* line 1, ../sass/pc/admin/_goods_content.scss */
+.goods_list_container {
+  width: 1200px;
+  padding: 30px;
+}
+
+/* line 6, ../sass/pc/admin/_goods_content.scss */
+.goods_on_sale_container {
+  width: 800px;
+  padding: 15px;
+}

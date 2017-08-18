@@ -1,0 +1,76 @@
+<extend name="../Common/home_base"/>
+
+
+<block name="custom_css">
+    <link rel="stylesheet" href="__PUBLIC__/css/strategy_evoluation.css" />
+</block>
+
+<block name="content">
+    <div class="row_container">
+        <div class="crumbs_nav">
+	        <div class="crumbs_nav_item">
+	            <a href="/">首页</a>
+	            <i>&gt;</i>
+	        </div>
+	        <div class="crumbs_nav_item">
+	            <a class="goods_show" href="{:U('Evoluation/evoluation_list')}">手游资讯</a>
+	            <i class="goods_show">&gt;</i>
+	        </div>
+            <div class="crumbs_nav_item">
+                <a class="goods_show">{$evoluation_info.title}</a>
+                <i class="goods_show"></i>
+            </div>
+	    </div>
+        <div class="strategy_evoluation_info">
+            <h3>{$evoluation_info.title}</h3>
+            <div class="strategy_evoluation_message">
+                <span>发布时间：{$evoluation_info.created_date}</span>
+                <span class="strategy_evoluation_auth">作者：轰轰虎 </span>
+                <span class="strategy_evoluation_game">游戏：{$evoluation_info.game_name}</span>
+                <span>浏览次数：{$evoluation_info.scan_num}</span>
+
+                <!-- 我要分享   start-->
+                <div class="bdsharebuttonbox" style="display:inline;float:right;"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
+                <script>
+                    window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                </script>
+                <!-- 我要分享   end-->
+            </div>
+            <div class="strategy_evoluation_info_content">
+                {$evoluation_info.content}
+            </div>
+        </div>
+
+        <div class="recommended">
+            <div class="inline_div current_list">
+                <div class="list_header">
+                    <h2>相关信息</h2><a href="{:U('Home/Evoluation/evoluation_list')}">更多&nbsp;...</a>
+                </div>
+                <ul>
+                    <foreach name="cg_evoluation" item="cg_list">
+                        <li>
+                            <a href="{$cg_list.url}">【评&nbsp;&nbsp;&nbsp;&nbsp;测】{$cg_list.title}</a>
+                        </li>
+                    </foreach>
+                </ul>
+
+
+            </div>
+            <div class="inline_div hot_list">
+                <div class="list_header">
+                    <h2>其他热门</h2><a href="{:U('Home/Evoluation/evoluation_list')}">更多&nbsp;...</a>
+                </div>
+                <ul>
+                    <foreach name="hot_list" item="h_list">
+                        <li>
+                            <a href="{$h_list.url}">{$h_list.title}</a>
+                        </li>
+                    </foreach>
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+
+
+    </div>
+</block>

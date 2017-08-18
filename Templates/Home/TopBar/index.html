@@ -1,0 +1,172 @@
+<block name="home_notice"></block>
+<div class="top_bar_container">
+    <div class="top_quick_bar">
+        <div class="row_container">
+            <div class="top_quick_bar_left">
+                <li>
+                    <php>$session_data = session('user_auth');</php>
+                    <span>您好<notempty name="session_data"><a href="{:U('Home/User/info')}">{$session_data['username'] ? $session_data['username'] : $session_data['tel']}</a>
+                    <php>$vipLevel = getUserVipLevel();</php>
+                    <if condition="$vipLevel neq ''">
+                        <span class="vip_level">{$vipLevel}</span>
+                    </if>
+                    </notempty>，欢迎光临轰轰虎</span>
+                </li>
+                <if condition="is_login()">
+                    <li>
+                        <a href="{:U('Login/logout')}" rel="nofollow">退出</a>
+                    </li>
+                    <li>
+                        <a href="{:U('User/message')}" rel="nofollow">消息
+                            <php>$num = getMessageNoRead();</php>
+                            <if condition="$num neq 0">({$num})</if>
+                        </a>
+                    </li>
+                    <else/>
+                    <li>
+                        <a href="{:U('Login/index')}" rel="nofollow">登录</a>
+                    </li>
+                    <li>
+                        <a href="{:U('Register/reg_tel')}" rel="nofollow">免费注册</a>
+                    </li>
+                </if>
+            </div>
+            <div class="top_quick_bar_right">
+                <dl>
+                    <dt>
+                        <a href="http://www.honghonghu.com" rel="nofollow">首页</a>
+                    </dt>
+                    <dt class="top_grayline">|</dt>
+                    <dd class="subNav">
+                  <span>
+                    <a href="#" rel="nofollow">订单中心</a>
+                  </span>
+                        <ul>
+                            <li>
+                                <a href="{:U('User/chongzhi_list')}">苹果充值</a>
+                            </li>
+                            <li>
+                                <a href="{:U('User/cz_package_order')}">充值团购</a>
+                            </li>
+                            <li>
+                                <a href="{:U('User/my_requirement')}">代练需求</a>
+                            </li>
+                            <li>
+                                <a href="{:U('User/my_package')}">代练套餐</a>
+                            </li>
+                            <li>
+                                <a href="{:U('User/my_account_trade')}">账号交易</a>
+                            </li>
+                            <li>
+                                <a href="{:U('User/group_buy_order')}">一元购</a>
+                            </li>
+                            <li>
+                                <a href="{:U('User/goods_order')}">商品兑换</a>
+                            </li>
+                            <li>
+                                <a href="{:U('User/sc_order_list')}">首充号</a>
+                            </li>
+                        </ul>
+                    </dd>
+                    <dt class="top_grayline">|</dt>
+                    <dt>
+                        <a href="{:U('User/info')}" rel="nofollow">个人中心</a>
+                    </dt>
+                    <dt class="top_grayline">|</dt>
+                    <dt>
+                        <a href="{:U('Help/index')}" rel="nofollow">帮助中心</a>
+                    </dt>
+                    <!--<dt class="top_grayline">|</dt>
+                    <dd class="subNav wb">
+                  <span>
+                  <a href="#" target="_blank" rel="nofollow">官方微博</a>
+                </span>
+                        <ul id="hide_nav">
+                            <li class="tengxun">
+                                <a href="#" target="_blank" rel="nofollow" >腾讯微博</a>
+                            </li>
+                            <li class="xinlang">
+                                <a href="#" target="_blank" rel="nofollow" >新浪微博</a>
+                            </li>
+                        </ul>
+                    </dd>-->
+                </dl>
+            </div>
+        </div>
+    </div>
+    <div class="christmas_top">
+        <div class="row_container">
+            <!--  <div class="top_bar">
+
+             </div> -->
+            <div class="logo_bar">
+
+                <a href="{:U('/')}">
+                    <img src="__PUBLIC__/img/logo.png" alt="logo" class="web_logo"/>
+                </a>
+
+                <div class="search_bar">
+                    <form action="{:U('Index/search')}" method="post" style="width:350px;">
+                        <input class="search_text" type="text" name="name" placeholder="请输入游戏关键字">
+                        <input class="search_submit"  type="submit"  value="搜索"/>
+                        <div class="clear"></div>
+                    </form>
+                    <div class="hot_search">
+                        <span class="hot_img"></span>
+                        <a href="{:U('CZIOS/chongzhi_info',array('gameId'=>60))}">天天酷跑</a>
+                        <a href="{:U('CZIOS/chongzhi_info',array('gameId'=>795))}">王者荣耀</a>
+                        <a href="{:U('CZIOS/chongzhi_info',array('gameId'=>587))}">少年三国志</a>
+                        <php>$list = getSearchGameList(4);</php>
+                        <foreach name="list" item="search">
+                            <a href="{:U('CZIOS/chongzhi_info',array('gameId'=>$search['game_id']))}">{$search.name}</a>
+                        </foreach>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="navi">
+    <div class="row_container">
+        <div class="navi_bar_container">
+            <ul>
+                <!-- <block name="home_login_btn">
+                </block> -->
+
+                <li class="single">
+                    <a href="http://www.honghonghu.com">首页</a>
+                </li>
+
+                <li class="single">
+                    <a href="{:U('CZIOS/index')}">手游充值</a>
+                </li>
+
+                <li class="single">
+                    <a href="{:U('Family/family_index')}">名人堂
+                        <img src="__PUBLIC__/img/new.gif">
+                    </a>
+                </li>
+
+                <li class="single">
+                    <a href="{:U('SCH/index')}">首充号</a>
+                </li>
+
+                <li class="dropdown_menu">游戏交易
+                    <dt>
+                        <a href="{:U('TradeCenter/index', array('type'=>3))}">代练套餐</a>
+                        <a href="{:U('TradeCenter/index', array('type'=>4))}">代练需求</a>
+                        <a href="{:U('TradeCenter/index', array('type'=>2))}">账号买卖</a>
+                    </dt>
+                </li>
+
+               <!--  <li class="single">
+                    <a href="{:U('GroupBuy/index')}" target="_blank">团购专区</a>
+                </li> -->
+                <li class="single">
+                    <a href="{:U('CreditsStore/index')}">积分商城</a>
+                </li>
+            </ul>
+            <!-- <block name="login_phone"></block> -->
+        </div>
+    </div>
+</div>

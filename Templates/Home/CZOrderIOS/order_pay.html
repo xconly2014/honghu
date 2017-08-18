@@ -1,0 +1,33 @@
+<extend name="../Common/chongzhi_base" />
+
+<block name="content">
+    <div class="row_container">
+        <div class="center_content">
+            <include file="Bank/cash_desk_first"/>
+        </div>
+    </div>
+</block>
+
+<block name="extra_js">
+    <script src="__PUBLIC__/js/module/cash_desk.js"></script>
+    <script type="text/javascript">
+        step = 3;
+        $().ready(function(){
+            setProgressBar();
+            cash_desk_active();
+
+            $('.btn_ok').click(function(){
+                var url="{$result_url}";
+
+                $.post(url, "", function(msg){
+                    if(msg.status){
+                        window.location.href = "{$result_finish_url}";
+                    }else{
+                        alert("其实你还没有付款");
+                    }
+                },'json');
+            });
+        });
+
+    </script>
+</block>

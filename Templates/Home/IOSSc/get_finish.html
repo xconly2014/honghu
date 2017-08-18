@@ -1,0 +1,32 @@
+<extend name="../Common/home_base" />
+
+<block name="content">
+    <div class="row_container">
+        <div class="center_content">
+            <div class="pay_finish">
+                <span>付款成功</span>
+                <p>客服人员正在处理订单,请耐心等待&nbsp;!</p>
+                <label class="alert_text">若10分钟内未收到通知，可凭<strong>&nbsp;订单号&nbsp;{$sc_order_info.id}&nbsp;</strong>咨询客服</label>
+            </div>
+
+            <div class="pay_finish_info">
+                <p class="static_field">
+                    <label class="form_key">订单号：</label>
+                    <label class="form_value">{$sc_order_info.id}</label>
+                </p>
+                <p class="static_field">
+                    <label class="form_key">游戏：</label>
+                    <label class="form_value">{$sc_order_info.game_name}</label>
+                </p>
+                <p class="static_field">
+                    <label class="form_key">首充号：</label>
+                    <label class="form_value">{$sc_order_info.details}</label>
+                </p>
+                <p class="static_field">
+                    <label class="form_key">付款金额：</label>
+                    <label class="form_value">{$sc_order_info.real_payment}</label>
+                </p>
+            </div>
+        </div>
+    </div>
+</block>

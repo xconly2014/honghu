@@ -1,0 +1,2760 @@
+/* line 1, ../sass/pc/common/_global.scss */
+* {
+  font-family: "Microsoft Yahei" !important;
+}
+
+/* line 3, ../sass/pc/common/_global.scss */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 8, ../sass/pc/common/_global.scss */
+* li {
+  list-style: none;
+}
+
+/* line 12, ../sass/pc/common/_global.scss */
+html body {
+  background: -moz-linear-gradient(top, #ffffff, #f7d195);
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#f7d195));
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#ffffff', endColorstr='#f7d195');
+  /*IE6 & IE7*/
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#ffffff', endColorstr='#f7d195')";
+  /* IE8 */
+}
+
+/* line 19, ../sass/pc/common/_global.scss */
+.vip_level {
+  padding-left: 10px;
+  display: inline-block;
+  width: 50px;
+  font-size: 13px;
+  background: url(../img/small_vip.png) 0px 6px no-repeat;
+  color: #fff;
+}
+
+/* line 1, ../sass/pc/common/_common.scss */
+.row_container {
+  width: 980px;
+  margin: 0 auto;
+}
+
+/* line 6, ../sass/pc/common/_common.scss */
+.part_margin {
+  margin-top: 10px;
+}
+
+/* line 10, ../sass/pc/common/_common.scss */
+.inline_div {
+  float: left;
+}
+
+/* line 14, ../sass/pc/common/_common.scss */
+.box_left {
+  float: left;
+  position: relative;
+}
+
+/* line 19, ../sass/pc/common/_common.scss */
+.box_right {
+  float: right;
+  position: relative;
+}
+
+/* line 27, ../sass/pc/common/_common.scss */
+.logo_container {
+  float: left;
+  width: 20%;
+  height: 100%;
+  vertical-align: middle;
+  background-color: #66afe9;
+}
+
+/* line 35, ../sass/pc/common/_common.scss */
+a img {
+  border: none;
+}
+
+/* line 1, ../sass/pc/common/_top_quick_bar.scss */
+.top_quick_bar {
+  height: 30px;
+  position: relative;
+  background: #fff;
+  z-index: 5;
+}
+
+/* line 8, ../sass/pc/common/_top_quick_bar.scss */
+.top_quick_bar_left {
+  position: absolute;
+  z-index: 4;
+  text-align: left;
+}
+/* line 13, ../sass/pc/common/_top_quick_bar.scss */
+.top_quick_bar_left li {
+  float: left;
+  font-size: 14px;
+  line-height: 30px;
+  text-align: center;
+}
+/* line 19, ../sass/pc/common/_top_quick_bar.scss */
+.top_quick_bar_left li a {
+  padding: 0px 5px;
+  text-decoration: none;
+  display: inline-block;
+}
+/* line 23, ../sass/pc/common/_top_quick_bar.scss */
+.top_quick_bar_left li a:hover {
+  color: #f00;
+  text-decoration: underline;
+}
+/* line 29, ../sass/pc/common/_top_quick_bar.scss */
+.top_quick_bar_left li span {
+  margin-right: 5px;
+  display: inline-block;
+}
+
+/* line 36, ../sass/pc/common/_top_quick_bar.scss */
+.top_grayline {
+  font-size: 14px;
+  color: #999;
+  margin-left: 2px;
+}
+
+/* line 43, ../sass/pc/common/_top_quick_bar.scss */
+.top_quick_bar_right {
+  /*position:absolute;*/
+  /*right: 0px;*/
+  z-index: 99;
+  float: right;
+  margin-right: 3px;
+}
+
+/*menu*/
+/* line 52, ../sass/pc/common/_top_quick_bar.scss */
+dl {
+  font-size: 13px;
+  line-height: 30px;
+  text-align: center;
+}
+/* line 57, ../sass/pc/common/_top_quick_bar.scss */
+dl dt {
+  float: left;
+}
+/* line 59, ../sass/pc/common/_top_quick_bar.scss */
+dl dt span {
+  color: #f00;
+}
+/* line 64, ../sass/pc/common/_top_quick_bar.scss */
+dl dd {
+  float: left;
+  display: block;
+  width: 98px;
+  padding-right: 5px;
+  position: relative;
+}
+/* line 71, ../sass/pc/common/_top_quick_bar.scss */
+dl dd span {
+  display: inline-block;
+  width: 100px;
+  background: url(../img/index_bg.png) no-repeat 69px -26px;
+}
+/* line 75, ../sass/pc/common/_top_quick_bar.scss */
+dl dd span:hover {
+  background: url(../img/index_bg.png) no-repeat 69px 6px;
+}
+/* line 78, ../sass/pc/common/_top_quick_bar.scss */
+dl dd span a {
+  margin-right: 5px;
+}
+/* line 83, ../sass/pc/common/_top_quick_bar.scss */
+dl dd ul {
+  position: absolute;
+  border: solid 2px #ededed;
+  border-top-width: 0px;
+  width: 102px;
+  display: none;
+  background-color: #FFFFF5;
+}
+/* line 93, ../sass/pc/common/_top_quick_bar.scss */
+dl dd:hover ul {
+  display: block;
+}
+/* line 99, ../sass/pc/common/_top_quick_bar.scss */
+dl a {
+  color: #000;
+  padding: 0 10px;
+  text-decoration: none;
+  display: inline-block;
+}
+/* line 104, ../sass/pc/common/_top_quick_bar.scss */
+dl a:hover {
+  color: #f00;
+  text-decoration: underline;
+}
+
+/* line 1, ../sass/pc/common/_top_bar.scss */
+.top_bar_container {
+  /*background: url("../img/top_bar_bg.png") 0 0 repeat-x;*/
+  background: #F7CE8E;
+  height: 250px;
+}
+
+/* line 6, ../sass/pc/common/_top_bar.scss */
+.top_bar {
+  height: 120px;
+}
+/* line 9, ../sass/pc/common/_top_bar.scss */
+.top_bar img {
+  float: left;
+}
+
+/* line 14, ../sass/pc/common/_top_bar.scss */
+.christmas_top {
+  height: 215px;
+  background: url("../img/top_bg.png") 0 0 no-repeat;
+  background-position: center;
+}
+
+/* line 19, ../sass/pc/common/_top_bar.scss */
+.logo_bar {
+  width: 980px;
+  position: absolute;
+  z-index: 1;
+  top: 55px;
+}
+/* line 20, ../sass/pc/common/_top_bar.scss */
+.logo_bar a {
+  text-decoration: none;
+}
+/* line 28, ../sass/pc/common/_top_bar.scss */
+.logo_bar .web_logo {
+  border: none;
+}
+
+/* line 33, ../sass/pc/common/_top_bar.scss */
+.search_bar {
+  position: absolute;
+  left: 630px;
+  top: 120px;
+}
+/* line 38, ../sass/pc/common/_top_bar.scss */
+.search_bar input[type=text] {
+  float: left;
+  display: inline-block;
+  width: 268px;
+  height: 26px;
+  padding-left: 5px;
+  border: 2px solid #FF9936;
+}
+/* line 47, ../sass/pc/common/_top_bar.scss */
+.search_bar input[type=submit] {
+  font-size: 14px;
+  float: left;
+  display: inline-block;
+  width: 70px;
+  height: 30px;
+  border: none;
+  color: #fff;
+  padding-right: 20px;
+  background: #FF9936 url(../img/0101.jpg) no-repeat 46px 8px;
+}
+
+/* line 59, ../sass/pc/common/_top_bar.scss */
+.clear {
+  clear: both;
+}
+
+/* line 63, ../sass/pc/common/_top_bar.scss */
+.hot_search {
+  margin-top: 5px;
+  font-size: 13px;
+}
+/* line 66, ../sass/pc/common/_top_bar.scss */
+.hot_search a {
+  margin: 4px;
+  color: #000;
+  text-decoration: none;
+}
+/* line 70, ../sass/pc/common/_top_bar.scss */
+.hot_search a:hover {
+  color: #f00;
+}
+
+/* line 76, ../sass/pc/common/_top_bar.scss */
+.hot_img {
+  display: block;
+  float: left;
+  width: 40px;
+  height: 15px;
+  margin: 1px 8px 0 0;
+  background: url(../img/index_bg.png) no-repeat -156px -64px;
+}
+
+/* line 1, ../sass/pc/common/_navi_bar.scss */
+.navi {
+  height: 45px;
+  background-color: #FF6B2F;
+  position: relative;
+}
+
+/* line 7, ../sass/pc/common/_navi_bar.scss */
+.navi_bar_container {
+  position: relative;
+  z-index: 4;
+}
+/* line 11, ../sass/pc/common/_navi_bar.scss */
+.navi_bar_container ul {
+  padding-left: 0;
+  margin: 0;
+}
+
+/* line 17, ../sass/pc/common/_navi_bar.scss */
+.single {
+  width: 127px;
+  height: 45px;
+  line-height: 42px;
+  float: left;
+  text-align: center;
+}
+/* line 22, ../sass/pc/common/_navi_bar.scss */
+.single:hover {
+  background-color: #f33f00;
+}
+/* line 26, ../sass/pc/common/_navi_bar.scss */
+.single:hover a {
+  color: #000;
+}
+/* line 30, ../sass/pc/common/_navi_bar.scss */
+.single a {
+  width: 127px;
+  height: 45px;
+  line-height: 42px;
+  font-size: 16px;
+  display: block;
+  color: #fbfbfa;
+  text-decoration: none;
+}
+
+/* line 39, ../sass/pc/common/_navi_bar.scss */
+.dropdown_menu {
+  width: 127px;
+  height: 45px;
+  line-height: 42px;
+  font-size: 16px;
+  float: left;
+  text-align: center;
+  color: #fff;
+}
+/* line 46, ../sass/pc/common/_navi_bar.scss */
+.dropdown_menu dt {
+  margin-top: 3px;
+  background-color: #fff;
+  border-left: 1px solid #f33f00;
+  border-right: 1px solid #f33f00;
+  border-bottom: 1px solid #f33f00;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  display: none;
+}
+/* line 55, ../sass/pc/common/_navi_bar.scss */
+.dropdown_menu dt a {
+  width: 126px;
+  height: 28px;
+  line-height: 28px;
+  font-size: 16px;
+  display: inline-block;
+  text-align: center;
+  color: #fe7d55;
+  text-decoration: none;
+  padding: 6px 0 0 0;
+}
+/* line 66, ../sass/pc/common/_navi_bar.scss */
+.dropdown_menu dt a:hover {
+  background-color: #f33f00;
+  color: #fff;
+}
+/* line 72, ../sass/pc/common/_navi_bar.scss */
+.dropdown_menu:hover {
+  background: url("../img/navibar_menu_hover.png") 0 0 repeat-x;
+  color: #000;
+}
+/* line 75, ../sass/pc/common/_navi_bar.scss */
+.dropdown_menu:hover dt {
+  display: block;
+}
+
+/* line 81, ../sass/pc/common/_navi_bar.scss */
+.home_login_btn {
+  width: 127px;
+  height: 45px;
+  line-height: 42px;
+  font-size: 16px;
+  float: left;
+  text-align: center;
+  color: #fff;
+  background-color: #4ea4ed;
+  background: url("../img/login_index.png") 0px -2px no-repeat;
+  cursor: pointer;
+}
+/* line 90, ../sass/pc/common/_navi_bar.scss */
+.home_login_btn img {
+  margin-left: -60px;
+}
+
+/* line 95, ../sass/pc/common/_navi_bar.scss */
+.login_float {
+  margin-left: -40px;
+  width: 270px;
+  height: 545px;
+  z-index: 20;
+  display: none;
+}
+/* line 102, ../sass/pc/common/_navi_bar.scss */
+.login_float ul {
+  z-index: 15;
+}
+/* line 105, ../sass/pc/common/_navi_bar.scss */
+.login_float ul.login_in {
+  position: relative;
+  top: 170px;
+}
+/* line 109, ../sass/pc/common/_navi_bar.scss */
+.login_float ul.login_in a {
+  text-decoration: none;
+  display: block;
+  width: 120px;
+  font-size: 15px;
+  line-height: 40px;
+  border-bottom: 1px solid #f34001;
+  margin: 0 auto;
+  padding-left: 40px;
+  color: #f34001;
+}
+/* line 122, ../sass/pc/common/_navi_bar.scss */
+.login_float ul.login_out {
+  position: relative;
+  top: 200px;
+  left: -5px;
+  padding-top: 20px;
+  padding-left: 46px;
+}
+/* line 130, ../sass/pc/common/_navi_bar.scss */
+.login_float ul.login_out li input {
+  margin: 10px;
+  display: block;
+  width: 160px;
+  height: 20px;
+  background-color: #d3d3d3;
+  border: none;
+  padding: 5px;
+}
+/* line 140, ../sass/pc/common/_navi_bar.scss */
+.login_float ul.login_out li a {
+  text-decoration: none;
+  color: #fff;
+  display: inline-block;
+  width: 75px;
+  height: 30px;
+  line-height: 30px;
+  margin: 7px;
+  padding: 2px 0;
+  background-color: #ff7342;
+  text-align: center;
+  vertical-align: middle;
+}
+/* line 153, ../sass/pc/common/_navi_bar.scss */
+.login_float ul.login_out li a:hover {
+  color: #000;
+}
+
+/* line 162, ../sass/pc/common/_navi_bar.scss */
+.login_float_in {
+  background: url("../img/login_float_in.png") 0 45px repeat-x;
+}
+
+/* line 166, ../sass/pc/common/_navi_bar.scss */
+.login_float_out {
+  background: url("../img/login_float_out.png") 0 45px repeat-x;
+}
+
+/* line 170, ../sass/pc/common/_navi_bar.scss */
+#info {
+  color: #f00;
+}
+
+/* line 1, ../sass/pc/common/_footer.scss */
+.footer_container {
+  width: 100%;
+  height: 235px;
+  background: #fdf3e3;
+  opacity: 0.85;
+  /*border-top:1px solid #fdf3e3;*/
+  clear: both;
+}
+
+/* line 9, ../sass/pc/common/_footer.scss */
+.footer {
+  width: 980px;
+  height: 200px;
+  margin-top: 20px;
+}
+
+/* line 16, ../sass/pc/common/_footer.scss */
+.footer_top {
+  padding-top: 2px;
+  height: 40px;
+}
+/* line 20, ../sass/pc/common/_footer.scss */
+.footer_top ul {
+  width: 860px;
+  margin: 0 auto;
+  padding-left: 25px;
+}
+/* line 26, ../sass/pc/common/_footer.scss */
+.footer_top li {
+  width: 155px;
+  height: 40px;
+  float: left;
+  padding-left: 50px;
+  padding-right: 10px;
+}
+/* line 33, ../sass/pc/common/_footer.scss */
+.footer_top li span {
+  width: 150px;
+  height: 40px;
+  line-height: 40px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* line 43, ../sass/pc/common/_footer.scss */
+.item_1 {
+  background: url(../img/footer/clock.png) 3px 2px no-repeat;
+}
+
+/* line 47, ../sass/pc/common/_footer.scss */
+.item_2 {
+  background: url(../img/footer/start.png) 3px 2px no-repeat;
+}
+
+/* line 50, ../sass/pc/common/_footer.scss */
+.item_3 {
+  background: url(../img/footer/quick.png) 5px 5px no-repeat;
+}
+
+/* line 53, ../sass/pc/common/_footer.scss */
+.item_4 {
+  background: url(../img/footer/chat.png) 0px 3px no-repeat;
+}
+
+/* line 57, ../sass/pc/common/_footer.scss */
+.left_computer {
+  float: left;
+  margin-top: 15px;
+}
+
+/* line 61, ../sass/pc/common/_footer.scss */
+.footer_details {
+  width: 480px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+/* line 65, ../sass/pc/common/_footer.scss */
+.footer_details a, .footer_details span {
+  font-size: 13px;
+  color: #5b5a5a;
+  text-decoration: none;
+  padding: 0 3px;
+  font-family: 'Heiti';
+}
+
+/* line 74, ../sass/pc/common/_footer.scss */
+.footer_introduce {
+  width: 640px;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+/* line 79, ../sass/pc/common/_footer.scss */
+.footer_introduce span {
+  font-size: 13px;
+  color: #5b5a5a;
+  font-family: 'Heiti';
+}
+
+/* line 86, ../sass/pc/common/_footer.scss */
+.footer_safe {
+  width: 710px;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+/* line 91, ../sass/pc/common/_footer.scss */
+.footer_safe a {
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+/* line 96, ../sass/pc/common/_footer.scss */
+.img_border {
+  border: 1.5px solid #ccc;
+  border-radius: 5px;
+}
+
+/* line 1, ../sass/pc/common/_letter_bar.scss */
+.letter_bar {
+  border-bottom: 1px dashed #ededed;
+  display: inline-block;
+  margin-left: 10px;
+}
+/* line 6, ../sass/pc/common/_letter_bar.scss */
+.letter_bar li {
+  list-style: none;
+  width: 28px;
+  height: 38px;
+  line-height: 38px;
+  text-align: center;
+  float: left;
+  margin-right: 10px;
+}
+/* line 15, ../sass/pc/common/_letter_bar.scss */
+.letter_bar li a {
+  margin: 5px 0px;
+  display: inline-block;
+  line-height: 28px;
+  width: 100%;
+  text-decoration: none;
+  color: #2e82c5;
+  font-size: 18px;
+}
+
+/* line 27, ../sass/pc/common/_letter_bar.scss */
+.letter_bar_content {
+  height: 345px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 10px;
+  overflow: auto;
+}
+
+/* line 36, ../sass/pc/common/_letter_bar.scss */
+.letter_more_game {
+  line-height: 50px;
+  font-size: 16px;
+  font-weight: bold;
+  float: right;
+  color: #ffffff;
+  margin-right: 40px;
+  text-decoration: none;
+}
+/* line 44, ../sass/pc/common/_letter_bar.scss */
+.letter_more_game:hover {
+  color: #2e82c5;
+}
+
+/* line 49, ../sass/pc/common/_letter_bar.scss */
+.tab_on {
+  background-color: #ededed;
+  border-radius: 10px;
+}
+
+/* line 54, ../sass/pc/common/_letter_bar.scss */
+.active {
+  display: block;
+}
+
+/* line 58, ../sass/pc/common/_letter_bar.scss */
+.sleep {
+  display: none;
+}
+
+/* line 2, ../sass/pc/common/_row_item.scss */
+.show_hidden li {
+  border-bottom: 1px dashed #ccc;
+  min-height: 30px;
+  line-height: 20px;
+  list-style-type: none;
+  margin-left: 12px;
+}
+/* line 8, ../sass/pc/common/_row_item.scss */
+.show_hidden li span {
+  display: block;
+  width: 100%;
+}
+/* line 11, ../sass/pc/common/_row_item.scss */
+.show_hidden li span a {
+  font-size: 14px;
+  text-decoration: none;
+  line-height: 30px;
+  color: #000;
+}
+/* line 16, ../sass/pc/common/_row_item.scss */
+.show_hidden li span a:hover {
+  color: #ff6600;
+  text-decoration: underline;
+}
+/* line 21, ../sass/pc/common/_row_item.scss */
+.show_hidden li span b {
+  color: red;
+  display: inline-block;
+  float: right;
+  margin-top: 8px;
+  margin-right: 10px;
+}
+/* line 30, ../sass/pc/common/_row_item.scss */
+.show_hidden li em {
+  display: none;
+  color: #ccc;
+  font-size: 12px;
+}
+
+/* line 1, ../sass/pc/common/_page.scss */
+.page {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+/* line 6, ../sass/pc/common/_page.scss */
+.page a {
+  float: left;
+  display: block;
+  overflow: hidden;
+  margin: 5px 2px;
+  padding: 2px 10px;
+  border: 1px solid #D7DBDC;
+  text-decoration: none;
+  color: #404548;
+  background-color: #F6FFFF;
+}
+/* line 16, ../sass/pc/common/_page.scss */
+.page a:hover {
+  background-color: #72B939;
+  color: #fff;
+}
+/* line 21, ../sass/pc/common/_page.scss */
+.page a.current {
+  background-color: #72B939;
+  color: #fff;
+}
+/* line 26, ../sass/pc/common/_page.scss */
+.page span {
+  float: left;
+  display: block;
+  overflow: hidden;
+  color: #404548;
+  background-color: #F6FFFF;
+  margin: 5px;
+  padding: 5px 8px;
+  border: 1px solid #D7DBDC;
+  font-size: 12px;
+}
+
+/* line 1, ../sass/pc/common/_form.scss */
+.link_text {
+  color: #ffe68f;
+}
+
+/* line 4, ../sass/pc/common/_form.scss */
+.required label:first-child::after {
+  content: " *";
+  color: #ff0000;
+  font-family: arial;
+  font-weight: bold;
+}
+
+/* line 11, ../sass/pc/common/_form.scss */
+.input_field {
+  font-size: 12px;
+  margin: 12px 0px;
+}
+/* line 15, ../sass/pc/common/_form.scss */
+.input_field .form_info {
+  vertical-align: top;
+  text-align: right;
+  width: 120px;
+  display: inline-block;
+  margin-right: 10px;
+  line-height: 30px;
+}
+/* line 25, ../sass/pc/common/_form.scss */
+.input_field .padding {
+  padding-right: 55px;
+}
+/* line 29, ../sass/pc/common/_form.scss */
+.input_field select {
+  border: 1px solid #ccc;
+  width: 206px;
+  border-radius: 5px;
+  height: 26px;
+}
+/* line 36, ../sass/pc/common/_form.scss */
+.input_field input[type='radio'], .input_field input[type='checkbox'] {
+  margin-left: 30px;
+  margin-top: 10px;
+}
+/* line 41, ../sass/pc/common/_form.scss */
+.input_field input[type='text'], .input_field input[type='password'] {
+  width: 196px;
+  height: 16px;
+  padding: 5px;
+  margin-bottom: 6px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+/* line 49, ../sass/pc/common/_form.scss */
+.input_field textarea {
+  padding: 5px;
+  width: 202px;
+  resize: none;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+/* line 56, ../sass/pc/common/_form.scss */
+.input_field input[type="button"] {
+  width: 60px;
+  height: 30px;
+  background-color: #FF9933;
+  border: 1px solid #FF9933;
+}
+/* line 63, ../sass/pc/common/_form.scss */
+.input_field button[type="submit"] {
+  width: 115px;
+  line-height: 28px;
+  font-size: 14px;
+  background: #FF9933;
+  padding: 0 5px;
+  border-radius: 5px;
+  color: black;
+  cursor: pointer;
+  border: none;
+}
+/* line 74, ../sass/pc/common/_form.scss */
+.input_field button[type="submit"]:hover {
+  color: white;
+}
+/* line 79, ../sass/pc/common/_form.scss */
+.input_field button[type="reset"] {
+  width: 115px;
+  line-height: 28px;
+  font-size: 14px;
+  color: black;
+  padding: 0 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
+/* line 89, ../sass/pc/common/_form.scss */
+.input_field button[type="reset"]:hover {
+  background: #FF9933;
+}
+/* line 94, ../sass/pc/common/_form.scss */
+.input_field span.error {
+  background: url("../img/wrong.png") no-repeat 0px 0px;
+  display: inline-block;
+  padding-left: 20px;
+  width: 280px;
+  height: 20px;
+  color: red;
+}
+/* line 102, ../sass/pc/common/_form.scss */
+.input_field span.success {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url("../img/right.png") no-repeat 0px 0px;
+  position: relative;
+  top: 10px;
+}
+
+/* line 114, ../sass/pc/common/_form.scss */
+.t_ali_r {
+  text-align: right;
+}
+
+/* line 118, ../sass/pc/common/_form.scss */
+.t_ali_l {
+  text-align: left;
+}
+
+/* line 122, ../sass/pc/common/_form.scss */
+.static_field {
+  margin: 12px 0;
+}
+/* line 126, ../sass/pc/common/_form.scss */
+.static_field .form_key {
+  text-align: right;
+  width: 120px;
+  display: inline-block;
+  margin-right: 10px;
+  line-height: 30px;
+}
+/* line 134, ../sass/pc/common/_form.scss */
+.static_field .form_value {
+  font-size: 16px;
+}
+/* line 138, ../sass/pc/common/_form.scss */
+.static_field button[type="submit"] {
+  width: 115px;
+  line-height: 28px;
+  font-size: 14px;
+  background: #FF9933;
+  padding: 0 5px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 2px;
+}
+/* line 150, ../sass/pc/common/_form.scss */
+.static_field button[type="submit"]:hover {
+  color: #000;
+}
+
+/* line 156, ../sass/pc/common/_form.scss */
+.important_label {
+  color: #ff2222;
+  font-weight: bold;
+}
+
+/* line 161, ../sass/pc/common/_form.scss */
+.sum_text {
+  font-size: 18px;
+  color: #f0ad4e;
+}
+
+/* img */
+/* line 167, ../sass/pc/common/_form.scss */
+#vcode {
+  width: 140px;
+  height: 30px;
+  vertical-align: middle;
+}
+
+/* img code input */
+/* line 174, ../sass/pc/common/_form.scss */
+#check_vcode {
+  width: 60px;
+}
+
+/* telephone code input */
+/* line 179, ../sass/pc/common/_form.scss */
+#tel_vcode, #email_vcode {
+  width: 80px;
+}
+
+/* line 183, ../sass/pc/common/_form.scss */
+#counter {
+  float: left;
+  display: inline-block;
+}
+/* line 186, ../sass/pc/common/_form.scss */
+#counter a {
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  height: 23px;
+  line-height: 20px;
+  width: 26px;
+  border: 1px solid #A9A9A9;
+  float: left;
+  font-size: 20px;
+  color: #0093DF;
+  font-weight: bold;
+}
+/* line 199, ../sass/pc/common/_form.scss */
+#counter a:hover {
+  color: #FF9933;
+}
+/* line 203, ../sass/pc/common/_form.scss */
+#counter #add {
+  margin-left: 10px;
+  border-right: none;
+  border-bottom-left-radius: 12px;
+  border-top-left-radius: 12px;
+}
+/* line 209, ../sass/pc/common/_form.scss */
+#counter #reduce {
+  border-left: none;
+  border-bottom-right-radius: 12px;
+  border-top-right-radius: 12px;
+  margin-right: 100px;
+}
+/* line 216, ../sass/pc/common/_form.scss */
+#counter input {
+  float: left;
+  height: 21px;
+  text-align: center;
+  width: 40px;
+}
+
+/* line 225, ../sass/pc/common/_form.scss */
+.first {
+  position: relative;
+}
+
+/* line 229, ../sass/pc/common/_form.scss */
+.tel_vcode, .email_vcode {
+  background: #3C8FD7;
+  text-decoration: none;
+  display: inline-block;
+  width: 110px;
+  line-height: 24px;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #fff;
+}
+
+/* line 242, ../sass/pc/common/_form.scss */
+.get_vcode {
+  font-style: normal;
+  font-size: 12px;
+  width: 290px;
+  height: 130px;
+  background: #F8F8F8;
+  border: 1px solid red;
+  display: none;
+  position: absolute;
+  z-index: 50;
+  margin-left: -140px;
+  margin-top: 30px;
+}
+/* line 256, ../sass/pc/common/_form.scss */
+.get_vcode div {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+/* line 261, ../sass/pc/common/_form.scss */
+.get_vcode .buttons {
+  margin-top: 5px;
+}
+/* line 264, ../sass/pc/common/_form.scss */
+.get_vcode .buttons .btn_ok {
+  display: inline-block;
+  width: 62px;
+  height: 26px;
+  margin-right: 20px;
+  line-height: 26px;
+  text-align: center;
+  color: #FFF;
+  background: #4097DD;
+  text-decoration: none;
+}
+/* line 275, ../sass/pc/common/_form.scss */
+.get_vcode .buttons .btn_cancel {
+  font-size: 14px;
+  color: blue;
+}
+
+/* line 282, ../sass/pc/common/_form.scss */
+.img_vcode {
+  height: 58px;
+}
+/* line 285, ../sass/pc/common/_form.scss */
+.img_vcode input {
+  width: 90px;
+  height: 14px;
+  padding: 5px;
+  margin-bottom: 6px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+/* line 294, ../sass/pc/common/_form.scss */
+.img_vcode img {
+  width: 80px;
+  height: 26px;
+  position: relative;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+/* line 302, ../sass/pc/common/_form.scss */
+.img_vcode span.error {
+  background: url("../img/wrong.png") no-repeat 0px 0px;
+  display: inline-block;
+  padding-left: 20px;
+  width: 320px;
+  height: 20px;
+  color: red;
+}
+/* line 311, ../sass/pc/common/_form.scss */
+.img_vcode span.success {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url("../img/right.png") no-repeat 0px 0px;
+  position: relative;
+}
+
+/* line 1, ../sass/pc/common/_home_left_menu_bar.scss */
+.help_container {
+  margin-top: 38px;
+}
+
+/* line 4, ../sass/pc/common/_home_left_menu_bar.scss */
+.menu_bar_container {
+  padding: 0;
+  float: left;
+  background: none;
+  width: 184px;
+}
+
+/* line 11, ../sass/pc/common/_home_left_menu_bar.scss */
+.box {
+  text-align: center;
+}
+/* line 13, ../sass/pc/common/_home_left_menu_bar.scss */
+.box h1 {
+  font-size: 20px;
+  font-weight: normal;
+  float: left;
+  margin: -5px 0 0 25px;
+  background: #FE8A4F;
+  width: 135px;
+  height: 40px;
+  text-align: center;
+  color: #fff;
+  line-height: 40px;
+  border-bottom: 4px solid #FF7542;
+  border-radius: 5px;
+}
+
+/* line 29, ../sass/pc/common/_home_left_menu_bar.scss */
+.text {
+  background: #fff;
+  line-height: 38px;
+  padding: 50px 0px 30px 0px;
+  border-bottom: 4px solid #E4E9EF;
+  margin-bottom: 30px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+/* line 37, ../sass/pc/common/_home_left_menu_bar.scss */
+.text li {
+  list-style: none;
+  width: 100%;
+}
+/* line 40, ../sass/pc/common/_home_left_menu_bar.scss */
+.text li a {
+  display: block;
+  padding: 0px;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  text-decoration: none;
+  color: #207BCC;
+}
+/* line 49, ../sass/pc/common/_home_left_menu_bar.scss */
+.text li:hover {
+  background: #a0d8ef;
+}
+/* line 52, ../sass/pc/common/_home_left_menu_bar.scss */
+.text li.active {
+  background: #FEAE57;
+}
+/* line 54, ../sass/pc/common/_home_left_menu_bar.scss */
+.text li.active a {
+  color: #000;
+  font-weight: bold;
+}
+
+/* line 1, ../sass/pc/common/_step_bar.scss */
+.flowstep .step-no, .flowstep .step-sub-box .step-sub {
+  background: url("../img/steps-icon.png") no-repeat 50% -102px;
+}
+
+/* line 5, ../sass/pc/common/_step_bar.scss */
+.flowstep {
+  margin: 0 auto;
+  padding: 20px 0;
+}
+/* line 8, ../sass/pc/common/_step_bar.scss */
+.flowstep > ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  /*@include clearfix;*/
+}
+/* line 13, ../sass/pc/common/_step_bar.scss */
+.flowstep > ol > li {
+  float: left;
+}
+
+/* line 19, ../sass/pc/common/_step_bar.scss */
+.flowstep .step-first .step-done .step-no {
+  background-position: 50% -204px;
+}
+
+/* line 23, ../sass/pc/common/_step_bar.scss */
+.flowstep .step-no {
+  height: 34px;
+  line-height: 34px;
+  font-family: 'arial black';
+  color: #fff;
+  font-size: 18px;
+}
+
+/* line 31, ../sass/pc/common/_step_bar.scss */
+.flowstep-4 li {
+  width: 235px;
+}
+
+/* line 35, ../sass/pc/common/_step_bar.scss */
+.flowstep-5 li {
+  width: 188px;
+}
+
+/* line 39, ../sass/pc/common/_step_bar.scss */
+.flowstep-6 li {
+  width: 156px;
+}
+
+/* line 43, ../sass/pc/common/_step_bar.scss */
+.step-name, .step-no {
+  text-align: center;
+}
+
+/* line 47, ../sass/pc/common/_step_bar.scss */
+.flowstep .step-last .step-no {
+  background-position: 50% -136px;
+}
+
+/* line 51, ../sass/pc/common/_step_bar.scss */
+.step-name {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* line 56, ../sass/pc/common/_step_bar.scss */
+.flowstep .step-cur .step-no {
+  background-position: 50% 0;
+}
+
+/* line 60, ../sass/pc/common/_step_bar.scss */
+.flowstep .step-done .step-no {
+  background-position: 50% -170px;
+}
+
+/* line 64, ../sass/pc/common/_step_bar.scss */
+.flowstep .step-time {
+  text-align: center;
+  font-size: 12px;
+  color: #c8c8c8;
+  margin-top: 5px;
+}
+
+/* line 71, ../sass/pc/common/_step_bar.scss */
+.flowstep.orange {
+  border: 1px solid #dbdbdb;
+  margin-bottom: 30px;
+}
+/* line 74, ../sass/pc/common/_step_bar.scss */
+.flowstep.orange .flowstep-4 li {
+  width: 234px;
+}
+
+/* line 80, ../sass/pc/common/_step_bar.scss */
+.flowstep .step-last .step-done .step-no {
+  background-position: 50% -68px;
+}
+
+/* line 1, ../sass/pc/common/_shade.scss */
+.up_box {
+  display: none;
+  position: absolute;
+  width: 600px;
+  left: 30%;
+  top: 50%;
+  height: auto;
+  z-index: 100;
+  background: #fff;
+  border: 1px #ddd solid;
+  padding: 1px;
+}
+/* line 13, ../sass/pc/common/_shade.scss */
+.up_box h2 {
+  height: 25px;
+  font-size: 14px;
+  background: #2588C9;
+  position: relative;
+  padding-left: 10px;
+  line-height: 25px;
+  color: #fff;
+}
+/* line 22, ../sass/pc/common/_shade.scss */
+.up_box h2 a {
+  position: absolute;
+  right: 5px;
+  font-size: 12px;
+  color: #fff;
+}
+/* line 32, ../sass/pc/common/_shade.scss */
+.up_box .box_content .box_message {
+  margin-left: 130px;
+  margin-top: 30px;
+}
+/* line 39, ../sass/pc/common/_shade.scss */
+.up_box .box_btn {
+  margin-top: 20px;
+  margin-left: 130px;
+  margin-bottom: 20px;
+}
+/* line 44, ../sass/pc/common/_shade.scss */
+.up_box .box_btn .btn_no {
+  padding: 5px;
+  font-size: 14px;
+  margin-left: 25px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-decoration: none;
+}
+/* line 53, ../sass/pc/common/_shade.scss */
+.up_box .box_btn .btn_ok {
+  padding: 5px;
+  font-size: 14px;
+  background: #FF811A;
+  border: 1px solid #FF811A;
+  color: #fff;
+  font-weight: bold;
+  margin-left: 25px;
+  border-radius: 5px;
+}
+
+/* line 66, ../sass/pc/common/_shade.scss */
+#bg {
+  background: #666;
+  position: absolute;
+  z-index: 99;
+  left: 0;
+  top: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+}
+
+/* line 1, ../sass/pc/common/_small_letter_bar.scss */
+.search_list {
+  line-height: 42px;
+  width: 605px;
+  height: 42px;
+  padding-left: 25px;
+  background-color: #FF9934;
+  font-size: 13px;
+}
+/* line 9, ../sass/pc/common/_small_letter_bar.scss */
+.search_list a {
+  display: inline-block;
+  font-size: 16px;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-decoration: none;
+  text-align: center;
+  color: #fff;
+  border-radius: 8px;
+}
+/* line 20, ../sass/pc/common/_small_letter_bar.scss */
+.search_list a:hover {
+  background-color: #000;
+  color: #f0f0f0;
+}
+/* line 26, ../sass/pc/common/_small_letter_bar.scss */
+.search_list .is_active {
+  background-color: #eee;
+  color: #000;
+  font-weight: bold;
+}
+/* line 31, ../sass/pc/common/_small_letter_bar.scss */
+.search_list #recommend {
+  width: 60px;
+}
+
+/* line 36, ../sass/pc/common/_small_letter_bar.scss */
+.search_game {
+  padding: 10px 0px;
+  height: 448px;
+  width: 630px;
+}
+/* line 40, ../sass/pc/common/_small_letter_bar.scss */
+.search_game div {
+  display: none;
+}
+/* line 43, ../sass/pc/common/_small_letter_bar.scss */
+.search_game div ul {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+/* line 47, ../sass/pc/common/_small_letter_bar.scss */
+.search_game div ul li {
+  float: left;
+  width: 102px;
+  height: 110px;
+  text-align: center;
+  margin: 8px;
+}
+/* line 54, ../sass/pc/common/_small_letter_bar.scss */
+.search_game div ul li a {
+  text-decoration: none;
+  color: #2393D2;
+  font-weight: bold;
+}
+/* line 59, ../sass/pc/common/_small_letter_bar.scss */
+.search_game div ul li a img {
+  border-radius: 10px;
+}
+/* line 63, ../sass/pc/common/_small_letter_bar.scss */
+.search_game div ul li a p {
+  font-size: 12px;
+  text-align: center;
+}
+
+/* line 1, ../sass/pc/common/_cash_desk.scss */
+.pay_info {
+  font-size: 14px;
+  line-height: 26px;
+  padding: 10px 15px;
+  background: #f4faff;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+/* line 9, ../sass/pc/common/_cash_desk.scss */
+.pay_info span b {
+  color: red;
+}
+
+/* line 15, ../sass/pc/common/_cash_desk.scss */
+.pay_way {
+  height: 36px;
+  line-height: 36px;
+  padding-left: 30px;
+  margin: 0 auto;
+  border-left: 1px solid #bcccee;
+  border-top: 1px solid #bcccee;
+  border-right: 1px solid #bcccee;
+  border-bottom: 3px solid #bcccee;
+  font-size: 14px;
+  background: url(../img/background-1.jpg) repeat-x;
+}
+/* line 26, ../sass/pc/common/_cash_desk.scss */
+.pay_way span {
+  padding-right: 10px;
+}
+/* line 29, ../sass/pc/common/_cash_desk.scss */
+.pay_way a {
+  color: #5194ef;
+  display: inline-block;
+  min-width: 135px;
+  padding: 0 10px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+}
+/* line 37, ../sass/pc/common/_cash_desk.scss */
+.pay_way a:hover {
+  color: #ff8501;
+}
+/* line 42, ../sass/pc/common/_cash_desk.scss */
+.pay_way a.active {
+  color: #ff8501;
+  background: #fff;
+  border-left: 3px solid #bcccee;
+  border-right: 3px solid #bcccee;
+  border-top: 3px solid #bcccee;
+}
+
+/* line 51, ../sass/pc/common/_cash_desk.scss */
+.pay_way_list {
+  border-left: 3px solid #bcccee;
+  border-right: 3px solid #bcccee;
+  border-bottom: 3px solid #bcccee;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: #fff;
+}
+/* line 59, ../sass/pc/common/_cash_desk.scss */
+.pay_way_list ul {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  min-height: 240px;
+}
+/* line 66, ../sass/pc/common/_cash_desk.scss */
+.pay_way_list ul li {
+  float: left;
+  margin-left: 22px;
+  margin-top: 30px;
+}
+/* line 70, ../sass/pc/common/_cash_desk.scss */
+.pay_way_list ul li span.checked {
+  border: 1px solid red;
+}
+/* line 75, ../sass/pc/common/_cash_desk.scss */
+.pay_way_list ul.default_way {
+  display: block;
+}
+/* line 78, ../sass/pc/common/_cash_desk.scss */
+.pay_way_list .online_payment {
+  clear: both;
+  padding: 20px 0 20px 43px;
+  color: #f00;
+  font-size: 12px;
+  font-weight: bold;
+}
+/* line 85, ../sass/pc/common/_cash_desk.scss */
+.pay_way_list .online_payment a {
+  color: #00f;
+  font-size: 14px;
+}
+/* line 91, ../sass/pc/common/_cash_desk.scss */
+.pay_way_list .pay_next {
+  height: 38px;
+  background: #F3F5FC;
+  width: 944px;
+  padding: 11px 0 0 30px;
+  border-top: 1px solid #BCCCEE;
+}
+/* line 98, ../sass/pc/common/_cash_desk.scss */
+.pay_way_list .pay_next button {
+  text-decoration: none;
+  font-size: 12px;
+  background: #FF811A;
+  border: 1px solid #FF811A;
+  width: 86px;
+  height: 28px;
+  display: inline-block;
+  text-align: center;
+  line-height: 28px;
+  border-radius: 3px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+/* line 112, ../sass/pc/common/_cash_desk.scss */
+.pay_way_list .pay_next button:hover {
+  text-decoration: underline;
+}
+
+/* line 118, ../sass/pc/common/_cash_desk.scss */
+.credits {
+  display: inline-block;
+  width: 144px;
+  height: 38px;
+  vertical-align: middle;
+  background: url(../img/credits.png) no-repeat 0 0;
+}
+
+/* line 126, ../sass/pc/common/_cash_desk.scss */
+.hb {
+  display: inline-block;
+  width: 144px;
+  height: 38px;
+  vertical-align: middle;
+  background: url(../img/hb.png) no-repeat 0 0;
+  border: 1px solid #ededed;
+}
+
+/* line 135, ../sass/pc/common/_cash_desk.scss */
+.hb_details {
+  margin-left: 400px;
+  width: 275px;
+  height: 180px;
+  border: 1px solid #ff9936;
+  float: right;
+  margin-right: 70px;
+  margin-top: 50px;
+}
+/* line 143, ../sass/pc/common/_cash_desk.scss */
+.hb_details p {
+  padding: 20px 15px 0px 15px;
+  line-height: 25px;
+  color: red;
+}
+/* line 148, ../sass/pc/common/_cash_desk.scss */
+.hb_details a {
+  background: url(../img/hb_cz.png) no-repeat;
+  display: block;
+  line-height: 30px;
+  width: 108px;
+  height: 31px;
+  margin-left: 140px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* line 164, ../sass/pc/common/_cash_desk.scss */
+.mpbalance {
+  display: inline-block;
+  width: 144px;
+  height: 38px;
+  vertical-align: middle;
+  background: url(../img/mpbalance.png) no-repeat 0 0;
+}
+
+/* line 172, ../sass/pc/common/_cash_desk.scss */
+.vcoins {
+  display: inline-block;
+  width: 144px;
+  height: 38px;
+  vertical-align: middle;
+  background: url(../img/vcoin.png) no-repeat 0 0;
+}
+
+/* line 180, ../sass/pc/common/_cash_desk.scss */
+.gs, .ny, .js, .zs, .ms, .pf, .xy, .yz, .gd, .jt, .gf, .zg, .bj, .pa, .wx, .zfb, .cft, .kq, .zf, .yd, .dx, .lt {
+  background: url(../img/pay_way.png) no-repeat 0 0;
+  display: inline-block;
+  width: 142px;
+  height: 36px;
+  vertical-align: middle;
+  border: 1px solid #ededed;
+}
+
+/* line 188, ../sass/pc/common/_cash_desk.scss */
+.china_union {
+  background: url(../img/china_union.png) no-repeat;
+  width: 142px;
+  height: 36px;
+  display: inline-block;
+  vertical-align: middle;
+  border: 1px solid #ededed;
+}
+
+/* line 196, ../sass/pc/common/_cash_desk.scss */
+.gs {
+  background-position: 0 0;
+}
+
+/* line 200, ../sass/pc/common/_cash_desk.scss */
+.ny {
+  background-position: -180px 0;
+}
+
+/* line 204, ../sass/pc/common/_cash_desk.scss */
+.js {
+  background-position: -360px 0;
+}
+
+/* line 208, ../sass/pc/common/_cash_desk.scss */
+.zs {
+  background-position: -540px 0;
+}
+
+/* line 212, ../sass/pc/common/_cash_desk.scss */
+.ms {
+  background-position: -720px 0;
+}
+
+/* line 216, ../sass/pc/common/_cash_desk.scss */
+.pf {
+  background-position: 0 -70px;
+}
+
+/* line 220, ../sass/pc/common/_cash_desk.scss */
+.xy {
+  background-position: -180px -70px;
+}
+
+/* line 224, ../sass/pc/common/_cash_desk.scss */
+.yz {
+  background-position: -360px -70px;
+}
+
+/* line 228, ../sass/pc/common/_cash_desk.scss */
+.gd {
+  background-position: -540px -70px;
+}
+
+/* line 232, ../sass/pc/common/_cash_desk.scss */
+.jt {
+  background-position: -720px -70px;
+}
+
+/* line 236, ../sass/pc/common/_cash_desk.scss */
+.gf {
+  background-position: 0 -140px;
+}
+
+/* line 240, ../sass/pc/common/_cash_desk.scss */
+.zg {
+  background-position: -180px -140px;
+}
+
+/* line 244, ../sass/pc/common/_cash_desk.scss */
+.bj {
+  background-position: -360px -140px;
+}
+
+/* line 248, ../sass/pc/common/_cash_desk.scss */
+.pa {
+  background-position: -540px -140px;
+}
+
+/* line 252, ../sass/pc/common/_cash_desk.scss */
+.wx {
+  background-position: -720px -140px;
+}
+
+/* line 256, ../sass/pc/common/_cash_desk.scss */
+.zfb {
+  background-position: 0 -210px;
+}
+
+/* line 260, ../sass/pc/common/_cash_desk.scss */
+.cft {
+  background-position: -180px -210px;
+}
+
+/* line 264, ../sass/pc/common/_cash_desk.scss */
+.kq {
+  background-position: -360px -210px;
+}
+
+/* line 268, ../sass/pc/common/_cash_desk.scss */
+.zf {
+  background-position: -540px -210px;
+}
+
+/* line 272, ../sass/pc/common/_cash_desk.scss */
+.yd {
+  background-position: 0 -280px;
+}
+
+/* line 276, ../sass/pc/common/_cash_desk.scss */
+.dx {
+  background-position: -180px -280px;
+}
+
+/* line 280, ../sass/pc/common/_cash_desk.scss */
+.lt {
+  background-position: -360px -280px;
+}
+
+/* line 285, ../sass/pc/common/_cash_desk.scss */
+.mb_cash_desk li label {
+  margin-left: 10px;
+}
+
+/* line 290, ../sass/pc/common/_cash_desk.scss */
+.hb_credits_info {
+  margin-top: 5px;
+}
+/* line 293, ../sass/pc/common/_cash_desk.scss */
+.hb_credits_info label {
+  font-size: 14px;
+  color: #f00;
+}
+/* line 297, ../sass/pc/common/_cash_desk.scss */
+.hb_credits_info p {
+  font-size: 12px;
+  color: #FF9933;
+}
+
+/* line 1, ../sass/pc/common/_crumbs_nav_bar.scss */
+.navigation_bar {
+  padding-top: 17px;
+  padding-bottom: 11px;
+}
+
+/* line 6, ../sass/pc/common/_crumbs_nav_bar.scss */
+.crumbs_nav {
+  font-size: 14px;
+  height: 20px;
+  margin-top: 10px;
+  padding-left: 10px;
+  color: #EFA47D;
+}
+
+/* line 14, ../sass/pc/common/_crumbs_nav_bar.scss */
+.crumbs_nav_item {
+  float: left;
+  margin-right: 8px;
+}
+/* line 20, ../sass/pc/common/_crumbs_nav_bar.scss */
+.crumbs_nav_item a {
+  text-decoration: none;
+  color: #EFA47D;
+}
+/* line 23, ../sass/pc/common/_crumbs_nav_bar.scss */
+.crumbs_nav_item a:hover {
+  text-decoration: underline;
+}
+/* line 28, ../sass/pc/common/_crumbs_nav_bar.scss */
+.crumbs_nav_item i {
+  font-family: simsun;
+  font-style: normal;
+}
+/* line 33, ../sass/pc/common/_crumbs_nav_bar.scss */
+.crumbs_nav_item .goods_show {
+  color: #E95404;
+}
+
+/* line 1, ../sass/pc/common/_game_pic_container.scss */
+.game_pic {
+  width: 260px;
+  height: 260px;
+  border: 2px solid #fafafa;
+  float: left;
+}
+/* line 7, ../sass/pc/common/_game_pic_container.scss */
+.game_pic img {
+  float: left;
+  margin: 10px 0 0 10px;
+  width: 240px;
+  height: 240px;
+}
+
+/* line 1, ../sass/pc/common/_info_box.scss */
+.info_details {
+  margin: 10px auto;
+  padding: 15px;
+  height: 240px;
+}
+
+/* line 1, ../sass/pc/common/_tab_panel.scss */
+.tab_header {
+  height: 30px;
+  margin-top: 20px;
+}
+/* line 5, ../sass/pc/common/_tab_panel.scss */
+.tab_header li {
+  float: left;
+  padding: 4px;
+  width: 130px;
+  text-align: center;
+  border: 2px solid #ff9936;
+  border-bottom: none;
+  cursor: pointer;
+}
+/* line 14, ../sass/pc/common/_tab_panel.scss */
+.tab_header li.active {
+  font-weight: bold;
+  background-color: #ff9936;
+}
+
+/* line 21, ../sass/pc/common/_tab_panel.scss */
+.tab_body {
+  border: 1px solid #ff9936;
+  min-height: 320px;
+}
+/* line 25, ../sass/pc/common/_tab_panel.scss */
+.tab_body .tab_content {
+  font-size: 14px;
+  min-height: 200px;
+  padding: 18px;
+}
+/* line 29, ../sass/pc/common/_tab_panel.scss */
+.tab_body .tab_content li {
+  list-style-type: decimal;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  line-height: 20px;
+  font-size: 14px;
+  margin-left: 26px;
+}
+/* line 38, ../sass/pc/common/_tab_panel.scss */
+.tab_body div {
+  display: none;
+}
+/* line 41, ../sass/pc/common/_tab_panel.scss */
+.tab_body .other {
+  display: none;
+}
+/* line 45, ../sass/pc/common/_tab_panel.scss */
+.tab_body .cur {
+  display: block;
+}
+
+/* line 1, ../sass/pc/common/_pay_finish.scss */
+.finish_page {
+  background: #ffffff;
+  height: 629px;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+/* line 8, ../sass/pc/common/_pay_finish.scss */
+.recommend_buy {
+  width: 120px;
+  float: right;
+  margin-right: 50px;
+  margin-top: 50px;
+}
+/* line 13, ../sass/pc/common/_pay_finish.scss */
+.recommend_buy a {
+  text-decoration: none;
+  font-size: 16px;
+}
+/* line 17, ../sass/pc/common/_pay_finish.scss */
+.recommend_buy .recommend_user {
+  background: url(../img/recommend_user.png) 70px 17.5px no-repeat;
+  width: 120px;
+  line-height: 80px;
+  color: #ffa631;
+}
+/* line 24, ../sass/pc/common/_pay_finish.scss */
+.recommend_buy .recommend_credits {
+  background: url(../img/recommend_credits.png) 70px 17.5px no-repeat;
+  width: 120px;
+  line-height: 80px;
+  color: #ff6176;
+}
+/* line 31, ../sass/pc/common/_pay_finish.scss */
+.recommend_buy .recommend_group {
+  background: url(../img/recommend_group.png) 70px 17.5px no-repeat;
+  width: 120px;
+  line-height: 80px;
+  color: #2b9bd5;
+}
+/* line 37, ../sass/pc/common/_pay_finish.scss */
+.recommend_buy .finish_goods {
+  background: url(../img/finish_goods.png) 0px 72px no-repeat;
+  width: 100px;
+  height: 255px;
+}
+
+/* line 44, ../sass/pc/common/_pay_finish.scss */
+.finish_line {
+  width: 850px;
+  height: 10px;
+  background: #FFA731;
+  margin-left: 75px;
+  border-radius: 5px;
+  z-index: 1000;
+  position: relative;
+}
+
+/* line 55, ../sass/pc/common/_pay_finish.scss */
+.pay_finish_info {
+  display: inline-block;
+  width: 420px;
+  height: 250px;
+  background: url(../img/note.png) no-repeat;
+  padding: 45px 45px 10px 35px;
+  margin: 10px 0px 10px 265px;
+  color: #FD7837;
+  font-weight: bold;
+}
+/* line 64, ../sass/pc/common/_pay_finish.scss */
+.pay_finish_info h3 {
+  text-align: center;
+  padding: 5px;
+}
+/* line 68, ../sass/pc/common/_pay_finish.scss */
+.pay_finish_info label {
+  line-height: 30px;
+}
+/* line 71, ../sass/pc/common/_pay_finish.scss */
+.pay_finish_info p {
+  clear: both;
+}
+/* line 73, ../sass/pc/common/_pay_finish.scss */
+.pay_finish_info p label {
+  padding: 3px 0px;
+  display: inline-block;
+}
+/* line 76, ../sass/pc/common/_pay_finish.scss */
+.pay_finish_info p label.finish_key {
+  text-align: right;
+  width: 100px;
+  vertical-align: top;
+}
+/* line 81, ../sass/pc/common/_pay_finish.scss */
+.pay_finish_info p label.finish_value {
+  width: 305px;
+}
+
+/* line 88, ../sass/pc/common/_pay_finish.scss */
+.pay_finish {
+  padding-left: 280px;
+  padding-top: 30px;
+  height: 175px;
+  display: inline-block;
+}
+/* line 94, ../sass/pc/common/_pay_finish.scss */
+.pay_finish span {
+  text-align: center;
+  background: url("../img/plane.png") 150px 37px no-repeat;
+  display: inline-block;
+  padding-left: 90px;
+  width: 320px;
+  height: 100px;
+  color: green;
+  font-size: 20px;
+  font-size: bold;
+  line-height: 100px;
+  font-weight: bold;
+  /*box-shadow: 0px 0px 10px 0px #ccc;*/
+}
+/* line 109, ../sass/pc/common/_pay_finish.scss */
+.pay_finish p {
+  width: 420px;
+  text-align: center;
+  color: #cdcdcd;
+  font-size: 16px;
+  padding: 10px 0;
+  font-weight: bold;
+  margin-top: 5px;
+}
+/* line 119, ../sass/pc/common/_pay_finish.scss */
+.pay_finish .alert_text {
+  width: 420px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #000000;
+  text-align: center;
+}
+/* line 126, ../sass/pc/common/_pay_finish.scss */
+.pay_finish .alert_text strong {
+  color: #2e82c5;
+}
+/* line 129, ../sass/pc/common/_pay_finish.scss */
+.pay_finish .alert_text b {
+  color: red;
+  margin-top: 8px;
+}
+
+/* line 136, ../sass/pc/common/_pay_finish.scss */
+.alert_container {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 99;
+  background: rgba(0, 0, 0, 0.5);
+}
+/* line 145, ../sass/pc/common/_pay_finish.scss */
+.alert_container .alert_content {
+  height: 768px;
+  background: url(../img/cz_alert2.png) no-repeat;
+  background-position: center;
+  background-size: 450px 500px;
+  opacity: 0.9;
+}
+/* line 151, ../sass/pc/common/_pay_finish.scss */
+.alert_container .alert_content .alert_msg {
+  text-align: center;
+  padding-top: 305px;
+}
+/* line 154, ../sass/pc/common/_pay_finish.scss */
+.alert_container .alert_content .alert_msg div {
+  display: block;
+  font-size: 18px;
+}
+/* line 159, ../sass/pc/common/_pay_finish.scss */
+.alert_container .alert_content .alert_msg span {
+  display: block;
+  font-size: 13px;
+}
+/* line 163, ../sass/pc/common/_pay_finish.scss */
+.alert_container .alert_content .alert_msg .btn_close {
+  opacity: 0.5;
+}
+/* line 166, ../sass/pc/common/_pay_finish.scss */
+.alert_container .alert_content .alert_msg a {
+  margin-top: 10px;
+  display: inline-block;
+  width: 115px;
+  line-height: 28px;
+  font-size: 14px;
+  padding: 0 5px;
+  border-radius: 5px;
+  color: black;
+  background-color: #d3d3d3;
+  border: none;
+  text-decoration: none;
+}
+/* line 179, ../sass/pc/common/_pay_finish.scss */
+.alert_container .alert_content .alert_msg a:hover {
+  background: #FF9933;
+}
+
+/* line 187, ../sass/pc/common/_pay_finish.scss */
+.extra_info {
+  color: #f00;
+}
+
+/* line 191, ../sass/pc/common/_pay_finish.scss */
+.qr_code_container {
+  width: 195px;
+  height: 185px;
+  position: relative;
+  top: -195px;
+  left: 80px;
+  background: url(../img/yellow_people.png) no-repeat -3px 54px;
+}
+/* line 198, ../sass/pc/common/_pay_finish.scss */
+.qr_code_container p {
+  float: left;
+  width: 80px;
+}
+/* line 202, ../sass/pc/common/_pay_finish.scss */
+.qr_code_container span {
+  display: block;
+  color: #FD7837;
+  font-weight: bold;
+}
+/* line 207, ../sass/pc/common/_pay_finish.scss */
+.qr_code_container img {
+  display: block;
+  float: right;
+  margin: -5px 0px 0px 0px;
+}
+
+/*
+.row_container{
+  position: relative;
+}
+*/
+/* line 1, ../sass/pc/common/_alert_login.scss */
+.theme-popover-mask {
+  z-index: 9998;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+  display: none;
+}
+
+/* line 14, ../sass/pc/common/_alert_login.scss */
+.theme-popover {
+  z-index: 9999;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 460px;
+  height: 320px;
+  margin: -180px 0 0 -330px;
+  border-radius: 5px;
+  border: solid 2px #666;
+  background-color: #fff;
+  display: none;
+  box-shadow: 0 0 10px #666;
+}
+
+/* line 29, ../sass/pc/common/_alert_login.scss */
+.theme-poptit {
+  border-bottom: 1px solid #ddd;
+  position: relative;
+}
+/* line 33, ../sass/pc/common/_alert_login.scss */
+.theme-poptit img {
+  margin-top: 12px;
+  margin-left: 12px;
+}
+
+/* line 39, ../sass/pc/common/_alert_login.scss */
+.theme-popbod {
+  padding: 60px 15px;
+  color: #444;
+  height: 148px;
+}
+
+/* line 45, ../sass/pc/common/_alert_login.scss */
+.dform {
+  padding: 80px 30px 40px 10px;
+  text-align: center;
+}
+
+/* line 50, ../sass/pc/common/_alert_login.scss */
+.theme-signin {
+  margin: -50px -20px -50px 90px;
+  text-align: left;
+  font-size: 14px;
+}
+
+/* line 57, ../sass/pc/common/_alert_login.scss */
+.login_form li {
+  list-style: none;
+  margin: 10px;
+}
+/* line 61, ../sass/pc/common/_alert_login.scss */
+.login_form li label {
+  display: inline-block;
+  width: 80px;
+  text-align: right;
+}
+/* line 67, ../sass/pc/common/_alert_login.scss */
+.login_form li span {
+  color: red;
+}
+/* line 71, ../sass/pc/common/_alert_login.scss */
+.login_form li button {
+  margin-top: 10px;
+  margin-right: 10px;
+  width: 90px;
+  height: 30px;
+  background: #FF9933;
+  border: none;
+  border-radius: 5px;
+}
+/* line 80, ../sass/pc/common/_alert_login.scss */
+.login_form li button:hover {
+  color: #fff;
+}
+
+/* line 87, ../sass/pc/common/_alert_login.scss */
+.ipt {
+  border: solid 1px #d2d2d2;
+  border-left-color: #ccc;
+  border-top-color: #ccc;
+  border-radius: 2px;
+  box-shadow: inset 0 1px 0 #f8f8f8;
+  background-color: #fff;
+  padding: 4px 6px;
+  height: 21px;
+  line-height: 21px;
+  color: #555;
+  width: 180px;
+  vertical-align: baseline;
+}
+
+/* line 102, ../sass/pc/common/_alert_login.scss */
+.theme-popover-mask {
+  z-index: 9998;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+  display: none;
+}
+
+/* line 115, ../sass/pc/common/_alert_login.scss */
+.close {
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 20px;
+  color: #000000;
+  text-shadow: 0 1px 0 #000;
+  opacity: 0.6;
+  text-decoration: none;
+  margin-top: 2px;
+  margin-right: 5px;
+}
+
+/* line 128, ../sass/pc/common/_alert_login.scss */
+label.error {
+  background: url("../img/wrong.png") no-repeat 0px 0px;
+  display: inline-block;
+  padding-left: 20px;
+  width: 320px;
+  height: 20px;
+  color: red;
+}
+
+/* line 1, ../sass/pc/common/_total.scss */
+.total {
+  font-size: 14px;
+  height: 40px;
+  border-bottom: 1px dashed #ccc;
+}
+/* line 6, ../sass/pc/common/_total.scss */
+.total p {
+  padding-left: 20px;
+  padding-bottom: 10px;
+}
+/* line 9, ../sass/pc/common/_total.scss */
+.total p b {
+  color: red;
+}
+/* line 12, ../sass/pc/common/_total.scss */
+.total p a {
+  margin-left: 500px;
+  text-decoration: none;
+}
+/* line 15, ../sass/pc/common/_total.scss */
+.total p a:hover {
+  color: orange;
+  text-decoration: underline;
+}
+
+/* line 23, ../sass/pc/common/_total.scss */
+.p_credits {
+  margin: 10px 20px 0 0;
+  display: inline;
+  background: url(../img/dollar.png) no-repeat;
+  float: right;
+}
+
+/* line 30, ../sass/pc/common/_total.scss */
+.p_hb {
+  margin: 10px 20px 0 20px;
+  display: inline;
+  float: left;
+  background: url(../img/hubi.png) no-repeat;
+}
+
+/* line 1, ../sass/pc/common/_left_img_and_explain.scss */
+.cz_game_info {
+  width: 220px;
+  padding-right: 5px;
+  padding-left: 10px;
+}
+/* line 6, ../sass/pc/common/_left_img_and_explain.scss */
+.cz_game_info img {
+  margin: 23px 0 20px 23px;
+}
+/* line 9, ../sass/pc/common/_left_img_and_explain.scss */
+.cz_game_info h5 {
+  text-align: center;
+}
+
+/* line 14, ../sass/pc/common/_left_img_and_explain.scss */
+.instructions_div {
+  width: 100%;
+  margin-top: 23px;
+}
+/* line 19, ../sass/pc/common/_left_img_and_explain.scss */
+.instructions_div label {
+  display: block;
+  margin-left: 20px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  height: 30px;
+  line-height: 30px;
+}
+/* line 29, ../sass/pc/common/_left_img_and_explain.scss */
+.instructions_div hr {
+  border-top: 3px solid #4091E9;
+}
+/* line 33, ../sass/pc/common/_left_img_and_explain.scss */
+.instructions_div ul {
+  margin-top: 10px;
+}
+/* line 38, ../sass/pc/common/_left_img_and_explain.scss */
+.instructions_div li {
+  list-style-type: decimal;
+  padding: 2px 8px 2px 0px;
+  line-height: 20px;
+  font-size: 12px;
+  margin-left: 26px;
+}
+/* line 44, ../sass/pc/common/_left_img_and_explain.scss */
+.instructions_div li a {
+  color: #666;
+  text-decoration: none;
+}
+/* line 47, ../sass/pc/common/_left_img_and_explain.scss */
+.instructions_div li a:hover {
+  color: #f00;
+}
+
+/* line 55, ../sass/pc/common/_left_img_and_explain.scss */
+.problem_title {
+  height: 24px;
+  padding: 50px 0  0 8px;
+  border-bottom: 1px solid #ccc;
+}
+/* line 59, ../sass/pc/common/_left_img_and_explain.scss */
+.problem_title img {
+  margin: 0 5px 0 0;
+  height: 18px;
+  float: left;
+}
+/* line 64, ../sass/pc/common/_left_img_and_explain.scss */
+.problem_title p {
+  font-size: 13px;
+  width: 120px;
+  float: left;
+}
+
+/* line 1, ../sass/pc/content/_authentication.scss */
+.auth_container {
+  background: #fff;
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+}
+
+/* line 7, ../sass/pc/content/_authentication.scss */
+.authentication_alert {
+  padding: 10px;
+  border: solid #efe0b2 1px;
+  background: #fffce9;
+}
+/* line 12, ../sass/pc/content/_authentication.scss */
+.authentication_alert img {
+  vertical-align: middle;
+  margin-left: 220px;
+}
+/* line 17, ../sass/pc/content/_authentication.scss */
+.authentication_alert span {
+  display: inline-block;
+  width: 320px;
+  height: 40px;
+  font-size: 18px;
+}
+/* line 24, ../sass/pc/content/_authentication.scss */
+.authentication_alert p {
+  margin-left: 220px;
+  font-size: 12px;
+  color: #9a9a9a;
+}
+
+/* line 31, ../sass/pc/content/_authentication.scss */
+.auth_id_title {
+  margin: 20px;
+  border-bottom: 1px solid #999;
+  padding: 8px 0px;
+}
+
+/* line 37, ../sass/pc/content/_authentication.scss */
+.photo_size {
+  position: relative;
+  top: 5px;
+  color: #666;
+}
+
+/* line 43, ../sass/pc/content/_authentication.scss */
+.file_upload {
+  margin-left: 130px;
+  width: 550px;
+  height: 205px;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+/* line 50, ../sass/pc/content/_authentication.scss */
+.file_upload .photo_left {
+  width: 270px;
+  height: 200px;
+  border-right: 1px dashed #ccc;
+  float: left;
+}
+/* line 57, ../sass/pc/content/_authentication.scss */
+.file_upload .photo_right {
+  width: 250px;
+  height: 200px;
+  float: left;
+  margin-left: 25px;
+}
+/* line 63, ../sass/pc/content/_authentication.scss */
+.file_upload li {
+  font-size: 14px;
+  padding: 2px;
+}
+/* line 66, ../sass/pc/content/_authentication.scss */
+.file_upload li.photo_message {
+  color: #666;
+}
+/* line 70, ../sass/pc/content/_authentication.scss */
+.file_upload li #face, .file_upload li #back, .file_upload li #body {
+  width: 240px;
+  height: 135px;
+  border: 1px solid #ccc;
+}
+/* line 74, ../sass/pc/content/_authentication.scss */
+.file_upload li #face img, .file_upload li #back img, .file_upload li #body img {
+  width: 240px;
+  height: 135px;
+}
+/* line 80, ../sass/pc/content/_authentication.scss */
+.file_upload li #photo_face, .file_upload li #photo_back, .file_upload li #photo_body {
+  margin-top: 3px;
+  margin-left: 70px;
+}
+
+/* line 87, ../sass/pc/content/_authentication.scss */
+label#error {
+  font-size: 12px;
+  background: url("../img/wrong.png") no-repeat 0px 0px;
+  display: inline-block;
+  padding-left: 20px;
+  width: 320px;
+  height: 20px;
+  position: relative;
+  top: -33px;
+  left: -13px;
+  color: red;
+}
+
+/* line 1, ../sass/pc/common/_wx_pay.scss */
+.wx_order_msg {
+  height: 50px;
+  padding: 20px 0 10px 0;
+}
+/* line 5, ../sass/pc/common/_wx_pay.scss */
+.wx_order_msg p {
+  margin: 5px 10px;
+}
+/* line 7, ../sass/pc/common/_wx_pay.scss */
+.wx_order_msg p label {
+  color: #f00;
+}
+
+/* line 12, ../sass/pc/common/_wx_pay.scss */
+.wx_pay_container {
+  width: 930px;
+  height: 530px;
+  margin: 0 auto;
+  border-top: 4px solid #4b5b78;
+  padding: 12px 25px 0px 25px;
+  background: #FFFFFF;
+  margin-bottom: 50px;
+}
+/* line 20, ../sass/pc/common/_wx_pay.scss */
+.wx_pay_container .wx_top {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+/* line 24, ../sass/pc/common/_wx_pay.scss */
+.wx_pay_container .wx_left {
+  float: left;
+  margin-left: 130px;
+}
+/* line 29, ../sass/pc/common/_wx_pay.scss */
+.wx_pay_container .wx_left .wx_left_top img {
+  width: 298px;
+  height: 298px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+/* line 38, ../sass/pc/common/_wx_pay.scss */
+.wx_pay_container .wx_left .wx_left_bottom {
+  padding: 8px 0px 8px 125px;
+  height: 44px;
+  background: url(../img/sao.png) 50px 8px no-repeat #ff7674;
+}
+/* line 43, ../sass/pc/common/_wx_pay.scss */
+.wx_pay_container .wx_left .wx_left_bottom p {
+  font-size: 15px;
+  line-height: 22px;
+  color: #fff;
+  font-weight: 700;
+}
+/* line 51, ../sass/pc/common/_wx_pay.scss */
+.wx_pay_container .wx_right {
+  float: left;
+  margin-left: 50px;
+  margin-top: -20px;
+}
+
+/* line 58, ../sass/pc/common/_wx_pay.scss */
+.review_order_container {
+  margin-left: 20px;
+  display: none;
+}
+/* line 62, ../sass/pc/common/_wx_pay.scss */
+.review_order_container span {
+  background: url("../img/finish.png") no-repeat 0px 0px;
+  display: block;
+  padding-left: 50px;
+  width: 180px;
+  height: 44px;
+  color: green;
+  font-size: 16px;
+  line-height: 44px;
+  margin-top: 20px;
+}
+/* line 75, ../sass/pc/common/_wx_pay.scss */
+.review_order_container p label {
+  color: #f00;
+}
+
+/* line 1, ../sass/pc/common/_week.scss */
+.singer_r_img {
+  float: left;
+  display: block;
+  width: 114px;
+  height: 52px;
+  background: url(../img/account_center/sing_week.gif) right 2px no-repeat;
+  vertical-align: middle;
+  float: right;
+  *margin-bottom: -10px;
+}
+/* line 11, ../sass/pc/common/_week.scss */
+.singer_r_img:hover {
+  background-position: right -53px;
+  text-decoration: none;
+}
+/* line 16, ../sass/pc/common/_week.scss */
+.singer_r_img span {
+  margin-left: 14px;
+  font-size: 18px;
+  display: block;
+  font-family: 'Hiragino Sans GB','Microsoft YaHei',sans-serif !important;
+  font-weight: 700;
+  color: #165379;
+}
+/* line 25, ../sass/pc/common/_week.scss */
+.singer_r_img.current {
+  background: url(../img/account_center/sing_sing.gif) no-repeat 0 2px;
+}
+
+/* line 29, ../sass/pc/common/_week.scss */
+.singer_l_cont {
+  float: left;
+  height: 50px;
+  background: url(../img/account_center/sing_per.gif) no-repeat left 12px;
+  text-indent: 23px;
+  font-size: 16px;
+}
+
+/* line 36, ../sass/pc/common/_week.scss */
+#week_day {
+  color: #165379;
+  font-size: 18px;
+}
+
+/* line 41, ../sass/pc/common/_week.scss */
+.sign table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+/* line 42, ../sass/pc/common/_week.scss */
+.sign th, .sign td {
+  width: 30px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  border: 1px solid #e3e3e3;
+}
+
+/* line 43, ../sass/pc/common/_week.scss */
+.sign th {
+  font-size: 16px;
+}
+
+/* line 44, ../sass/pc/common/_week.scss */
+.sign td {
+  color: #404040;
+  vertical-align: middle;
+}
+
+/* line 45, ../sass/pc/common/_week.scss */
+.sign .on {
+  background: url(../img/account_center/sign_have.gif) no-repeat center;
+}
+
+/* line 46, ../sass/pc/common/_week.scss */
+.calendar_month_next, .calendar_month_prev {
+  width: 34px;
+  height: 40px;
+  cursor: pointer;
+  background: url(../img/account_center/sign_arrow.png) no-repeat;
+}
+
+/* line 47, ../sass/pc/common/_week.scss */
+.calendar_month_next {
+  float: right;
+  background-position: -42px -6px;
+}
+
+/* line 48, ../sass/pc/common/_week.scss */
+.calendar_month_span {
+  display: inline;
+  line-height: 40px;
+  font-size: 16px;
+  color: #656565;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+/* line 49, ../sass/pc/common/_week.scss */
+.calendar_month_prev {
+  float: left;
+  background-position: -5px -6px;
+}
+
+/* line 50, ../sass/pc/common/_week.scss */
+.sign_succ_calendar_title {
+  text-align: center;
+  width: 398px;
+  border-left: 1px solid #e3e3e3;
+  border-right: 1px solid #e3e3e3;
+  background: #fff;
+}
+
+/* line 51, ../sass/pc/common/_week.scss */
+.sign_main {
+  border-top: 1px solid #e3e3e3;
+  font-family: "Microsoft YaHei",SimHei;
+}
+
+/* line 52, ../sass/pc/common/_week.scss */
+#sign_layer {
+  display: none;
+  width: 400px;
+}
+
+/* line 55, ../sass/pc/common/_week.scss */
+.sign_msg b {
+  color: red;
+}
+/* line 58, ../sass/pc/common/_week.scss */
+.sign_msg p {
+  color: red;
+  font-size: 12px;
+}
+/* line 61, ../sass/pc/common/_week.scss */
+.sign_msg p a {
+  text-decoration: none;
+  color: orange;
+}
+/* line 66, ../sass/pc/common/_week.scss */
+.sign_msg li {
+  list-style-type: disc;
+}
+
+/* line 1, ../sass/pc/common/_package_list.scss */
+.game_articles {
+  font-size: 14px;
+  width: 264px;
+  height: 570px;
+}
+
+/* line 7, ../sass/pc/common/_package_list.scss */
+.game_picture {
+  height: 165px;
+  background: url(../img/game_pic_shadow.png) no-repeat;
+  background-position: bottom;
+}
+/* line 11, ../sass/pc/common/_package_list.scss */
+.game_picture img {
+  border: 2px solid #666;
+}
+
+/* line 16, ../sass/pc/common/_package_list.scss */
+.nva {
+  height: 33px;
+  line-height: 33px;
+  text-align: center;
+  font-size: 16px;
+  background: url(../img/nav_bgpic.png);
+  font-weight: bold;
+  color: #fff;
+  border-bottom: 1px solid #F44609;
+}
+
+/* line 27, ../sass/pc/common/_package_list.scss */
+.show_hidden {
+  border: 1px solid #FFA634;
+  height: 371px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+/* line 3, ../sass/pc/common/_strategy_evoluation_list.scss */
+#game_strategy_evoluation_content li label {
+  display: inline-block;
+  width: 350px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,36 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="header_bar">
+    <h1 class="mui-title">兑换成功</h1>
+</block>
+
+<block name="main_content">
+    <div class="main_container">
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell mui-media">
+                <a href="#">
+                    <img class="mui-media-object mui-pull-left" src="__PUBLIC__/img/finish.png">
+                    <div class="mui-media-body">
+                        <span style="color:green;font-size:20px">尊敬的用户，你已兑换成功^_^</span>
+                        <p class='mui-ellipsis-2'>我们将尽快为您寄出商品，并通过手机短信通知您，请留意！</p>
+                    </div>
+                </a>
+            </li>
+
+            <li class="mui-table-view-cell mui-collapse mui-active">
+                <a class="mui-navigate-right" href="#">订单详情</a>
+                <ul class="mui-table-view mui-table-view-chevron">
+                    <li class="mui-table-view-cell">
+                        <label>订单号：</label><span>{$orderId}</span>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        <label>商品名：</label><span>{$data.name}</span>
+                    </li>
+                    <li class="mui-table-view-cell">
+                       <label>消耗积分：</label><span>{$data.credits}</span>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</block>

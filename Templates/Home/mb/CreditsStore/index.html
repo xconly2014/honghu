@@ -1,0 +1,43 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="extra_js">
+    <script type="text/javascript" src="__PUBLIC__/js/common/activity.js"></script>
+    <script type="text/javascript">
+        $().ready(function(){
+        	is_activity({$activity_time});
+        });
+    </script>
+</block>
+
+<block name="header_bar">
+    <h1 class="mui-title">积分商城商品列表</h1>
+</block>
+
+<block name="extra_css">
+    <link rel="stylesheet" href="__PUBLIC__/css/mb_credits.css" />
+</block>
+
+<block name="main_content">
+    <div class="main_container">
+        <ul class="mui-table-view">
+            <foreach name="goodsList" item="goods">
+                <li class="mui-table-view-cell mui-media">
+                    <a href="{:U('Home/CreditsStore/goods_info',array('id'=>$goods['id']))}">
+                        <img class="mui-media-object mui-pull-left" src="__PUBLIC__/upload/goods_pic/{$goods.pic_name}"/>
+                        <div class="mui-media-body">
+                            {$goods.name}
+                            <p class='mui-ellipsis'>
+                                 剩余：{$goods.remaining}个
+                                 <notempty name="goods.discount_credits">
+                                     <b class="import_right">{$goods.discount_credits}</b>
+                                 </notempty>
+                                 <b class="import_right del_line">{$goods.credits}</b>
+                            </p>
+                        </div>
+                    </a>
+                </li>
+            </foreach>
+        </ul>
+        <div class="page">{$page}</div>
+    </div>
+</block>

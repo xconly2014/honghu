@@ -1,0 +1,22 @@
+<extend name="../Common/admin_base" />
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div class="news_strategy_container">
+                <form class="common_form container" action="{:U('Admin/Help/categoryEdit',array('id'=>$categoryRes['id']))}" method="post">
+                    <p>修改目录名</p>
+                    <li class="required">
+                        <label>目录名</label>
+                        <input type="text" name="name" value="{$categoryRes.name}"/>
+                    </li>
+
+                     <li>
+                        <button type="submit">修改</button>
+                        
+                    </li>
+                </form>
+            </div>
+        </div>
+    </div>
+</block>

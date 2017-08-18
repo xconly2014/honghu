@@ -1,0 +1,32 @@
+<extend name="../Common/_mb_layout" />
+
+<block name="header_bar">
+    <h1 class="mui-title">首充号详情页</h1>
+</block>
+
+<block name="main_content">
+    <div class="main_container">
+        <h4>首充号详情</h4>
+        <form action="{$submit_url}" method="post">
+            <ul class="mui-table-view">
+                <li class="mui-table-view-cell">
+                    <label>套餐详情：</label><span>{$scObj.operator}&nbsp;{$scObj.info}</span>
+                </li>
+                <li class="mui-table-view-cell">
+                    <label>原价：</label><span>{$scObj.price}元</span>
+                </li> 
+
+                <li class="mui-table-view-cell">
+                    <label>折扣：</label><span>{$scObj.discount}</span>
+                </li>
+
+                <li class="mui-table-view-cell">
+                    <label>您需要支付：</label><b style="color:red;font-weight:bold;font-size:20px;">{$scObj.real_price}元</b></span>
+                </li>       
+            </ul>
+            <div class="mui-button-row">
+                <button class="mui-btn mui-btn-primary mui-btn-block">购买</button>
+            </div>
+        </form>    
+    </div>
+</block>

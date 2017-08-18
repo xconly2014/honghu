@@ -1,0 +1,37 @@
+<extend name="../Common/admin_base" />
+
+<block name="content">
+    <div class="content_container">
+        <div class="content">
+            <div class="news_list_container">
+                <div class="table_container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>编号</th>
+                                <th>提交时间</th>
+                                <th>联系方式</th>
+                                <th>建议详情</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <foreach name="suggest_list" item="row">
+                                <tr>
+                                    <td>{$row.id}</td>
+                                    <td>{$row.created_date}</td>
+                                    <td>{$row.contact_way}</td>
+                                    <td>{$row.advice}</td>
+                                    <td>
+                                       <a href="{:U('Admin/Suggest/del_suggest', array('id'=>$row['id']))}" onclick="return confirm('确定删除吗?');">删除</a>
+                                    </td>
+                                </tr>
+                            </foreach>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>

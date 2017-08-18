@@ -1,0 +1,16 @@
+/* line 1, ../sass/user_record_list.scss */
+ul {
+  margin-top: 10px;
+  height: 25px;
+}
+/* line 4, ../sass/user_record_list.scss */
+ul li {
+  float: left;
+  width: 180px;
+  vertical-align: middle;
+}
+/* line 8, ../sass/user_record_list.scss */
+ul li b {
+  color: #0190f7;
+  font-size: 18px;
+}

@@ -1,0 +1,72 @@
+.qq_ask  {
+  background-image:url('/static/img/account_qq.png');
+  background-repeat: no-repeat;
+  width:32px;
+  height:32px;
+}
+
+.fixed {
+  position: fixed;
+  background: #fff;
+  width:60px;
+  top:420px;
+  z-index:9999;
+
+  ul {
+    margin:0;
+    padding:0;
+    li {
+      width:60px;
+      padding-bottom: 10px;
+      padding-top:5px;
+      list-style: none;
+
+      a  {
+        display:block;
+        height:45px;
+        text-align: center;
+        text-decoration: none;
+        color:#777;
+
+        img  {
+          width:32px;
+          height:32px;
+        }
+
+        p  {
+          margin-top:5px;
+          line-height: 12px;
+          font-size: 12px;
+          text-align: center;
+
+        }
+
+        &:hover  {
+          color: #f0ad4e;
+        }
+      }
+    }
+  }
+}
+
+
+.float_right  {
+  top:450px;
+  position: fixed;
+  z-index:9999;
+}
+
+.tel_div{
+  display:none;
+  position:absolute;
+  left:-95px;
+  top:120px;
+  background:#fff;
+  height:45px;
+  line-height: 50px;
+  font-size:14px;
+  padding:0px 5px;
+  border-radius:5px 0px 0px 5px;
+  color:#000;
+  font-weight: bold;
+}
